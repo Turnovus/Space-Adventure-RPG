@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cseqpkmw7747v"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/location_panel.gd" id="1_76554"]
+[ext_resource type="Texture2D" uid="uid://kblgw7o4ad2u" path="res://assets/position-marker.svg" id="2_bh7s7"]
+
+[node name="LocationPanel" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_76554")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_bh7s7")
+expand_mode = 2
+
+[node name="LocationName" type="Label" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sample Text"
+horizontal_alignment = 1
+vertical_alignment = 1

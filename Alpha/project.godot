@@ -15,6 +15,14 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "purple",
+"res://galaxy/": "blue",
+"res://interface/": "green"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
