@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfpx8i6ru5r7v"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/turn_buttons.gd" id="1_e3c88"]
+[ext_resource type="Texture2D" uid="uid://drffhb3i53vc4" path="res://assets/play-button.svg" id="1_s6b47"]
+[ext_resource type="Texture2D" uid="uid://bpn2bho6i75nb" path="res://assets/fast-forward-button.svg" id="2_erl45"]
+
+[node name="TurnButtons" type="VBoxContainer"]
+custom_minimum_size = Vector2(136.34, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_vertical = 3
+script = ExtResource("1_e3c88")
+
+[node name="TurnButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "END TURN"
+icon = ExtResource("1_s6b47")
+expand_icon = true
+
+[node name="ActionButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "END ACTION"
+icon = ExtResource("2_erl45")
+expand_icon = true
