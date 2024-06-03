@@ -11,9 +11,9 @@ var player : Agent
 
 
 # Signals sent during execution of a turn
-signal turn_start
-signal turn_end
-signal turn_post
+signal turn_start(turn: int)
+signal turn_end(turn: int)
+signal turn_post(turn: int)
 
 
 func _ready():

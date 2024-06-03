@@ -15,5 +15,5 @@ func get_player() -> Agent:
 	return galaxy.player
 
 
-func _on_turn_post(turn):
+func _on_turn_post(_turn):
 	location_name.text = get_player().get_parent().name
