@@ -14,6 +14,8 @@ var player : Agent
 signal turn_start(turn: int)
 signal turn_end(turn: int)
 signal turn_post(turn: int)
+# Signals sent in response to player action
+signal player_actions_changed
 
 
 func _ready():

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=5 format=3 uid="uid://cjy7tmi6n5kpd"]
 
+[ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="PackedScene" uid="uid://b3tgiiopvq2dk" path="res://interface/main_interface_components/time_panel.tscn" id="1_q4pvq"]
 [ext_resource type="PackedScene" uid="uid://cseqpkmw7747v" path="res://interface/main_interface_components/location_panel.tscn" id="2_cvq3e"]
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
@@ -23,6 +24,9 @@ offset_top = 471.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="PointsPanel" parent="HBoxContainer" instance=ExtResource("1_g5gv6")]
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
