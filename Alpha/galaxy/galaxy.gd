@@ -31,7 +31,7 @@ func generate_galaxy():
 		for j in range(0,4):
 			var planet = PLANET_ENTITY.new()
 			planet.name = "Planet " + str(i) + "." + str(j)
-			sun.add_child(planet)
+			sun.add_child_entity(planet)
 			
 		add_child(sun)
 
@@ -41,7 +41,7 @@ func make_player():
 	player.is_player = true
 	var start_sun = get_child(randi_range(0, get_child_count() - 1))
 	var start_planet = start_sun.get_child(randi_range(0, start_sun.get_child_count() - 1))
-	start_planet.add_child(player)
+	start_planet.add_child_entity(player)
 
 
 func request_turn_advance():
