@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drffhb3i53vc4"
-path="res://.godot/imported/play-button.svg-e8123629de468c6387e3c74e26ede665.ctex"
+uid="uid://bj0ejx3j4n3dh"
+path="res://.godot/imported/palm.svg-dd11d1f32757e2b66f2d8670e9c338ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/play-button.svg"
-dest_files=["res://.godot/imported/play-button.svg-e8123629de468c6387e3c74e26ede665.ctex"]
+source_file="res://assets/anatomy/palm.svg"
+dest_files=["res://.godot/imported/palm.svg-dd11d1f32757e2b66f2d8670e9c338ad.ctex"]
 
 [params]
 

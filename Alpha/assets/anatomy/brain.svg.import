@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kblgw7o4ad2u"
-path="res://.godot/imported/position-marker.svg-d7216fd2f033e8d2dcb6002c107a43e4.ctex"
+uid="uid://c4lfu07sxpbv"
+path="res://.godot/imported/brain.svg-6fb78ffc7a34b7e71c87db625be18435.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/position-marker.svg"
-dest_files=["res://.godot/imported/position-marker.svg-d7216fd2f033e8d2dcb6002c107a43e4.ctex"]
+source_file="res://assets/anatomy/brain.svg"
+dest_files=["res://.godot/imported/brain.svg-6fb78ffc7a34b7e71c87db625be18435.ctex"]
 
 [params]
 
