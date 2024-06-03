@@ -2,6 +2,14 @@ extends Node
 class_name Entity
 
 
+var turn_created = 0
+
+
+func _ready():
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	turn_created = galaxy.turn
+
+
 func do_turn():
 	_turn_action()
 	

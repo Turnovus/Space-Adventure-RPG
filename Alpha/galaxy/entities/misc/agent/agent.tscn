@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu57sse557lbi"]
+
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
+
+[node name="Agent" type="Node"]
+script = ExtResource("1_kdh5l")
