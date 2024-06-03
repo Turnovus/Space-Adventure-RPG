@@ -30,6 +30,10 @@ func normalized_relative_location(location: Vector2) -> Vector2:
 	return normalized
 
 
+func get_size() -> Vector2:
+	return BASE_PLANET_SIZE * size
+
+
 func _turn_action():
 	super()
 
