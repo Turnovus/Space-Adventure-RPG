@@ -19,14 +19,14 @@ func max_mental_points() -> int:
 func unallocated_physical_points() -> int:
 	var points = max_physical_points()
 	for action in actions_this_turn:
-		points -= action.physical_point_cost()
+		points -= action.physical_point_cost(self)
 	return points
 
 
 func unallocated_mental_points() -> int:
 	var points = max_mental_points()
 	for action in actions_this_turn:
-		points -= action.mental_point_cost()
+		points -= action.mental_point_cost(self)
 	return points
 
 

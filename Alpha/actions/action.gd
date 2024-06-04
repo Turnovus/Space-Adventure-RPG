@@ -6,22 +6,22 @@ class_name Action
 @export var icon : Texture2D = null
 
 
-func physical_point_cost() -> int:
+func physical_point_cost(agent : Agent) -> int:
 	var points = 0
 	
 	for child in get_children(true):
 		if child is PointCostResolverBase:
-			points += child.physical_point_cost()
+			points += child.physical_point_cost(agent)
 	
 	return points
 
 
-func mental_point_cost() -> int:
+func mental_point_cost(agent : Agent) -> int:
 	var points = 0
 	
 	for child in get_children(true):
 		if child is PointCostResolverBase:
-			points += child.mental_point_cost()
+			points += child.mental_point_cost(agent)
 	
 	return points
 

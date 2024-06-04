@@ -11,7 +11,7 @@ const SECONDS_PER_DEGREE = SECONDS_PER_MINUTE * MINUTES_PER_DEGREE
 const SECONDS_PER_LAT = SECONDS_PER_DEGREE * DEGREES_PER_LAT
 const SECONDS_PER_LONG = SECONDS_PER_DEGREE * DEGREES_PER_LONG
 
-const H_BREAK = "   |   "
+const H_BREAK = "    |    "
 
 @onready var location_name : Label = $"CenterContainer/HBoxContainer/LocationName"
 

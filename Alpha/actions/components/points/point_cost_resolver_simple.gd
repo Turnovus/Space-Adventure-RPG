@@ -6,9 +6,9 @@ class_name PointCostResolverSimple
 @export var mental_points : int = 0
 
 
-func physical_point_cost() -> int:
+func physical_point_cost(_agent : Agent) -> int:
 	return physical_points
 
 
-func mental_point_cost() -> int:
+func mental_point_cost(_agent : Agent) -> int:
 	return mental_points
