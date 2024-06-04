@@ -1,23 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://toj861m6c7iv"]
+[gd_scene load_steps=3 format=3 uid="uid://cx2i4hx5bi26"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet.gd" id="1_b5x1o"]
-[ext_resource type="PackedScene" uid="uid://bfu2wxa4g1gxd" path="res://actions/planetary/travel/action_travel_directional.tscn" id="2_0r6vp"]
+[ext_resource type="PackedScene" uid="uid://bfu2wxa4g1gxd" path="res://actions/planetary/travel/action_travel_directional.tscn" id="2_mbtty"]
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_b5x1o")
 
-[node name="TravelNorth" parent="." instance=ExtResource("2_0r6vp")]
+[node name="TravelNorth" parent="." instance=ExtResource("2_mbtty")]
 movement = Vector2(0, 0.002)
 label = "Go North"
 
-[node name="TravelSouth" parent="." instance=ExtResource("2_0r6vp")]
+[node name="TravelSouth" parent="." instance=ExtResource("2_mbtty")]
 movement = Vector2(0, -0.002)
 label = "Go South"
 
-[node name="TravelEast" parent="." instance=ExtResource("2_0r6vp")]
+[node name="TravelEast" parent="." instance=ExtResource("2_mbtty")]
 movement = Vector2(0.002, 0)
 label = "Go East"
 
-[node name="TravelWest" parent="." instance=ExtResource("2_0r6vp")]
+[node name="TravelWest" parent="." instance=ExtResource("2_mbtty")]
 movement = Vector2(-0.002, 0)
 label = "Go West"
