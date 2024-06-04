@@ -20,10 +20,19 @@ func regenerate_actions():
 		child.queue_free()
 	
 	for action in player.get_available_actions():
-		if not player.actions_this_turn.has(action):
-			var new_listing = listing.instantiate()
-			new_listing.set_action(action)
-			list.add_child(new_listing)
+		if player.actions_this_turn.has(action):
+			continue
+		
+		var excluded = false
+		for chosen in player.actions_this_turn:
+			if chosen.is_exclusive_with(action):
+				excluded = true
+		if excluded:
+			continue
+			
+		var new_listing = listing.instantiate()
+		new_listing.set_action(action)
+		list.add_child(new_listing)
 
 
 func _on_turn_post(_turn : int):

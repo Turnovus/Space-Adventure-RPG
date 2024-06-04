@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfu2wxa4g1gxd"]
+
+[ext_resource type="Script" path="res://actions/planetary/travel/action_travel_directional.gd" id="1_s301i"]
+[ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/map/compass.svg" id="2_od63s"]
+[ext_resource type="Script" path="res://actions/components/exclusivity/action_exclusion_tag.gd" id="3_qlw8d"]
+
+[node name="ActionTravelDirectional" type="Node"]
+script = ExtResource("1_s301i")
+icon = ExtResource("2_od63s")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_qlw8d")
+tag = "travel"

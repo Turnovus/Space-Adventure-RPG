@@ -38,5 +38,16 @@ func do_continue() -> bool:
 	return false
 
 
+func is_exclusive_with(other : Action) -> bool:
+	for child in get_children():
+		var exclusion : ActionExclusion = child as ActionExclusion
+		if exclusion == null:
+			continue
+		if exclusion.is_exclusive_with(other):
+			return true
+	
+	return false
+
+
 func is_possible_for(_agent : Agent) -> bool:
 	return true

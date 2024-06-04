@@ -1,20 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://toj861m6c7iv"]
+[gd_scene load_steps=3 format=3 uid="uid://toj861m6c7iv"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet.gd" id="1_b5x1o"]
-[ext_resource type="Script" path="res://actions/planetary/travel/action_travel_directional.gd" id="2_ojjwt"]
-[ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/map/compass.svg" id="3_r3k5w"]
+[ext_resource type="PackedScene" uid="uid://bfu2wxa4g1gxd" path="res://actions/planetary/travel/action_travel_directional.tscn" id="2_0r6vp"]
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_b5x1o")
 
-[node name="MoveNorthAction" type="Node" parent="."]
-script = ExtResource("2_ojjwt")
+[node name="TravelNorth" parent="." instance=ExtResource("2_0r6vp")]
 movement = Vector2(0, 1)
 label = "Go North"
-icon = ExtResource("3_r3k5w")
 
-[node name="MoveSouthAction" type="Node" parent="."]
-script = ExtResource("2_ojjwt")
+[node name="TravelSouth" parent="." instance=ExtResource("2_0r6vp")]
 movement = Vector2(0, -1)
 label = "Go South"
-icon = ExtResource("3_r3k5w")
