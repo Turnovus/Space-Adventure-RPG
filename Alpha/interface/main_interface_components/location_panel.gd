@@ -37,6 +37,7 @@ func update_location():
 	location_name.text = text
 
 
+@warning_ignore("integer_division")
 func planet_local_location_string(agent : Agent, planet : Planet) -> String:
 	var format_string = "{lat_deg}° {lat_min}' {lat_sec}\" {lat_card}, {long_deg}° {long_min}' {long_sec}\" {long_card}"
 	var location = agent.location_relative / planet.get_size()
