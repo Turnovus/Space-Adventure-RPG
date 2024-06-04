@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bciigurosq6cq"]
+
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/machine/cog.svg" id="1_0rcy1"]
+[ext_resource type="Script" path="res://interface/main_interface_components/player_action_list/player_action_listing.gd" id="2_kbdso"]
+
+[node name="PlayerActionListing" type="Button"]
+offset_right = 289.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+text = "Sample Text"
+icon = ExtResource("1_0rcy1")
+expand_icon = true
+script = ExtResource("2_kbdso")

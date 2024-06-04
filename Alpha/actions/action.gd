@@ -3,6 +3,7 @@ class_name Action
 
 
 @export var label : String = ""
+@export var icon : Texture2D = null
 
 
 func physical_point_cost() -> int:
@@ -29,7 +30,7 @@ func get_full_label() -> String:
 	return label
 
 
-func action_resolve(agent : Agent):
+func action_resolve(_agent : Agent):
 	pass
 
 
@@ -37,5 +38,5 @@ func do_continue() -> bool:
 	return false
 
 
-func is_possible_for(agent : Agent) -> bool:
+func is_possible_for(_agent : Agent) -> bool:
 	return true

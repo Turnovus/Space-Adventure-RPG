@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://toj861m6c7iv"]
+[gd_scene load_steps=3 format=3 uid="uid://toj861m6c7iv"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet.gd" id="1_b5x1o"]
+[ext_resource type="Script" path="res://actions/planetary/travel/action_travel_directional.gd" id="2_ojjwt"]
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_b5x1o")
+
+[node name="MoveNorthAction" type="Node" parent="."]
+script = ExtResource("2_ojjwt")
+movement = Vector2(0, 1)
+label = "Go North"
+
+[node name="MoveSouthAction" type="Node" parent="."]
+script = ExtResource("2_ojjwt")
+movement = Vector2(0, -1)
+label = "Go South"

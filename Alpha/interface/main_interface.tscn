@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=6 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="PackedScene" uid="uid://b3tgiiopvq2dk" path="res://interface/main_interface_components/time_panel.tscn" id="1_q4pvq"]
 [ext_resource type="PackedScene" uid="uid://cseqpkmw7747v" path="res://interface/main_interface_components/location_panel.tscn" id="2_cvq3e"]
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
+[ext_resource type="PackedScene" uid="uid://cg73gxmawfrtm" path="res://interface/main_interface_components/player_action_list/player_action_list.tscn" id="5_x15g8"]
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
@@ -40,3 +41,11 @@ layout_mode = 2
 
 [node name="TurnButtons" parent="HBoxContainer" instance=ExtResource("2_ervsp")]
 layout_mode = 2
+
+[node name="PlayerActionList" parent="." instance=ExtResource("5_x15g8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.235
+anchor_bottom = 0.877
+offset_right = 0.279968
+offset_bottom = -0.296021
