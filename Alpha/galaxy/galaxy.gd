@@ -3,7 +3,7 @@ class_name Galaxy
 
 
 const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
-const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet.gd")
+const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet.tscn")
 const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
 
 var turn : int = 0
@@ -31,7 +31,7 @@ func generate_galaxy():
 		sun.name = "Sun " + str(i)
 		
 		for j in range(0,4):
-			var planet = PLANET_ENTITY.new()
+			var planet = PLANET_ENTITY.instantiate()
 			planet.name = "Planet " + str(i) + "." + str(j)
 			sun.add_child_entity(planet)
 			
