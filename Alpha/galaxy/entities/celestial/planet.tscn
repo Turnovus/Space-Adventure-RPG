@@ -7,9 +7,17 @@
 script = ExtResource("1_b5x1o")
 
 [node name="TravelNorth" parent="." instance=ExtResource("2_0r6vp")]
-movement = Vector2(0, 1)
+movement = Vector2(0, 0.002)
 label = "Go North"
 
 [node name="TravelSouth" parent="." instance=ExtResource("2_0r6vp")]
-movement = Vector2(0, -1)
+movement = Vector2(0, -0.002)
 label = "Go South"
+
+[node name="TravelEast" parent="." instance=ExtResource("2_0r6vp")]
+movement = Vector2(0.002, 0)
+label = "Go East"
+
+[node name="TravelWest" parent="." instance=ExtResource("2_0r6vp")]
+movement = Vector2(-0.002, 0)
+label = "Go West"

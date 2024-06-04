@@ -2,7 +2,7 @@ extends Entity
 class_name Planet
 
 
-const BASE_PLANET_SIZE : Vector2 = Vector2(100, 50)
+const BASE_PLANET_SIZE : Vector2 = Vector2(100, 100)
 
 var size: float = 1
 
@@ -21,9 +21,14 @@ func remove_child_entity(entity: Entity):
 func normalized_relative_location(location: Vector2) -> Vector2:
 	var normalized = Vector2(location)
 	
+	# Moving horizantally is wrapped
 	var max_x = BASE_PLANET_SIZE.x * size * 0.5
-	normalized.x = clampf(normalized.x, -max_x, max_x)
+	while normalized.x >= max_x + 1:
+		normalized.x -= max_x * 2 + 1
+	while normalized.x <= -(max_x + 1):
+		normalized.x += max_x * 2 + 1
 	
+	# Moving vertically is clamped
 	var max_y = BASE_PLANET_SIZE.y * size * 0.5
 	normalized.y = clampf(normalized.y, -max_y, max_y)
 	
