@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=7 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="PackedScene" uid="uid://b3tgiiopvq2dk" path="res://interface/main_interface_components/time_panel.tscn" id="1_q4pvq"]
 [ext_resource type="PackedScene" uid="uid://cseqpkmw7747v" path="res://interface/main_interface_components/location_panel.tscn" id="2_cvq3e"]
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
+[ext_resource type="PackedScene" uid="uid://dp7fo75kh6l3h" path="res://interface/main_interface_components/main_tabs/available_actions_tab.tscn" id="5_01e6a"]
 [ext_resource type="PackedScene" uid="uid://cg73gxmawfrtm" path="res://interface/main_interface_components/player_action_list/player_action_list.tscn" id="5_x15g8"]
 
 [node name="MainInterface" type="Control"]
@@ -40,6 +41,19 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TurnButtons" parent="HBoxContainer" instance=ExtResource("2_ervsp")]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.236
+anchor_right = 1.0
+anchor_bottom = 0.875
+offset_left = 3.12799
+offset_bottom = 0.999939
+grow_horizontal = 0
+
+[node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
 
 [node name="PlayerActionList" parent="." instance=ExtResource("5_x15g8")]

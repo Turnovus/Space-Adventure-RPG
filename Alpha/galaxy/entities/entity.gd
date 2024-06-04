@@ -23,7 +23,7 @@ func remove_child_entity(entity: Entity):
 
 
 func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
-	var actions = []
+	var actions : Array[Action] = []
 	for child in get_children():
 		if child is Action and child.is_possible_for(agent_requesting):
 			actions.append(child)
@@ -31,7 +31,7 @@ func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
 
 
 func get_available_actions() -> Array[Action]:
-	var actions = []
+	var actions : Array[Action] = []
 	
 	actions.append_array(get_outgoing_actions_for(self))
 	actions.append_array(get_parent().get_outgoing_actions_for(self))
