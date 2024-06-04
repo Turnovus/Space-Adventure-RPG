@@ -1,13 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7awxhkdfxfn8"]
+[gd_scene load_steps=5 format=3 uid="uid://c7awxhkdfxfn8"]
 
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/machine/cog.svg" id="1_7nhd1"]
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/available_action_listing.gd" id="2_dhl70"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/anatomy/palm.svg" id="3_m8g57"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/anatomy/brain.svg" id="4_rsk4n"]
 
-[node name="AvailableActionListing" type="Button"]
-offset_right = 193.0
+[node name="AvailableActionListing" type="HBoxContainer"]
+offset_right = 266.0
 offset_bottom = 31.0
+size_flags_horizontal = 3
+script = ExtResource("2_dhl70")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Sample Text"
 icon = ExtResource("1_7nhd1")
 expand_icon = true
-script = ExtResource("2_dhl70")
+
+[node name="PhysicalIcon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_m8g57")
+expand_mode = 2
+
+[node name="PhysicalCount" type="Label" parent="."]
+layout_mode = 2
+text = "0"
+
+[node name="MentalIcon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("4_rsk4n")
+expand_mode = 2
+
+[node name="MentalCount" type="Label" parent="."]
+layout_mode = 2
+text = "0"

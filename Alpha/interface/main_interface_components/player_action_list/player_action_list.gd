@@ -19,5 +19,5 @@ func _on_player_actions_changed():
 	
 	for action in player.actions_this_turn:
 		var new_listing = listing.instantiate()
-		new_listing.set_action(action)
 		list.add_child(new_listing)
+		new_listing.set_action(player, action)

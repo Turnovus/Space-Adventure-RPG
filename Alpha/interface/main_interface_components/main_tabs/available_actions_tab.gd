@@ -31,8 +31,8 @@ func regenerate_actions():
 			continue
 			
 		var new_listing = listing.instantiate()
-		new_listing.set_action(action)
 		list.add_child(new_listing)
+		new_listing.set_action(action)
 
 
 func _on_turn_post(_turn : int):
