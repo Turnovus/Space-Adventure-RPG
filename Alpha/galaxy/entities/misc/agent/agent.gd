@@ -28,3 +28,8 @@ func unallocated_mental_points() -> int:
 	for action in actions_this_turn:
 		points -= action.mental_point_cost()
 	return points
+
+
+func _turn_action():
+	for action in actions_this_turn:
+		action.action_resolve(self)

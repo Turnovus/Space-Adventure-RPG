@@ -73,7 +73,11 @@ func try_remove_player_action(action : Action):
 
 func _update_entities():
 	for child in get_children():
-		pass
+		var entity : Entity = child as Entity
+		if entity == null:
+			continue
+		
+		entity.do_turn()
 
 
 func _start_turn():
