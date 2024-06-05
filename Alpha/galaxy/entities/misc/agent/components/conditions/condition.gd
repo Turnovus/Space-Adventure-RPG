@@ -8,7 +8,7 @@ class_name Condition
 var degree = 0
 
 
-func update(agent : Agent):
+func update(_agent : Agent):
 	pass
 
 
