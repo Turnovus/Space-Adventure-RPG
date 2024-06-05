@@ -4,6 +4,8 @@ class_name Agent
 
 const BASE_POINTS = 20
 
+@onready var conditions = $ConditionManager
+
 var is_player: bool = false
 var actions_this_turn : Array[Action]
 
@@ -33,3 +35,5 @@ func unallocated_mental_points() -> int:
 func _turn_action():
 	for action in actions_this_turn:
 		action.action_resolve(self)
+	
+	conditions.update(self)

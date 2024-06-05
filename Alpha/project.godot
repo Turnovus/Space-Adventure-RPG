@@ -22,6 +22,7 @@ folder_colors={
 "res://actions/components/": "red",
 "res://assets/": "purple",
 "res://galaxy/": "blue",
+"res://galaxy/entities/misc/agent/components/": "red",
 "res://interface/": "green"
 }
 

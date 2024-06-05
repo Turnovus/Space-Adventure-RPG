@@ -1,0 +1,14 @@
+extends Node
+class_name ConditionManager
+
+
+func _ready():
+	var parent = get_parent()
+	update(parent)
+
+
+func update(agent : Agent):
+	for child in get_children():
+		if not child is Condition:
+			continue
+		child.update(agent)

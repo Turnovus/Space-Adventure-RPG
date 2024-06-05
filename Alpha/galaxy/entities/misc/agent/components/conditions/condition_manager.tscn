@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://br33brnaiaxxk"]
+
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.gd" id="1_jxbo6"]
+[ext_resource type="PackedScene" uid="uid://8tk5dctnpg3d" path="res://galaxy/entities/misc/agent/components/conditions/light/condition_light.tscn" id="2_wsd44"]
+
+[node name="ConditionManager" type="Node"]
+script = ExtResource("1_jxbo6")
+
+[node name="ConditionLight" parent="." node_paths=PackedStringArray("degrees") instance=ExtResource("2_wsd44")]
+degrees = [NodePath("Dark"), NodePath("MostlyDark"), NodePath("MostlyLight"), null]

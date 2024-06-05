@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dp7fo75kh6l3h"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/available_actions_tab.gd" id="1_ukee3"]
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.gd" id="1_ukee3"]
 
 [node name="AvailableActionsTab" type="ScrollContainer"]
 anchors_preset = 15

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://8tk5dctnpg3d"]
+
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/light/condition_light.gd" id="1_6r5pp"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/condition_degree_data.gd" id="2_hn726"]
+[ext_resource type="Texture2D" uid="uid://dnw6vasm3qimq" path="res://assets/weather/moon.svg" id="3_878od"]
+[ext_resource type="Texture2D" uid="uid://dc7fg4a72c6bg" path="res://assets/weather/sunrise.svg" id="4_2mcxj"]
+
+[node name="ConditionLight" type="Node" node_paths=PackedStringArray("degrees")]
+script = ExtResource("1_6r5pp")
+degrees = [NodePath("Dark"), NodePath("MostlyDark"), NodePath("MostlyLight"), null]
+
+[node name="Dark" type="Node" parent="."]
+script = ExtResource("2_hn726")
+label = "It is entirely dark. There is no light to see by."
+icon = ExtResource("3_878od")
+
+[node name="MostlyDark" type="Node" parent="."]
+script = ExtResource("2_hn726")
+label = "It is mostly dark. There is barely enough light to see by."
+icon = ExtResource("4_2mcxj")
+
+[node name="MostlyLight" type="Node" parent="."]
+script = ExtResource("2_hn726")
+label = "It is slightly dark, enough to interfere with vision."
+icon = ExtResource("4_2mcxj")

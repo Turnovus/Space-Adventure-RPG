@@ -1,7 +1,7 @@
 extends ScrollContainer
 
 
-@onready var listing = preload("res://interface/main_interface_components/main_tabs/available_action_listing.tscn")
+@onready var listing = preload("res://interface/main_interface_components/main_tabs/available_actions/available_action_listing.tscn")
 @onready var list = $VBoxContainer
 
 
