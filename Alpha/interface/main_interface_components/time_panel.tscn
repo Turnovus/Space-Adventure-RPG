@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3tgiiopvq2dk"]
+[gd_scene load_steps=7 format=3 uid="uid://b3tgiiopvq2dk"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/time_panel.gd" id="1_pvpvv"]
+[ext_resource type="Texture2D" uid="uid://cnn6oeuetsood" path="res://assets/machine/clockwork.svg" id="2_l4y3x"]
+[ext_resource type="Texture2D" uid="uid://b32y48xgtt6yy" path="res://assets/weather/sun.svg" id="2_v7pd5"]
+[ext_resource type="Texture2D" uid="uid://dnw6vasm3qimq" path="res://assets/weather/moon.svg" id="3_v42af"]
+[ext_resource type="Texture2D" uid="uid://25ya24guarmn" path="res://assets/weather/sunrise.svg" id="4_1avtu"]
+[ext_resource type="Texture2D" uid="uid://cq2sbdqq7x0pd" path="res://assets/weather/sunset.svg" id="5_ldxil"]
 
 [node name="TimePanel" type="PanelContainer"]
 anchors_preset = 15
@@ -11,6 +16,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_pvpvv")
+sun_icon = ExtResource("2_v7pd5")
+moon_icon = ExtResource("3_v42af")
+sunrise_icon = ExtResource("4_1avtu")
+sunset_icon = ExtResource("5_ldxil")
 
 [node name="TimePanelInner" type="CenterContainer" parent="."]
 layout_mode = 2
@@ -18,13 +27,31 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="TimePanelInner"]
 layout_mode = 2
 
-[node name="UniverseClock" type="Label" parent="TimePanelInner/VBoxContainer"]
+[node name="Universe" type="HBoxContainer" parent="TimePanelInner/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="UniverseIcon" type="TextureRect" parent="TimePanelInner/VBoxContainer/Universe"]
+layout_mode = 2
+texture = ExtResource("2_l4y3x")
+expand_mode = 2
+
+[node name="UniverseClock" type="Label" parent="TimePanelInner/VBoxContainer/Universe"]
 layout_mode = 2
 text = "Year 0, Day 0 - 0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LocalClock" type="Label" parent="TimePanelInner/VBoxContainer"]
+[node name="Local" type="HBoxContainer" parent="TimePanelInner/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LocalIcon" type="TextureRect" parent="TimePanelInner/VBoxContainer/Local"]
+layout_mode = 2
+texture = ExtResource("2_l4y3x")
+expand_mode = 2
+
+[node name="LocalClock" type="Label" parent="TimePanelInner/VBoxContainer/Local"]
 layout_mode = 2
 text = "12:00 - Noon"
 horizontal_alignment = 1

@@ -10,8 +10,14 @@ const ZERO_YEAR = 1
 const LIGHT_LEVEL_DAY = 0.5
 const LIGHT_LEVEL_NIGHT = 0.1
 
-@onready var universe_clock: Label = $"TimePanelInner/VBoxContainer/UniverseClock"
-@onready var local_clock: Label = $"TimePanelInner/VBoxContainer/LocalClock"
+@export var sun_icon : Texture2D
+@export var moon_icon : Texture2D
+@export var sunrise_icon : Texture2D
+@export var sunset_icon : Texture2D
+
+@onready var universe_clock: Label = $TimePanelInner/VBoxContainer/Universe/UniverseClock
+@onready var local_clock: Label = $TimePanelInner/VBoxContainer/Local/LocalClock
+@onready var local_icon : TextureRect = $TimePanelInner/VBoxContainer/Local/LocalIcon
 
 
 func _ready():
@@ -82,9 +88,13 @@ func local_time_planetary(player : Agent, planet : Planet):
 	local_clock.text += " - "
 	if light < LIGHT_LEVEL_NIGHT:
 		local_clock.text += "Night"
+		local_icon.texture = moon_icon
 	elif light > LIGHT_LEVEL_DAY:
 		local_clock.text += "Day"
+		local_icon.texture = sun_icon
 	elif local_time < 0.5:
 		local_clock.text += "Dawn"
+		local_icon.texture = sunrise_icon
 	else:
 		local_clock.text += "Dusk"
+		local_icon.texture = sunset_icon

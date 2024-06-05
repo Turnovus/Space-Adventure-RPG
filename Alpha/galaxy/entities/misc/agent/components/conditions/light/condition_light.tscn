@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/light/condition_light.gd" id="1_6r5pp"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/condition_degree_data.gd" id="2_hn726"]
 [ext_resource type="Texture2D" uid="uid://dnw6vasm3qimq" path="res://assets/weather/moon.svg" id="3_878od"]
-[ext_resource type="Texture2D" uid="uid://dc7fg4a72c6bg" path="res://assets/weather/sunrise.svg" id="4_2mcxj"]
+[ext_resource type="Texture2D" uid="uid://dc7fg4a72c6bg" path="res://assets/weather/sun-horizon.svg" id="4_2mcxj"]
 
 [node name="ConditionLight" type="Node" node_paths=PackedStringArray("degrees")]
 script = ExtResource("1_6r5pp")
