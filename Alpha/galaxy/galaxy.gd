@@ -3,7 +3,7 @@ class_name Galaxy
 
 
 const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
-const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet.tscn")
+const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet/planet.tscn")
 const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
 
 var turn : int = 0

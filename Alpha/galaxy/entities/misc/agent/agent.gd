@@ -32,6 +32,10 @@ func unallocated_mental_points() -> int:
 	return points
 
 
+func get_terrestrial_location() -> TerrestrialLocation:
+	return get_parent() as TerrestrialLocation
+
+
 func _turn_action():
 	for action in actions_this_turn:
 		action.action_resolve(self)

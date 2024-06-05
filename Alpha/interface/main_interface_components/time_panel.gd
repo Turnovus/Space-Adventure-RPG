@@ -62,14 +62,13 @@ func _on_turn_post(turn:int):
 		universe_clock.text += "0"
 	universe_clock.text += str(minutes)
 	
-	var location = player.get_parent()
-	var planet = location as Planet
-	if planet != null:
-		local_time_planetary(player, planet)
+	var location = player.get_terrestrial_location()
+	if location != null:
+		local_time_terrestrial(player, location)
 
 
-func local_time_planetary(player : Agent, planet : Planet):
-	var local_time = planet.time_of_day_at(player.location_relative)
+func local_time_terrestrial(player : Agent, location : TerrestrialLocation):
+	var local_time = location.time_of_day_at(player.location_relative)
 	var total_minutes = 1440.0 * local_time
 	
 	var minutes = int(total_minutes) % 60
@@ -84,7 +83,7 @@ func local_time_planetary(player : Agent, planet : Planet):
 		local_clock.text += "0"
 	local_clock.text += str(minutes)
 	
-	var light = planet.light_level_at(player.location_relative)
+	var light = location.light_level_at(player.location_relative)
 	local_clock.text += " - "
 	if light < LIGHT_LEVEL_NIGHT:
 		local_clock.text += "Night"

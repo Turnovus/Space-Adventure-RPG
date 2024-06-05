@@ -1,4 +1,4 @@
-extends Entity
+extends TerrestrialLocation
 class_name Planet
 
 
