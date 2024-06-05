@@ -7,6 +7,9 @@ const TURNS_PER_YEAR = TURNS_PER_DAY * 100
 const ZERO_DAY = 1
 const ZERO_YEAR = 1
 
+const LIGHT_LEVEL_DAY = 0.5
+const LIGHT_LEVEL_NIGHT = 0.1
+
 @onready var universe_clock: Label = $"TimePanelInner/VBoxContainer/UniverseClock"
 @onready var local_clock: Label = $"TimePanelInner/VBoxContainer/LocalClock"
 
@@ -75,4 +78,13 @@ func local_time_planetary(player : Agent, planet : Planet):
 		local_clock.text += "0"
 	local_clock.text += str(minutes)
 	
-	local_clock.text += " ({time})".format({"time" : local_time})
+	var light = planet.light_level_at(player.location_relative)
+	local_clock.text += " - "
+	if light < LIGHT_LEVEL_NIGHT:
+		local_clock.text += "Night"
+	elif light > LIGHT_LEVEL_DAY:
+		local_clock.text += "Day"
+	elif local_time < 0.5:
+		local_clock.text += "Dawn"
+	else:
+		local_clock.text += "Dusk"

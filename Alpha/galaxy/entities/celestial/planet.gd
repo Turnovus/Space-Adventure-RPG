@@ -60,6 +60,18 @@ func time_of_day_at(relative_location : Vector2) -> float:
 	return mod
 
 
+func light_level_at(relative_location : Vector2) -> float:
+	#NOTE: Remember to rewrite comment after tampering with equation
+	#f(x) = -10(x-0.55)^2 + 1.2 {0 <= f(x) <= 1}
+	#0.55 = midday
+	var time = time_of_day_at(relative_location)
+	var light = time - 0.55
+	light *= light
+	light *= -10
+	light += 1.2
+	return clampf(light, 0, 1)
+
+
 func _turn_action():
 	super()
 	
