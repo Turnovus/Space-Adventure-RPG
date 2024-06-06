@@ -1,9 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=13 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/light/condition_light.gd" id="3_3ih7e"]
+[ext_resource type="PackedScene" uid="uid://bxt82xhac32a1" path="res://galaxy/entities/misc/agent/components/stats/stat_manager.tscn" id="3_t8mw0"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/condition_degree_data.gd" id="4_080mv"]
+[ext_resource type="Texture2D" uid="uid://dnw6vasm3qimq" path="res://assets/weather/moon.svg" id="5_242im"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="5_lb8gf"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/components/stat_effector/condition_component_stat_effector.gd" id="6_65t5o"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/anatomy/palm.svg" id="6_jtu38"]
+[ext_resource type="Texture2D" uid="uid://dc7fg4a72c6bg" path="res://assets/weather/sun-horizon.svg" id="7_krrdb"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/anatomy/brain.svg" id="11_2s4pq"]
+[ext_resource type="Texture2D" uid="uid://cyi3lb3bxofqf" path="res://assets/apparel/walking-boot.svg" id="12_og4sx"]
 
-[node name="Agent" type="Node"]
+[node name="Agent" type="Node" node_paths=PackedStringArray("physical_point_stat", "mental_point_stat")]
 script = ExtResource("1_kdh5l")
+physical_point_stat = NodePath("StatManager/PhysicalPoints")
+mental_point_stat = NodePath("StatManager/MentalPoints")
 
 [node name="ConditionManager" parent="." instance=ExtResource("2_e2rc3")]
+
+[node name="Light" type="Node" parent="ConditionManager" node_paths=PackedStringArray("degrees")]
+script = ExtResource("3_3ih7e")
+degrees = [NodePath("Dark"), NodePath("MostlyDark"), NodePath("MostlyLight"), null]
+
+[node name="Dark" type="Node" parent="ConditionManager/Light"]
+script = ExtResource("4_080mv")
+label = "It is entirely dark. There is no light to see by."
+icon = ExtResource("5_242im")
+
+[node name="MovementMalus" type="Node" parent="ConditionManager/Light/Dark" node_paths=PackedStringArray("stat")]
+script = ExtResource("6_65t5o")
+stat = NodePath("../../../../StatManager/MovementSpeed")
+stat_potency_factor = 0.2
+
+[node name="MostlyDark" type="Node" parent="ConditionManager/Light"]
+script = ExtResource("4_080mv")
+label = "It is mostly dark. There is barely enough light to see by."
+icon = ExtResource("7_krrdb")
+
+[node name="MovementMalus" type="Node" parent="ConditionManager/Light/MostlyDark" node_paths=PackedStringArray("stat")]
+script = ExtResource("6_65t5o")
+stat = NodePath("../../../../StatManager/MovementSpeed")
+stat_potency_factor = 0.5
+
+[node name="MostlyLight" type="Node" parent="ConditionManager/Light"]
+script = ExtResource("4_080mv")
+label = "It is slightly dark, enough to interfere with vision."
+icon = ExtResource("7_krrdb")
+
+[node name="MovementMalus" type="Node" parent="ConditionManager/Light/MostlyLight" node_paths=PackedStringArray("stat")]
+script = ExtResource("6_65t5o")
+stat = NodePath("../../../../StatManager/MovementSpeed")
+stat_potency_factor = 0.9
+
+[node name="StatManager" parent="." instance=ExtResource("3_t8mw0")]
+
+[node name="PhysicalPoints" type="Node" parent="StatManager"]
+script = ExtResource("5_lb8gf")
+icon = ExtResource("6_jtu38")
+label = "Physical Ability"
+base_value = 20.0
+
+[node name="MentalPoints" type="Node" parent="StatManager"]
+script = ExtResource("5_lb8gf")
+icon = ExtResource("11_2s4pq")
+label = "Mental Ability"
+base_value = 20.0
+
+[node name="MovementSpeed" type="Node" parent="StatManager"]
+script = ExtResource("5_lb8gf")
+icon = ExtResource("12_og4sx")
+label = "Movement"

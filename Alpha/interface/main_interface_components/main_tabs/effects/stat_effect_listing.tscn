@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://obs3wkehvrtw"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/effects/stat_effect_listing.gd" id="1_2s64w"]
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/machine/cog.svg" id="1_71glx"]
+
+[node name="StatEffectListing" type="HBoxContainer"]
+script = ExtResource("1_2s64w")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_71glx")
+expand_mode = 2
+
+[node name="Factor" type="Label" parent="."]
+layout_mode = 2
+text = "x0"
+
+[node name="Offset" type="Label" parent="."]
+layout_mode = 2
+text = "+0"

@@ -4,18 +4,23 @@ class_name Agent
 
 const BASE_POINTS = 20
 
-@onready var conditions = $ConditionManager
+@export var physical_point_stat : Stat
+@export var mental_point_stat : Stat
+
+@onready var conditions : ConditionManager = $ConditionManager
+@onready var stats : StatManager = $StatManager
 
 var is_player: bool = false
 var actions_this_turn : Array[Action]
 
-
+@warning_ignore("narrowing_conversion")
 func max_physical_points() -> int:
-	return BASE_POINTS
+	return physical_point_stat.get_current_potency()
 
 
+@warning_ignore("narrowing_conversion")
 func max_mental_points() -> int:
-	return BASE_POINTS
+	return mental_point_stat.get_current_potency()
 
 
 func unallocated_physical_points() -> int:
