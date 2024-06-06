@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://6wf2glsjigx4"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/effects/player_effect_listing.gd" id="1_2lt6c"]
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/machine/cog.svg" id="2_fxmey"]
+
+[node name="PlayerEffectListing" type="HBoxContainer"]
+offset_right = 207.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_2lt6c")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_fxmey")
+expand_mode = 2
+
+[node name="Status" type="Label" parent="."]
+layout_mode = 2
+text = "Sample Text"

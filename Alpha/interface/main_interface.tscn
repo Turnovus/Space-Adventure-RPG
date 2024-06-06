@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
 [ext_resource type="PackedScene" uid="uid://dp7fo75kh6l3h" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.tscn" id="5_01e6a"]
 [ext_resource type="PackedScene" uid="uid://cg73gxmawfrtm" path="res://interface/main_interface_components/player_action_list/player_action_list.tscn" id="5_x15g8"]
-[ext_resource type="PackedScene" uid="uid://brobaureixti5" path="res://interface/main_interface_components/main_tabs/status/player_status_tab.tscn" id="6_orlqx"]
+[ext_resource type="PackedScene" uid="uid://brobaureixti5" path="res://interface/main_interface_components/main_tabs/effects/player_effect_tab.tscn" id="6_frpnf"]
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
@@ -58,7 +58,7 @@ grow_horizontal = 0
 [node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
 
-[node name="Status" parent="TabContainer" instance=ExtResource("6_orlqx")]
+[node name="Effects" parent="TabContainer" instance=ExtResource("6_frpnf")]
 visible = false
 layout_mode = 2
 
