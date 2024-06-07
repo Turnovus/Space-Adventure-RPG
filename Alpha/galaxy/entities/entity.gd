@@ -25,8 +25,12 @@ func remove_child_entity(entity: Entity):
 func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
 	var actions : Array[Action] = []
 	for child in get_children():
-		if child is Action and child.is_possible_for(agent_requesting):
-			actions.append(child)
+		var issuer : ActionIssuer = child as ActionIssuer
+		if issuer == null: 
+			continue
+		var action : Action = issuer.issue_action(agent_requesting)
+		if action != null and action.is_possible_for(agent_requesting):
+			actions.append(action)
 	return actions
 
 

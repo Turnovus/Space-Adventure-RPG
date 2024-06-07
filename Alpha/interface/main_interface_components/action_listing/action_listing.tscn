@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgagh2ynn47x4"]
+
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/machine/cog.svg" id="1_he7ad"]
+[ext_resource type="Script" path="res://interface/main_interface_components/action_listing/action_listing.gd" id="1_vofev"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/anatomy/palm.svg" id="2_mbd65"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/anatomy/brain.svg" id="3_ju71v"]
+
+[node name="ActionListing" type="PanelContainer"]
+offset_right = 431.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_vofev")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ActionIcon" type="TextureRect" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+texture = ExtResource("1_he7ad")
+expand_mode = 2
+
+[node name="ActionLabel" type="Label" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+text = "Sample Text"
+
+[node name="Space" type="Label" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+text = "    --    "
+
+[node name="PhysicalIcon" type="TextureRect" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+texture = ExtResource("2_mbd65")
+expand_mode = 2
+
+[node name="PhysicalCost" type="Label" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+text = "0"
+
+[node name="MentalIcon" type="TextureRect" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+texture = ExtResource("3_ju71v")
+expand_mode = 2
+
+[node name="MentalCost" type="Label" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+text = "0"
+
+[node name="Button" type="Button" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Add"
+
+[node name="ComponentViews" type="HFlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1

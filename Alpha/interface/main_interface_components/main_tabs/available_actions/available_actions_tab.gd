@@ -1,7 +1,7 @@
 extends ScrollContainer
 
 
-@onready var listing = preload("res://interface/main_interface_components/main_tabs/available_actions/available_action_listing.tscn")
+@onready var listing = preload("res://interface/main_interface_components/action_listing/action_listing.tscn")
 @onready var list = $VBoxContainer
 
 
@@ -32,7 +32,7 @@ func regenerate_actions():
 			
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
-		new_listing.set_action(action)
+		new_listing.set_action(action, false)
 
 
 func _on_turn_post(_turn : int):

@@ -1,7 +1,7 @@
 extends PanelContainer
 
 
-@onready var listing = preload("res://interface/main_interface_components/player_action_list/player_action_listing.tscn")
+@onready var listing = preload("res://interface/main_interface_components/action_listing/action_listing.tscn")
 @onready var list = $ScrollContainer/VBoxContainer
 
 
@@ -20,4 +20,4 @@ func _on_player_actions_changed():
 	for action in player.actions_this_turn:
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
-		new_listing.set_action(player, action)
+		new_listing.set_action(action, true)

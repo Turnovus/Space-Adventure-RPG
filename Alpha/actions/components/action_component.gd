@@ -1,0 +1,29 @@
+extends Node
+class_name ActionComponent
+
+
+@export var view_component : PackedScene
+
+
+func build_view_component() -> Control:
+	if view_component == null:
+		return null
+	
+	return view_component.instantiate() as Control
+
+
+func affect_physical_point_cost(initial_cost : int) -> int:
+	return initial_cost
+
+
+func affect_mental_point_cost(initial_cost : int) -> int:
+	return initial_cost
+
+
+func affect_potency(initial_potency : float) -> float:
+	return initial_potency
+
+
+func active() -> bool:
+	return true
+

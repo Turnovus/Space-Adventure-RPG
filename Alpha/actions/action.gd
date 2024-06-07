@@ -2,52 +2,49 @@ extends Node
 class_name Action
 
 
-@export var label : String = ""
-@export var icon : Texture2D = null
+@export var icon : Texture2D
+@export var label : String
 
 
-func physical_point_cost(agent : Agent) -> int:
-	var points = 0
+func get_components() -> Array[ActionComponent]:
+	var components : Array[ActionComponent] = []
+	for child in get_children():
+		var component = child as ActionComponent
+		if component != null:
+			components.append(component)
+	return components
+
+
+func get_physical_point_cost() -> int:
+	var cost = 0
+	for component in get_components():
+		cost = component.affect_physical_point_cost(cost)
+	return cost
+
+
+func get_mental_point_cost() -> int:
+	var cost = 0
+	for component in get_components():
+		cost = component.affect_mental_point_cost(cost)
+	return cost
+
+
+func is_possible_for(agent : Agent) -> bool:
+	if len(agent.actions_this_turn) > 0:
+		if agent.unallocated_mental_points() <= get_mental_point_cost():
+			return false
+		if agent.unallocated_physical_points() <= get_physical_point_cost():
+			return false
 	
-	for child in get_children(true):
-		if child is PointCostResolverBase:
-			points += child.physical_point_cost(agent)
-	
-	return points
-
-
-func mental_point_cost(agent : Agent) -> int:
-	var points = 0
-	
-	for child in get_children(true):
-		if child is PointCostResolverBase:
-			points += child.mental_point_cost(agent)
-	
-	return points
-
-
-func get_full_label() -> String:
-	return label
-
-
-func action_resolve(_agent : Agent):
-	pass
-
-
-func do_continue() -> bool:
-	return false
+	return true
 
 
 func is_exclusive_with(other : Action) -> bool:
-	for child in get_children():
-		var exclusion : ActionExclusion = child as ActionExclusion
-		if exclusion == null:
-			continue
-		if exclusion.is_exclusive_with(other):
-			return true
+	if other.scene_file_path == scene_file_path:
+		return true
 	
 	return false
 
 
-func is_possible_for(_agent : Agent) -> bool:
-	return true
+func action_turn(agent : Agent):
+	pass

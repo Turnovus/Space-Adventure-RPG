@@ -13,6 +13,7 @@ const BASE_POINTS = 20
 var is_player: bool = false
 var actions_this_turn : Array[Action]
 
+
 @warning_ignore("narrowing_conversion")
 func max_physical_points() -> int:
 	return physical_point_stat.get_current_potency()
@@ -26,14 +27,14 @@ func max_mental_points() -> int:
 func unallocated_physical_points() -> int:
 	var points = max_physical_points()
 	for action in actions_this_turn:
-		points -= action.physical_point_cost(self)
+		points -= action.get_physical_point_cost()
 	return points
 
 
 func unallocated_mental_points() -> int:
 	var points = max_mental_points()
 	for action in actions_this_turn:
-		points -= action.mental_point_cost(self)
+		points -= action.get_mental_point_cost()
 	return points
 
 
@@ -43,6 +44,6 @@ func get_terrestrial_location() -> TerrestrialLocation:
 
 func _turn_action():
 	for action in actions_this_turn:
-		action.action_resolve(self)
+		action.action_turn(self)
 	
 	conditions.update(self)
