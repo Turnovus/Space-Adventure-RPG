@@ -4,6 +4,7 @@ class_name Action
 
 @export var icon : Texture2D
 @export var label : String
+@export var base_potency : float = 1
 
 
 func get_components() -> Array[ActionComponent]:
@@ -29,6 +30,13 @@ func get_mental_point_cost() -> int:
 	return cost
 
 
+func get_potency() -> float:
+	var potency = base_potency
+	for component in get_components():
+		potency = component.affect_potency(potency)
+	return potency
+
+
 func is_possible_for(agent : Agent) -> bool:
 	if len(agent.actions_this_turn) > 0:
 		if agent.unallocated_mental_points() <= get_mental_point_cost():
@@ -46,5 +54,5 @@ func is_exclusive_with(other : Action) -> bool:
 	return false
 
 
-func action_turn(agent : Agent):
+func action_turn(_agent : Agent):
 	pass

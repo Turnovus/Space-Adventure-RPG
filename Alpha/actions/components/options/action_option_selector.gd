@@ -2,6 +2,8 @@ extends ActionComponent
 class_name ActionOptionSelector
 
 
+@export var label : String
+
 var selected_option : ActionOption
 
 

@@ -20,8 +20,10 @@ config/icon="res://icon.svg"
 folder_colors={
 "res://actions/": "orange",
 "res://actions/components/": "red",
+"res://actions/components/options/view/": "green",
 "res://assets/": "purple",
 "res://galaxy/": "blue",
+"res://galaxy/entities/celestial/planet/actions/": "orange",
 "res://galaxy/entities/misc/agent/components/": "red",
 "res://interface/": "green"
 }

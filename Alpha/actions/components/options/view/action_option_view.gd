@@ -1,8 +1,17 @@
-extends OptionButton
+extends HBoxContainer
+
+
+@onready var option : OptionButton = $OptionButton
+@onready var label = $Label
 
 
 func set_component(component : ActionComponent):
-	for child in component.get_children():
-		add_item(child.label)
+	label.text = component.label
 	
-	item_selected.connect(component._on_option_selected)
+	var children = component.get_children()
+	for i in range(0, component.get_child_count()):
+		option.add_item(children[i].label)
+		if children[i] == component.selected_option:
+			option.selected = i
+	
+	option.item_selected.connect(component._on_option_selected)
