@@ -4,6 +4,7 @@ class_name Stat
 
 @export var icon : Texture2D
 @export var label : String
+@export_multiline var description : String
 @export var base_value : float = 1
 
 

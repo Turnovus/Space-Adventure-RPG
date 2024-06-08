@@ -12,3 +12,5 @@ func set_stat(stat : Stat):
 	
 	label.text = stat.label
 	value.text = str(stat.get_current_potency())
+	
+	tooltip_text = stat.description

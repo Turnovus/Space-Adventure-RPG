@@ -60,15 +60,18 @@ stat_potency_factor = 0.9
 script = ExtResource("5_lb8gf")
 icon = ExtResource("6_jtu38")
 label = "Physical Ability"
+description = "The number of available physical action points per turn, rounded down to the nearest whole number."
 base_value = 20.0
 
 [node name="MentalPoints" type="Node" parent="StatManager"]
 script = ExtResource("5_lb8gf")
 icon = ExtResource("11_2s4pq")
 label = "Mental Ability"
+description = "The number of available mental action points per turn, rounded down to the nearest whole number."
 base_value = 20.0
 
 [node name="MovementSpeed" type="Node" parent="StatManager"]
 script = ExtResource("5_lb8gf")
 icon = ExtResource("12_og4sx")
 label = "Movement"
+description = "The rate of movement over solid ground."
