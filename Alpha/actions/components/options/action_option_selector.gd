@@ -25,3 +25,17 @@ func get_option() -> ActionOption:
 
 func _on_option_selected(index : int):
 	set_option(get_child(index))
+
+
+func get_sub_components() -> Array[ActionComponent]:
+	var sub_components : Array[ActionComponent] = super()
+	
+	if selected_option == null:
+		selected_option = get_child(0)
+	
+	for child in selected_option.get_children():
+		if child is ActionComponent:
+			sub_components.append(child)
+			sub_components.append_array(child.get_sub_components())
+	
+	return sub_components

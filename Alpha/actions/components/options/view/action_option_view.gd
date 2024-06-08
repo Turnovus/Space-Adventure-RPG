@@ -5,6 +5,9 @@ extends HBoxContainer
 @onready var label = $Label
 
 
+signal dirty_listing
+
+
 func set_component(component : ActionComponent):
 	label.text = component.label
 	
@@ -15,3 +18,9 @@ func set_component(component : ActionComponent):
 			option.selected = i
 	
 	option.item_selected.connect(component._on_option_selected)
+	option.item_selected.connect(_on_option_selected)
+	option.item_selected.emit(option.selected)
+
+
+func _on_option_selected(_index : int):
+	dirty_listing.emit()

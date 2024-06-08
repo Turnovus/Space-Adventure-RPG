@@ -27,3 +27,13 @@ func affect_potency(initial_potency : float) -> float:
 func active() -> bool:
 	return true
 
+
+func get_sub_components() -> Array[ActionComponent]:
+	var sub_components : Array[ActionComponent] = []
+	
+	for child in get_children():
+		if child is ActionComponent:
+			sub_components.append(child)
+			sub_components.append_array(child.get_sub_components())
+	
+	return sub_components

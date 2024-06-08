@@ -13,6 +13,7 @@ func get_components() -> Array[ActionComponent]:
 		var component = child as ActionComponent
 		if component != null:
 			components.append(component)
+			components.append_array(component.get_sub_components())
 	return components
 
 

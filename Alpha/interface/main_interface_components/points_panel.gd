@@ -8,6 +8,7 @@ extends PanelContainer
 func _ready():
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	galaxy.player_actions_changed.connect(_on_player_actions_changed)
+	galaxy.player_points_reallocated.connect(_on_player_actions_changed)
 	_on_player_actions_changed()
 
 
