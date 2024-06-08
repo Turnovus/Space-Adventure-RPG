@@ -12,15 +12,15 @@ func build_view_component() -> Control:
 	return view_component.instantiate() as Control
 
 
-func affect_physical_point_cost(initial_cost : int) -> int:
+func affect_physical_point_cost(initial_cost : int, _agent : Agent) -> int:
 	return initial_cost
 
 
-func affect_mental_point_cost(initial_cost : int) -> int:
+func affect_mental_point_cost(initial_cost : int, _agent : Agent) -> int:
 	return initial_cost
 
 
-func affect_potency(initial_potency : float) -> float:
+func affect_potency(initial_potency : float, _agent : Agent) -> float:
 	return initial_potency
 
 

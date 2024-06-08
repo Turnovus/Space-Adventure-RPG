@@ -44,14 +44,17 @@ func update_label_and_icon():
 	action_label.text = action.label
 
 func update_point_display():
-	var physical_cost = action.get_physical_point_cost()
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var player : Agent = galaxy.player
+	
+	var physical_cost = action.get_physical_point_cost(player)
 	if physical_cost == 0:
 		icon_physical.hide()
 		physical_count.hide
 	else:
 		physical_count.text = str(physical_cost)
 	
-	var mental_cost = action.get_mental_point_cost()
+	var mental_cost = action.get_mental_point_cost(player)
 	if mental_cost == 0:
 		icon_mental.hide()
 		mental_count.hide()

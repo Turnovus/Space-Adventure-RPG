@@ -17,32 +17,32 @@ func get_components() -> Array[ActionComponent]:
 	return components
 
 
-func get_physical_point_cost() -> int:
+func get_physical_point_cost(agent : Agent) -> int:
 	var cost = 0
 	for component in get_components():
-		cost = component.affect_physical_point_cost(cost)
+		cost = component.affect_physical_point_cost(cost, agent)
 	return cost
 
 
-func get_mental_point_cost() -> int:
+func get_mental_point_cost(agent : Agent) -> int:
 	var cost = 0
 	for component in get_components():
-		cost = component.affect_mental_point_cost(cost)
+		cost = component.affect_mental_point_cost(cost, agent)
 	return cost
 
 
-func get_potency() -> float:
+func get_potency(agent : Agent) -> float:
 	var potency = base_potency
 	for component in get_components():
-		potency = component.affect_potency(potency)
+		potency = component.affect_potency(potency, agent)
 	return potency
 
 
 func is_possible_for(agent : Agent) -> bool:
 	if len(agent.actions_this_turn) > 0:
-		if agent.unallocated_mental_points() <= get_mental_point_cost():
+		if agent.unallocated_mental_points() <= get_mental_point_cost(agent):
 			return false
-		if agent.unallocated_physical_points() <= get_physical_point_cost():
+		if agent.unallocated_physical_points() <= get_physical_point_cost(agent):
 			return false
 	
 	return true
