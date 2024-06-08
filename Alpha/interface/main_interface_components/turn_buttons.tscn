@@ -10,6 +10,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_vertical = 3
 script = ExtResource("1_e3c88")
+tooltip_advance_turn = "Advance to the next turn, performing all selected actions."
+tooltip_points_overallocated = "Not enough action points to complete selected actions."
 
 [node name="TurnButton" type="Button" parent="."]
 layout_mode = 2
