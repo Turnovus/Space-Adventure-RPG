@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=15 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dc7fg4a72c6bg" path="res://assets/weather/sun-horizon.svg" id="7_krrdb"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/anatomy/brain.svg" id="11_2s4pq"]
 [ext_resource type="Texture2D" uid="uid://cyi3lb3bxofqf" path="res://assets/apparel/walking-boot.svg" id="12_og4sx"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/knowledge/knowledge_tracker.gd" id="13_0id4j"]
+[ext_resource type="Resource" uid="uid://d0olmo34545xj" path="res://data/knowledge/groups/survival.tres" id="14_0khjm"]
 
 [node name="Agent" type="Node" node_paths=PackedStringArray("physical_point_stat", "mental_point_stat")]
 script = ExtResource("1_kdh5l")
@@ -75,3 +77,7 @@ script = ExtResource("5_lb8gf")
 icon = ExtResource("12_og4sx")
 label = "Movement"
 description = "The rate of movement over solid ground."
+
+[node name="KnowledgeTracker" type="Node" parent="."]
+script = ExtResource("13_0id4j")
+knowledge_groups = Array[Resource("res://data/knowledge/knowledge_group.gd")]([ExtResource("14_0khjm")])

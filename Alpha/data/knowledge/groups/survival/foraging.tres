@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Knowledge" load_steps=2 format=3 uid="uid://d0q23v2847exn"]
+
+[ext_resource type="Script" path="res://data/knowledge/knowledge.gd" id="1_ec3mw"]
+
+[resource]
+script = ExtResource("1_ec3mw")
+key = "foraging"
+label = "Foraging"
+description = "The ability to extract useful materials from one's environment."
+base_cost = 0.5
+prerequisites = Array[ExtResource("1_ec3mw")]([])

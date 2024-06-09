@@ -9,6 +9,7 @@ const BASE_POINTS = 20
 
 @onready var conditions : ConditionManager = $ConditionManager
 @onready var stats : StatManager = $StatManager
+@onready var knowledge : KnowledgeTracker = $KnowledgeTracker
 
 var is_player: bool = false
 var actions_this_turn : Array[Action]

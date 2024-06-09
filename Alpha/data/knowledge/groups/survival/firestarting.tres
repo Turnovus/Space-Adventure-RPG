@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Knowledge" load_steps=4 format=3 uid="uid://ck3uudi3dj3ep"]
+
+[ext_resource type="Resource" uid="uid://d0q23v2847exn" path="res://data/knowledge/groups/survival/foraging.tres" id="1_ar77f"]
+[ext_resource type="Texture2D" uid="uid://dq62dlvjqjlst" path="res://assets/object/campfire.svg" id="1_bhns4"]
+[ext_resource type="Script" path="res://data/knowledge/knowledge.gd" id="1_vph62"]
+
+[resource]
+script = ExtResource("1_vph62")
+key = "firestarting"
+label = "Firestarting"
+description = "Discovery of fire. This is how civilizations are born."
+icon = ExtResource("1_bhns4")
+base_cost = 0.75
+prerequisites = Array[ExtResource("1_vph62")]([ExtResource("1_ar77f")])
