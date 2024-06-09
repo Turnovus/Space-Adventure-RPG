@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d20tlitpshcgb"]
+[gd_scene load_steps=11 format=3 uid="uid://d20tlitpshcgb"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/travel_planet.gd" id="1_8f5u2"]
 [ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/map/compass.svg" id="2_rqe0g"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://actions/components/options/action_option.gd" id="5_x3io4"]
 [ext_resource type="Script" path="res://actions/components/point_cost/action_point_cost_fraction.gd" id="7_de5on"]
 [ext_resource type="Script" path="res://actions/components/potency/action_potency_factor.gd" id="7_o73r7"]
+[ext_resource type="Script" path="res://actions/components/potency/action_potency_stat/action_potency_stat.gd" id="9_2mwp7"]
+[ext_resource type="PackedScene" uid="uid://dvaqj61lnneb5" path="res://actions/components/potency/action_potency_stat/view/potency_stat_view.tscn" id="10_mxr38"]
 
 [node name="TravelPlanet" type="Node" node_paths=PackedStringArray("direction_option")]
 script = ExtResource("1_8f5u2")
@@ -100,3 +102,8 @@ factor = 1.5
 script = ExtResource("7_de5on")
 physical_points_percent = 1.1
 mental_points_percent = 0.25
+
+[node name="ActionComponentPotencyStat" type="Node" parent="."]
+script = ExtResource("9_2mwp7")
+stat_name = "MovementSpeed"
+view_component = ExtResource("10_mxr38")

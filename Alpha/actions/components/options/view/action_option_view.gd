@@ -8,7 +8,7 @@ extends HBoxContainer
 signal dirty_listing
 
 
-func set_component(component : ActionComponent):
+func set_component(component : ActionComponent, _agent : Agent):
 	label.text = component.label
 	
 	var children = component.get_children()

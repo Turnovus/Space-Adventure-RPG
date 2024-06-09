@@ -19,9 +19,14 @@ func get_current_potency() -> float:
 	var offset = 0
 	
 	for condition : Condition in agent.conditions.get_children():
-		for child in condition.get_children():
+		var degree = condition.current_degree()
+		if degree == null:
+			continue
+			
+		for child in degree.get_children():
 			var component : ConditionComponentStatEffector = child as ConditionComponentStatEffector
-			if component == null or component.stat != self:
+			
+			if component == null or component.stat.name != name:
 				continue
 			factor *= component.stat_potency_factor
 			offset += component.stat_potency_offset

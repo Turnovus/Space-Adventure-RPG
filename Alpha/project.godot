@@ -21,6 +21,7 @@ folder_colors={
 "res://actions/": "orange",
 "res://actions/components/": "red",
 "res://actions/components/options/view/": "green",
+"res://actions/components/potency/action_potency_stat/view/": "green",
 "res://assets/": "purple",
 "res://galaxy/": "blue",
 "res://galaxy/entities/celestial/planet/actions/": "orange",

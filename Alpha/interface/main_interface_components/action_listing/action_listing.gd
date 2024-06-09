@@ -50,8 +50,10 @@ func update_point_display():
 	var physical_cost = action.get_physical_point_cost(player)
 	if physical_cost == 0:
 		icon_physical.hide()
-		physical_count.hide
+		physical_count.hide()
 	else:
+		icon_physical.show()
+		physical_count.show()
 		physical_count.text = str(physical_cost)
 	
 	var mental_cost = action.get_mental_point_cost(player)
@@ -59,10 +61,15 @@ func update_point_display():
 		icon_mental.hide()
 		mental_count.hide()
 	else:
+		icon_mental.show()
+		mental_count.show()
 		mental_count.text = str(mental_cost)
 
 
 func rebuild_component_views():
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var player : Agent = galaxy.player
+	
 	for child in component_list.get_children():
 		child.queue_free()
 	
@@ -70,7 +77,7 @@ func rebuild_component_views():
 		var view : Control = component.build_view_component()
 		if view != null:
 			component_list.add_child(view)
-			view.set_component(component)
+			view.set_component(component, player)
 			if view.has_signal("dirty_listing"):
 				view.connect("dirty_listing", _on_dirty_listing)
 
