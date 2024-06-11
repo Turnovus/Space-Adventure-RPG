@@ -30,6 +30,11 @@ folder_colors={
 "res://interface/": "green"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
