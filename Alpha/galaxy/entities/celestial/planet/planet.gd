@@ -32,10 +32,10 @@ func normalized_relative_location(location: Vector2) -> Vector2:
 	
 	# Moving horizantally is wrapped
 	var max_x = BASE_PLANET_SIZE.x * size * 0.5
-	while normalized.x >= max_x + 1:
-		normalized.x -= max_x * 2 + 1
-	while normalized.x <= -(max_x + 1):
-		normalized.x += max_x * 2 + 1
+	while normalized.x > max_x:
+		normalized.x -= max_x * 2
+	while normalized.x < -(max_x):
+		normalized.x += max_x * 2
 	
 	# Moving vertically is clamped
 	var max_y = BASE_PLANET_SIZE.y * size * 0.5
@@ -53,7 +53,7 @@ func time_of_day_at(relative_location : Vector2) -> float:
 	#return global_time
 	var total_width = BASE_PLANET_SIZE.x * size
 	var offset = relative_location.x / total_width
-	var local_time = global_time - offset # NOTE: This assumes that the sun rises in the east and sets in west
+	var local_time = global_time + offset # NOTE: This assumes that the sun rises in the east and sets in west
 	var mod = fmod(local_time, 1.0)
 	if local_time < 0:
 		mod = 1 - abs(mod)
