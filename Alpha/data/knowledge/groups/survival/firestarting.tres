@@ -10,5 +10,5 @@ key = "firestarting"
 label = "Firestarting"
 description = "Discovery of fire. This is how civilizations are born."
 icon = ExtResource("1_bhns4")
-base_cost = 0.75
+base_cost = 50.0
 prerequisites = Array[ExtResource("1_vph62")]([ExtResource("1_ar77f")])

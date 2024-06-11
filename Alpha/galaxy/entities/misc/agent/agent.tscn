@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=16 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -13,12 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/anatomy/brain.svg" id="11_2s4pq"]
 [ext_resource type="Texture2D" uid="uid://cyi3lb3bxofqf" path="res://assets/apparel/walking-boot.svg" id="12_og4sx"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/knowledge/knowledge_tracker.gd" id="13_0id4j"]
+[ext_resource type="Texture2D" uid="uid://c0i28kba7266q" path="res://assets/head/idea.svg" id="13_o3qor"]
 [ext_resource type="Resource" uid="uid://d0olmo34545xj" path="res://data/knowledge/groups/survival.tres" id="14_0khjm"]
 
-[node name="Agent" type="Node" node_paths=PackedStringArray("physical_point_stat", "mental_point_stat")]
+[node name="Agent" type="Node" node_paths=PackedStringArray("physical_point_stat", "mental_point_stat", "learning_stat")]
 script = ExtResource("1_kdh5l")
 physical_point_stat = NodePath("StatManager/PhysicalPoints")
 mental_point_stat = NodePath("StatManager/MentalPoints")
+learning_stat = NodePath("StatManager/Learning")
 
 [node name="ConditionManager" parent="." instance=ExtResource("2_e2rc3")]
 
@@ -77,6 +79,13 @@ script = ExtResource("5_lb8gf")
 icon = ExtResource("12_og4sx")
 label = "Movement"
 description = "The rate of movement over solid ground."
+
+[node name="Learning" type="Node" parent="StatManager"]
+script = ExtResource("5_lb8gf")
+icon = ExtResource("13_o3qor")
+label = "Introspection"
+description = "How quickly you come up with new ideas, all on your own. For each unspent mental action point, you will earn this much progress in a random knowledge each turn."
+base_value = 0.01
 
 [node name="KnowledgeTracker" type="Node" parent="."]
 script = ExtResource("13_0id4j")

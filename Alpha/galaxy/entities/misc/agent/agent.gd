@@ -6,6 +6,7 @@ const BASE_POINTS = 20
 
 @export var physical_point_stat : Stat
 @export var mental_point_stat : Stat
+@export var learning_stat : Stat
 
 @onready var conditions : ConditionManager = $ConditionManager
 @onready var stats : StatManager = $StatManager
@@ -48,3 +49,7 @@ func _turn_action():
 		action.action_turn(self)
 	
 	conditions.update(self)
+	
+	var unspent_mental = unallocated_mental_points()
+	if unspent_mental > 0:
+		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency())

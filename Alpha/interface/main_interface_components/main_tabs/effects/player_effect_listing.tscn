@@ -19,6 +19,7 @@ expand_mode = 2
 
 [node name="Status" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Sample Text"
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]

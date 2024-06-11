@@ -8,6 +8,7 @@ extends HBoxContainer
 
 @onready var selection_icon = $PanelContainer/SelectionIcon
 @onready var selection_label = $PanelContainer/SelectionLabel
+@onready var selection_progress = $PanelContainer/SelectionProgress
 @onready var selection_description = $PanelContainer/PanelContainer/ScrollContainer/SelectionDescription
 
 var player_knowledge : KnowledgeTracker
@@ -40,6 +41,15 @@ func update_selected_knowledge():
 	selection_icon.texture = selected_group_icon if knowledge.icon == null else knowledge.icon
 	selection_label.text = knowledge.label
 	selection_description.text = knowledge.description
+	
+	var color = get_knowledge_color(knowledge)
+	selection_label.set("theme_override_colors/font_color", color)
+	selection_icon.modulate = color
+	
+	selection_progress.text = "{progress}/{cost}".format({
+		"progress" : snapped(player_knowledge.get_learning(knowledge), 0.01),
+		"cost" : knowledge.base_cost,
+	})
 
 
 func _on_group_selected(index : int):
@@ -51,10 +61,23 @@ func _on_group_selected(index : int):
 	knowledge_list.clear()
 	for knowledge : Knowledge in player_knowledge.knowledge_groups[index].knowledge:
 		var icon = selected_group_icon if knowledge.icon == null else knowledge.icon
-		knowledge_list.add_item(knowledge.label, icon)
+		var item = knowledge_list.add_item(knowledge.label, icon)
+		
+		var color = get_knowledge_color(knowledge)
+		knowledge_list.set_item_custom_fg_color(item, color)
+		knowledge_list.set_item_icon_modulate(item, color)
 	
 	knowledge_list.select(0)
 	knowledge_list.item_selected.emit(0)
+
+
+func get_knowledge_color(knowledge : Knowledge) -> Color:
+	if player_knowledge.has_learned(knowledge):
+		return Knowledge.COLOR_LEARNED
+	elif player_knowledge.can_learn(knowledge):
+		return Knowledge.COLOR_CAN_LEARN
+	else:
+		return Knowledge.COLOR_LOCKED
 
 
 func _on_knowledge_selected(index : int):
@@ -63,4 +86,11 @@ func _on_knowledge_selected(index : int):
 
 
 func _on_turn_post(_turn : int):
+	var group : KnowledgeGroup = player_knowledge.knowledge_groups[selected_knowledge_group]
+	for i in range(0, knowledge_list.item_count):
+		var knowledge : Knowledge = group.knowledge[i]
+		var color = get_knowledge_color(knowledge)
+		knowledge_list.set_item_custom_fg_color(i, color)
+		knowledge_list.set_item_icon_modulate(i, color)
+	
 	update_selected_knowledge()
