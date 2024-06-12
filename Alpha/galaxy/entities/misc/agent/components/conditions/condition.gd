@@ -1,9 +1,8 @@
-extends Node
 class_name Condition
+extends Node
 
 
 @export var degrees : Array[ConditionDegreeData] = []
-
 
 var degree = 0
 

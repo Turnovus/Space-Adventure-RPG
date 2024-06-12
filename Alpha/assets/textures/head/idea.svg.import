@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj0ejx3j4n3dh"
-path="res://.godot/imported/palm.svg-dd11d1f32757e2b66f2d8670e9c338ad.ctex"
+uid="uid://c0i28kba7266q"
+path="res://.godot/imported/idea.svg-91326c945831aa489462c56856a4a62c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/anatomy/palm.svg"
-dest_files=["res://.godot/imported/palm.svg-dd11d1f32757e2b66f2d8670e9c338ad.ctex"]
+source_file="res://assets/textures/head/idea.svg"
+dest_files=["res://.godot/imported/idea.svg-91326c945831aa489462c56856a4a62c.ctex"]
 
 [params]
 

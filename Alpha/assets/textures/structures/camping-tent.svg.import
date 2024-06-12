@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0i28kba7266q"
-path="res://.godot/imported/idea.svg-eba7ee27c004d359457ca7286bb19982.ctex"
+uid="uid://dmhrpve8h6v8h"
+path="res://.godot/imported/camping-tent.svg-d55b1bf7ba0bee35c8eec7c811fc3626.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/head/idea.svg"
-dest_files=["res://.godot/imported/idea.svg-eba7ee27c004d359457ca7286bb19982.ctex"]
+source_file="res://assets/textures/structures/camping-tent.svg"
+dest_files=["res://.godot/imported/camping-tent.svg-d55b1bf7ba0bee35c8eec7c811fc3626.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
-extends Node
 class_name ConditionManager
+extends Node
 
 
 func _ready():

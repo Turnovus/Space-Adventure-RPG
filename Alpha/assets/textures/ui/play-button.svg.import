@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq62dlvjqjlst"
-path="res://.godot/imported/campfire.svg-ca0643930d320b687bc07ba76f0b9cae.ctex"
+uid="uid://drffhb3i53vc4"
+path="res://.godot/imported/play-button.svg-e016289836ffaced03c8e0b6e9a43fc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/object/campfire.svg"
-dest_files=["res://.godot/imported/campfire.svg-ca0643930d320b687bc07ba76f0b9cae.ctex"]
+source_file="res://assets/textures/ui/play-button.svg"
+dest_files=["res://.godot/imported/play-button.svg-e016289836ffaced03c8e0b6e9a43fc1.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://obs3wkehvrtw"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/effects/stat_effect_listing.gd" id="1_2s64w"]
-[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/machine/cog.svg" id="1_71glx"]
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="1_71glx"]
 
 [node name="StatEffectListing" type="HBoxContainer"]
 script = ExtResource("1_2s64w")

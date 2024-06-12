@@ -1,5 +1,5 @@
-extends ActionComponent
 class_name ActionOptionSelector
+extends ActionComponent
 
 
 @export var label : String

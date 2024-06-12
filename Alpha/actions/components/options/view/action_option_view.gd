@@ -1,11 +1,10 @@
 extends HBoxContainer
 
 
+signal dirty_listing
+
 @onready var option : OptionButton = $OptionButton
 @onready var label = $Label
-
-
-signal dirty_listing
 
 
 func set_component(component : ActionComponent, _agent : Agent):

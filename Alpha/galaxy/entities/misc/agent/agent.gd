@@ -1,5 +1,5 @@
-extends Entity
 class_name Agent
+extends Entity
 
 
 const BASE_POINTS = 20
@@ -8,12 +8,12 @@ const BASE_POINTS = 20
 @export var mental_point_stat : Stat
 @export var learning_stat : Stat
 
+var is_player: bool = false
+var actions_this_turn : Array[Action]
+
 @onready var conditions : ConditionManager = $ConditionManager
 @onready var stats : StatManager = $StatManager
 @onready var knowledge : KnowledgeTracker = $KnowledgeTracker
-
-var is_player: bool = false
-var actions_this_turn : Array[Action]
 
 
 @warning_ignore("narrowing_conversion")

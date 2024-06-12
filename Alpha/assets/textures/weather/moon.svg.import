@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b32y48xgtt6yy"
-path="res://.godot/imported/sun.svg-f383a3fdcff3e13af8adafdfd8d57b95.ctex"
+uid="uid://dnw6vasm3qimq"
+path="res://.godot/imported/moon.svg-12a544e90615901b09234100c3861ca8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather/sun.svg"
-dest_files=["res://.godot/imported/sun.svg-f383a3fdcff3e13af8adafdfd8d57b95.ctex"]
+source_file="res://assets/textures/weather/moon.svg"
+dest_files=["res://.godot/imported/moon.svg-12a544e90615901b09234100c3861ca8.ctex"]
 
 [params]
 

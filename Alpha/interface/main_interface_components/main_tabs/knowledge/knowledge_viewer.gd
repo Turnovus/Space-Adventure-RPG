@@ -3,6 +3,12 @@ extends HBoxContainer
 
 @export var default_group_icon : Texture2D
 
+var player_knowledge : KnowledgeTracker
+var selected_knowledge_group : int = 0
+var selected_knowledge : int = 0
+
+var selected_group_icon : Texture2D
+
 @onready var knowledge_group_list = $KnowledgeGroupList
 @onready var knowledge_list = $KnowledgeList
 
@@ -10,12 +16,6 @@ extends HBoxContainer
 @onready var selection_label = $PanelContainer/SelectionLabel
 @onready var selection_progress = $PanelContainer/SelectionProgress
 @onready var selection_description = $PanelContainer/PanelContainer/ScrollContainer/SelectionDescription
-
-var player_knowledge : KnowledgeTracker
-var selected_knowledge_group : int = 0
-var selected_knowledge : int = 0
-
-var selected_group_icon : Texture2D
 
 
 func _ready():

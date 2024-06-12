@@ -1,5 +1,5 @@
-extends Node
 class_name ConditionDegreeData
+extends Node
 
 
 @export_multiline var label : String

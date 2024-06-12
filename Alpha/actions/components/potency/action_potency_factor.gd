@@ -1,5 +1,5 @@
-extends ActionComponent
 class_name ActionComponentPotencyFactor
+extends ActionComponent
 
 
 @export var factor : float = 1

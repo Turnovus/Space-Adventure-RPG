@@ -1,12 +1,11 @@
-extends Node
 class_name Entity
-
-
-var turn_created = 0
-var location_relative : Vector2 = Vector2(0,0)
+extends Node
 
 
 signal location_changed(this : Entity)
+
+var turn_created = 0
+var location_relative : Vector2 = Vector2(0,0)
 
 
 func _ready():

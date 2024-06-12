@@ -9,6 +9,7 @@ const PIP_COLOR_PLAYER = Color.AQUA
 const PIP_COLOR_SITE = Color.BURLYWOOD
 
 const LABEL_FONT_SIZE = 10
+const LABEL_FONT_COLOR = Color.BLACK
 
 @export var label_font : Font
 
@@ -55,7 +56,7 @@ func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLoca
 
 func draw_terrestrial_label(map : Rect2, pip : Vector2, location : TerrestrialLocation, label : String):
 	var draw_location = get_draw_location(map, pip, location)
-	draw_string(label_font, draw_location, label, 0, -1, LABEL_FONT_SIZE)
+	draw_string(label_font, draw_location, label, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE, LABEL_FONT_COLOR)
 
 
 func get_draw_location(map : Rect2, relative_location : Vector2, location : TerrestrialLocation) -> Vector2:

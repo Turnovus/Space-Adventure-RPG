@@ -1,5 +1,5 @@
-extends Node
 class_name ActionComponent
+extends Node
 
 
 @export var view_component : PackedScene

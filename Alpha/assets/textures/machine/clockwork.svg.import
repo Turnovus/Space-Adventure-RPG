@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kblgw7o4ad2u"
-path="res://.godot/imported/position-marker.svg-5cb02b9c5b947bbb5ca29a3f23696eb1.ctex"
+uid="uid://cnn6oeuetsood"
+path="res://.godot/imported/clockwork.svg-5e99573f70931fa3f2a38fe56b38ff71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/position-marker.svg"
-dest_files=["res://.godot/imported/position-marker.svg-5cb02b9c5b947bbb5ca29a3f23696eb1.ctex"]
+source_file="res://assets/textures/machine/clockwork.svg"
+dest_files=["res://.godot/imported/clockwork.svg-5e99573f70931fa3f2a38fe56b38ff71.ctex"]
 
 [params]
 

@@ -1,12 +1,11 @@
 @icon("res://assets/head/idea.svg")
-extends Resource
 class_name Knowledge
+extends Resource
 
 
 const COLOR_LEARNED : Color = Color.WHITE
 const COLOR_CAN_LEARN : Color = Color.CADET_BLUE
 const COLOR_LOCKED : Color = Color.RED
-
 
 @export_group("Info")
 @export var key : String

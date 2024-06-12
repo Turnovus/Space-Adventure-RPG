@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpn2bho6i75nb"
-path="res://.godot/imported/fast-forward-button.svg-66927c2298c1bc417e9ddd4fc511d13a.ctex"
+uid="uid://cyi3lb3bxofqf"
+path="res://.godot/imported/walking-boot.svg-ccee57591ff8594ac10ac5505465da41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/fast-forward-button.svg"
-dest_files=["res://.godot/imported/fast-forward-button.svg-66927c2298c1bc417e9ddd4fc511d13a.ctex"]
+source_file="res://assets/textures/apparel/walking-boot.svg"
+dest_files=["res://.godot/imported/walking-boot.svg-ccee57591ff8594ac10ac5505465da41.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="KnowledgeGroup" load_steps=5 format=3 uid="uid://d0olmo34545xj"]
 
-[ext_resource type="Texture2D" uid="uid://dmhrpve8h6v8h" path="res://assets/structures/camping-tent.svg" id="1_4dusm"]
+[ext_resource type="Texture2D" uid="uid://dmhrpve8h6v8h" path="res://assets/textures/structures/camping-tent.svg" id="1_4dusm"]
 [ext_resource type="Script" path="res://data/knowledge/knowledge_group.gd" id="2_5lai1"]
 [ext_resource type="Resource" uid="uid://d0q23v2847exn" path="res://data/knowledge/groups/survival/foraging.tres" id="2_sd7kl"]
 [ext_resource type="Resource" uid="uid://ck3uudi3dj3ep" path="res://data/knowledge/groups/survival/firestarting.tres" id="3_xkjeb"]

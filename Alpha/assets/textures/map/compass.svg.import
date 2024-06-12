@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq2sbdqq7x0pd"
-path="res://.godot/imported/sunset.svg-c593fff543d191167c5f252cba4fbeb2.ctex"
+uid="uid://cui3hhhi0kg2e"
+path="res://.godot/imported/compass.svg-089ab1b66bf02b8ae59774cbf890db5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather/sunset.svg"
-dest_files=["res://.godot/imported/sunset.svg-c593fff543d191167c5f252cba4fbeb2.ctex"]
+source_file="res://assets/textures/map/compass.svg"
+dest_files=["res://.godot/imported/compass.svg-089ab1b66bf02b8ae59774cbf890db5f.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
-extends Node
 class_name ConditionComponentStatEffector
+extends Node
 
 
 @export var stat : Stat

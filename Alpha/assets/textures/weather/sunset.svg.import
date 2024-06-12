@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyi3lb3bxofqf"
-path="res://.godot/imported/walking-boot.svg-48483ef3d76bd960e756c57986dc1aee.ctex"
+uid="uid://cq2sbdqq7x0pd"
+path="res://.godot/imported/sunset.svg-fc6b5cb882c2757a0b17d2d456e98cb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/apparel/walking-boot.svg"
-dest_files=["res://.godot/imported/walking-boot.svg-48483ef3d76bd960e756c57986dc1aee.ctex"]
+source_file="res://assets/textures/weather/sunset.svg"
+dest_files=["res://.godot/imported/sunset.svg-fc6b5cb882c2757a0b17d2d456e98cb9.ctex"]
 
 [params]
 

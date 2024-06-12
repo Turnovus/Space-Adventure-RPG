@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc7fg4a72c6bg"
-path="res://.godot/imported/sun-horizon.svg-215464c9be90156bc61d7213e3edaefc.ctex"
+uid="uid://25ya24guarmn"
+path="res://.godot/imported/sunrise.svg-5426791251f3e8af29a47b6015d555a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather/sun-horizon.svg"
-dest_files=["res://.godot/imported/sun-horizon.svg-215464c9be90156bc61d7213e3edaefc.ctex"]
+source_file="res://assets/textures/weather/sunrise.svg"
+dest_files=["res://.godot/imported/sunrise.svg-5426791251f3e8af29a47b6015d555a4.ctex"]
 
 [params]
 

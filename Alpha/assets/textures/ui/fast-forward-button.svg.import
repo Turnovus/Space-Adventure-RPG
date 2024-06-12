@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ricm4nnkl0g8"
-path="res://.godot/imported/cog.svg-679a9ce47c40ae6b53911df9403ec979.ctex"
+uid="uid://bpn2bho6i75nb"
+path="res://.godot/imported/fast-forward-button.svg-2847e4519cfe09fb207d9eedd9c42aa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/machine/cog.svg"
-dest_files=["res://.godot/imported/cog.svg-679a9ce47c40ae6b53911df9403ec979.ctex"]
+source_file="res://assets/textures/ui/fast-forward-button.svg"
+dest_files=["res://.godot/imported/fast-forward-button.svg-2847e4519cfe09fb207d9eedd9c42aa2.ctex"]
 
 [params]
 

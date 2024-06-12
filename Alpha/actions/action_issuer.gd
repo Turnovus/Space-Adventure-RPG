@@ -5,6 +5,6 @@ class_name ActionIssuer
 @export var action_scene : PackedScene
 
 
-func issue_action(agent : Agent) -> Action:
+func issue_action(_agent : Agent) -> Action:
 	var action = action_scene.instantiate() as Action
 	return action

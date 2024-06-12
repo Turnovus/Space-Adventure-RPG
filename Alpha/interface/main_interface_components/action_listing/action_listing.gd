@@ -17,9 +17,9 @@ var action : Action
 var is_player_action : bool
 
 
-func set_action(action : Action, is_player_action : bool):
-	self.action = action
-	self.is_player_action = is_player_action
+func set_action(new_action : Action, player_action : bool):
+	action = new_action
+	is_player_action = player_action
 	
 	if is_player_action:
 		button.text = "X"

@@ -1,5 +1,5 @@
-extends TerrestrialLocation
 class_name Planet
+extends TerrestrialLocation
 
 
 const BASE_PLANET_SIZE : Vector2 = Vector2(100, 100)

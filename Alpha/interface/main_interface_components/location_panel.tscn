@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cseqpkmw7747v"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/location_panel.gd" id="1_76554"]
-[ext_resource type="Texture2D" uid="uid://kblgw7o4ad2u" path="res://assets/ui/position-marker.svg" id="2_b0as8"]
+[ext_resource type="Texture2D" uid="uid://kblgw7o4ad2u" path="res://assets/textures/ui/position-marker.svg" id="2_b0as8"]
 
 [node name="LocationPanel" type="PanelContainer"]
 offset_right = 40.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnn6oeuetsood"
-path="res://.godot/imported/clockwork.svg-83c1bfb550977f10de89b49f364af70a.ctex"
+uid="uid://bccuftkssausm"
+path="res://.godot/imported/galaxy.svg-0d91e3fb1d4fe0c3e3296dbc8f6f4da2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/machine/clockwork.svg"
-dest_files=["res://.godot/imported/clockwork.svg-83c1bfb550977f10de89b49f364af70a.ctex"]
+source_file="res://assets/textures/space/galaxy.svg"
+dest_files=["res://.godot/imported/galaxy.svg-0d91e3fb1d4fe0c3e3296dbc8f6f4da2.ctex"]
 
 [params]
 

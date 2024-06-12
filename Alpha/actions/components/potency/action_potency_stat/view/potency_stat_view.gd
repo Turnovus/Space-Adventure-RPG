@@ -1,11 +1,11 @@
 extends HBoxContainer
 
 
-@onready var icon = $TextureRect
-@onready var label = $Label
-
 var stat_component : ActionComponentPotencyStat
 var agent : Agent
+
+@onready var icon = $TextureRect
+@onready var label = $Label
 
 
 func _ready():
@@ -13,9 +13,9 @@ func _ready():
 	galaxy.turn_post.connect(_on_turn_post)
 
 
-func set_component(component : ActionComponent, agent : Agent):
+func set_component(component : ActionComponent, new_agent : Agent):
 	stat_component = component as ActionComponentPotencyStat
-	self.agent = agent
+	agent = new_agent
 	update_readout()
 
 

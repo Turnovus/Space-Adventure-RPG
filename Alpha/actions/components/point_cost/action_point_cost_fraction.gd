@@ -1,5 +1,5 @@
-extends ActionComponent
 class_name ActionComponentPointCostFraction
+extends ActionComponent
 
 
 @export var physical_points_percent : float = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnw6vasm3qimq"
-path="res://.godot/imported/moon.svg-38173c7f7c725538b53e08593bd4b5d5.ctex"
+uid="uid://c4lfu07sxpbv"
+path="res://.godot/imported/brain.svg-23b739c0237c8f25e0bb29a4f8ec09dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather/moon.svg"
-dest_files=["res://.godot/imported/moon.svg-38173c7f7c725538b53e08593bd4b5d5.ctex"]
+source_file="res://assets/textures/anatomy/brain.svg"
+dest_files=["res://.godot/imported/brain.svg-23b739c0237c8f25e0bb29a4f8ec09dc.ctex"]
 
 [params]
 

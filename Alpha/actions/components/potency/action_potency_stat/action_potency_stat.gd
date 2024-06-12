@@ -1,5 +1,5 @@
-extends ActionComponent
 class_name ActionComponentPotencyStat
+extends ActionComponent
 
 
 @export var stat_name : String

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cui3hhhi0kg2e"
-path="res://.godot/imported/compass.svg-d8be341aab085f88f75f30dd3a33b567.ctex"
+uid="uid://dc7fg4a72c6bg"
+path="res://.godot/imported/sun-horizon.svg-b280da8872f410f8e8191cd87b56b4b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/map/compass.svg"
-dest_files=["res://.godot/imported/compass.svg-d8be341aab085f88f75f30dd3a33b567.ctex"]
+source_file="res://assets/textures/weather/sun-horizon.svg"
+dest_files=["res://.godot/imported/sun-horizon.svg-b280da8872f410f8e8191cd87b56b4b6.ctex"]
 
 [params]
 

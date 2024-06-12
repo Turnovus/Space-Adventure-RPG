@@ -1,5 +1,5 @@
-extends Resource
 class_name KnowledgeGroup
+extends Resource
 
 
 @export var label : String

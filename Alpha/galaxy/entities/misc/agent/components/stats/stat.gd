@@ -1,5 +1,5 @@
-extends Node
 class_name Stat
+extends Node
 
 
 @export var icon : Texture2D

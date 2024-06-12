@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://25ya24guarmn"
-path="res://.godot/imported/sunrise.svg-e8faa7602cc34d2201833eba9a032740.ctex"
+uid="uid://dq62dlvjqjlst"
+path="res://.godot/imported/campfire.svg-5eba9cf2f53c897a9a4defd9f9a2ae23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather/sunrise.svg"
-dest_files=["res://.godot/imported/sunrise.svg-e8faa7602cc34d2201833eba9a032740.ctex"]
+source_file="res://assets/textures/object/campfire.svg"
+dest_files=["res://.godot/imported/campfire.svg-5eba9cf2f53c897a9a4defd9f9a2ae23.ctex"]
 
 [params]
 

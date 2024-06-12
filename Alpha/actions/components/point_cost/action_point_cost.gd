@@ -1,5 +1,5 @@
-extends ActionComponent
 class_name ActionComponentPointCost
+extends ActionComponent
 
 
 @export var add_cost_physical : int = 0

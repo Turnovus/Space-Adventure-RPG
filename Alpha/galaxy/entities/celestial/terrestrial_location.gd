@@ -1,5 +1,5 @@
-extends Entity
 class_name TerrestrialLocation
+extends Entity
 
 
 func get_root_terrestrial_location() -> TerrestrialLocation:

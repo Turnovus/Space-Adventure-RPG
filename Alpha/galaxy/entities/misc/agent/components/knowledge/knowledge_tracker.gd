@@ -1,5 +1,5 @@
-extends Node
 class_name KnowledgeTracker
+extends Node
 
 
 @export var knowledge_groups : Array[KnowledgeGroup] = []

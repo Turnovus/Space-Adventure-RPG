@@ -1,13 +1,13 @@
 extends VBoxContainer
 
 
-@onready var turn_button = $"TurnButton"
-@onready var action_button = $"ActionButton"
-
 @export_multiline var tooltip_advance_turn : String
 @export_multiline var tooltip_points_overallocated : String
 
 var galaxy: Galaxy
+
+@onready var turn_button = $"TurnButton"
+@onready var action_button = $"ActionButton"
 
 
 func _ready():

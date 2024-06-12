@@ -2,14 +2,6 @@ extends Node
 class_name Galaxy
 
 
-const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
-const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet/planet.tscn")
-const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
-
-var turn : int = 0
-var player : Agent
-
-
 # Signals sent during execution of a turn
 signal turn_start(turn: int)
 signal turn_end(turn: int)
@@ -17,6 +9,13 @@ signal turn_post(turn: int)
 # Signals sent in response to player action
 signal player_actions_changed
 signal player_points_reallocated
+
+const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
+const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet/planet.tscn")
+const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
+
+var turn : int = 0
+var player : Agent
 
 
 func _ready():

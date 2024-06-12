@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d20tlitpshcgb"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/travel_planet.gd" id="1_8f5u2"]
-[ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/map/compass.svg" id="2_rqe0g"]
+[ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/textures/map/compass.svg" id="2_rqe0g"]
 [ext_resource type="Script" path="res://actions/components/options/action_option_selector.gd" id="3_s7vnr"]
 [ext_resource type="PackedScene" uid="uid://b4ofidd204ujl" path="res://actions/components/options/view/action_option_view.tscn" id="4_jvtcy"]
 [ext_resource type="Script" path="res://actions/components/options/vector2/action_option_vector2.gd" id="5_it530"]
