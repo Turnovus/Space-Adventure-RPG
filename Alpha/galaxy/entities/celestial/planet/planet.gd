@@ -9,8 +9,7 @@ var day_length_turns : int
 var day_progress_turns : int
 
 
-func _ready():
-	super()
+func _init():
 	size = randi_range(6, 14) / 10.0
 	day_length_turns = randi_range(6, 18) * 20
 	day_progress_turns = randi_range(0, day_length_turns - 1)
@@ -31,14 +30,14 @@ func normalized_relative_location(location: Vector2) -> Vector2:
 	var normalized = Vector2(location)
 	
 	# Moving horizantally is wrapped
-	var max_x = BASE_PLANET_SIZE.x * size * 0.5
+	var max_x = get_size().x * 0.5
 	while normalized.x > max_x:
 		normalized.x -= max_x * 2
 	while normalized.x < -(max_x):
 		normalized.x += max_x * 2
 	
 	# Moving vertically is clamped
-	var max_y = BASE_PLANET_SIZE.y * size * 0.5
+	var max_y = get_size().y * size * 0.5
 	normalized.y = clampf(normalized.y, -max_y, max_y)
 	
 	return normalized
@@ -72,8 +71,17 @@ func light_level_at(relative_location : Vector2) -> float:
 	return clampf(light, 0, 1)
 
 
-func _turn_action():
-	super()
+func get_random_location() -> Vector2:
+	var dimensions = get_size()
+	dimensions -= dimensions / 2
+	var random = dimensions
+	random.x *= randf_range(-1, 1)
+	random.y *= randf_range(-1, 1)
+	return random
+
+
+func _turn_action(turn: int):
+	super(turn)
 	
 	day_progress_turns += 1
 	if day_progress_turns >= day_length_turns:

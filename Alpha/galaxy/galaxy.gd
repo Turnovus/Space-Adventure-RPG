@@ -36,6 +36,10 @@ func generate_galaxy():
 			planet.name = "Planet " + str(i) + "." + str(j)
 			sun.add_child_entity(planet)
 			
+			for k in range(0, 40):
+				var site = Site.new(planet.get_random_location())
+				planet.add_child_entity(site)
+			
 		add_child(sun)
 
 
@@ -78,7 +82,7 @@ func _update_entities():
 		if entity == null:
 			continue
 		
-		entity.do_turn()
+		entity.do_turn(turn)
 
 
 func _start_turn():

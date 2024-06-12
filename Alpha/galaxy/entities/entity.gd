@@ -48,13 +48,13 @@ func move_relative(movement : Vector2):
 	location_changed.emit(self)
 
 
-func do_turn():
-	_turn_action()
+func do_turn(turn : int):
+	_turn_action(turn)
 	
 	for child : Node in get_children():
 		if child is Entity:
-			child.do_turn()
+			child.do_turn(turn)
 
 
-func _turn_action():
+func _turn_action(_turn : int):
 	pass

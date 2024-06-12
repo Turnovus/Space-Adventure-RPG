@@ -6,6 +6,11 @@ const MAP_MARGIN = 10.0
 
 const PIP_RADIUS = 2.5
 const PIP_COLOR_PLAYER = Color.AQUA
+const PIP_COLOR_SITE = Color.BURLYWOOD
+
+const LABEL_FONT_SIZE = 10
+
+@export var label_font : Font
 
 var show_player : bool = true
 
@@ -36,20 +41,35 @@ func _draw():
 	
 	if show_player:
 		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
+	
+	for child in location.get_children():
+		if child is Site:
+			draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE)
+			draw_terrestrial_label(map_rect, child.location_relative, location, child.name)
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):
-	pip.y = -pip.y # Because North is positive for terrestrial locations
+	var draw_location = get_draw_location(map, pip, location)
+	draw_circle(draw_location, PIP_RADIUS, color)
+
+
+func draw_terrestrial_label(map : Rect2, pip : Vector2, location : TerrestrialLocation, label : String):
+	var draw_location = get_draw_location(map, pip, location)
+	draw_string(label_font, draw_location, label, 0, -1, LABEL_FONT_SIZE)
+
+
+func get_draw_location(map : Rect2, relative_location : Vector2, location : TerrestrialLocation) -> Vector2:
+	relative_location.y = -relative_location.y # Because North is positive for terrestrial locations
 	
 	var planet : Planet = location as Planet
 	if planet != null:
-		pip /= planet.get_size()
-		pip *= map.size
+		relative_location /= planet.get_size()
+		relative_location *= map.size
 	
-	pip += map.position
-	pip += map.size / 2
+	relative_location += map.position
+	relative_location += map.size / 2
 	
-	draw_circle(pip, PIP_RADIUS, color)
+	return relative_location
 
 
 func _on_turn_post(_turn : int):
