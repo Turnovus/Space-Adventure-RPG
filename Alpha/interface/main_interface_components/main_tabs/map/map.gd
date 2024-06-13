@@ -14,8 +14,10 @@ const LABEL_FONT_COLOR = Color.BLACK
 @export var label_font : Font
 
 var show_player : bool = true
+var show_sites : bool = true
 
 @onready var show_player_button : CheckBox = $VBoxContainer/ShowPlayerButton
+@onready var show_site_button : CheckBox = $VBoxContainer/ShowSiteButton
 
 
 func _ready():
@@ -23,6 +25,7 @@ func _ready():
 	galaxy.turn_post.connect(_on_turn_post)
 	
 	show_player_button.toggled.connect(_on_show_player_toggled)
+	show_site_button.toggled.connect(_on_show_site_toggled)
 
 
 func _draw():
@@ -43,10 +46,11 @@ func _draw():
 	if show_player:
 		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
 	
-	for child in location.get_children():
-		if child is Site:
-			draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE)
-			draw_terrestrial_label(map_rect, child.location_relative, location, child.name)
+	if show_sites:
+		for child in location.get_children():
+			if child is Site:
+				draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE)
+				draw_terrestrial_label(map_rect, child.location_relative, location, child.name)
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):
@@ -79,4 +83,9 @@ func _on_turn_post(_turn : int):
 
 func _on_show_player_toggled(toggled_on : bool):
 	show_player = toggled_on
+	queue_redraw()
+
+
+func _on_show_site_toggled(toggled_on : bool):
+	show_sites = toggled_on
 	queue_redraw()

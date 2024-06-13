@@ -23,3 +23,9 @@ layout_mode = 2
 focus_mode = 0
 button_pressed = true
 text = "Show Player"
+
+[node name="ShowSiteButton" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+text = "Show Sites"

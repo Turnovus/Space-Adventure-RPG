@@ -57,6 +57,7 @@ anchor_bottom = 0.875
 offset_left = 3.12799
 offset_bottom = 0.999939
 grow_horizontal = 0
+tab_focus_mode = 0
 
 [node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
