@@ -18,12 +18,12 @@ var actions_this_turn : Array[Action]
 
 @warning_ignore("narrowing_conversion")
 func max_physical_points() -> int:
-	return physical_point_stat.get_current_potency()
+	return physical_point_stat.get_current_potency(self)
 
 
 @warning_ignore("narrowing_conversion")
 func max_mental_points() -> int:
-	return mental_point_stat.get_current_potency()
+	return mental_point_stat.get_current_potency(self)
 
 
 func unallocated_physical_points() -> int:
@@ -52,4 +52,4 @@ func _turn_action(_turn : int):
 	
 	var unspent_mental = unallocated_mental_points()
 	if unspent_mental > 0:
-		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency())
+		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency(self))

@@ -1,5 +1,5 @@
 class_name Stat
-extends Node
+extends Resource
 
 
 @export var icon : Texture2D
@@ -12,8 +12,7 @@ func get_base_potency() -> float:
 	return base_value
 
 
-func get_current_potency() -> float:
-	var agent : Agent = get_parent().get_parent()
+func get_current_potency(agent : Agent) -> float:
 	var potency = get_base_potency()
 	var factor = 1
 	var offset = 0
@@ -26,7 +25,7 @@ func get_current_potency() -> float:
 		for child in degree.get_children():
 			var component : ConditionComponentStatEffector = child as ConditionComponentStatEffector
 			
-			if component == null or component.stat.name != name:
+			if component == null or component.stat != self:
 				continue
 			factor *= component.stat_potency_factor
 			offset += component.stat_potency_offset

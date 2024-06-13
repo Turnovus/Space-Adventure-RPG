@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=3 format=3 uid="uid://b0kypomefkcnd"]
+
+[ext_resource type="Texture2D" uid="uid://cyi3lb3bxofqf" path="res://assets/textures/apparel/walking-boot.svg" id="1_6q7qt"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="1_v7pva"]
+
+[resource]
+script = ExtResource("1_v7pva")
+icon = ExtResource("1_6q7qt")
+label = "Movement"
+description = "The rate of movement over solid ground."
+base_value = 1.0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=3 format=3 uid="uid://btwaygtoaqmr8"]
+
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="1_ejn8i"]
+[ext_resource type="Texture2D" uid="uid://c0i28kba7266q" path="res://assets/textures/head/idea.svg" id="1_lbd8f"]
+
+[resource]
+script = ExtResource("1_ejn8i")
+icon = ExtResource("1_lbd8f")
+label = "Introspection"
+description = "How quickly you come up with new ideas, all on your own.
+
+For each unspent mental action point, you will earn this much progress in a random knowledge each turn."
+base_value = 1.0

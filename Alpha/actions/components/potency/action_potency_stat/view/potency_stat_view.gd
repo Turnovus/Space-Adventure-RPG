@@ -24,7 +24,7 @@ func _on_turn_post(_turn : int):
 
 
 func update_readout():
-	var stat : Stat = agent.stats.get_node(stat_component.stat_name)
+	var stat : Stat = stat_component.stat
 	if stat.icon != null:
 		icon.texture = stat.icon
 	label.text = "x" + str(stat_component.affect_potency(1, agent))

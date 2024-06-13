@@ -18,11 +18,7 @@ func _on_turn_post(_turn : int):
 	for child in list.get_children():
 		child.queue_free()
 	
-	for child in player.stats.get_children():
-		var stat = child as Stat
-		if stat == null:
-			continue
-		
+	for stat in player.stats.stats:
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
-		new_listing.set_stat(stat)
+		new_listing.set_stat(stat, player)
