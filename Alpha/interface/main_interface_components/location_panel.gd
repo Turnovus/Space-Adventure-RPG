@@ -31,7 +31,10 @@ func update_location():
 	var player = get_player()
 	var location = player.get_parent()
 	
-	var text = player.get_parent().name
+	var identity = player.get_parent().get_identity()
+	var text = "planet "
+	text += player.get_parent().name if identity == null else identity.title
+	text = text.capitalize()
 	
 	if location is Planet:
 		text += H_BREAK + planet_local_location_string(player, location as Planet)
@@ -47,9 +50,6 @@ func planet_local_location_string(agent : Agent, planet : Planet) -> String:
 	
 	var lat_card = "North" if location.y >= 0 else "South"
 	var long_card = "East" if location.x >= 0 else "West"
-	
-	#var lattitude: int = abs(location.y) * DEGREES_PER_LAT * SECONDS_PER_DEGREE
-	#var lat_degrees: int = lattitude / SECONDS_PER_DEGREE
 	
 	var lat_running : int = abs(location.y) * SECONDS_PER_LAT
 	var long_running : int = abs(location.x) * SECONDS_PER_LONG

@@ -55,5 +55,12 @@ func do_turn(turn : int):
 			child.do_turn(turn)
 
 
+func get_identity() -> Identity:
+	for child in get_children():
+		if child is Identity:
+			return child
+	return null
+
+
 func _turn_action(_turn : int):
 	pass

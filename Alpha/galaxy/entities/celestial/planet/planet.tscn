@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx2i4hx5bi26"]
+[gd_scene load_steps=6 format=3 uid="uid://cx2i4hx5bi26"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_b5x1o"]
 [ext_resource type="Script" path="res://actions/action_issuer.gd" id="2_tklot"]
 [ext_resource type="PackedScene" uid="uid://d20tlitpshcgb" path="res://galaxy/entities/celestial/planet/actions/travel_planet.tscn" id="3_imxn3"]
+[ext_resource type="Script" path="res://data/identity/identity.gd" id="4_it4ph"]
+[ext_resource type="Resource" uid="uid://du31m5rqdda8e" path="res://data/identity/namer/planet_namer.tres" id="5_cebf7"]
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_b5x1o")
@@ -10,3 +12,7 @@ script = ExtResource("1_b5x1o")
 [node name="ActionIssuer" type="Node" parent="."]
 script = ExtResource("2_tklot")
 action_scene = ExtResource("3_imxn3")
+
+[node name="Identity" type="Node" parent="."]
+script = ExtResource("4_it4ph")
+namer = ExtResource("5_cebf7")
