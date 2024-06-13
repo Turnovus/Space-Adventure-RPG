@@ -40,7 +40,14 @@ func update_selected_knowledge():
 	
 	selection_icon.texture = selected_group_icon if knowledge.icon == null else knowledge.icon
 	selection_label.text = knowledge.label
-	selection_description.text = knowledge.description
+	
+	selection_description.clear()
+	selection_description.push_color(get_knowledge_color(knowledge, true))
+	selection_description.append_text(get_completion_text(knowledge))
+	
+	selection_description.push_color(Color.WHITE)
+	selection_description.append_text("\n\n")
+	selection_description.append_text(knowledge.description)
 	
 	var color = get_knowledge_color(knowledge)
 	selection_label.set("theme_override_colors/font_color", color)
@@ -71,13 +78,34 @@ func _on_group_selected(index : int):
 	knowledge_list.item_selected.emit(0)
 
 
-func get_knowledge_color(knowledge : Knowledge) -> Color:
+func get_knowledge_color(knowledge : Knowledge, use_alt=false) -> Color:
 	if player_knowledge.has_learned(knowledge):
-		return Knowledge.COLOR_LEARNED
+		return Knowledge.COLOR_LEARNED_ALT if use_alt else Knowledge.COLOR_LEARNED
 	elif player_knowledge.can_learn(knowledge):
 		return Knowledge.COLOR_CAN_LEARN
 	else:
 		return Knowledge.COLOR_LOCKED
+
+
+func get_completion_text(knowledge : Knowledge) -> String:
+	if player_knowledge.has_learned(knowledge):
+		return "You have mastered this knowledge."
+	elif player_knowledge.can_learn(knowledge):
+		return "You are still learning this knowledge."
+	else:
+		var text = "You can not yet learn this knowledge."
+		var all_missing = []
+		
+		for prerequisite in knowledge.prerequisites:
+			if not player_knowledge.has_learned(prerequisite):
+				all_missing.append(prerequisite)
+		
+		if len(all_missing) > 0:
+			text += "\nMissing prerequisites:"
+			for missing in all_missing:
+				text += "\n - " + missing.label
+		
+		return text
 
 
 func _on_knowledge_selected(index : int):
