@@ -8,4 +8,4 @@ script = ExtResource("1_f4wh8")
 icon = ExtResource("1_d3ci7")
 label = "Mental Ability"
 description = "The number of available mental action points per turn, rounded down to the nearest whole number."
-base_value = 1.0
+base_value = 20.0
