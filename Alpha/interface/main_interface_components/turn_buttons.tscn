@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://drffhb3i53vc4" path="res://assets/textures/ui/play-button.svg" id="1_s6b47"]
 [ext_resource type="Texture2D" uid="uid://bpn2bho6i75nb" path="res://assets/textures/ui/fast-forward-button.svg" id="2_erl45"]
 
-
 [node name="TurnButtons" type="VBoxContainer"]
 custom_minimum_size = Vector2(136.34, 0)
 offset_right = 40.0

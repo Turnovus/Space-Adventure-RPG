@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsdd4hxg5cgne"]
+[gd_scene load_steps=4 format=3 uid="uid://bsdd4hxg5cgne"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/stats/player_stat_tab.gd" id="1_tklsk"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_xlgr1"]
+[ext_resource type="Texture2D" uid="uid://dwrsjrgu70vn4" path="res://assets/textures/body/skills.svg" id="3_w0e1w"]
 
 [node name="PlayerStatTab" type="ScrollContainer"]
 anchors_preset = 15
@@ -9,6 +11,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tklsk")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("2_xlgr1")
+tab_icon = ExtResource("3_w0e1w")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]
 layout_mode = 2
