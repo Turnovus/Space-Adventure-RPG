@@ -1,0 +1,9 @@
+camp
+city
+colony
+district
+hamlet
+settlement
+town
+township
+village

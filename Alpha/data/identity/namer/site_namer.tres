@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Namer" load_steps=12 format=3 uid="uid://djmpxd184omj6"]
+
+[ext_resource type="Script" path="res://data/identity/namer/namer.gd" id="1_giq0n"]
+[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_random_choice.gd" id="1_vyvlx"]
+[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_from_file.gd" id="2_7hhcu"]
+[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_terrestrial_root.gd" id="3_dsi5v"]
+
+[sub_resource type="Resource" id="Resource_cwjxo"]
+script = ExtResource("3_dsi5v")
+fallback_use_node_name = true
+
+[sub_resource type="Resource" id="Resource_lhaky"]
+script = ExtResource("2_7hhcu")
+file_path = "res://assets/text/misc/colors.txt"
+
+[sub_resource type="Resource" id="Resource_4wcjw"]
+script = ExtResource("2_7hhcu")
+file_path = "res://assets/text/names/human/given_names_male.txt"
+
+[sub_resource type="Resource" id="Resource_srp4e"]
+script = ExtResource("1_vyvlx")
+sub_resolvers = Array[Resource("res://data/identity/namer/name_part_resolver/name_part_resolver.gd")]([SubResource("Resource_cwjxo"), SubResource("Resource_lhaky"), SubResource("Resource_4wcjw")])
+selections = 1
+
+[sub_resource type="Resource" id="Resource_42tow"]
+script = ExtResource("2_7hhcu")
+file_path = "res://assets/text/misc/settlement.txt"
+
+[sub_resource type="Resource" id="Resource_tx45u"]
+script = ExtResource("2_7hhcu")
+file_path = "res://assets/text/misc/landforms.txt"
+
+[sub_resource type="Resource" id="Resource_ylq16"]
+script = ExtResource("1_vyvlx")
+sub_resolvers = Array[Resource("res://data/identity/namer/name_part_resolver/name_part_resolver.gd")]([SubResource("Resource_42tow"), SubResource("Resource_tx45u")])
+selections = 1
+
+[resource]
+script = ExtResource("1_giq0n")
+name_parts = Array[Resource("res://data/identity/namer/name_part_resolver/name_part_resolver.gd")]([SubResource("Resource_srp4e"), SubResource("Resource_ylq16")])

@@ -6,7 +6,7 @@ var inactive_turns_to_expire : int = -1
 var last_turn_maintained : int
 
 
-func _init(location : Vector2, expiration_turns = -1):
+func setup(location : Vector2, expiration_turns = -1):
 	location_relative = location
 	inactive_turns_to_expire = expiration_turns
 

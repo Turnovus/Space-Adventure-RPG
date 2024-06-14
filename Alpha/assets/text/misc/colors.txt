@@ -1,0 +1,17 @@
+aquamarine
+beige
+black
+blue
+cyan
+gold
+gray
+green
+magenta
+maroon
+orange
+purple
+red
+silver
+white
+violet
+yellow

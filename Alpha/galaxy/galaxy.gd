@@ -13,6 +13,7 @@ signal player_points_reallocated
 const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
 const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet/planet.tscn")
 const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
+const SITE_ENTITY = preload("res://galaxy/entities/celestial/planet/site/site.tscn")
 
 var turn : int = 0
 var player : Agent
@@ -35,8 +36,9 @@ func generate_galaxy():
 			planet.name = "Planet " + str(i) + "." + str(j)
 			sun.add_child_entity(planet)
 			
-			for k in range(0, 40):
-				var site = Site.new(planet.get_random_location())
+			for k in range(0, 20):
+				var site = SITE_ENTITY.instantiate()
+				site.setup(planet.get_random_location())
 				planet.add_child_entity(site)
 			
 		add_child(sun)

@@ -50,7 +50,7 @@ func _draw():
 		for child in location.get_children():
 			if child is Site:
 				draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE)
-				draw_terrestrial_label(map_rect, child.location_relative, location, child.name)
+				draw_terrestrial_label(map_rect, child.location_relative, location, child.get_node("Identity").title.capitalize())
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):
