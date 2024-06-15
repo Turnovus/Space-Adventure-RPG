@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=13 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="Script" path="res://interface/main_interface.gd" id="1_l3a4o"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bsdd4hxg5cgne" path="res://interface/main_interface_components/main_tabs/stats/player_stat_tab.tscn" id="7_5rbcq"]
 [ext_resource type="PackedScene" uid="uid://cyu7h3kk7ci83" path="res://interface/main_interface_components/main_tabs/knowledge/knowledge_viewer.tscn" id="8_eajhw"]
 [ext_resource type="PackedScene" uid="uid://byw82b0q8oa4h" path="res://interface/main_interface_components/main_tabs/map/map.tscn" id="9_f6mjv"]
+[ext_resource type="PackedScene" uid="uid://edophnioen3s" path="res://interface/main_interface_components/main_tabs/codex/codex_main_menu.tscn" id="11_h5t0t"]
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
@@ -78,6 +79,10 @@ visible = false
 layout_mode = 2
 
 [node name="Map" parent="TabContainer" instance=ExtResource("9_f6mjv")]
+visible = false
+layout_mode = 2
+
+[node name="Codex" parent="TabContainer" instance=ExtResource("11_h5t0t")]
 visible = false
 layout_mode = 2
 

@@ -14,6 +14,7 @@ var actions_this_turn : Array[Action]
 @onready var conditions : ConditionManager = $ConditionManager
 @onready var stats : StatManager = $StatManager
 @onready var knowledge : KnowledgeTracker = $KnowledgeTracker
+@onready var codex : Codex = $Codex
 
 
 @warning_ignore("narrowing_conversion")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfp8upuiq2q1l"]
+[gd_scene load_steps=5 format=3 uid="uid://cfp8upuiq2q1l"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/site/site.gd" id="1_bgvu7"]
 [ext_resource type="Script" path="res://data/identity/identity.gd" id="2_dvhoc"]
 [ext_resource type="Resource" uid="uid://djmpxd184omj6" path="res://data/identity/namer/site_namer.tres" id="3_lim5f"]
+[ext_resource type="Texture2D" uid="uid://kblgw7o4ad2u" path="res://assets/textures/ui/position-marker.svg" id="4_2ii8w"]
 
 [node name="Site" type="Node"]
 script = ExtResource("1_bgvu7")
@@ -10,3 +11,4 @@ script = ExtResource("1_bgvu7")
 [node name="Identity" type="Node" parent="."]
 script = ExtResource("2_dvhoc")
 namer = ExtResource("3_lim5f")
+default_codex_icon = ExtResource("4_2ii8w")

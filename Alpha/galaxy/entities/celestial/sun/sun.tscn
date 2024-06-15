@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://sqe814yl18vw"]
+
+[ext_resource type="Script" path="res://galaxy/entities/celestial/sun/sun.gd" id="1_kqap2"]
+[ext_resource type="Script" path="res://data/identity/identity.gd" id="2_bylix"]
+[ext_resource type="Resource" uid="uid://du31m5rqdda8e" path="res://data/identity/namer/planet_namer.tres" id="3_7qlh1"]
+[ext_resource type="Texture2D" uid="uid://dcvm5ywesoawp" path="res://assets/textures/space/solar-system.svg" id="4_ygsrb"]
+
+[node name="Sun" type="Node"]
+script = ExtResource("1_kqap2")
+
+[node name="Identity" type="Node" parent="."]
+script = ExtResource("2_bylix")
+namer = ExtResource("3_7qlh1")
+default_codex_icon = ExtResource("4_ygsrb")
+unknown_title = "unknown star"

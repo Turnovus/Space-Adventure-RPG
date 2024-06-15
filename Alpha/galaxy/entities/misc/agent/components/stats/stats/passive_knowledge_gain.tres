@@ -10,4 +10,4 @@ label = "Introspection"
 description = "How quickly you come up with new ideas, all on your own.
 
 For each unspent mental action point, you will earn this much progress in a random knowledge each turn."
-base_value = 1.0
+base_value = 0.01

@@ -11,6 +11,7 @@ signal player_actions_changed
 signal player_points_reallocated
 
 const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
+const SUN_ENTITY = preload("res://galaxy/entities/celestial/sun/sun.tscn")
 const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet/planet.tscn")
 const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
 const SITE_ENTITY = preload("res://galaxy/entities/celestial/planet/site/site.tscn")
@@ -26,9 +27,7 @@ func _ready():
 
 func generate_galaxy():
 	for i in range(0,10):
-		# TODO: We're just using base entities as suns here because we don't need them to do
-		# anything special right now.
-		var sun = BASE_ENTITY.new()
+		var sun = SUN_ENTITY.instantiate()
 		sun.name = "Sun " + str(i)
 		
 		for j in range(0,4):
@@ -48,7 +47,11 @@ func make_player():
 	player = AGENT_ENTITY.instantiate()
 	player.is_player = true
 	var start_sun = get_child(randi_range(0, get_child_count() - 1))
-	var start_planet = start_sun.get_child(randi_range(0, start_sun.get_child_count() - 1))
+	var planets : Array[Planet] = []
+	for i in start_sun.get_children():
+		if i is Planet:
+			planets.append(i)
+	var start_planet = planets[randi_range(0, len(planets) - 1)]
 	start_planet.add_child_entity(player)
 
 

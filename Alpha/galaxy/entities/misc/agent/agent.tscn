@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=16 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://btwaygtoaqmr8" path="res://galaxy/entities/misc/agent/components/stats/stats/passive_knowledge_gain.tres" id="12_k3v11"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/knowledge/knowledge_tracker.gd" id="13_0id4j"]
 [ext_resource type="Resource" uid="uid://d0olmo34545xj" path="res://data/knowledge/groups/survival.tres" id="14_0khjm"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/codex/codex.gd" id="15_1ab5t"]
 
 [node name="Agent" type="Node"]
 script = ExtResource("1_kdh5l")
@@ -63,3 +64,6 @@ stats = Array[Resource("res://galaxy/entities/misc/agent/components/stats/stat.g
 [node name="KnowledgeTracker" type="Node" parent="."]
 script = ExtResource("13_0id4j")
 knowledge_groups = Array[Resource("res://data/knowledge/knowledge_group.gd")]([ExtResource("14_0khjm")])
+
+[node name="Codex" type="Node" parent="."]
+script = ExtResource("15_1ab5t")

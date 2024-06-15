@@ -90,3 +90,8 @@ func _turn_action(turn: int):
 
 func _on_child_location_changed(entity: Entity):
 	entity.location_relative = normalized_relative_location(entity.location_relative)
+	
+	var codex : Codex = entity.get_node_or_null("Codex")
+	if codex != null:
+		codex.push_entry(get_parent(), Codex.CodexDetails.TITLE)
+		codex.push_entry(self, Codex.CodexDetails.TITLE)
