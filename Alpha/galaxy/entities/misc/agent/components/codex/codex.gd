@@ -36,3 +36,10 @@ func push_entry(reference : Node, new_details : CodexDetails):
 	
 	entry.known_details &= new_details
 	entry_pushed.emit(entry)
+
+
+func knows_title(reference : Node) -> bool:
+	for entry in get_entries():
+		if entry.reference == reference:
+			return CodexDetails.TITLE & entry.known_details
+	return false
