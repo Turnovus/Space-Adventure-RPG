@@ -10,17 +10,16 @@ var references : Dictionary = {}
 
 
 func _ready():
-	tree_root = tree.create_item()
-	tree_root.set_text(0, "The Galaxy")
-	tree_root.set_icon(0, galaxy_texture)
-	tree_root.set_icon_max_width(0, 24)
-	
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player : Agent = galaxy.player
 	player.codex.entry_pushed.connect(_on_player_entry_pushed)
+	rebuild_codex()
 
 
 func push_codex_entry(entry : CodexEntry):
+	if not codex_concerns(entry.reference):
+		return
+	
 	var item
 	if references.has(entry.reference):
 		item = references[entry.reference]
@@ -42,6 +41,43 @@ func update_entry(entry : CodexEntry, item : TreeItem):
 	item.set_text(0, Identity.get_title(entry.identity).capitalize())
 	item.set_icon(0, entry.identity.default_codex_icon)
 	item.set_icon_max_width(0, 24)
+
+
+func codex_concerns(node : Node) -> bool:
+	return node is Sun or node is TerrestrialLocation
+
+
+func rebuild_codex():
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var codex : Codex = galaxy.player.codex
+	
+	initialize_tree_control()
+	references = {}
+	
+	var entries = []
+	var uncached_references = []
+	for entry : CodexEntry in codex.get_entries():
+		if codex_concerns(entry.reference):
+			entries.append(entry)
+			uncached_references.append(entry.reference)
+	
+	while len(entries) > 0:
+		for index in range(len(entries) - 1, -1, -1):
+			var entry : CodexEntry = entries[index]
+			if uncached_references.has(entry.reference.get_parent()):
+				continue
+			
+			push_codex_entry(entry)
+			entries.remove_at(index)
+			uncached_references.remove_at(index)
+
+
+func initialize_tree_control():
+	tree.clear()
+	tree_root = tree.create_item()
+	tree_root.set_text(0, "The Galaxy")
+	tree_root.set_icon(0, galaxy_texture)
+	tree_root.set_icon_max_width(0, 24)
 
 
 func _on_player_entry_pushed(entry : CodexEntry):
