@@ -1,6 +1,11 @@
 extends PanelContainer
 
 
+enum GridMode {
+	NONE = 0,
+	DISTANCE = 1,
+}
+
 const MAP_COLOR : Color = Color.DIM_GRAY
 const MAP_MARGIN = 10.0
 
@@ -11,13 +16,18 @@ const PIP_COLOR_SITE = Color.BURLYWOOD
 const LABEL_FONT_SIZE = 10
 const LABEL_FONT_COLOR = Color.BLACK
 
+const DISTANCE_UNIT : float = 5.0
+const DISTANCE_LINE_COLOR : Color = Color(0, 0, 0, 0.5)
+
 @export var label_font : Font
 
 var show_player : bool = true
 var show_sites : bool = true
+var grid_mode : GridMode = GridMode.DISTANCE
 
 @onready var show_player_button : CheckBox = $VBoxContainer/ShowPlayerButton
 @onready var show_site_button : CheckBox = $VBoxContainer/ShowSiteButton
+@onready var show_grid_option : OptionButton = $VBoxContainer/HBoxContainer/ShowGridOption
 
 
 func _ready():
@@ -26,6 +36,7 @@ func _ready():
 	
 	show_player_button.toggled.connect(_on_show_player_toggled)
 	show_site_button.toggled.connect(_on_show_site_toggled)
+	show_grid_option.item_selected.connect(_on_show_grid_item_selected)
 
 
 func _draw():
@@ -42,6 +53,10 @@ func _draw():
 	
 	var map_rect = Rect2(map_position, Vector2(dimension, dimension))
 	draw_rect(map_rect, MAP_COLOR)
+	
+	match grid_mode:
+		GridMode.DISTANCE:
+			draw_distance_grid(map_rect, location)
 	
 	if show_player:
 		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
@@ -77,6 +92,23 @@ func get_draw_location(map : Rect2, relative_location : Vector2, location : Terr
 	return relative_location
 
 
+func draw_distance_grid(map : Rect2, location : TerrestrialLocation):
+	var planet : Planet = location as Planet
+	if planet == null:
+		return
+	
+	var planet_size = planet.get_size()
+	var width_offset = Vector2(map.size.x, 0)
+	var height_offset = Vector2(0, map.size.y)
+	
+	for lat in range(DISTANCE_UNIT, planet_size.y, DISTANCE_UNIT):
+		var lat_offset = Vector2(0, lat * (map.size.y / planet_size.y))
+		draw_line(map.position + lat_offset, map.position + lat_offset + width_offset, DISTANCE_LINE_COLOR)
+	for long in range(DISTANCE_UNIT, planet_size.x, DISTANCE_UNIT):
+		var long_offset = Vector2(long * (map.size.x / planet_size.x), 0)
+		draw_line(map.position + long_offset, map.position + long_offset + height_offset, DISTANCE_LINE_COLOR)
+
+
 func _on_turn_post(_turn : int):
 	queue_redraw()
 
@@ -88,4 +120,9 @@ func _on_show_player_toggled(toggled_on : bool):
 
 func _on_show_site_toggled(toggled_on : bool):
 	show_sites = toggled_on
+	queue_redraw()
+
+
+func _on_show_grid_item_selected(index : int):
+	grid_mode = index as GridMode
 	queue_redraw()

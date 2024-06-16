@@ -35,3 +35,19 @@ layout_mode = 2
 focus_mode = 0
 button_pressed = true
 text = "Show Sites"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GridLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Grid: "
+
+[node name="ShowGridOption" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+item_count = 2
+selected = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Distance"
+popup/item_1/id = 1
