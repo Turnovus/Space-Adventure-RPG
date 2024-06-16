@@ -7,8 +7,9 @@ enum CodexDetails {
 	
 	TITLE = 0b0000_0001,
 	GENDER = 0b0000_0010,
+	LOCATION = 0b0000_0100,
 	
-	EVERYTHING = 0b0000_0011,
+	EVERYTHING = 0b0000_0111,
 }
 
 signal entry_pushed(entry : CodexEntry)
@@ -42,4 +43,11 @@ func knows_title(reference : Node) -> bool:
 	for entry in get_entries():
 		if entry.reference == reference:
 			return CodexDetails.TITLE & entry.known_details
+	return false
+
+
+func knows_about(reference : Node, details : CodexDetails) -> bool:
+	for entry in get_entries():
+		if entry.reference == reference:
+			return details & entry.known_details
 	return false

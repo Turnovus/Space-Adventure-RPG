@@ -11,6 +11,10 @@ func setup(location : Vector2, expiration_turns = -1):
 	inactive_turns_to_expire = expiration_turns
 
 
+func get_detection_range_factor() -> float:
+	return 1.0
+
+
 func _turn_action(turn : int):
 	if inactive_turns_to_expire < 0:
 		return

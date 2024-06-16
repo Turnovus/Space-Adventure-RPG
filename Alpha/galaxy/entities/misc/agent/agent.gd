@@ -45,6 +45,11 @@ func get_terrestrial_location() -> TerrestrialLocation:
 	return get_parent() as TerrestrialLocation
 
 
+func get_detection_range() -> float:
+	#TODO: Detection stat
+	return 15
+
+
 func _turn_action(_turn : int):
 	for action in actions_this_turn:
 		action.action_turn(self)

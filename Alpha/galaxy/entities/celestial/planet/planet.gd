@@ -24,6 +24,10 @@ func add_child_entity(entity: Entity):
 	if codex != null:
 		codex.push_entry(get_parent(), Codex.CodexDetails.TITLE)
 		codex.push_entry(self, Codex.CodexDetails.TITLE)
+	
+	var agent : Agent = entity as Agent
+	if agent != null:
+		scan_sites(agent)
 
 
 func remove_child_entity(entity: Entity):
@@ -85,6 +89,18 @@ func get_random_location() -> Vector2:
 	return random
 
 
+func scan_sites(agent : Agent):
+	for child in get_children():
+		var site : Site = child as Site
+		if site == null:
+			continue
+		
+		var detection = agent.get_detection_range() * site.get_detection_range_factor()
+		#HACK: Detection does not wrap around planet
+		if agent.location_relative.distance_to(site.location_relative) <= detection:
+			agent.codex.push_entry(site, Codex.CodexDetails.LOCATION)
+
+
 func _turn_action(turn: int):
 	super(turn)
 	
@@ -95,3 +111,7 @@ func _turn_action(turn: int):
 
 func _on_child_location_changed(entity: Entity):
 	entity.location_relative = normalized_relative_location(entity.location_relative)
+	
+	var agent : Agent = entity as Agent
+	if agent != null:
+		scan_sites(agent)

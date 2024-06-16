@@ -43,6 +43,7 @@ func _draw():
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player : Agent = galaxy.player
 	var location : TerrestrialLocation = player.get_terrestrial_location().get_root_terrestrial_location()
+	var codex : Codex = player.codex
 	
 	var dimension = min(size.x, size.y) - MAP_MARGIN*2
 	var map_position = Vector2.ZERO
@@ -64,8 +65,13 @@ func _draw():
 	if show_sites:
 		for child in location.get_children():
 			if child is Site:
+				if not codex.knows_about(child, Codex.CodexDetails.LOCATION):
+					continue
+				var site_identity = child.get_node("Identity")
 				draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE)
-				draw_terrestrial_label(map_rect, child.location_relative, location, child.get_node("Identity").title.capitalize())
+				var site_label = Identity.get_title(site_identity, codex.knows_about(child, Codex.CodexDetails.TITLE))
+				site_label = site_label.capitalize()
+				draw_terrestrial_label(map_rect, child.location_relative, location, site_label)
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):

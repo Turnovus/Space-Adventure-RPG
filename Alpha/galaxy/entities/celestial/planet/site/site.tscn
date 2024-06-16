@@ -12,3 +12,4 @@ script = ExtResource("1_bgvu7")
 script = ExtResource("2_dvhoc")
 namer = ExtResource("3_lim5f")
 default_codex_icon = ExtResource("4_2ii8w")
+unknown_title = "unknown site"
