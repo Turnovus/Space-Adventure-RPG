@@ -14,7 +14,10 @@ func _ready():
 
 
 func add_child_entity(entity: Entity):
-	add_child(entity)
+	if entity.get_parent() == null:
+		add_child(entity)
+	else:
+		entity.reparent(self)
 
 
 func remove_child_entity(entity: Entity):
@@ -43,7 +46,11 @@ func get_available_actions() -> Array[Action]:
 
 
 func move_relative(movement : Vector2):
-	location_relative += movement
+	location_relative = location_relative + movement
+
+
+func set_location_relative(value : Vector2):
+	location_relative = value
 	location_changed.emit(self)
 
 

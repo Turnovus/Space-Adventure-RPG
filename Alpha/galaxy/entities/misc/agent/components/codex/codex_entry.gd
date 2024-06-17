@@ -4,7 +4,7 @@ extends Node
 
 var reference : Node
 var identity : Identity
-var known_details : Codex.CodexDetails
+var known_details : int
 
 
 func _init(new_reference : Node, initial_details : Codex.CodexDetails):

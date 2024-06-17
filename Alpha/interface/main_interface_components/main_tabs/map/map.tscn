@@ -7,6 +7,7 @@
 [sub_resource type="SystemFont" id="SystemFont_38qaq"]
 font_names = PackedStringArray("Monospace")
 font_weight = 999
+subpixel_positioning = 0
 
 [node name="Map" type="PanelContainer"]
 anchors_preset = 15

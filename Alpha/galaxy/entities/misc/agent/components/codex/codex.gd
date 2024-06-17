@@ -23,11 +23,12 @@ func get_entries() -> Array[CodexEntry]:
 	return entries
 
 
-func push_entry(reference : Node, new_details : CodexDetails):
+func push_entry(reference : Node, new_details : int):
 	var entry = null
 	for child in get_entries():
 		if child.reference == reference:
 			entry = child
+			break
 	
 	if entry == null:
 		entry = CodexEntry.new(reference, new_details)
@@ -35,7 +36,7 @@ func push_entry(reference : Node, new_details : CodexDetails):
 		entry_pushed.emit(entry)
 		return
 	
-	entry.known_details &= new_details
+	entry.known_details |= new_details
 	entry_pushed.emit(entry)
 
 

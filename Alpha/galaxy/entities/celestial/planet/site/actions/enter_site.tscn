@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpf2a8kiiyl8h"]
+
+[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/site/actions/enter_site.gd" id="1_ww7t1"]
+
+[node name="EnterSite" type="Node"]
+script = ExtResource("1_ww7t1")
+label = "Enter "

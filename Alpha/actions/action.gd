@@ -6,6 +6,8 @@ class_name Action
 @export var label : String
 @export var base_potency : float = 1
 
+var issuer : Node
+
 
 func get_components() -> Array[ActionComponent]:
 	var components : Array[ActionComponent] = []
@@ -57,3 +59,7 @@ func is_exclusive_with(other : Action) -> bool:
 
 func action_turn(_agent : Agent):
 	pass
+
+
+func sustain_action(_agent : Agent) -> bool:
+	return true

@@ -7,4 +7,5 @@ class_name ActionIssuer
 
 func issue_action(_agent : Agent) -> Action:
 	var action = action_scene.instantiate() as Action
+	action.issuer = get_parent()
 	return action

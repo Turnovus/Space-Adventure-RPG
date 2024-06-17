@@ -34,7 +34,7 @@ func update_location():
 	var identity = player.get_parent().get_identity()
 	var text = "planet "
 	var codex : Codex = player.codex
-	text += player.get_parent().name if identity == null else Identity.get_title(identity, codex.knows_title(location))
+	text += Identity.get_title(identity, codex.knows_title(location))
 	text = text.capitalize()
 	
 	if location is Planet:

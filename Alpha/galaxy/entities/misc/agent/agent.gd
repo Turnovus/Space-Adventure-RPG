@@ -17,6 +17,11 @@ var actions_this_turn : Array[Action]
 @onready var codex : Codex = $Codex
 
 
+func _ready():
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	galaxy.turn_end.connect(_on_turn_end)
+
+
 @warning_ignore("narrowing_conversion")
 func max_physical_points() -> int:
 	return physical_point_stat.get_current_potency(self)
@@ -59,3 +64,14 @@ func _turn_action(_turn : int):
 	var unspent_mental = unallocated_mental_points()
 	if unspent_mental > 0:
 		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency(self))
+
+
+func _on_turn_end(_turn : int):
+	var actions_next_turn : Array[Action] = []
+	
+	for action in actions_this_turn:
+		if action.sustain_action(self):
+			actions_next_turn.append(action)
+	
+	actions_this_turn = actions_next_turn
+	actions_next_turn = []

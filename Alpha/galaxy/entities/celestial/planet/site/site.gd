@@ -2,6 +2,8 @@ class_name Site
 extends TerrestrialLocation
 
 
+const KNOWLEDGE_ON_ENTRY : int = Codex.CodexDetails.TITLE | Codex.CodexDetails.LOCATION
+
 var inactive_turns_to_expire : int = -1
 var last_turn_maintained : int
 
@@ -13,6 +15,18 @@ func setup(location : Vector2, expiration_turns = -1):
 
 func get_detection_range_factor() -> float:
 	return 1.0
+
+
+func add_child_entity(entity: Entity):
+	super(entity)
+	
+	var agent : Agent = entity as Agent
+	if agent != null:
+		agent.codex.push_entry(self, KNOWLEDGE_ON_ENTRY)
+
+
+func remove_child_entity(entity: Entity):
+	super(entity)
 
 
 func _turn_action(turn : int):
