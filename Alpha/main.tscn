@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://celumiql6xkch"]
+[gd_scene load_steps=6 format=3 uid="uid://celumiql6xkch"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_048e1"]
 [ext_resource type="PackedScene" uid="uid://db01hyegfe3i" path="res://galaxy/galaxy.tscn" id="2_2epjy"]
 [ext_resource type="PackedScene" uid="uid://cjy7tmi6n5kpd" path="res://interface/main_interface.tscn" id="3_h7j1e"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sx4mb"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ml862"]
+noise = SubResource("FastNoiseLite_sx4mb")
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -14,6 +20,18 @@ grow_vertical = 2
 script = ExtResource("1_048e1")
 
 [node name="Galaxy" parent="." instance=ExtResource("2_2epjy")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2048, 2048)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = SubResource("NoiseTexture2D_ml862")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)
 
 [node name="MainInterface" parent="." instance=ExtResource("3_h7j1e")]
 layout_mode = 1
