@@ -32,14 +32,18 @@ func update_location():
 	var location = player.get_parent()
 	
 	var identity = player.get_parent().get_identity()
-	var text = "planet "
+	var text = ""
 	var codex : Codex = player.codex
 	text += Identity.get_title(identity, codex.knows_title(location))
 	text = text.capitalize()
 	
 	if location is Planet:
-		text += H_BREAK + planet_local_location_string(player, location as Planet)
-		text += H_BREAK + str(player.location_relative)
+		text = "Planet " + text
+	
+	var root_planet : Planet = location.get_root_terrestrial_location() as Planet
+	if root_planet != null:
+		text += H_BREAK + planet_local_location_string(player, root_planet)
+		text += H_BREAK + str(snapped(player.location_relative, Vector2(0.01, 0.01)))
 	
 	location_name.text = text
 

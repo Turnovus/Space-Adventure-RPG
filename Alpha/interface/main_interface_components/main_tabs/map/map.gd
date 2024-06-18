@@ -59,9 +59,6 @@ func _draw():
 		GridMode.DISTANCE:
 			draw_distance_grid(map_rect, location)
 	
-	if show_player:
-		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
-	
 	if show_sites:
 		for child in location.get_children():
 			if child is Site:
@@ -72,6 +69,9 @@ func _draw():
 				var site_label = Identity.get_title(site_identity, codex.knows_about(child, Codex.CodexDetails.TITLE))
 				site_label = site_label.capitalize()
 				draw_terrestrial_label(map_rect, child.location_relative, location, site_label)
+	
+	if show_player:
+		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):

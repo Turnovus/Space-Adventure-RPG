@@ -33,4 +33,4 @@ func player_points_overallocated() -> bool:
 	if len(player.actions_this_turn) <= 1:
 		return false
 	
-	return player.unallocated_mental_points() < 0 or player.unallocated_mental_points() < 0
+	return player.unallocated_physical_points() < 0 or player.unallocated_mental_points() < 0

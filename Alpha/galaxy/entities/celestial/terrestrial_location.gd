@@ -28,7 +28,7 @@ func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
 		
 		var action = location.entry_action.instantiate() as Action
 		action.issuer = location
-		action.label += Identity.get_title(location.get_identity(), agent_requesting.codex.knows_title(location))
+		action.label += Identity.get_title(location.get_identity(), agent_requesting.codex.knows_title(location)).capitalize()
 		actions.append(action)
 	
 	return actions
