@@ -5,6 +5,7 @@ extends HBoxContainer
 
 var tree_root : TreeItem
 var references : Dictionary = {}
+var codex : Codex
 
 @onready var tree : Tree = $Tree
 
@@ -12,7 +13,8 @@ var references : Dictionary = {}
 func _ready():
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player : Agent = galaxy.player
-	player.codex.entry_pushed.connect(_on_player_entry_pushed)
+	codex = galaxy.player.codex
+	codex.entry_pushed.connect(_on_player_entry_pushed)
 	rebuild_codex()
 
 
@@ -50,9 +52,6 @@ func codex_concerns(node : Node) -> bool:
 
 
 func rebuild_codex():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var codex : Codex = galaxy.player.codex
-	
 	initialize_tree_control()
 	references = {}
 	

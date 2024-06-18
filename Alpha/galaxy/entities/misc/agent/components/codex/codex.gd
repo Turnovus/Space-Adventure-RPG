@@ -37,6 +37,7 @@ func push_entry(reference : Node, new_details : int):
 		return
 	
 	entry.known_details |= new_details
+	entry.update_identity()
 	entry_pushed.emit(entry)
 
 
