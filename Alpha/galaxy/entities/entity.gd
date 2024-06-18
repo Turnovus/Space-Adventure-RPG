@@ -14,10 +14,15 @@ func _ready():
 
 
 func add_child_entity(entity: Entity):
-	if entity.get_parent() == null:
-		add_child(entity)
-	else:
-		entity.reparent(self)
+	var parent = entity.get_parent()
+	if parent != null:
+		var parent_entity : Entity = parent as Entity
+		if parent_entity == null:
+			parent.remove_child(entity)
+		else:
+			parent_entity.remove_child_entity(entity)
+	
+	add_child(entity)
 
 
 func remove_child_entity(entity: Entity):
