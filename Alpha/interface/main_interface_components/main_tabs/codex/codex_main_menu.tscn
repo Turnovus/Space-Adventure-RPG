@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://edophnioen3s"]
+[gd_scene load_steps=5 format=3 uid="uid://edophnioen3s"]
 
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_a66jj"]
+[ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_xp7ff"]
 [ext_resource type="Texture2D" uid="uid://bccuftkssausm" path="res://assets/textures/space/galaxy.svg" id="2_cpvop"]
 [ext_resource type="PackedScene" uid="uid://d4lpm3acli8v2" path="res://interface/main_interface_components/main_tabs/codex/locations/codex_locations.tscn" id="3_1ckpy"]
 
@@ -10,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/icon_max_width = 25
+script = ExtResource("1_xp7ff")
 
 [node name="TabController" type="Node" parent="."]
 script = ExtResource("1_a66jj")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4lpm3acli8v2"]
+[gd_scene load_steps=4 format=3 uid="uid://d4lpm3acli8v2"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/codex/locations/codex_locations.gd" id="1_bkgh0"]
 [ext_resource type="Texture2D" uid="uid://bccuftkssausm" path="res://assets/textures/space/galaxy.svg" id="2_hmojn"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="3_jqade"]
 
 [node name="CodexLocations" type="HBoxContainer"]
 anchors_preset = 15
@@ -11,6 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bkgh0")
 galaxy_texture = ExtResource("2_hmojn")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("3_jqade")
+tab_icon = ExtResource("2_hmojn")
 
 [node name="Tree" type="Tree" parent="."]
 layout_mode = 2

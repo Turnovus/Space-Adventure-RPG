@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
-[ext_resource type="Script" path="res://interface/main_interface.gd" id="1_l3a4o"]
+[ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_l3a4o"]
 [ext_resource type="PackedScene" uid="uid://b3tgiiopvq2dk" path="res://interface/main_interface_components/time_panel.tscn" id="1_q4pvq"]
 [ext_resource type="PackedScene" uid="uid://cseqpkmw7747v" path="res://interface/main_interface_components/location_panel.tscn" id="2_cvq3e"]
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
@@ -22,7 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_l3a4o")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -62,6 +61,7 @@ offset_bottom = 0.999939
 grow_horizontal = 0
 theme_override_constants/icon_max_width = 25
 tab_focus_mode = 0
+script = ExtResource("1_l3a4o")
 
 [node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
