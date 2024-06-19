@@ -5,7 +5,7 @@ extends VBoxContainer
 @onready var status = $HBoxContainer/Status
 @onready var sub_list = $HFlowContainer
 
-@onready var stat_listing = preload("res://interface/main_interface_components/main_tabs/effects/stat_effect_listing.tscn")
+@onready var stat_listing = preload("res://interface/main_interface_components/player/effects/stat_effect_listing.tscn")
 
 
 func set_condition(data : ConditionDegreeData):

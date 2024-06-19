@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=11 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_l3a4o"]
@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
 [ext_resource type="PackedScene" uid="uid://dp7fo75kh6l3h" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.tscn" id="5_01e6a"]
 [ext_resource type="PackedScene" uid="uid://cg73gxmawfrtm" path="res://interface/main_interface_components/player_action_list/player_action_list.tscn" id="5_x15g8"]
-[ext_resource type="PackedScene" uid="uid://brobaureixti5" path="res://interface/main_interface_components/main_tabs/effects/player_effect_tab.tscn" id="6_frpnf"]
-[ext_resource type="PackedScene" uid="uid://bsdd4hxg5cgne" path="res://interface/main_interface_components/main_tabs/stats/player_stat_tab.tscn" id="7_5rbcq"]
-[ext_resource type="PackedScene" uid="uid://cyu7h3kk7ci83" path="res://interface/main_interface_components/main_tabs/knowledge/knowledge_viewer.tscn" id="8_eajhw"]
+[ext_resource type="PackedScene" uid="uid://d1huw6xvlrfjv" path="res://interface/main_interface_components/player/player_main_menu.tscn" id="7_4cjly"]
 [ext_resource type="PackedScene" uid="uid://byw82b0q8oa4h" path="res://interface/main_interface_components/main_tabs/map/map.tscn" id="9_f6mjv"]
 [ext_resource type="PackedScene" uid="uid://edophnioen3s" path="res://interface/main_interface_components/main_tabs/codex/codex_main_menu.tscn" id="11_h5t0t"]
 
@@ -66,15 +64,7 @@ script = ExtResource("1_l3a4o")
 [node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
 
-[node name="Effects" parent="TabContainer" instance=ExtResource("6_frpnf")]
-visible = false
-layout_mode = 2
-
-[node name="Status" parent="TabContainer" instance=ExtResource("7_5rbcq")]
-visible = false
-layout_mode = 2
-
-[node name="Knowledge" parent="TabContainer" instance=ExtResource("8_eajhw")]
+[node name="You" parent="TabContainer" instance=ExtResource("7_4cjly")]
 visible = false
 layout_mode = 2
 

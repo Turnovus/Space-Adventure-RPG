@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1huw6xvlrfjv"]
+
+[ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_33yy7"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_6l4yp"]
+[ext_resource type="Texture2D" uid="uid://bd7k4vurfqepg" path="res://assets/textures/body/person.svg" id="3_sxxhe"]
+[ext_resource type="PackedScene" uid="uid://brobaureixti5" path="res://interface/main_interface_components/player/effects/player_effect_tab.tscn" id="4_mtoc6"]
+[ext_resource type="PackedScene" uid="uid://bsdd4hxg5cgne" path="res://interface/main_interface_components/player/stats/player_stat_tab.tscn" id="5_js2qx"]
+[ext_resource type="PackedScene" uid="uid://cyu7h3kk7ci83" path="res://interface/main_interface_components/player/knowledge/knowledge_viewer.tscn" id="6_p0xkw"]
+
+[node name="PlayerMainMenu" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/icon_max_width = 25
+script = ExtResource("1_33yy7")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("2_6l4yp")
+tab_icon = ExtResource("3_sxxhe")
+
+[node name="Effects" parent="." instance=ExtResource("4_mtoc6")]
+layout_mode = 2
+
+[node name="Stats" parent="." instance=ExtResource("5_js2qx")]
+visible = false
+layout_mode = 2
+
+[node name="Knowledge" parent="." instance=ExtResource("6_p0xkw")]
+visible = false
+layout_mode = 2

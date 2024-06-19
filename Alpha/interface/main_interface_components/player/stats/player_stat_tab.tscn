@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsdd4hxg5cgne"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/stats/player_stat_tab.gd" id="1_tklsk"]
+[ext_resource type="Script" path="res://interface/main_interface_components/player/stats/player_stat_tab.gd" id="1_tklsk"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_xlgr1"]
 [ext_resource type="Texture2D" uid="uid://dwrsjrgu70vn4" path="res://assets/textures/body/skills.svg" id="3_w0e1w"]
 

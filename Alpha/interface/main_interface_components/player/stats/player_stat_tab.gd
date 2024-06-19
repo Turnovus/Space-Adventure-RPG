@@ -1,7 +1,7 @@
 extends ScrollContainer
 
 
-@onready var listing = preload("res://interface/main_interface_components/main_tabs/stats/player_stat_listing.tscn")
+@onready var listing = preload("res://interface/main_interface_components/player/stats/player_stat_listing.tscn")
 @onready var list = $HFlowContainer
 
 
