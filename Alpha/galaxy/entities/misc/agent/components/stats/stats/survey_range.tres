@@ -17,5 +17,5 @@ script = ExtResource("1_6p3ru")
 icon = ExtResource("1_e76qu")
 label = "Survey Range"
 description = ""
-base_value = 0.25
+base_value = 2.5
 skills = Array[ExtResource("3_ks2ni")]([SubResource("Resource_spos4")])

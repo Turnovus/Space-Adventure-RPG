@@ -22,10 +22,12 @@ const DISTANCE_LINE_COLOR : Color = Color(0, 0, 0, 0.5)
 @export var label_font : Font
 
 var show_player : bool = true
+var show_survey : bool = true
 var show_sites : bool = true
 var grid_mode : GridMode = GridMode.DISTANCE
 
 @onready var show_player_button : CheckBox = $VBoxContainer/ShowPlayerButton
+@onready var show_survey_button : CheckBox = $VBoxContainer/ShowSurveyButton
 @onready var show_site_button : CheckBox = $VBoxContainer/ShowSiteButton
 @onready var show_grid_option : OptionButton = $VBoxContainer/HBoxContainer/ShowGridOption
 
@@ -35,6 +37,7 @@ func _ready():
 	galaxy.turn_post.connect(_on_turn_post)
 	
 	show_player_button.toggled.connect(_on_show_player_toggled)
+	show_survey_button.toggled.connect(_on_show_survey_toggled)
 	show_site_button.toggled.connect(_on_show_site_toggled)
 	show_grid_option.item_selected.connect(_on_show_grid_item_selected)
 
@@ -72,6 +75,9 @@ func _draw():
 	
 	if show_player:
 		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
+	
+	if show_survey:
+		draw_terrestrial_distance_radius(map_rect, player.location_relative, location, player.get_detection_range())
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):
@@ -82,6 +88,12 @@ func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLoca
 func draw_terrestrial_label(map : Rect2, pip : Vector2, location : TerrestrialLocation, label : String):
 	var draw_location = get_draw_location(map, pip, location)
 	draw_string(label_font, draw_location, label, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE, LABEL_FONT_COLOR)
+
+
+func draw_terrestrial_distance_radius(map : Rect2, position_relative : Vector2, location : TerrestrialLocation, radius : float):
+	var map_position = get_draw_location(map, position_relative, location)
+	var local_radius = radius * (map.size.x / location.get_size().x)
+	draw_arc(map_position, local_radius, 0, TAU, 16, Color.RED)
 
 
 func get_draw_location(map : Rect2, relative_location : Vector2, location : TerrestrialLocation) -> Vector2:
@@ -121,6 +133,11 @@ func _on_turn_post(_turn : int):
 
 func _on_show_player_toggled(toggled_on : bool):
 	show_player = toggled_on
+	queue_redraw()
+
+
+func _on_show_survey_toggled(toggled_on : bool):
+	show_survey = toggled_on
 	queue_redraw()
 
 
