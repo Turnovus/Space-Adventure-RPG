@@ -12,28 +12,6 @@ func get_shortest_distance(relative_position_a : Vector2, relative_position_b : 
 	return relative_position_a.distance_to(relative_position_b)
 
 
-func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
-	var actions : Array[Action] = super(agent_requesting)
-	
-	for child in get_children():
-		var location = child as TerrestrialLocation
-		if location == null or location.entry_action == null:
-			continue
-		
-		if location.check_relative_distance:
-			var location_position = location.location_relative
-			var agent_position = agent_requesting.location_relative
-			if get_shortest_distance(location_position, agent_position) > location.max_entry_distance:
-				continue
-		
-		var action = location.entry_action.instantiate() as Action
-		action.issuer = location
-		action.label += Identity.get_title(location.get_identity(), agent_requesting.codex.knows_title(location)).capitalize()
-		actions.append(action)
-	
-	return actions
-
-
 func get_root_terrestrial_location() -> TerrestrialLocation:
 	var parent = get_parent()
 	if parent is TerrestrialLocation:

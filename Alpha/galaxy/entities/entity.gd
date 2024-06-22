@@ -29,27 +29,6 @@ func remove_child_entity(entity: Entity):
 	remove_child(entity)
 
 
-func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
-	var actions : Array[Action] = []
-	for child in get_children():
-		var issuer : ActionIssuer = child as ActionIssuer
-		if issuer == null: 
-			continue
-		var action : Action = issuer.issue_action(agent_requesting)
-		if action != null and action.is_possible_for(agent_requesting):
-			actions.append(action)
-	return actions
-
-
-func get_available_actions() -> Array[Action]:
-	var actions : Array[Action] = []
-	
-	actions.append_array(get_outgoing_actions_for(self))
-	actions.append_array(get_parent().get_outgoing_actions_for(self))
-	
-	return actions
-
-
 func move_relative(movement : Vector2):
 	location_relative = location_relative + movement
 

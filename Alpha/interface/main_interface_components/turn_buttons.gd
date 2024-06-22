@@ -30,7 +30,8 @@ func _on_player_actions_changed():
 
 func player_points_overallocated() -> bool:
 	var player = galaxy.player
-	if len(player.actions_this_turn) <= 1:
-		return false
+	#FIXME
+	#if len(player.actions_this_turn) <= 1:
+		#return false
 	
 	return player.unallocated_physical_points() < 0 or player.unallocated_mental_points() < 0

@@ -11,7 +11,6 @@ const BASE_POINTS = 20
 @export var survey_range_stat : Stat
 
 var is_player: bool = false
-var actions_this_turn : Array[Action]
 
 @onready var conditions : ConditionManager = $ConditionManager
 @onready var stats : StatManager = $StatManager
@@ -37,15 +36,13 @@ func max_mental_points() -> int:
 
 func unallocated_physical_points() -> int:
 	var points = max_physical_points()
-	for action in actions_this_turn:
-		points -= action.get_physical_point_cost(self)
+	# TODO: Subtract point costs from active actions
 	return points
 
 
 func unallocated_mental_points() -> int:
 	var points = max_mental_points()
-	for action in actions_this_turn:
-		points -= action.get_mental_point_cost(self)
+	# TODO: Subtract point costs from active actions
 	return points
 
 
@@ -58,8 +55,7 @@ func get_detection_range() -> float:
 
 
 func _turn_action(_turn : int):
-	for action in actions_this_turn:
-		action.action_turn(self)
+	#TODO: Actions
 	
 	conditions.update(self)
 	
@@ -69,11 +65,5 @@ func _turn_action(_turn : int):
 
 
 func _on_turn_end(_turn : int):
-	var actions_next_turn : Array[Action] = []
-	
-	for action in actions_this_turn:
-		if action.sustain_action(self):
-			actions_next_turn.append(action)
-	
-	actions_this_turn = actions_next_turn
-	actions_next_turn = []
+	# TODO: Re-validate selected actions
+	pass
