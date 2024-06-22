@@ -18,6 +18,7 @@ config/icon="res://assets/textures/space/galaxy.svg"
 [file_customization]
 
 folder_colors={
+"res://actions/": "orange",
 "res://actions/components/": "red",
 "res://actions/components/options/view/": "green",
 "res://actions/components/potency/action_potency_stat/view/": "green",
