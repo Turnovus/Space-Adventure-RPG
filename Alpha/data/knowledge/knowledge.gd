@@ -1,4 +1,4 @@
-@icon("res://assets/head/idea.svg")
+@icon("res://assets/textures/head/idea.svg")
 class_name Knowledge
 extends Resource
 

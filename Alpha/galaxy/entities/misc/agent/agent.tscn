@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=19 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -13,14 +13,18 @@
 [ext_resource type="Resource" uid="uid://b0kypomefkcnd" path="res://galaxy/entities/misc/agent/components/stats/stats/movement_speed.tres" id="11_qdy8w"]
 [ext_resource type="Resource" uid="uid://btwaygtoaqmr8" path="res://galaxy/entities/misc/agent/components/stats/stats/passive_knowledge_gain.tres" id="12_k3v11"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/knowledge/knowledge_tracker.gd" id="13_0id4j"]
+[ext_resource type="Resource" uid="uid://ckbfwgju4f03l" path="res://galaxy/entities/misc/agent/components/stats/stats/survey_range.tres" id="13_e6ppp"]
 [ext_resource type="Resource" uid="uid://d0olmo34545xj" path="res://data/knowledge/groups/survival.tres" id="14_0khjm"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/codex/codex.gd" id="15_1ab5t"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/skill_tracker.gd" id="16_epxb4"]
+[ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="17_8cy1n"]
 
 [node name="Agent" type="Node"]
 script = ExtResource("1_kdh5l")
 physical_point_stat = ExtResource("9_c5vy8")
 mental_point_stat = ExtResource("10_oo78l")
 learning_stat = ExtResource("12_k3v11")
+survey_range_stat = ExtResource("13_e6ppp")
 
 [node name="ConditionManager" parent="." instance=ExtResource("2_e2rc3")]
 
@@ -59,7 +63,7 @@ stat = ExtResource("11_qdy8w")
 stat_potency_factor = 0.9
 
 [node name="StatManager" parent="." instance=ExtResource("3_t8mw0")]
-stats = Array[Resource("res://galaxy/entities/misc/agent/components/stats/stat.gd")]([ExtResource("9_c5vy8"), ExtResource("10_oo78l"), ExtResource("11_qdy8w"), ExtResource("12_k3v11")])
+stats = Array[Resource("res://galaxy/entities/misc/agent/components/stats/stat.gd")]([ExtResource("9_c5vy8"), ExtResource("10_oo78l"), ExtResource("11_qdy8w"), ExtResource("12_k3v11"), ExtResource("13_e6ppp")])
 
 [node name="KnowledgeTracker" type="Node" parent="."]
 script = ExtResource("13_0id4j")
@@ -67,3 +71,7 @@ knowledge_groups = Array[Resource("res://data/knowledge/knowledge_group.gd")]([E
 
 [node name="Codex" type="Node" parent="."]
 script = ExtResource("15_1ab5t")
+
+[node name="SkillTracker" type="Node" parent="."]
+script = ExtResource("16_epxb4")
+skills = Array[Resource("res://data/skills/skill.gd")]([ExtResource("17_8cy1n")])

@@ -1,3 +1,4 @@
+@icon("res://assets/textures/ui/open-folder.svg")
 class_name KnowledgeGroup
 extends Resource
 

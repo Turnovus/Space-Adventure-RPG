@@ -4,9 +4,11 @@ extends Entity
 
 const BASE_POINTS = 20
 
+@export_category("stats")
 @export var physical_point_stat : Stat
 @export var mental_point_stat : Stat
 @export var learning_stat : Stat
+@export var survey_range_stat : Stat
 
 var is_player: bool = false
 var actions_this_turn : Array[Action]
@@ -15,6 +17,7 @@ var actions_this_turn : Array[Action]
 @onready var stats : StatManager = $StatManager
 @onready var knowledge : KnowledgeTracker = $KnowledgeTracker
 @onready var codex : Codex = $Codex
+@onready var skills : SkillTracker = $SkillTracker
 
 
 func _ready():
@@ -51,8 +54,7 @@ func get_terrestrial_location() -> TerrestrialLocation:
 
 
 func get_detection_range() -> float:
-	#TODO: Detection stat
-	return 15
+	return survey_range_stat.get_current_potency(self)
 
 
 func _turn_action(_turn : int):

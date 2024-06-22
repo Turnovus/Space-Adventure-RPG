@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d20tlitpshcgb"]
+[gd_scene load_steps=14 format=3 uid="uid://d20tlitpshcgb"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/travel_planet.gd" id="1_8f5u2"]
 [ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/textures/map/compass.svg" id="2_rqe0g"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://actions/components/potency/action_potency_stat/action_potency_stat.gd" id="9_2mwp7"]
 [ext_resource type="Resource" uid="uid://b0kypomefkcnd" path="res://galaxy/entities/misc/agent/components/stats/stats/movement_speed.tres" id="10_1wvqb"]
 [ext_resource type="PackedScene" uid="uid://dvaqj61lnneb5" path="res://actions/components/potency/action_potency_stat/view/potency_stat_view.tscn" id="10_mxr38"]
+[ext_resource type="Script" path="res://actions/components/experience/action_skill_train.gd" id="12_rqw6t"]
+[ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="13_ny87k"]
 
 [node name="TravelPlanet" type="Node" node_paths=PackedStringArray("direction_option")]
 script = ExtResource("1_8f5u2")
@@ -108,3 +110,7 @@ mental_points_percent = 0.25
 script = ExtResource("9_2mwp7")
 stat = ExtResource("10_1wvqb")
 view_component = ExtResource("10_mxr38")
+
+[node name="ActionComponentSkillTrain" type="Node" parent="."]
+script = ExtResource("12_rqw6t")
+skill = ExtResource("13_ny87k")

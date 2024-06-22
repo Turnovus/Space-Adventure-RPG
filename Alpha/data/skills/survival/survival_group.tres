@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillGroup" load_steps=3 format=3 uid="uid://6xokjpfl66nn"]
+
+[ext_resource type="Script" path="res://data/skills/skill_group.gd" id="1_f083x"]
+[ext_resource type="Texture2D" uid="uid://dmhrpve8h6v8h" path="res://assets/textures/structures/camping-tent.svg" id="1_igpa7"]
+
+[resource]
+script = ExtResource("1_f083x")
+label = "Survival"
+icon = ExtResource("1_igpa7")
+catch_up_rate_factor = 1.0

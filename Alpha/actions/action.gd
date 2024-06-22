@@ -57,9 +57,17 @@ func is_exclusive_with(other : Action) -> bool:
 	return false
 
 
-func action_turn(_agent : Agent):
-	pass
+func action_turn(agent : Agent):
+	var potency = get_potency(agent)
+	_do_action(agent)
+	
+	for component in get_components():
+		component.turn_action(agent, potency)
 
 
 func sustain_action(_agent : Agent) -> bool:
 	return true
+
+
+func _do_action(_agent : Agent):
+	pass

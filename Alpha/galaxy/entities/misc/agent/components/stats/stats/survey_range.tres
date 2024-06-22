@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=6 format=3 uid="uid://ckbfwgju4f03l"]
+
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="1_6p3ru"]
+[ext_resource type="Texture2D" uid="uid://eg0xmohhss5o" path="res://assets/textures/object/sextant.svg" id="1_e76qu"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/effectors/stat_effector_skill.gd" id="3_ks2ni"]
+[ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="4_bkwsa"]
+
+[sub_resource type="Resource" id="Resource_spos4"]
+script = ExtResource("3_ks2ni")
+skill = ExtResource("4_bkwsa")
+base_factor = 1.0
+factor_offset_per_level = 0.1
+use_exact_level = true
+
+[resource]
+script = ExtResource("1_6p3ru")
+icon = ExtResource("1_e76qu")
+label = "Survey Range"
+description = ""
+base_value = 0.25
+skills = Array[ExtResource("3_ks2ni")]([SubResource("Resource_spos4")])

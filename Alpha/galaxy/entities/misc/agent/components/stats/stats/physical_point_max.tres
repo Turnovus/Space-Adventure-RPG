@@ -9,3 +9,4 @@ icon = ExtResource("1_eqs0i")
 label = "Physical Ability"
 description = "The number of available physical action points per turn, rounded down to the nearest whole number."
 base_value = 20.0
+skills = Array[Resource("res://galaxy/entities/misc/agent/components/stats/effectors/stat_effector_skill.gd")]([])
