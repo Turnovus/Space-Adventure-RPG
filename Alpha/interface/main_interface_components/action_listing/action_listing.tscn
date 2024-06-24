@@ -15,13 +15,19 @@ layout_mode = 2
 
 [node name="TitleRow" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+alignment = 1
 
 [node name="ActionIcon" type="TextureRect" parent="VBoxContainer/TitleRow"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_6y6em")
 expand_mode = 2
 
 [node name="ActionLabel" type="Label" parent="VBoxContainer/TitleRow"]
 layout_mode = 2
 text = "Sample Text"
+
+[node name="Button" type="Button" parent="VBoxContainer/TitleRow"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Add"
