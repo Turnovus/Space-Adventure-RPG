@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=20 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/codex/codex.gd" id="15_1ab5t"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/skill_tracker.gd" id="16_epxb4"]
 [ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="17_8cy1n"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/action_tracker.gd" id="19_8ymft"]
 
 [node name="Agent" type="Node"]
 script = ExtResource("1_kdh5l")
@@ -75,3 +76,6 @@ script = ExtResource("15_1ab5t")
 [node name="SkillTracker" type="Node" parent="."]
 script = ExtResource("16_epxb4")
 skills = Array[Resource("res://data/skills/skill.gd")]([ExtResource("17_8cy1n")])
+
+[node name="ActionTracker" type="Node" parent="."]
+script = ExtResource("19_8ymft")

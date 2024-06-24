@@ -6,5 +6,5 @@ extends Resource
 @export var icon : Texture2D
 
 
-func create_doer(issuer : Entity, agent : Agent) -> ActionDoer:
-	return ActionDoer.new(self, issuer, agent)
+func create_doer(issuer : Entity) -> ActionDoer:
+	return ActionDoer.new(self, issuer)

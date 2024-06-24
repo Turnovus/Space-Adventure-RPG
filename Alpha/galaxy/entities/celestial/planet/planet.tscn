@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx2i4hx5bi26"]
+[gd_scene load_steps=7 format=3 uid="uid://cx2i4hx5bi26"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_b5x1o"]
 [ext_resource type="Script" path="res://data/identity/identity.gd" id="4_it4ph"]
 [ext_resource type="Resource" uid="uid://du31m5rqdda8e" path="res://data/identity/namer/planet_namer.tres" id="5_cebf7"]
 [ext_resource type="Script" path="res://actions/action_issuer.gd" id="5_kj324"]
 [ext_resource type="Texture2D" uid="uid://w68wuw7kat8x" path="res://assets/textures/space/world.svg" id="6_7jtg2"]
+[ext_resource type="Resource" uid="uid://dsu7kjr0ok5da" path="res://galaxy/entities/celestial/planet/actions/travel_planet.tres" id="6_lda4j"]
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_b5x1o")
@@ -16,3 +17,4 @@ default_codex_icon = ExtResource("6_7jtg2")
 
 [node name="ActionIssuer" type="Node" parent="."]
 script = ExtResource("5_kj324")
+action = ExtResource("6_lda4j")

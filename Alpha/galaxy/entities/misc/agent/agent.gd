@@ -17,6 +17,7 @@ var is_player: bool = false
 @onready var knowledge : KnowledgeTracker = $KnowledgeTracker
 @onready var codex : Codex = $Codex
 @onready var skills : SkillTracker = $SkillTracker
+@onready var actions : ActionTracker = $ActionTracker
 
 
 func _ready():
@@ -54,7 +55,13 @@ func get_detection_range() -> float:
 	return survey_range_stat.get_current_potency(self)
 
 
+func get_doable_actions() -> Array[ActionDoer]:
+	# TODO: Validate action eligibility
+	return get_parent().get_action_doers()
+
+
 func _turn_action(_turn : int):
+	print_orphan_nodes()
 	#TODO: Actions
 	
 	conditions.update(self)

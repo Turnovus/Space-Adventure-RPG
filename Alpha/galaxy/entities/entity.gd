@@ -53,12 +53,13 @@ func get_identity() -> Identity:
 	return null
 
 
-func get_actions_available_to(agent : Agent) -> Array[Action]:
-	var actions : Array[Action] = []
+func get_action_doers() -> Array[ActionDoer]:
+	var doers : Array[ActionDoer] = []
 	for child in get_children():
-		if child is ActionIssuer:
-			actions.append_array(child.get_actions_available_to(agent))
-	return actions
+		var issuer : ActionIssuer = child as ActionIssuer
+		if issuer != null:
+			doers.append(issuer.get_doer())
+	return doers
 
 
 func _turn_action(_turn : int):
