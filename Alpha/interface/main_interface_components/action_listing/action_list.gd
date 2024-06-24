@@ -31,6 +31,14 @@ func update(doers : Array[ActionDoer]):
 		create_listing(missing)
 
 
+func update_listing_visibility_for(agent : Agent):
+	for child in get_children():
+		var listing : ActionListing = child as ActionListing
+		if listing == null:
+			continue
+		listing.visible = not agent.is_already_doing(listing.doer)
+
+
 func create_listing(doer : ActionDoer):
 	var listing : ActionListing = LISTING.instantiate()
 	listing.doer = doer

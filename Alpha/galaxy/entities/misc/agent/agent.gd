@@ -68,6 +68,16 @@ func get_actions_doing() -> Array[ActionDoer]:
 	return doers
 
 
+func is_already_doing(doer : ActionDoer) -> bool:
+	for child in actions.get_children():
+		var child_doer : ActionDoer = child as ActionDoer
+		if child_doer != null:
+			if child_doer.action == doer.action and child_doer.issuer == doer.issuer:
+				return true
+	
+	return false
+
+
 func _turn_action(_turn : int):
 	#TODO: Actions
 	

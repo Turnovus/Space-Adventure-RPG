@@ -38,6 +38,10 @@ func _on_button_pressed():
 		ActionListingMode.ADD:
 			doer.reparent(galaxy.player.actions)
 		ActionListingMode.REMOVE:
+			# We need to remove it from the action tracker because it won't be
+			# freed by the time the action list's update method is called,
+			# which will cause it think the action is still active.
+			galaxy.player.actions.remove_child(doer)
 			doer.queue_free()
 	galaxy.player_actions_changed.emit()
 	queue_free()
