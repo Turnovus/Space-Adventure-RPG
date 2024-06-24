@@ -53,5 +53,13 @@ func get_identity() -> Identity:
 	return null
 
 
+func get_actions_available_to(agent : Agent) -> Array[Action]:
+	var actions : Array[Action] = []
+	for child in get_children():
+		if child is ActionIssuer:
+			actions.append_array(child.get_actions_available_to(agent))
+	return actions
+
+
 func _turn_action(_turn : int):
 	pass
