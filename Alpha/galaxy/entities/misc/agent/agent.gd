@@ -60,6 +60,14 @@ func get_doable_actions() -> Array[ActionDoer]:
 	return get_parent().get_action_doers()
 
 
+func get_actions_doing() -> Array[ActionDoer]:
+	var doers : Array[ActionDoer] = []
+	for child in actions.get_children():
+		if child is ActionDoer:
+			doers.append(child)
+	return doers
+
+
 func _turn_action(_turn : int):
 	#TODO: Actions
 	
