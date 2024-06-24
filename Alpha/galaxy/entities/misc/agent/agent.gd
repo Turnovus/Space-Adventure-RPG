@@ -61,7 +61,6 @@ func get_doable_actions() -> Array[ActionDoer]:
 
 
 func _turn_action(_turn : int):
-	print_orphan_nodes()
 	#TODO: Actions
 	
 	conditions.update(self)
