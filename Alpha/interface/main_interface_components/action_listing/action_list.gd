@@ -3,6 +3,8 @@ extends VBoxContainer
 
 const LISTING = preload("res://interface/main_interface_components/action_listing/action_listing.tscn")
 
+@export var mode : ActionListing.ActionListingMode
+
 @onready var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 
 
@@ -32,5 +34,6 @@ func update(doers : Array[ActionDoer]):
 func create_listing(doer : ActionDoer):
 	var listing : ActionListing = LISTING.instantiate()
 	listing.doer = doer
+	listing.mode = mode
 	add_child(listing)
 	listing.update()
