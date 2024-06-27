@@ -1,9 +1,20 @@
-[gd_resource type="Resource" script_class="Action" load_steps=3 format=3 uid="uid://dsu7kjr0ok5da"]
+[gd_resource type="Resource" script_class="Action" load_steps=5 format=3 uid="uid://dsu7kjr0ok5da"]
 
 [ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/textures/map/compass.svg" id="1_33e6f"]
 [ext_resource type="Script" path="res://actions/action.gd" id="1_aosf5"]
+[ext_resource type="Script" path="res://actions/components/action_component_point_fraction.gd" id="1_cqfws"]
+
+[sub_resource type="Resource" id="Resource_uj6qy"]
+script = ExtResource("1_cqfws")
+physical_point_percent = 0.75
+mental_point_percent = 0.25
+physical_allocation_affects_potency = false
+base_physical_points = 1.0
+mental_allocation_affects_potency = false
+base_mental_points = 1.0
 
 [resource]
 script = ExtResource("1_aosf5")
 base_label = "Travel"
 icon = ExtResource("1_33e6f")
+components = Array[Resource("res://actions/components/action_component.gd")]([SubResource("Resource_uj6qy")])

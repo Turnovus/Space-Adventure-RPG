@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq2knqdine1s1"]
+[gd_scene load_steps=5 format=3 uid="uid://bq2knqdine1s1"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/action_listing/action_listing.gd" id="1_yto2w"]
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_6y6em"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="3_n2gwd"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="4_d3s7d"]
 
 [node name="ActionListing" type="PanelContainer"]
 anchors_preset = 10
@@ -26,6 +28,30 @@ expand_mode = 2
 [node name="ActionLabel" type="Label" parent="VBoxContainer/TitleRow"]
 layout_mode = 2
 text = "Sample Text"
+
+[node name="PointSpace" type="Label" parent="VBoxContainer/TitleRow"]
+layout_mode = 2
+text = "  - -  "
+
+[node name="PhysicalIcon" type="TextureRect" parent="VBoxContainer/TitleRow"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_n2gwd")
+expand_mode = 2
+
+[node name="PhysicalCost" type="Label" parent="VBoxContainer/TitleRow"]
+layout_mode = 2
+text = "0"
+
+[node name="MentalIcon" type="TextureRect" parent="VBoxContainer/TitleRow"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_d3s7d")
+expand_mode = 2
+
+[node name="MentalCost" type="Label" parent="VBoxContainer/TitleRow"]
+layout_mode = 2
+text = "0"
 
 [node name="Button" type="Button" parent="VBoxContainer/TitleRow"]
 layout_mode = 2
