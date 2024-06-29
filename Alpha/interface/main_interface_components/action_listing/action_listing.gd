@@ -46,13 +46,14 @@ func update():
 	
 	point_space.visible = (physical > 0 or mental > 0)
 	
-	physical_readout.text = str(physical)
-	physical_readout.visible = (physical > 0)
-	physical_icon.visible = (physical > 0)
-	
-	mental_readout.text = str(mental)
-	mental_readout.visible = (mental > 0)
-	mental_icon.visible = (mental > 0)
+	update_point_counter(physical, physical_readout, physical_icon)
+	update_point_counter(mental, mental_readout, mental_icon)
+
+
+func update_point_counter(count : float, readout : Label, icon : TextureRect):
+	readout.text = str(count)
+	readout.visible = count > 0
+	icon.visible = count > 0
 
 
 func _on_button_pressed():
