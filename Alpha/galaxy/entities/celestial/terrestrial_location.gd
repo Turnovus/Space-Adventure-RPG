@@ -14,7 +14,7 @@ func get_shortest_distance(relative_position_a : Vector2, relative_position_b : 
 
 func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
 	var actions : Array[Action] = super(agent_requesting)
-	
+	#HACK : Remove this if support for sibling-to-sibling actions is added
 	for child in get_children():
 		var location = child as TerrestrialLocation
 		if location == null or location.entry_action == null:
@@ -26,12 +26,24 @@ func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
 			if get_shortest_distance(location_position, agent_position) > location.max_entry_distance:
 				continue
 		
-		var action = location.entry_action.instantiate() as Action
-		action.issuer = location
-		action.label += Identity.get_title(location.get_identity(), agent_requesting.codex.knows_title(location)).capitalize()
+		var action = location.issue_entry_action(agent_requesting)
 		actions.append(action)
 	
 	return actions
+
+
+func issue_entry_action(agent : Agent) -> Action:
+	var action : Action = null
+	for child in get_children():
+		if child.scene_file_path == entry_action.resource_path:
+			action = child as Action
+	if action == null:
+		action = entry_action.instantiate() as Action
+		action.issuer = self
+		add_child(action)
+	
+	action.label = "Enter " + Identity.get_title(get_identity(), agent.codex.knows_title(self)).capitalize()
+	return action
 
 
 func get_root_terrestrial_location() -> TerrestrialLocation:
