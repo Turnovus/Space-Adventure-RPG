@@ -20,9 +20,6 @@ func regenerate_actions():
 		child.queue_free()
 	
 	for action in player.get_available_actions():
-		#if player.actions_this_turn.has(action):
-			#continue
-		
 		var excluded = false
 		for chosen in player.actions.get_actions():
 			if chosen.is_exclusive_with(action):

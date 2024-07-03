@@ -71,7 +71,10 @@ func do_turn():
 
 
 func try_add_player_action(action : Action):
-	player.actions.add_child(action)
+	if action.get_parent() != null:
+		action.reparent(player.actions)
+	else:
+		player.actions.add_child(action)
 	player_actions_changed.emit()
 
 
