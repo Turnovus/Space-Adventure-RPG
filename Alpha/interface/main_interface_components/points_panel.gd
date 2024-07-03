@@ -21,8 +21,8 @@ func _on_player_actions_changed():
 	var player : Agent = get_player()
 	var max_phys = player.max_physical_points()
 	var max_ment = player.max_mental_points()
-	var used_phys = max_phys - player.unallocated_physical_points()
-	var used_ment = max_ment - player.unallocated_mental_points()
+	var used_phys = player.actions.allocated_physical_points()
+	var used_ment = player.actions.allocated_mental_points()
 	
 	if used_phys > max_phys:
 		if len(player.actions_this_turn) > 1:

@@ -11,13 +11,13 @@ const BASE_POINTS = 20
 @export var survey_range_stat : Stat
 
 var is_player: bool = false
-var actions_this_turn : Array[Action]
 
 @onready var conditions : ConditionManager = $ConditionManager
 @onready var stats : StatManager = $StatManager
 @onready var knowledge : KnowledgeTracker = $KnowledgeTracker
 @onready var codex : Codex = $Codex
 @onready var skills : SkillTracker = $SkillTracker
+@onready var actions : ActionTracker = $ActionTracker
 
 
 func _ready():
@@ -35,20 +35,6 @@ func max_mental_points() -> int:
 	return mental_point_stat.get_current_potency(self)
 
 
-func unallocated_physical_points() -> int:
-	var points = max_physical_points()
-	for action in actions_this_turn:
-		points -= action.get_physical_point_cost(self)
-	return points
-
-
-func unallocated_mental_points() -> int:
-	var points = max_mental_points()
-	for action in actions_this_turn:
-		points -= action.get_mental_point_cost(self)
-	return points
-
-
 func get_terrestrial_location() -> TerrestrialLocation:
 	return get_parent() as TerrestrialLocation
 
@@ -58,22 +44,14 @@ func get_detection_range() -> float:
 
 
 func _turn_action(_turn : int):
-	for action in actions_this_turn:
-		action.action_turn(self)
+	actions.do_turn()
 	
 	conditions.update(self)
 	
-	var unspent_mental = unallocated_mental_points()
+	var unspent_mental = max_mental_points() - actions.allocated_mental_points()
 	if unspent_mental > 0:
 		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency(self))
 
 
 func _on_turn_end(_turn : int):
-	var actions_next_turn : Array[Action] = []
-	
-	for action in actions_this_turn:
-		if action.sustain_action(self):
-			actions_next_turn.append(action)
-	
-	actions_this_turn = actions_next_turn
-	actions_next_turn = []
+	actions.validate_actions()

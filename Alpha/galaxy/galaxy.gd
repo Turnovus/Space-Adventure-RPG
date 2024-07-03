@@ -71,12 +71,13 @@ func do_turn():
 
 
 func try_add_player_action(action : Action):
-	player.actions_this_turn.append(action)
+	player.actions.add_child(action)
 	player_actions_changed.emit()
 
 
 func try_remove_player_action(action : Action):
-	player.actions_this_turn.erase(action)
+	player.actions.remove_child(action)
+	action.queue_free()
 	player_actions_changed.emit()
 
 

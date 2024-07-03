@@ -18,7 +18,7 @@ func _on_player_actions_changed():
 	for child in list.get_children():
 		child.queue_free()
 	
-	for action in player.actions_this_turn:
+	for action in player.actions.get_actions():
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
 		new_listing.set_action(action, true)

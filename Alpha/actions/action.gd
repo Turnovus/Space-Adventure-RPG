@@ -41,10 +41,10 @@ func get_potency(agent : Agent) -> float:
 
 
 func is_possible_for(agent : Agent) -> bool:
-	if len(agent.actions_this_turn) > 0:
-		if agent.unallocated_mental_points() <= get_mental_point_cost(agent):
+	if agent.actions.count_actions() > 0:
+		if agent.actions.allocated_mental_points() <= get_mental_point_cost(agent):
 			return false
-		if agent.unallocated_physical_points() <= get_physical_point_cost(agent):
+		if agent.actions.allocated_physical_points() <= get_physical_point_cost(agent):
 			return false
 	
 	return true
