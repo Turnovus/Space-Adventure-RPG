@@ -33,4 +33,6 @@ func player_points_overallocated() -> bool:
 	if player.actions.count_actions() <= 1:
 		return false
 	
-	return player.unallocated_physical_points() < 0 or player.unallocated_mental_points() < 0
+	var over_mental = player.actions.allocated_mental_points() > player.max_mental_points()
+	var over_physical = player.actions.allocated_physical_points() > player.max_physical_points()
+	return over_mental or over_physical
