@@ -45,6 +45,7 @@ func get_detection_range() -> float:
 
 func _turn_action(_turn : int):
 	actions.do_turn()
+	actions.validate_actions()
 	
 	conditions.update(self)
 	
@@ -54,4 +55,4 @@ func _turn_action(_turn : int):
 
 
 func _on_turn_end(_turn : int):
-	actions.validate_actions()
+	pass

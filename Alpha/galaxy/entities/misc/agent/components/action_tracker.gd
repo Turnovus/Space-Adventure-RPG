@@ -2,6 +2,11 @@ class_name ActionTracker
 extends Node
 
 
+signal action_added
+signal action_removed
+signal actions_changed
+
+
 func get_agent() -> Agent:
 	return get_parent() as Agent
 
@@ -12,6 +17,26 @@ func get_actions() -> Array[Action]:
 		if child is Action:
 			actions.append(child)
 	return actions
+
+
+func add_action(action : Action):
+	if get_children().has(action):
+		return
+	if action.get_parent() != null:
+		action.reparent(self)
+	else:
+		add_child(action)
+	action_added.emit()
+	actions_changed.emit()
+
+
+func remove_action(action : Action):
+	if not get_children().has(action):
+		return
+	action.queue_free()
+	remove_child(action)
+	action_removed.emit()
+	actions_changed.emit()
 
 
 func allocated_physical_points() -> int:
@@ -34,9 +59,10 @@ func do_turn():
 
 
 func validate_actions():
+	print("validate_actions")
 	for action in get_actions():
 		if not action.sustain_action(get_agent()):
-			action.queue_free()
+			remove_action(action)
 
 
 func count_actions() -> int:

@@ -7,7 +7,6 @@ signal turn_start(turn: int)
 signal turn_end(turn: int)
 signal turn_post(turn: int)
 # Signals sent in response to player action
-signal player_actions_changed
 signal player_points_reallocated
 
 const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
@@ -71,17 +70,11 @@ func do_turn():
 
 
 func try_add_player_action(action : Action):
-	if action.get_parent() != null:
-		action.reparent(player.actions)
-	else:
-		player.actions.add_child(action)
-	player_actions_changed.emit()
+	player.actions.add_action(action)
 
 
 func try_remove_player_action(action : Action):
-	player.actions.remove_child(action)
-	action.queue_free()
-	player_actions_changed.emit()
+	player.actions.remove_action(action)
 
 
 func _update_entities():

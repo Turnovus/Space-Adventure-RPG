@@ -7,11 +7,11 @@ extends PanelContainer
 
 func _ready():
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	galaxy.player_actions_changed.connect(_on_player_actions_changed)
-	galaxy.turn_post.connect(_on_turn_post)
+	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
 
 
 func _on_player_actions_changed():
+	print("_on_player_actions_changed")
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player = galaxy.player
 	
@@ -22,7 +22,3 @@ func _on_player_actions_changed():
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
 		new_listing.set_action(action, true)
-
-
-func _on_turn_post(_turn : int):
-	_on_player_actions_changed()
