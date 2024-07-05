@@ -40,7 +40,7 @@ func get_potency(agent : Agent) -> float:
 	return potency
 
 
-func is_possible_for(agent : Agent) -> bool:
+func is_possible_for(_agent : Agent) -> bool:
 	return true
 
 

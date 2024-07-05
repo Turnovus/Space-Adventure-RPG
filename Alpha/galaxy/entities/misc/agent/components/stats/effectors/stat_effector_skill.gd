@@ -10,5 +10,5 @@ extends Resource
 
 func get_factor(agent : Agent) -> float:
 	var skills = agent.skills
-	var level = skills.get_exact_level(skill) if use_exact_level else skills.get_level(skill)
+	var level = skills.get_exact_level(skill) if use_exact_level else float(skills.get_level(skill))
 	return base_factor + (level * factor_offset_per_level)
