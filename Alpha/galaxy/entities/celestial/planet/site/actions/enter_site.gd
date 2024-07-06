@@ -2,7 +2,6 @@ extends Action
 
 
 func sustain_action(_agent : Agent) -> bool:
-	print("enter_site.sustain_action")
 	return false
 
 

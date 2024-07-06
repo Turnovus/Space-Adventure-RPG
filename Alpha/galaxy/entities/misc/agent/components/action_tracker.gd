@@ -59,7 +59,6 @@ func do_turn():
 
 
 func validate_actions():
-	print("validate_actions")
 	for action in get_actions():
 		if not action.sustain_action(get_agent()):
 			remove_action(action)

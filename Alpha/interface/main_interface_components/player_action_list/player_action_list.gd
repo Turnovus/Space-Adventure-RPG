@@ -11,7 +11,6 @@ func _ready():
 
 
 func _on_player_actions_changed():
-	print("_on_player_actions_changed")
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player = galaxy.player
 	
