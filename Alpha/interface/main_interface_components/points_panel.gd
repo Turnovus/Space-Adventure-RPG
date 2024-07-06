@@ -25,7 +25,7 @@ func _on_player_actions_changed():
 	var used_ment = player.actions.allocated_mental_points()
 	
 	if used_phys > max_phys:
-		if len(player.actions_this_turn) > 1:
+		if player.actions.count_actions() > 1:
 			physical_readout.set("theme_override_colors/font_color", Color.RED)
 		else:
 			physical_readout.set("theme_override_colors/font_color", Color.ORANGE)
@@ -33,7 +33,7 @@ func _on_player_actions_changed():
 		physical_readout.set("theme_override_colors/font_color", Color.WHITE)
 	
 	if used_ment > max_ment:
-		if len(player.actions_this_turn) > 1:
+		if player.actions.count_actions() > 1:
 			mental_readout.set("theme_override_colors/font_color", Color.RED)
 		else:
 			mental_readout.set("theme_override_colors/font_color", Color.ORANGE)
