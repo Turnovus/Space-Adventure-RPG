@@ -97,3 +97,6 @@ func local_time_terrestrial(player : Agent, location : TerrestrialLocation):
 	else:
 		local_clock.text += "Dusk"
 		local_icon.texture = sunset_icon
+	
+	local_clock.text += " - Light x"
+	local_clock.text += str(snapped(light, 0.01))

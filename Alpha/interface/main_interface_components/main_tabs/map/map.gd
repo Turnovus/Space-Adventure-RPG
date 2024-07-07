@@ -6,6 +6,8 @@ enum GridMode {
 	DISTANCE = 1,
 }
 
+const DEBUG_LIGHT = false
+
 const MAP_COLOR : Color = Color.DIM_GRAY
 const MAP_MARGIN = 10.0
 
@@ -19,16 +21,21 @@ const LABEL_FONT_COLOR = Color.BLACK
 const DISTANCE_UNIT : float = 5.0
 const DISTANCE_LINE_COLOR : Color = Color(0, 0, 0, 0.5)
 
+const DARKNESS_MAX_ALPHA : float = 0.75
+const LIGHT_GRID_RESOLUTION : int = 60
+
 @export var label_font : Font
 
 var show_player : bool = true
 var show_survey : bool = true
 var show_sites : bool = true
+var show_light : bool = false
 var grid_mode : GridMode = GridMode.DISTANCE
 
 @onready var show_player_button : CheckBox = $VBoxContainer/ShowPlayerButton
 @onready var show_survey_button : CheckBox = $VBoxContainer/ShowSurveyButton
 @onready var show_site_button : CheckBox = $VBoxContainer/ShowSiteButton
+@onready var show_light_button : CheckBox = $VBoxContainer/ShowLightButton
 @onready var show_grid_option : OptionButton = $VBoxContainer/HBoxContainer/ShowGridOption
 
 
@@ -39,6 +46,7 @@ func _ready():
 	show_player_button.toggled.connect(_on_show_player_toggled)
 	show_survey_button.toggled.connect(_on_show_survey_toggled)
 	show_site_button.toggled.connect(_on_show_site_toggled)
+	show_light_button.toggled.connect(_on_show_light_toggled)
 	show_grid_option.item_selected.connect(_on_show_grid_item_selected)
 
 
@@ -61,6 +69,9 @@ func _draw():
 	match grid_mode:
 		GridMode.DISTANCE:
 			draw_distance_grid(map_rect, location)
+	
+	if show_light:
+		draw_light_levels(map_rect, location)
 	
 	if show_sites:
 		for child in location.get_children():
@@ -127,6 +138,45 @@ func draw_distance_grid(map : Rect2, location : TerrestrialLocation):
 		draw_line(map.position + long_offset, map.position + long_offset + height_offset, DISTANCE_LINE_COLOR)
 
 
+func draw_light_levels(map : Rect2, location : TerrestrialLocation):
+	var planet : Planet = location as Planet
+	if planet == null:
+		return
+	
+	var planet_size = planet.get_size()
+	var grid_tile_width = map.size.x / LIGHT_GRID_RESOLUTION
+	var grid_tile_height = map.size.y / LIGHT_GRID_RESOLUTION
+	
+	for x in range(0, LIGHT_GRID_RESOLUTION):
+		var planet_x = float(x) / LIGHT_GRID_RESOLUTION
+		planet_x *= planet_size.x
+		planet_x -= planet_size.x / 2
+		planet_x += (planet_size.x / LIGHT_GRID_RESOLUTION) * 0.5
+		
+		var map_x = x * grid_tile_width
+		map_x += map.position.x
+		
+		for y in range(0, LIGHT_GRID_RESOLUTION):
+			var planet_y = float(y) / LIGHT_GRID_RESOLUTION
+			planet_y *= planet_size.y
+			planet_y -= planet_size.y / 2
+			planet_y += (planet_size.y / LIGHT_GRID_RESOLUTION) * 0.5
+			
+			var map_y = y * grid_tile_height
+			map_y += map.position.y
+			
+			var rect = Rect2(map_x, map_y, grid_tile_width, grid_tile_height)
+			var darkness = 1 - planet.light_level_at(Vector2(planet_x, planet_y))
+			var color = Color(0, 0, 0, darkness * DARKNESS_MAX_ALPHA)
+			draw_rect(rect, color)
+			
+			if not DEBUG_LIGHT:
+				continue
+			draw_rect(rect, Color.RED, false)
+			draw_terrestrial_pip(map, Vector2(planet_x, planet_y), planet, Color.RED)
+			draw_string(label_font, Vector2(map_x, map_y), str(snapped(planet_x, 0.1)), HORIZONTAL_ALIGNMENT_LEFT, -1, 8, LABEL_FONT_COLOR)
+
+
 func _on_turn_post(_turn : int):
 	queue_redraw()
 
@@ -143,6 +193,11 @@ func _on_show_survey_toggled(toggled_on : bool):
 
 func _on_show_site_toggled(toggled_on : bool):
 	show_sites = toggled_on
+	queue_redraw()
+
+
+func _on_show_light_toggled(toggled_on : bool):
+	show_light = toggled_on
 	queue_redraw()
 
 
