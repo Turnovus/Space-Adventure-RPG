@@ -22,7 +22,7 @@ func _init():
 	tilt = randi_range(0, 20) / 20.0
 	day_length_turns = randi_range(6, 18) * 20
 	day_progress_turns = randi_range(0, day_length_turns - 1)
-	year_length_turns = randi_range(1, 20) * 10 * day_length_turns
+	year_length_turns = randi_range(5, 15) * 10 * day_length_turns
 	year_progress_turns = randi_range(0, year_length_turns - 1)
 
 

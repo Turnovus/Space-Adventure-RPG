@@ -99,7 +99,7 @@ func local_time_terrestrial(player : Agent, location : TerrestrialLocation):
 		local_icon.texture = sunset_icon
 	
 	var date = location.year_progress_percent()
-	if player.location_relative.y > 0:
+	if player.location_relative.y >= 0:
 		date = fmod(date + 0.5, 1)
 	local_clock.text += " - "
 	if date < 0.125:

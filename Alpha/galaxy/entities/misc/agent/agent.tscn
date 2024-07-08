@@ -43,6 +43,11 @@ script = ExtResource("6_65t5o")
 stat = ExtResource("11_qdy8w")
 stat_potency_factor = 0.2
 
+[node name="SurveyMalus" type="Node" parent="ConditionManager/Light/Dark"]
+script = ExtResource("6_65t5o")
+stat = ExtResource("13_e6ppp")
+stat_potency_factor = 0.05
+
 [node name="MostlyDark" type="Node" parent="ConditionManager/Light"]
 script = ExtResource("4_080mv")
 label = "It is mostly dark. There is barely enough light to see by."
@@ -53,6 +58,11 @@ script = ExtResource("6_65t5o")
 stat = ExtResource("11_qdy8w")
 stat_potency_factor = 0.5
 
+[node name="SurveyMalus" type="Node" parent="ConditionManager/Light/MostlyDark"]
+script = ExtResource("6_65t5o")
+stat = ExtResource("13_e6ppp")
+stat_potency_factor = 0.35
+
 [node name="MostlyLight" type="Node" parent="ConditionManager/Light"]
 script = ExtResource("4_080mv")
 label = "It is slightly dark, enough to interfere with vision."
@@ -62,6 +72,11 @@ icon = ExtResource("7_krrdb")
 script = ExtResource("6_65t5o")
 stat = ExtResource("11_qdy8w")
 stat_potency_factor = 0.9
+
+[node name="SurveyMalus" type="Node" parent="ConditionManager/Light/MostlyLight"]
+script = ExtResource("6_65t5o")
+stat = ExtResource("13_e6ppp")
+stat_potency_factor = 0.8
 
 [node name="StatManager" parent="." instance=ExtResource("3_t8mw0")]
 stats = Array[Resource("res://galaxy/entities/misc/agent/components/stats/stat.gd")]([ExtResource("9_c5vy8"), ExtResource("10_oo78l"), ExtResource("11_qdy8w"), ExtResource("12_k3v11"), ExtResource("13_e6ppp")])
