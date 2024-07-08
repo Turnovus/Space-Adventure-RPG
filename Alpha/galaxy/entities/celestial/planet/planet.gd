@@ -4,15 +4,26 @@ extends TerrestrialLocation
 
 const BASE_PLANET_SIZE : Vector2 = Vector2(100, 100)
 
+const BASE_LIGHT_OFFSET = 1.2
+const MAX_LIGHT_OFFSET = 1.9
+
+const SEASONAL_TILT_FACTOR = 0.6
+
 var size: float = 1
+var tilt : float
 var day_length_turns : int
 var day_progress_turns : int
+var year_length_turns : int
+var year_progress_turns : int
 
 
 func _init():
 	size = randi_range(6, 14) / 10.0
+	tilt = randi_range(0, 20) / 20.0
 	day_length_turns = randi_range(6, 18) * 20
 	day_progress_turns = randi_range(0, day_length_turns - 1)
+	year_length_turns = randi_range(1, 20) * 10 * day_length_turns
+	year_progress_turns = randi_range(0, year_length_turns - 1)
 
 
 func add_child_entity(entity: Entity):
@@ -70,14 +81,29 @@ func time_of_day_at(relative_location : Vector2) -> float:
 
 func light_level_at(relative_location : Vector2) -> float:
 	#NOTE: Remember to rewrite comment after tampering with equation
-	#f(x) = -10(x-0.55)^2 + 1.2 {0 <= f(x) <= 1}
+	#f(x) = -10(x-0.55)^2 + n {0 <= f(x) <= 1}
 	#0.55 = midday
+	#n = light offset (seasonal adjustment)
 	var time = time_of_day_at(relative_location)
 	var light = time - 0.55
 	light *= light
 	light *= -10
-	light += 1.2
+	var season = season_factor_at(relative_location)
+	season *= tilt * SEASONAL_TILT_FACTOR
+	light += 1.2 * season + 1
 	return clampf(light, 0, 1)
+
+
+func year_progress_percent() -> float:
+	return float(year_progress_turns) / year_length_turns
+
+
+func season_factor_at(relative_location : Vector2) -> float:
+	var lat = abs(relative_location.y) / abs(get_size().y / 2)
+	var date = year_progress_percent()
+	var sine = sin(2 * PI * date)
+	var factor = sine * sign(relative_location.y) * lat
+	return factor
 
 
 func get_random_location() -> Vector2:
@@ -107,6 +133,10 @@ func _turn_action(turn: int):
 	day_progress_turns += 1
 	if day_progress_turns >= day_length_turns:
 		day_progress_turns -= day_length_turns
+	
+	year_progress_turns += 1
+	if year_progress_turns >= year_length_turns:
+		year_progress_turns -= year_progress_turns
 
 
 func _on_child_location_changed(entity: Entity):
