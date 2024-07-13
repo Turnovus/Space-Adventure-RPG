@@ -7,9 +7,9 @@ extends BiomeGenerator
 
 
 enum PropertyType {
-	MOISTURE = 1,
-	TEMPERATURE = 2,
-	ELEVATION = 3,
+	MOISTURE = 0,
+	TEMPERATURE = 1,
+	ELEVATION = 2,
 }
 
 
@@ -24,6 +24,6 @@ func get_biome(moisture : float, temperature : float, elevation  : float) -> Bio
 			value = elevation
 	
 	for group : BiomeGeneratorGroup in groups:
-		if group.max_value <= value:
+		if value <= group.max_value:
 			return group.generator.get_biome(moisture, temperature, elevation)
 	return null

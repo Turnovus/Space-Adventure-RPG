@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cx2i4hx5bi26"]
+[gd_scene load_steps=29 format=3 uid="uid://cx2i4hx5bi26"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_e3lws"]
 [ext_resource type="Script" path="res://actions/action_issuer.gd" id="2_tklot"]
@@ -7,34 +7,74 @@
 [ext_resource type="Resource" uid="uid://du31m5rqdda8e" path="res://data/identity/namer/planet_namer.tres" id="5_cebf7"]
 [ext_resource type="Texture2D" uid="uid://w68wuw7kat8x" path="res://assets/textures/space/world.svg" id="6_7jtg2"]
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/components/biome_grid.gd" id="7_je5bt"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="8_slyqp"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="9_00cp0"]
-[ext_resource type="Resource" uid="uid://bwbui5imh75nt" path="res://data/biomes/forest.tres" id="9_xmqap"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="10_hdtmi"]
-[ext_resource type="Resource" uid="uid://b7hgw3575l14p" path="res://data/biomes/plains.tres" id="10_ot5tv"]
+[ext_resource type="Resource" uid="uid://c8ca37h82etck" path="res://data/biomes/deepwater.tres" id="8_1jt71"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="9_xvxby"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="10_l84wv"]
+[ext_resource type="Resource" uid="uid://bbu3j4q7g8ws0" path="res://data/biomes/water.tres" id="11_2lmw2"]
+[ext_resource type="Resource" uid="uid://b7hgw3575l14p" path="res://data/biomes/plains.tres" id="12_3acoe"]
+[ext_resource type="Resource" uid="uid://bwbui5imh75nt" path="res://data/biomes/forest.tres" id="13_fdxin"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="14_abf1v"]
+[ext_resource type="Resource" uid="uid://rxmfk52ah36u" path="res://data/biomes/mountain.tres" id="15_rfff6"]
 
-[sub_resource type="Resource" id="Resource_lbcgu"]
-script = ExtResource("9_00cp0")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("9_xmqap")])
+[sub_resource type="Resource" id="Resource_5qm7x"]
+script = ExtResource("9_xvxby")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("8_1jt71")])
 
-[sub_resource type="Resource" id="Resource_xgvwj"]
-script = ExtResource("10_hdtmi")
+[sub_resource type="Resource" id="Resource_884po"]
+script = ExtResource("10_l84wv")
+max_value = -0.15
+generator = SubResource("Resource_5qm7x")
+
+[sub_resource type="Resource" id="Resource_tfu4g"]
+script = ExtResource("9_xvxby")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("11_2lmw2")])
+
+[sub_resource type="Resource" id="Resource_tcxmt"]
+script = ExtResource("10_l84wv")
+max_value = 0.1
+generator = SubResource("Resource_tfu4g")
+
+[sub_resource type="Resource" id="Resource_slci5"]
+script = ExtResource("9_xvxby")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("12_3acoe")])
+
+[sub_resource type="Resource" id="Resource_o7vg1"]
+script = ExtResource("10_l84wv")
 max_value = 0.0
-generator = SubResource("Resource_lbcgu")
+generator = SubResource("Resource_slci5")
 
-[sub_resource type="Resource" id="Resource_vr5gv"]
-script = ExtResource("9_00cp0")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("10_ot5tv")])
+[sub_resource type="Resource" id="Resource_dms2u"]
+script = ExtResource("9_xvxby")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("13_fdxin")])
 
-[sub_resource type="Resource" id="Resource_w0ww7"]
-script = ExtResource("10_hdtmi")
-max_value = -1.0
-generator = SubResource("Resource_vr5gv")
+[sub_resource type="Resource" id="Resource_bxmi6"]
+script = ExtResource("10_l84wv")
+max_value = 1.0
+generator = SubResource("Resource_dms2u")
 
-[sub_resource type="Resource" id="Resource_uuj5b"]
-script = ExtResource("8_slyqp")
-groups = Array[Object]([SubResource("Resource_xgvwj"), SubResource("Resource_w0ww7")])
-type = 1
+[sub_resource type="Resource" id="Resource_4cf13"]
+script = ExtResource("14_abf1v")
+groups = Array[ExtResource("10_l84wv")]([SubResource("Resource_o7vg1"), SubResource("Resource_bxmi6")])
+type = 0
+
+[sub_resource type="Resource" id="Resource_iu7xc"]
+script = ExtResource("10_l84wv")
+max_value = 0.5
+generator = SubResource("Resource_4cf13")
+
+[sub_resource type="Resource" id="Resource_y7stg"]
+script = ExtResource("9_xvxby")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("15_rfff6")])
+
+[sub_resource type="Resource" id="Resource_6pbep"]
+script = ExtResource("10_l84wv")
+max_value = 1.0
+generator = SubResource("Resource_y7stg")
+
+[sub_resource type="Resource" id="Resource_16o3g"]
+script = ExtResource("14_abf1v")
+groups = Array[ExtResource("10_l84wv")]([SubResource("Resource_884po"), SubResource("Resource_tcxmt"), SubResource("Resource_iu7xc"), SubResource("Resource_6pbep")])
+type = 2
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_e3lws")
@@ -50,4 +90,4 @@ default_codex_icon = ExtResource("6_7jtg2")
 
 [node name="BiomeGrid" type="Node" parent="."]
 script = ExtResource("7_je5bt")
-generator = SubResource("Resource_uuj5b")
+generator = SubResource("Resource_16o3g")

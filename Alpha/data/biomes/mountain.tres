@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://rxmfk52ah36u"]
+
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_wkadu"]
+
+[resource]
+script = ExtResource("1_wkadu")
+label = "mountains"
+map_color = Color(0.414704, 0.414704, 0.414704, 1)
