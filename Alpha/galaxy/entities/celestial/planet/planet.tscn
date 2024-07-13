@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cx2i4hx5bi26"]
+[gd_scene load_steps=11 format=3 uid="uid://cx2i4hx5bi26"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_b5x1o"]
 [ext_resource type="Script" path="res://actions/action_issuer.gd" id="2_tklot"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://w68wuw7kat8x" path="res://assets/textures/space/world.svg" id="6_7jtg2"]
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/components/biome_grid.gd" id="7_je5bt"]
 [ext_resource type="Resource" uid="uid://b70nkgnjgn5wj" path="res://data/biomes/wasteland.tres" id="8_o0044"]
+[ext_resource type="Resource" uid="uid://bwbui5imh75nt" path="res://data/biomes/forest.tres" id="9_xmqap"]
+[ext_resource type="Resource" uid="uid://b7hgw3575l14p" path="res://data/biomes/plains.tres" id="10_ot5tv"]
 
 [node name="Planet" type="Node"]
 script = ExtResource("1_b5x1o")
@@ -24,3 +26,4 @@ default_codex_icon = ExtResource("6_7jtg2")
 [node name="BiomeGrid" type="Node" parent="."]
 script = ExtResource("7_je5bt")
 base_biome = ExtResource("8_o0044")
+random_biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("9_xmqap"), ExtResource("10_ot5tv")])

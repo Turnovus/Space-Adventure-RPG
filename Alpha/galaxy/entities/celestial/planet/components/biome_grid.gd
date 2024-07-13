@@ -19,6 +19,15 @@ func _ready():
 func generate():
 	biomes = Array()
 	var row = Array()
+	
+	for i in range(size):
+		row = []
+		for j in range(size):
+			row.append(random_biomes.pick_random())
+		biomes.append(row.duplicate())
+	
+	#FIXME
+	return
 	for i in range(size):
 		row.append(base_biome)
 	for i in range(size):

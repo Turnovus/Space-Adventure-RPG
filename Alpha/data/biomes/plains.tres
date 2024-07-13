@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://b7hgw3575l14p"]
+
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_50hrh"]
+
+[resource]
+script = ExtResource("1_50hrh")
+label = "plains"
+map_color = Color(0, 0.6, 0, 1)
