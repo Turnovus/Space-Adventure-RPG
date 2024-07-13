@@ -33,7 +33,6 @@ func generate():
 		row = []
 		for j in range(size):
 			var moisture = noise_moisture.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
-			print(str(moisture))
 			var elevation = noise_elevation.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
 			row.append(generator.get_biome(moisture, temperature, elevation))
 		biomes.append(row.duplicate())
