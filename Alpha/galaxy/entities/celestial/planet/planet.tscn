@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cx2i4hx5bi26"]
 
-[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_b5x1o"]
+[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_e3lws"]
 [ext_resource type="Script" path="res://actions/action_issuer.gd" id="2_tklot"]
 [ext_resource type="PackedScene" uid="uid://d20tlitpshcgb" path="res://galaxy/entities/celestial/planet/actions/travel_planet.tscn" id="3_imxn3"]
 [ext_resource type="Script" path="res://data/identity/identity.gd" id="4_it4ph"]
@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://b7hgw3575l14p" path="res://data/biomes/plains.tres" id="10_ot5tv"]
 
 [node name="Planet" type="Node"]
-script = ExtResource("1_b5x1o")
+script = ExtResource("1_e3lws")
 
 [node name="ActionIssuer" type="Node" parent="."]
 script = ExtResource("2_tklot")
