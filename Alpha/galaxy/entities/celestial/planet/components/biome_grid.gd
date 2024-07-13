@@ -7,10 +7,12 @@ extends Node
 
 var biomes : Array
 var size : int
-var texture : ImageTexture
+var image : Image
+var texture : ImageTexture = null
 
 
 func _ready():
+	size = get_parent().get_size().x
 	generate()
 
 
@@ -31,18 +33,18 @@ func get_texture() -> Texture2D:
 
 
 func regenerate_texture():
-	texture = ImageTexture.new()
-	var texture_image : Image = Image.create(size, size, false, Image.FORMAT_RG8)
-	generate_image(texture_image)
-	texture.create_from_image(texture_image)
+	#texture = ImageTexture.new()
+	image = Image.create(size, size, false, Image.FORMAT_RGBA8)
+	generate_image(image)
+	texture = ImageTexture.create_from_image(image)
 
 
 func generate_image(image : Image):
-	image.lock()
+	#image.lock()
 	
 	for y in range(size):
 		var row = biomes[y]
 		for x in range(size):
-			image.set_pixel(x, y, row[x].mapColor)
+			image.set_pixel(x, y, row[x].map_color)
 	
-	image.unlock()
+	#image.unlock()

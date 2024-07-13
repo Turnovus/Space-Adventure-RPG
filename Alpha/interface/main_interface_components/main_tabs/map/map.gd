@@ -6,6 +6,11 @@ enum GridMode {
 	DISTANCE = 1,
 }
 
+enum ColorMode {
+	NONE = 0,
+	BIOME = 1,
+}
+
 const DEBUG_LIGHT = false
 
 const MAP_COLOR : Color = Color.DIM_GRAY
@@ -31,12 +36,14 @@ var show_survey : bool = true
 var show_sites : bool = true
 var show_light : bool = false
 var grid_mode : GridMode = GridMode.DISTANCE
+var color_mode : ColorMode = ColorMode.BIOME
 
 @onready var show_player_button : CheckBox = $VBoxContainer/ShowPlayerButton
 @onready var show_survey_button : CheckBox = $VBoxContainer/ShowSurveyButton
 @onready var show_site_button : CheckBox = $VBoxContainer/ShowSiteButton
 @onready var show_light_button : CheckBox = $VBoxContainer/ShowLightButton
 @onready var show_grid_option : OptionButton = $VBoxContainer/HBoxContainer/ShowGridOption
+@onready var show_color_option : OptionButton = $VBoxContainer/HBoxContainer2/ShowColorOption
 
 
 func _ready():
@@ -48,6 +55,7 @@ func _ready():
 	show_site_button.toggled.connect(_on_show_site_toggled)
 	show_light_button.toggled.connect(_on_show_light_toggled)
 	show_grid_option.item_selected.connect(_on_show_grid_item_selected)
+	show_color_option.item_selected.connect(_on_show_color_item_selected)
 
 
 func _draw():
@@ -64,7 +72,11 @@ func _draw():
 	map_position += Vector2(MAP_MARGIN, MAP_MARGIN)
 	
 	var map_rect = Rect2(map_position, Vector2(dimension, dimension))
-	draw_rect(map_rect, MAP_COLOR)
+	match color_mode:
+		ColorMode.NONE:
+			draw_rect(map_rect, MAP_COLOR)
+		ColorMode.BIOME:
+			draw_biome_grid(map_rect, location)
 	
 	match grid_mode:
 		GridMode.DISTANCE:
@@ -89,6 +101,14 @@ func _draw():
 	
 	if show_survey:
 		draw_terrestrial_distance_radius(map_rect, player.location_relative, location, player.get_detection_range())
+
+
+func draw_biome_grid(map : Rect2, location : TerrestrialLocation):
+	var planet : Planet = location as Planet
+	if planet == null:
+		return
+	
+	draw_texture_rect(planet.biomes.get_texture(), map, false)
 
 
 func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):
@@ -203,4 +223,9 @@ func _on_show_light_toggled(toggled_on : bool):
 
 func _on_show_grid_item_selected(index : int):
 	grid_mode = index as GridMode
+	queue_redraw()
+
+
+func _on_show_color_item_selected(index : int):
+	color_mode = index as ColorMode
 	queue_redraw()
