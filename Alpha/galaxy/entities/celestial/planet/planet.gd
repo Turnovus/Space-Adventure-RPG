@@ -16,6 +16,8 @@ var day_progress_turns : int
 var year_length_turns : int
 var year_progress_turns : int
 
+@onready var biomes : BiomeGrid = $BiomeGrid
+
 
 func _init():
 	size = randi_range(6, 14) / 10.0
