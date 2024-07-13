@@ -20,10 +20,17 @@ func generate():
 	biomes = Array()
 	var row = Array()
 	
+	var noise_moisture = FastNoiseLite.new()
+	noise_moisture.seed = randi()
+	
+	#HACK
 	for i in range(size):
 		row = []
 		for j in range(size):
-			row.append(random_biomes.pick_random())
+			if noise_moisture.get_noise_2d(i*3, j*3) > 0.2:
+				row.append(random_biomes[0])
+			else:
+				row.append(random_biomes[1])
 		biomes.append(row.duplicate())
 	
 	#FIXME
@@ -49,11 +56,7 @@ func regenerate_texture():
 
 
 func generate_image(image : Image):
-	#image.lock()
-	
 	for y in range(size):
 		var row = biomes[y]
 		for x in range(size):
 			image.set_pixel(x, y, row[x].map_color)
-	
-	#image.unlock()
