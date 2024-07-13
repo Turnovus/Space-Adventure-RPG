@@ -2,8 +2,9 @@ class_name BiomeGrid
 extends Node
 
 
-@export var base_biome : Biome
-@export var random_biomes : Array[Biome]
+const NOISE_SCALE : float = 3.5
+
+@export var generator : BiomeGenerator
 
 var biomes : Array
 var size : int
@@ -23,21 +24,18 @@ func generate():
 	var noise_moisture = FastNoiseLite.new()
 	noise_moisture.seed = randi()
 	
-	#HACK
+	var noise_elevation = FastNoiseLite.new()
+	noise_elevation.seed = randi()
+	
 	for i in range(size):
+		var temperature = abs(float(size) / 2 - i) / size
+		temperature = 1 - temperature
 		row = []
 		for j in range(size):
-			if noise_moisture.get_noise_2d(i*3, j*3) > 0.2:
-				row.append(random_biomes[0])
-			else:
-				row.append(random_biomes[1])
-		biomes.append(row.duplicate())
-	
-	#FIXME
-	return
-	for i in range(size):
-		row.append(base_biome)
-	for i in range(size):
+			var moisture = noise_moisture.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
+			print(str(moisture))
+			var elevation = noise_elevation.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
+			row.append(generator.get_biome(moisture, temperature, elevation))
 		biomes.append(row.duplicate())
 
 
@@ -59,4 +57,5 @@ func generate_image(image : Image):
 	for y in range(size):
 		var row = biomes[y]
 		for x in range(size):
-			image.set_pixel(x, y, row[x].map_color)
+			if row[x] != null:
+				image.set_pixel(x, y, row[x].map_color)
