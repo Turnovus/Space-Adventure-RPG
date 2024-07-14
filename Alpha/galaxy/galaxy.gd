@@ -22,12 +22,14 @@ var player : Agent
 func _ready():
 	generate_galaxy()
 	make_player()
+	place_player()
 
 
 func generate_galaxy():
 	for i in range(0,10):
 		var sun = SUN_ENTITY.instantiate()
 		sun.name = "Sun " + str(i)
+		add_child(sun)
 		
 		for j in range(0,4):
 			var planet = PLANET_ENTITY.instantiate()
@@ -38,19 +40,21 @@ func generate_galaxy():
 				var site = SITE_ENTITY.instantiate()
 				site.setup(planet.get_random_location())
 				planet.add_child_entity(site)
-			
-		add_child(sun)
 
 
 func make_player():
 	player = AGENT_ENTITY.instantiate()
 	player.is_player = true
+
+
+func place_player():
 	var start_sun = get_child(randi_range(0, get_child_count() - 1))
 	var planets : Array[Planet] = []
 	for i in start_sun.get_children():
 		if i is Planet:
 			planets.append(i)
 	var start_planet = planets[randi_range(0, len(planets) - 1)]
+	player.location_relative = start_planet.get_random_location()
 	start_planet.add_child_entity(player)
 
 
