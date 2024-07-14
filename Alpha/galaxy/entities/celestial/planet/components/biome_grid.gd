@@ -11,6 +11,7 @@ var biomes : Array
 var size : int
 var image : Image
 var texture : ImageTexture = null
+var spawnable_tiles : Array
 
 
 func _ready():
@@ -20,6 +21,7 @@ func _ready():
 
 func generate():
 	biomes = Array()
+	spawnable_tiles = Array()
 	var row = Array()
 	
 	var noise_moisture = FastNoiseLite.new()
@@ -43,7 +45,12 @@ func generate():
 			random_temperature += temperature
 			var moisture = noise_moisture.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
 			var elevation = noise_elevation.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
-			row.append(generator.get_biome(moisture, random_temperature, elevation))
+			
+			var biome = generator.get_biome(moisture, random_temperature, elevation)
+			row.append(biome)
+			if biome.allow_spawn:
+				spawnable_tiles.append([j,i])
+		
 		biomes.append(row.duplicate())
 
 
@@ -67,3 +74,11 @@ func generate_image(image : Image):
 		for x in range(size):
 			if row[x] != null:
 				image.set_pixel(x, y, row[x].map_color)
+
+
+func get_spawnable_location() -> Vector2:
+	var random = spawnable_tiles.pick_random()
+	var vector = Vector2(random[0], random[1]) / size
+	vector *= 2
+	vector -= Vector2.ONE
+	return vector

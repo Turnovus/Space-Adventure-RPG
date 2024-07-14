@@ -6,3 +6,4 @@
 script = ExtResource("1_yslie")
 label = "tundra"
 map_color = Color(0.670549, 0.689592, 0.830122, 1)
+allow_spawn = false

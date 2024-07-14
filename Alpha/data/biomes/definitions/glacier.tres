@@ -1,8 +1,9 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://b2y7d7mirl3au"]
 
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_31cvh"]
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_xi775"]
 
 [resource]
-script = ExtResource("1_31cvh")
+script = ExtResource("1_xi775")
 label = "glacier"
 map_color = Color(0.819392, 0.889307, 0.855154, 1)
+allow_spawn = false

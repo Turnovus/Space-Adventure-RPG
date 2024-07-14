@@ -108,13 +108,14 @@ func season_factor_at(relative_location : Vector2) -> float:
 	return factor
 
 
-func get_random_location() -> Vector2:
-	var dimensions = get_size()
-	dimensions -= dimensions / 2
-	var random = dimensions
-	random.x *= randf_range(-1, 1)
-	random.y *= randf_range(-1, 1)
-	return random
+func get_random_location(ignore_terrain : bool = false) -> Vector2:
+	#TODO: Ignore terrain if requested
+	var location = biomes.get_spawnable_location()
+	location.y *= -1
+	location *= (get_size() * 0.5)
+	location.x += 0.5
+	location.y -= 0.5
+	return location
 
 
 func scan_sites(agent : Agent):

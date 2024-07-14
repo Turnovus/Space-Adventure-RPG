@@ -6,3 +6,4 @@
 script = ExtResource("1_xlu27")
 label = "desert"
 map_color = Color(1, 0.847059, 0, 1)
+allow_spawn = false
