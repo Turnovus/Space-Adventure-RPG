@@ -59,7 +59,7 @@ func append_local_biome(text : String, player : Agent, location : TerrestrialLoc
 		return text
 	
 	text += " - "
-	text += planet.get_biome_at(player.location_relative).label
+	text += planet.get_biome_at(player.location_relative).label.capitalize()
 	
 	return text
 
