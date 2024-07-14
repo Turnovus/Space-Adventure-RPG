@@ -3,6 +3,7 @@ extends Node
 
 
 const NOISE_SCALE : float = 3.5
+const TEMPERATURE_RANDOMNESS : float = 0.15
 
 @export var generator : BiomeGenerator
 
@@ -27,14 +28,22 @@ func generate():
 	var noise_elevation = FastNoiseLite.new()
 	noise_elevation.seed = randi()
 	
+	var noise_temperature = FastNoiseLite.new()
+	noise_temperature.seed = randi()
+	
 	for i in range(size):
 		var temperature = abs(float(size) / 2 - i) / size
 		temperature = 1 - (4 * temperature)
+		temperature *= 1 - TEMPERATURE_RANDOMNESS
+		
 		row = []
 		for j in range(size):
+			var random_temperature = noise_temperature.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
+			random_temperature *= TEMPERATURE_RANDOMNESS
+			random_temperature += temperature
 			var moisture = noise_moisture.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
 			var elevation = noise_elevation.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
-			row.append(generator.get_biome(moisture, temperature, elevation))
+			row.append(generator.get_biome(moisture, random_temperature, elevation))
 		biomes.append(row.duplicate())
 
 
