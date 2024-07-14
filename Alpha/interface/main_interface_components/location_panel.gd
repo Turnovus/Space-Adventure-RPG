@@ -31,6 +31,15 @@ func update_location():
 	var player = get_player()
 	var location = player.get_parent()
 	
+	var text = get_location_name(player, location)
+	text = append_local_coordinates(text, player, location)
+	location_name.text = text
+
+
+func get_location_name(player : Agent, location) -> String:
+	if not location.has_method("get_identity"):
+		return "Nowhere"
+	
 	var identity = player.get_parent().get_identity()
 	var text = ""
 	var codex : Codex = player.codex
@@ -40,12 +49,19 @@ func update_location():
 	if location is Planet:
 		text = "Planet " + text
 	
+	return text
+
+
+func append_local_coordinates(text : String, player : Agent, location) -> String:
+	if not location is TerrestrialLocation:
+		return text
+	
 	var root_planet : Planet = location.get_root_terrestrial_location() as Planet
 	if root_planet != null:
 		text += H_BREAK + planet_local_location_string(player, root_planet)
 		text += H_BREAK + str(snapped(player.location_relative, Vector2(0.01, 0.01)))
 	
-	location_name.text = text
+	return text
 
 
 @warning_ignore("integer_division")
