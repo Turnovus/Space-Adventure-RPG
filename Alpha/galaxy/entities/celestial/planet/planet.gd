@@ -130,6 +130,12 @@ func scan_sites(agent : Agent):
 			agent.codex.push_entry(site, Codex.CodexDetails.LOCATION)
 
 
+func get_biome_at(position : Vector2) -> Biome:
+	var rel_position = position / (0.5 * get_size())
+	rel_position.y *= -1
+	return biomes.get_biome_at(rel_position)
+
+
 func _turn_action(turn: int):
 	super(turn)
 	

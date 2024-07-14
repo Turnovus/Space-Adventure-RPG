@@ -82,3 +82,10 @@ func get_spawnable_location() -> Vector2:
 	vector *= 2
 	vector -= Vector2.ONE
 	return vector
+
+
+func get_biome_at(position : Vector2) -> Biome:
+	position += Vector2.ONE
+	position /= 2
+	position *= size
+	return biomes[int(position.y)][int(position.x)]

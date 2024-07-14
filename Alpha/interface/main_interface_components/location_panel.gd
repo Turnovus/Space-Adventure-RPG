@@ -32,6 +32,7 @@ func update_location():
 	var location = player.get_parent()
 	
 	var text = get_location_name(player, location)
+	text = append_local_biome(text, player, location)
 	text = append_local_coordinates(text, player, location)
 	location_name.text = text
 
@@ -48,6 +49,17 @@ func get_location_name(player : Agent, location) -> String:
 	
 	if location is Planet:
 		text = "Planet " + text
+	
+	return text
+
+
+func append_local_biome(text : String, player : Agent, location : TerrestrialLocation) -> String:
+	var planet : Planet = location.get_root_terrestrial_location() as Planet
+	if planet == null:
+		return text
+	
+	text += " - "
+	text += planet.get_biome_at(player.location_relative).label
 	
 	return text
 
