@@ -1,13 +1,19 @@
-[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=7 format=3 uid="uid://b0myjx1pjf065"]
+[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=9 format=3 uid="uid://b0myjx1pjf065"]
 
 [ext_resource type="Resource" uid="uid://617hbi8yfx7g" path="res://data/biomes/generator/definitions/midlands/mild_biomes.tres" id="1_e43eh"]
+[ext_resource type="Resource" uid="uid://c4ur3p7arm8oj" path="res://data/biomes/generator/definitions/midlands/cold_biomes.tres" id="1_l7ana"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="2_7pad1"]
 [ext_resource type="Resource" uid="uid://oa45s3l46qni" path="res://data/biomes/generator/definitions/midlands/hot_biomes.tres" id="3_ed2tw"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="4_v38oa"]
 
+[sub_resource type="Resource" id="Resource_s5nkg"]
+script = ExtResource("2_7pad1")
+max_value = -0.5
+generator = ExtResource("1_l7ana")
+
 [sub_resource type="Resource" id="Resource_s7ppq"]
 script = ExtResource("2_7pad1")
-max_value = 0.2
+max_value = 0.5
 generator = ExtResource("1_e43eh")
 
 [sub_resource type="Resource" id="Resource_otcc5"]
@@ -17,5 +23,5 @@ generator = ExtResource("3_ed2tw")
 
 [resource]
 script = ExtResource("4_v38oa")
-groups = Array[ExtResource("2_7pad1")]([SubResource("Resource_s7ppq"), SubResource("Resource_otcc5")])
+groups = Array[ExtResource("2_7pad1")]([SubResource("Resource_s5nkg"), SubResource("Resource_s7ppq"), SubResource("Resource_otcc5")])
 type = 1

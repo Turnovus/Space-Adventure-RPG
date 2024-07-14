@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://cx03h6towx10g"]
+
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_xfw6m"]
+
+[resource]
+script = ExtResource("1_xfw6m")
+label = "boreal forest"
+map_color = Color(0.391755, 0.445205, 0.203177, 1)
