@@ -29,7 +29,7 @@ func generate():
 	
 	for i in range(size):
 		var temperature = abs(float(size) / 2 - i) / size
-		temperature = 1 - temperature
+		temperature = 1 - (4 * temperature)
 		row = []
 		for j in range(size):
 			var moisture = noise_moisture.get_noise_2d(i * NOISE_SCALE, j * NOISE_SCALE)
