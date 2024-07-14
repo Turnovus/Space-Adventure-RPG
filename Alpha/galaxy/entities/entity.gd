@@ -51,7 +51,7 @@ func get_available_actions() -> Array[Action]:
 
 
 func move_relative(movement : Vector2):
-	location_relative = location_relative + movement
+	set_location_relative(location_relative + movement)
 
 
 func set_location_relative(value : Vector2):
