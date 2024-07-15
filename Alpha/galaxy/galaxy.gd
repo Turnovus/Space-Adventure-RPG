@@ -59,6 +59,7 @@ func place_player():
 	var start_planet = planets[randi_range(0, len(planets) - 1)]
 	player.location_relative = start_planet.get_random_location()
 	start_planet.add_child_entity(player)
+	start_planet.locate_nearest_site(player)
 
 
 func request_turn_advance():

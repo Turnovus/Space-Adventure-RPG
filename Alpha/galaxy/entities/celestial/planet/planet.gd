@@ -136,6 +136,23 @@ func get_biome_at(position : Vector2) -> Biome:
 	return biomes.get_biome_at(rel_position)
 
 
+func locate_nearest_site(agent : Agent):
+	var nearest_distance = -1
+	var nearest_site : Site
+	for child in get_children():
+		var site : Site = child as Site
+		if site == null:
+			continue
+		
+		var distance = get_shortest_distance(agent.location_relative, site.location_relative)
+		if nearest_distance == -1 or distance <= nearest_distance:
+			nearest_distance = distance
+			nearest_site = site
+	
+	if nearest_site != null:
+		agent.codex.push_entry(nearest_site, Codex.CodexDetails.LOCATION)
+
+
 func _turn_action(turn: int):
 	super(turn)
 	
