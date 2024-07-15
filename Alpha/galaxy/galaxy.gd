@@ -15,6 +15,9 @@ const PLANET_ENTITY = preload("res://galaxy/entities/celestial/planet/planet.tsc
 const AGENT_ENTITY = preload("res://galaxy/entities/misc/agent/agent.tscn")
 const SITE_ENTITY = preload("res://galaxy/entities/celestial/planet/site/site.tscn")
 
+const NUM_SUNS : int = 10
+const PLANETS_PER_SUN : int = 4
+
 var turn : int = 0
 var player : Agent
 
@@ -26,12 +29,12 @@ func _ready():
 
 
 func generate_galaxy():
-	for i in range(0,10):
+	for i in range(NUM_SUNS):
 		var sun = SUN_ENTITY.instantiate()
 		sun.name = "Sun " + str(i)
 		add_child(sun)
 		
-		for j in range(0,4):
+		for j in range(PLANETS_PER_SUN):
 			var planet = PLANET_ENTITY.instantiate()
 			planet.name = "Planet " + str(i) + "." + str(j)
 			sun.add_child_entity(planet)
