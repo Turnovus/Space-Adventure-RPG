@@ -18,7 +18,7 @@ func regenerate_actions():
 	for child in list.get_children():
 		child.queue_free()
 	
-	for action in player.get_available_actions():
+	for action : Action in player.get_available_actions():
 		var excluded = false
 		for chosen in player.actions.get_actions():
 			if chosen.is_exclusive_with(action):

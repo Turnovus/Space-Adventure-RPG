@@ -45,7 +45,7 @@ func is_possible_for(_agent : Agent) -> bool:
 
 
 func is_exclusive_with(other : Action) -> bool:
-	if other.scene_file_path == scene_file_path:
+	if other.scene_file_path == scene_file_path and other.issuer == issuer:
 		return true
 	
 	return false
