@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://becakt32bxos5"]
+
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_2h3jw"]
+
+[resource]
+script = ExtResource("1_2h3jw")
+label = "savanna"
+map_color = Color(0.886275, 0.729412, 0.517647, 1)

@@ -16,6 +16,8 @@ var day_progress_turns : int
 var year_length_turns : int
 var year_progress_turns : int
 
+@onready var biomes : BiomeGrid = $BiomeGrid
+
 
 func _init():
 	size = randi_range(6, 14) / 10.0
@@ -106,13 +108,14 @@ func season_factor_at(relative_location : Vector2) -> float:
 	return factor
 
 
-func get_random_location() -> Vector2:
-	var dimensions = get_size()
-	dimensions -= dimensions / 2
-	var random = dimensions
-	random.x *= randf_range(-1, 1)
-	random.y *= randf_range(-1, 1)
-	return random
+func get_random_location(ignore_terrain : bool = false) -> Vector2:
+	#TODO: Ignore terrain if requested
+	var location = biomes.get_spawnable_location()
+	location.y *= -1
+	location *= (get_size() * 0.5)
+	location.x += 0.5
+	location.y -= 0.5
+	return location
 
 
 func scan_sites(agent : Agent):
@@ -125,6 +128,29 @@ func scan_sites(agent : Agent):
 		#HACK: Detection does not wrap around planet
 		if agent.location_relative.distance_to(site.location_relative) <= detection:
 			agent.codex.push_entry(site, Codex.CodexDetails.LOCATION)
+
+
+func get_biome_at(position : Vector2) -> Biome:
+	var rel_position = position / (0.5 * get_size())
+	rel_position.y *= -1
+	return biomes.get_biome_at(rel_position)
+
+
+func locate_nearest_site(agent : Agent):
+	var nearest_distance = -1
+	var nearest_site : Site
+	for child in get_children():
+		var site : Site = child as Site
+		if site == null:
+			continue
+		
+		var distance = get_shortest_distance(agent.location_relative, site.location_relative)
+		if nearest_distance == -1 or distance <= nearest_distance:
+			nearest_distance = distance
+			nearest_site = site
+	
+	if nearest_site != null:
+		agent.codex.push_entry(nearest_site, Codex.CodexDetails.LOCATION)
 
 
 func _turn_action(turn: int):

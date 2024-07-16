@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=9 format=3 uid="uid://u8hm6muvv1qd"]
+
+[ext_resource type="Resource" uid="uid://b2y7d7mirl3au" path="res://data/biomes/definitions/glacier.tres" id="1_x5qd7"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="2_a6kgv"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_sht7q"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="3_n3rde"]
+[ext_resource type="Resource" uid="uid://dd1pgmtxkqqw0" path="res://data/biomes/generator/definitions/base_elevation.tres" id="4_oggq4"]
+
+[sub_resource type="Resource" id="Resource_okumf"]
+script = ExtResource("2_sht7q")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("1_x5qd7")])
+
+[sub_resource type="Resource" id="Resource_0qcrf"]
+script = ExtResource("2_a6kgv")
+max_value = -0.7
+generator = SubResource("Resource_okumf")
+
+[sub_resource type="Resource" id="Resource_dbg2j"]
+script = ExtResource("2_a6kgv")
+max_value = 1.0
+generator = ExtResource("4_oggq4")
+
+[resource]
+script = ExtResource("3_n3rde")
+groups = Array[ExtResource("2_a6kgv")]([SubResource("Resource_0qcrf"), SubResource("Resource_dbg2j")])
+type = 1

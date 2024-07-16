@@ -98,20 +98,30 @@ func local_time_terrestrial(player : Agent, location : TerrestrialLocation):
 		local_clock.text += "Dusk"
 		local_icon.texture = sunset_icon
 	
-	var date = location.year_progress_percent()
-	if player.location_relative.y >= 0:
-		date = fmod(date + 0.5, 1)
-	local_clock.text += " - "
-	if date < 0.125:
-		local_clock.text += "Spring"
-	elif date < 0.375:
-		local_clock.text += "Summer"
-	elif date < 0.625:
-		local_clock.text += "Fall"
-	elif date < 0.875:
-		local_clock.text += "Winter"
-	else:
-		local_clock.text += "Spring"
+	local_clock.text = try_append_year(local_clock.text, location, player)
 	
 	local_clock.text += " - Light x"
 	local_clock.text += str(snapped(light, 0.01))
+
+
+func try_append_year(text : String, location : TerrestrialLocation, player : Agent) -> String:
+	var planet = location.get_root_terrestrial_location() as Planet
+	if planet == null:
+		return text
+	
+	var date = planet.year_progress_percent()
+	if player.location_relative.y >= 0:
+		date = fmod(date + 0.5, 1)
+	text += " - "
+	if date < 0.125:
+		text += "Spring"
+	elif date < 0.375:
+		text += "Summer"
+	elif date < 0.625:
+		text += "Fall"
+	elif date < 0.875:
+		text += "Winter"
+	else:
+		text += "Spring"
+	
+	return text

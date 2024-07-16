@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx2i4hx5bi26"]
+[gd_scene load_steps=9 format=3 uid="uid://cx2i4hx5bi26"]
 
-[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_b5x1o"]
+[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_xhvau"]
 [ext_resource type="Script" path="res://actions/action_issuer.gd" id="2_tklot"]
 [ext_resource type="PackedScene" uid="uid://d20tlitpshcgb" path="res://galaxy/entities/celestial/planet/actions/travel_planet.tscn" id="3_imxn3"]
 [ext_resource type="Script" path="res://data/identity/identity.gd" id="4_it4ph"]
 [ext_resource type="Resource" uid="uid://du31m5rqdda8e" path="res://data/identity/namer/planet_namer.tres" id="5_cebf7"]
 [ext_resource type="Texture2D" uid="uid://w68wuw7kat8x" path="res://assets/textures/space/world.svg" id="6_7jtg2"]
+[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/components/biome_grid.gd" id="7_je5bt"]
+[ext_resource type="Resource" uid="uid://u8hm6muvv1qd" path="res://data/biomes/generator/definitions/planet_biomes.tres" id="8_lvk8t"]
 
 [node name="Planet" type="Node"]
-script = ExtResource("1_b5x1o")
+script = ExtResource("1_xhvau")
 
 [node name="ActionIssuer" type="Node" parent="."]
 script = ExtResource("2_tklot")
@@ -18,3 +20,7 @@ action_scene = ExtResource("3_imxn3")
 script = ExtResource("4_it4ph")
 namer = ExtResource("5_cebf7")
 default_codex_icon = ExtResource("6_7jtg2")
+
+[node name="BiomeGrid" type="Node" parent="."]
+script = ExtResource("7_je5bt")
+generator = ExtResource("8_lvk8t")

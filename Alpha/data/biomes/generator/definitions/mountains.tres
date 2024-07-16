@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BiomeGeneratorChoice" load_steps=3 format=3 uid="uid://cqcai46qgiikq"]
+
+[ext_resource type="Resource" uid="uid://rxmfk52ah36u" path="res://data/biomes/definitions/mountain.tres" id="1_fp5yp"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="1_vxkao"]
+
+[resource]
+script = ExtResource("1_vxkao")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("1_fp5yp")])

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=10 format=3 uid="uid://c4ur3p7arm8oj"]
+
+[ext_resource type="Resource" uid="uid://bqpovymtub0lu" path="res://data/biomes/definitions/midland/cold/tundra.tres" id="1_18dlu"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="1_bs338"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_2nqc6"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_j60fv"]
+[ext_resource type="Resource" uid="uid://cx03h6towx10g" path="res://data/biomes/definitions/midland/cold/boreal.tres" id="4_5517r"]
+
+[sub_resource type="Resource" id="Resource_nk4p6"]
+script = ExtResource("2_2nqc6")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("1_18dlu")])
+
+[sub_resource type="Resource" id="Resource_iwi5t"]
+script = ExtResource("3_j60fv")
+max_value = 0.3
+generator = SubResource("Resource_nk4p6")
+
+[sub_resource type="Resource" id="Resource_b7ooh"]
+script = ExtResource("2_2nqc6")
+biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("4_5517r")])
+
+[sub_resource type="Resource" id="Resource_2ud0u"]
+script = ExtResource("3_j60fv")
+max_value = 1.0
+generator = SubResource("Resource_b7ooh")
+
+[resource]
+script = ExtResource("1_bs338")
+groups = Array[ExtResource("3_j60fv")]([SubResource("Resource_iwi5t"), SubResource("Resource_2ud0u")])
+type = 0

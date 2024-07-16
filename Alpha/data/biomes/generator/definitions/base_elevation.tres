@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=9 format=3 uid="uid://dd1pgmtxkqqw0"]
+
+[ext_resource type="Resource" uid="uid://cluguwf2kwwut" path="res://data/biomes/generator/definitions/oceans.tres" id="1_f6cjo"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="2_ayfsd"]
+[ext_resource type="Resource" uid="uid://b0myjx1pjf065" path="res://data/biomes/generator/definitions/midlands/midland.tres" id="3_henv4"]
+[ext_resource type="Resource" uid="uid://cqcai46qgiikq" path="res://data/biomes/generator/definitions/mountains.tres" id="4_kl0au"]
+[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="5_3lyb7"]
+
+[sub_resource type="Resource" id="Resource_ntwht"]
+script = ExtResource("2_ayfsd")
+max_value = 0.0
+generator = ExtResource("1_f6cjo")
+
+[sub_resource type="Resource" id="Resource_pglyf"]
+script = ExtResource("2_ayfsd")
+max_value = 0.55
+generator = ExtResource("3_henv4")
+
+[sub_resource type="Resource" id="Resource_3nvvi"]
+script = ExtResource("2_ayfsd")
+max_value = 1.0
+generator = ExtResource("4_kl0au")
+
+[resource]
+script = ExtResource("5_3lyb7")
+groups = Array[ExtResource("2_ayfsd")]([SubResource("Resource_ntwht"), SubResource("Resource_pglyf"), SubResource("Resource_3nvvi")])
+type = 2

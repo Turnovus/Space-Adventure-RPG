@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://bwbui5imh75nt"]
+
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_cbg24"]
+
+[resource]
+script = ExtResource("1_cbg24")
+label = "forest"
+map_color = Color(0, 0.419608, 0, 1)
+allow_spawn = true

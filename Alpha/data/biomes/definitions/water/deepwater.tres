@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://c8ca37h82etck"]
+
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_a8nxx"]
+
+[resource]
+script = ExtResource("1_a8nxx")
+label = "deep ocean"
+map_color = Color(0, 0, 0.486275, 1)
+allow_spawn = false
