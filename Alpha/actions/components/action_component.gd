@@ -28,6 +28,10 @@ func active() -> bool:
 	return true
 
 
+func action_possible(_agent : Agent) -> bool:
+	return true
+
+
 func get_sub_components() -> Array[ActionComponent]:
 	var sub_components : Array[ActionComponent] = []
 	

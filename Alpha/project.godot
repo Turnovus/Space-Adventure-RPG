@@ -22,6 +22,7 @@ folder_colors={
 "res://actions/components/": "red",
 "res://actions/components/options/view/": "green",
 "res://actions/components/potency/action_potency_stat/view/": "green",
+"res://actions/components/tagger/view/": "green",
 "res://assets/": "purple",
 "res://data/": "gray",
 "res://galaxy/": "blue",

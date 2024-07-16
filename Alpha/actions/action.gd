@@ -40,7 +40,11 @@ func get_potency(agent : Agent) -> float:
 	return potency
 
 
-func is_possible_for(_agent : Agent) -> bool:
+func is_possible_for(agent : Agent) -> bool:
+	for component : ActionComponent in get_components():
+		if not component.action_possible(agent):
+			return false
+	
 	return true
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d20tlitpshcgb"]
+[gd_scene load_steps=16 format=3 uid="uid://d20tlitpshcgb"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/travel_planet.gd" id="1_8f5u2"]
 [ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/textures/map/compass.svg" id="2_rqe0g"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dvaqj61lnneb5" path="res://actions/components/potency/action_potency_stat/view/potency_stat_view.tscn" id="10_mxr38"]
 [ext_resource type="Script" path="res://actions/components/experience/action_skill_train.gd" id="12_rqw6t"]
 [ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="13_ny87k"]
+[ext_resource type="Script" path="res://actions/components/tagger/action_component_tagger.gd" id="14_nai2a"]
+[ext_resource type="PackedScene" uid="uid://bs5w64d8xvkqh" path="res://actions/components/tagger/view/action_component_tagger_view.tscn" id="15_hyhkd"]
 
 [node name="TravelPlanet" type="Node" node_paths=PackedStringArray("direction_option")]
 script = ExtResource("1_8f5u2")
@@ -114,3 +116,9 @@ view_component = ExtResource("10_mxr38")
 [node name="ActionComponentSkillTrain" type="Node" parent="."]
 script = ExtResource("12_rqw6t")
 skill = ExtResource("13_ny87k")
+
+[node name="ActionComponentTagger" type="Node" parent="."]
+script = ExtResource("14_nai2a")
+tag = "moving"
+mode = 1
+view_component = ExtResource("15_hyhkd")
