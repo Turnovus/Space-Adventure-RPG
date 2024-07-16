@@ -8,6 +8,7 @@ extends ScrollContainer
 func _ready():
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
+	galaxy.turn_post.connect(_on_turn_post)
 	_on_player_actions_changed()
 
 
@@ -32,4 +33,8 @@ func regenerate_actions():
 
 
 func _on_player_actions_changed():
+	regenerate_actions()
+
+
+func _on_turn_post(_turn : int):
 	regenerate_actions()
