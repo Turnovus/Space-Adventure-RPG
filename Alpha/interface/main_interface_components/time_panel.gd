@@ -114,14 +114,14 @@ func try_append_year(text : String, location : TerrestrialLocation, player : Age
 		date = fmod(date + 0.5, 1)
 	text += " - "
 	if date < 0.125:
-		text += "Spring"
-	elif date < 0.375:
-		text += "Summer"
-	elif date < 0.625:
 		text += "Fall"
-	elif date < 0.875:
+	elif date < 0.375:
 		text += "Winter"
-	else:
+	elif date < 0.625:
 		text += "Spring"
+	elif date < 0.875:
+		text += "Summer"
+	else:
+		text += "Fall"
 	
 	return text

@@ -181,6 +181,7 @@ func draw_light_levels(map : Rect2, location : TerrestrialLocation):
 			planet_y *= planet_size.y
 			planet_y -= planet_size.y / 2
 			planet_y += (planet_size.y / LIGHT_GRID_RESOLUTION) * 0.5
+			planet_y *= -1
 			
 			var map_y = y * grid_tile_height
 			map_y += map.position.y
