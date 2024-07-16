@@ -6,3 +6,4 @@
 script = ExtResource("1_2h3jw")
 label = "savanna"
 map_color = Color(0.886275, 0.729412, 0.517647, 1)
+allow_spawn = true

@@ -6,3 +6,4 @@
 script = ExtResource("1_xfw6m")
 label = "boreal forest"
 map_color = Color(0.391755, 0.445205, 0.203177, 1)
+allow_spawn = true

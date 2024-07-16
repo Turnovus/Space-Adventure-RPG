@@ -6,3 +6,4 @@
 script = ExtResource("1_1h4o8")
 label = "jungle"
 map_color = Color(0.329412, 0.807843, 0.239216, 1)
+allow_spawn = true
