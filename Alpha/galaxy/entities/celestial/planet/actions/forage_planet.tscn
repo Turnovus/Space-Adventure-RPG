@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bywxdiqinkqdl"]
+
+[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/forage_planet.gd" id="1_0q0cf"]
+[ext_resource type="Script" path="res://actions/components/knowledge/action_component_knowledge.gd" id="2_nxvad"]
+[ext_resource type="Resource" uid="uid://d0q23v2847exn" path="res://data/knowledge/groups/survival/foraging.tres" id="3_7dbuy"]
+[ext_resource type="PackedScene" uid="uid://bf63ht60bon4x" path="res://actions/components/knowledge/view/action_component_knowledge_view.tscn" id="4_648tf"]
+
+[node name="ForagePlanet" type="Node"]
+script = ExtResource("1_0q0cf")
+label = "Forage"
+
+[node name="ActionComponentKnowledge" type="Node" parent="."]
+script = ExtResource("2_nxvad")
+required_knowledge = ExtResource("3_7dbuy")
+view_component = ExtResource("4_648tf")
