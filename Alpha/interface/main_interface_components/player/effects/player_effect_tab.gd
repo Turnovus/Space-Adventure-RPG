@@ -3,6 +3,7 @@ extends ScrollContainer
 
 @onready var listing = preload("res://interface/main_interface_components/player/effects/player_effect_listing.tscn")
 @onready var list = $VBoxContainer
+@onready var tab_controller : TabController = $TabController
 
 
 func _ready():
@@ -14,6 +15,7 @@ func _ready():
 func _on_turn_post(_turn : int):
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player = galaxy.player
+	var count = 0
 	
 	for child in list.get_children():
 		child.queue_free()
@@ -30,3 +32,6 @@ func _on_turn_post(_turn : int):
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
 		new_listing.set_condition(degree)
+		count += 1
+	
+	tab_controller.count = count
