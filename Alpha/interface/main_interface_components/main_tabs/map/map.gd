@@ -16,12 +16,18 @@ const DEBUG_LIGHT = false
 const MAP_COLOR : Color = Color.DIM_GRAY
 const MAP_MARGIN = 10.0
 
-const PIP_RADIUS = 2.5
+const PIP_RADIUS_PLAYER = 2.5
+const PIP_RADIUS_SITE = 3
 const PIP_COLOR_PLAYER = Color.AQUA
-const PIP_COLOR_SITE = Color.BURLYWOOD
+const PIP_COLOR_SITE = Color.REBECCA_PURPLE
 
 const LABEL_FONT_SIZE = 10
 const LABEL_FONT_COLOR = Color.BLACK
+
+const LABEL_BACK_HEIGHT = 9
+const LABEL_BACK_WIDTH_PER_CHAR = 6
+const LABEL_BACK_OFFSET_Y = 0.5
+const LABEL_BACK_COLOR = Color(0.8, 0.8, 0.8, 0.2)
 
 const DISTANCE_UNIT : float = 5.0
 const DISTANCE_LINE_COLOR : Color = Color(0, 0, 0, 0.5)
@@ -91,13 +97,13 @@ func _draw():
 				if not codex.knows_about(child, Codex.CodexDetails.LOCATION):
 					continue
 				var site_identity = child.get_node("Identity")
-				draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE)
+				draw_terrestrial_pip(map_rect, child.location_relative, location, PIP_COLOR_SITE, PIP_RADIUS_SITE)
 				var site_label = Identity.get_title(site_identity, codex.knows_about(child, Codex.CodexDetails.TITLE))
 				site_label = site_label.capitalize()
 				draw_terrestrial_label(map_rect, child.location_relative, location, site_label)
 	
 	if show_player:
-		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER)
+		draw_terrestrial_pip(map_rect, player.location_relative, location, PIP_COLOR_PLAYER, PIP_RADIUS_PLAYER)
 	
 	if show_survey:
 		draw_terrestrial_distance_radius(map_rect, player.location_relative, location, player.get_detection_range())
@@ -111,13 +117,20 @@ func draw_biome_grid(map : Rect2, location : TerrestrialLocation):
 	draw_texture_rect(planet.biomes.get_texture(), map, false)
 
 
-func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color):
+func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLocation, color : Color, radius : float):
 	var draw_location = get_draw_location(map, pip, location)
-	draw_circle(draw_location, PIP_RADIUS, color)
+	draw_circle(draw_location, radius, color)
 
 
 func draw_terrestrial_label(map : Rect2, pip : Vector2, location : TerrestrialLocation, label : String):
 	var draw_location = get_draw_location(map, pip, location)
+	
+	var back_rect : Rect2 = Rect2(draw_location, Vector2.ZERO)
+	back_rect.size.x = LABEL_BACK_WIDTH_PER_CHAR * len(label)
+	back_rect.size.y = LABEL_BACK_HEIGHT
+	back_rect.position.y -= LABEL_BACK_HEIGHT - LABEL_BACK_OFFSET_Y
+	draw_rect(back_rect, LABEL_BACK_COLOR)
+	
 	draw_string(label_font, draw_location, label, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE, LABEL_FONT_COLOR)
 
 
@@ -194,7 +207,7 @@ func draw_light_levels(map : Rect2, location : TerrestrialLocation):
 			if not DEBUG_LIGHT:
 				continue
 			draw_rect(rect, Color.RED, false)
-			draw_terrestrial_pip(map, Vector2(planet_x, planet_y), planet, Color.RED)
+			draw_terrestrial_pip(map, Vector2(planet_x, planet_y), planet, Color.RED, PIP_RADIUS_PLAYER)
 			draw_string(label_font, Vector2(map_x, map_y), str(snapped(planet_x, 0.1)), HORIZONTAL_ALIGNMENT_LEFT, -1, 8, LABEL_FONT_COLOR)
 
 
