@@ -3,6 +3,7 @@ extends ScrollContainer
 
 @onready var listing = preload("res://interface/main_interface_components/action_listing/action_listing.tscn")
 @onready var list = $VBoxContainer
+@onready var tab_controller : TabController = $TabController
 
 
 func _ready():
@@ -15,6 +16,7 @@ func _ready():
 func regenerate_actions():
 	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
 	var player = galaxy.player
+	var action_count : int = 0
 	
 	for child in list.get_children():
 		child.queue_free()
@@ -30,6 +32,9 @@ func regenerate_actions():
 		var new_listing = listing.instantiate()
 		list.add_child(new_listing)
 		new_listing.set_action(action, false)
+		action_count += 1
+	
+	tab_controller.count = action_count
 
 
 func _on_player_actions_changed():
