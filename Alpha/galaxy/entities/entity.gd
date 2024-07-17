@@ -36,7 +36,7 @@ func get_outgoing_actions_for(agent_requesting : Agent) -> Array[Action]:
 		if issuer == null: 
 			continue
 		var action : Action = issuer.issue_action(agent_requesting)
-		if action != null and action.is_possible_for(agent_requesting):
+		if action != null:
 			actions.append(action)
 	return actions
 
