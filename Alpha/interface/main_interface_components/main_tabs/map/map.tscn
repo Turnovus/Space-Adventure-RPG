@@ -44,6 +44,12 @@ focus_mode = 0
 button_pressed = true
 text = "Show Sites"
 
+[node name="ShowLabelButton" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+text = "Show Labels"
+
 [node name="ShowLightButton" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
 focus_mode = 0

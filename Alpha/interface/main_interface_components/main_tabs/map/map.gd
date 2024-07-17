@@ -40,6 +40,7 @@ const LIGHT_GRID_RESOLUTION : int = 60
 var show_player : bool = true
 var show_survey : bool = true
 var show_sites : bool = true
+var show_labels : bool = true
 var show_light : bool = false
 var grid_mode : GridMode = GridMode.DISTANCE
 var color_mode : ColorMode = ColorMode.BIOME
@@ -47,6 +48,7 @@ var color_mode : ColorMode = ColorMode.BIOME
 @onready var show_player_button : CheckBox = $VBoxContainer/ShowPlayerButton
 @onready var show_survey_button : CheckBox = $VBoxContainer/ShowSurveyButton
 @onready var show_site_button : CheckBox = $VBoxContainer/ShowSiteButton
+@onready var show_label_button : CheckBox = $VBoxContainer/ShowLabelButton
 @onready var show_light_button : CheckBox = $VBoxContainer/ShowLightButton
 @onready var show_grid_option : OptionButton = $VBoxContainer/HBoxContainer/ShowGridOption
 @onready var show_color_option : OptionButton = $VBoxContainer/HBoxContainer2/ShowColorOption
@@ -59,6 +61,7 @@ func _ready():
 	show_player_button.toggled.connect(_on_show_player_toggled)
 	show_survey_button.toggled.connect(_on_show_survey_toggled)
 	show_site_button.toggled.connect(_on_show_site_toggled)
+	show_label_button.toggled.connect(_on_show_label_toggled)
 	show_light_button.toggled.connect(_on_show_light_toggled)
 	show_grid_option.item_selected.connect(_on_show_grid_item_selected)
 	show_color_option.item_selected.connect(_on_show_color_item_selected)
@@ -123,6 +126,9 @@ func draw_terrestrial_pip(map : Rect2, pip : Vector2, location : TerrestrialLoca
 
 
 func draw_terrestrial_label(map : Rect2, pip : Vector2, location : TerrestrialLocation, label : String):
+	if not show_labels:
+		return
+	
 	var draw_location = get_draw_location(map, pip, location)
 	
 	var back_rect : Rect2 = Rect2(draw_location, Vector2.ZERO)
@@ -227,6 +233,11 @@ func _on_show_survey_toggled(toggled_on : bool):
 
 func _on_show_site_toggled(toggled_on : bool):
 	show_sites = toggled_on
+	queue_redraw()
+
+
+func _on_show_label_toggled(toggled_on : bool):
+	show_labels = toggled_on
 	queue_redraw()
 
 
