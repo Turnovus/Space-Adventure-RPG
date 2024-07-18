@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bywxdiqinkqdl"]
+[gd_scene load_steps=13 format=3 uid="uid://bywxdiqinkqdl"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/forage_planet.gd" id="1_0q0cf"]
+[ext_resource type="Texture2D" uid="uid://brhcv41cvfdxq" path="res://assets/textures/object/basket.svg" id="2_5gri5"]
 [ext_resource type="Script" path="res://actions/components/knowledge/action_component_knowledge.gd" id="2_nxvad"]
 [ext_resource type="Resource" uid="uid://d0q23v2847exn" path="res://data/knowledge/groups/survival/foraging.tres" id="3_7dbuy"]
 [ext_resource type="PackedScene" uid="uid://bf63ht60bon4x" path="res://actions/components/knowledge/view/action_component_knowledge_view.tscn" id="4_648tf"]
@@ -14,6 +15,7 @@
 
 [node name="ForagePlanet" type="Node"]
 script = ExtResource("1_0q0cf")
+icon = ExtResource("2_5gri5")
 label = "Forage"
 
 [node name="Intensity" type="Node" parent="."]
