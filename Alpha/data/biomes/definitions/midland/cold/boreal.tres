@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=3 format=3 uid="uid://cx03h6towx10g"]
+[gd_resource type="Resource" script_class="Biome" load_steps=5 format=3 uid="uid://cx03h6towx10g"]
 
 [ext_resource type="Resource" uid="uid://dst2web5610k7" path="res://data/biomes/foraging/definitions/branches.tres" id="1_0nowd"]
 [ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_xfw6m"]
+[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="2_u0pxg"]
+
+[sub_resource type="Resource" id="Resource_tstfc"]
+script = ExtResource("2_u0pxg")
+forage_group = ExtResource("1_0nowd")
+richness_factor = 1.0
 
 [resource]
 script = ExtResource("1_xfw6m")
 label = "boreal forest"
 map_color = Color(0.391755, 0.445205, 0.203177, 1)
 allow_spawn = true
-forage_groups = Array[Resource("res://data/biomes/foraging/forage_group.gd")]([ExtResource("1_0nowd")])
+forage_groups = Array[ExtResource("2_u0pxg")]([SubResource("Resource_tstfc")])

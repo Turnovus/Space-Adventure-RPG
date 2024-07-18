@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=3 format=3 uid="uid://bwbui5imh75nt"]
+[gd_resource type="Resource" script_class="Biome" load_steps=5 format=3 uid="uid://bwbui5imh75nt"]
 
 [ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_cbg24"]
 [ext_resource type="Resource" uid="uid://dst2web5610k7" path="res://data/biomes/foraging/definitions/branches.tres" id="1_gp6ma"]
+[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="2_xepxa"]
+
+[sub_resource type="Resource" id="Resource_75qjj"]
+script = ExtResource("2_xepxa")
+forage_group = ExtResource("1_gp6ma")
+richness_factor = 1.0
 
 [resource]
 script = ExtResource("1_cbg24")
 label = "forest"
 map_color = Color(0, 0.419608, 0, 1)
 allow_spawn = true
-forage_groups = Array[Resource("res://data/biomes/foraging/forage_group.gd")]([ExtResource("1_gp6ma")])
+forage_groups = Array[ExtResource("2_xepxa")]([SubResource("Resource_75qjj")])

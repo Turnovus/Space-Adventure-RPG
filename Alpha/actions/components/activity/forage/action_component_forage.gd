@@ -11,7 +11,7 @@ func action_possible(agent : Agent) -> bool:
 
 
 func can_forage(biome : Biome) -> bool:
-	return biome.forage_groups.has(forage_group)
+	return biome.can_forage(forage_group)
 
 
 func get_agent_biome(agent : Agent) -> Biome:
