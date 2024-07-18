@@ -54,6 +54,11 @@ func get_root_terrestrial_location() -> TerrestrialLocation:
 	return self
 
 
+func get_biome_at(position : Vector2) -> Biome:
+	var parent : TerrestrialLocation = get_parent() as TerrestrialLocation
+	return null if parent == null else parent.get_biome_at(position)
+
+
 func time_of_day_at(relative_location : Vector2) -> float:
 	var parent = get_parent() as TerrestrialLocation
 	if parent == null:

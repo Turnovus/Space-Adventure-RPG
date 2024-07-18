@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmfby7mu2h274"]
+
+[ext_resource type="Script" path="res://actions/components/activity/forage/view/action_component_forage_view.gd" id="1_g2yle"]
+
+[node name="ActionComponentForageView" type="Label"]
+size_flags_horizontal = 3
+text = "Sample text"
+horizontal_alignment = 1
+script = ExtResource("1_g2yle")

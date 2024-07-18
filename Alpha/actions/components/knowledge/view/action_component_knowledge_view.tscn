@@ -3,4 +3,7 @@
 [ext_resource type="Script" path="res://actions/components/knowledge/view/action_component_knowledge_view.gd" id="1_57qa1"]
 
 [node name="ActionComponentKnowledgeView" type="Label"]
+size_flags_horizontal = 3
+text = "Sample text"
+horizontal_alignment = 1
 script = ExtResource("1_57qa1")

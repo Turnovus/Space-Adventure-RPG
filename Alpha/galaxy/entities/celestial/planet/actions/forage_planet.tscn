@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bywxdiqinkqdl"]
+[gd_scene load_steps=12 format=3 uid="uid://bywxdiqinkqdl"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/forage_planet.gd" id="1_0q0cf"]
 [ext_resource type="Script" path="res://actions/components/knowledge/action_component_knowledge.gd" id="2_nxvad"]
 [ext_resource type="Resource" uid="uid://d0q23v2847exn" path="res://data/knowledge/groups/survival/foraging.tres" id="3_7dbuy"]
 [ext_resource type="PackedScene" uid="uid://bf63ht60bon4x" path="res://actions/components/knowledge/view/action_component_knowledge_view.tscn" id="4_648tf"]
 [ext_resource type="Script" path="res://actions/components/options/action_option_selector.gd" id="5_46ftx"]
+[ext_resource type="Script" path="res://actions/components/activity/forage/action_component_forage.gd" id="6_aaupt"]
 [ext_resource type="PackedScene" uid="uid://b4ofidd204ujl" path="res://actions/components/options/view/action_option_view.tscn" id="6_cluni"]
 [ext_resource type="Script" path="res://actions/components/options/action_option.gd" id="7_06c40"]
+[ext_resource type="Resource" uid="uid://dst2web5610k7" path="res://data/biomes/foraging/definitions/branches.tres" id="7_actlj"]
+[ext_resource type="PackedScene" uid="uid://cmfby7mu2h274" path="res://actions/components/activity/forage/view/action_component_forage_view.tscn" id="8_m7myp"]
 [ext_resource type="Script" path="res://actions/components/point_cost/action_point_cost_fraction.gd" id="8_oucxd"]
 
 [node name="ForagePlanet" type="Node"]
@@ -44,6 +47,20 @@ label = "Thorough"
 script = ExtResource("8_oucxd")
 physical_points_percent = 0.75
 mental_points_percent = 0.6
+
+[node name="ForageType" type="Node" parent="."]
+script = ExtResource("5_46ftx")
+label = "Look for"
+view_component = ExtResource("6_cluni")
+
+[node name="Branches" type="Node" parent="ForageType"]
+script = ExtResource("7_06c40")
+label = "Branches"
+
+[node name="ActionComponentForage" type="Node" parent="ForageType/Branches"]
+script = ExtResource("6_aaupt")
+forage_group = ExtResource("7_actlj")
+view_component = ExtResource("8_m7myp")
 
 [node name="ActionComponentKnowledge" type="Node" parent="."]
 script = ExtResource("2_nxvad")
