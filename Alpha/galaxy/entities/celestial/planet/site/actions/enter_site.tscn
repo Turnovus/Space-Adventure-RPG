@@ -15,3 +15,4 @@ script = ExtResource("3_ouwso")
 tag = "moving"
 mode = 1
 view_component = ExtResource("4_r86jh")
+view_component_rank = 1

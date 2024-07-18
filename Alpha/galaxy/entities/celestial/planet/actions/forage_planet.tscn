@@ -61,8 +61,10 @@ label = "Branches"
 script = ExtResource("6_aaupt")
 forage_group = ExtResource("7_actlj")
 view_component = ExtResource("8_m7myp")
+view_component_rank = 1
 
 [node name="ActionComponentKnowledge" type="Node" parent="."]
 script = ExtResource("2_nxvad")
 required_knowledge = ExtResource("3_7dbuy")
 view_component = ExtResource("4_648tf")
+view_component_rank = 2

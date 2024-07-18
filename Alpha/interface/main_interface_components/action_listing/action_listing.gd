@@ -11,7 +11,7 @@ extends PanelContainer
 
 @onready var button : Button = $VBoxContainer/TopBar/Button
 
-@onready var component_list : HFlowContainer = $VBoxContainer/ComponentViews
+@onready var component_list : VBoxContainer = $VBoxContainer/ComponentViews
 
 var action : Action
 var is_player_action : bool
@@ -73,10 +73,21 @@ func rebuild_component_views():
 	for child in component_list.get_children():
 		child.queue_free()
 	
+	var ranks : Dictionary = {}
+	
 	for component : ActionComponent in action.get_components():
 		var view : Control = component.build_view_component()
 		if view != null:
-			component_list.add_child(view)
+			var flow : HFlowContainer
+			if not ranks.has(component.view_component_rank):
+				flow = HFlowContainer.new()
+				ranks[component.view_component_rank] = flow
+				component_list.add_child(flow)
+				flow.alignment = FlowContainer.ALIGNMENT_CENTER
+			else:
+				flow = ranks[component.view_component_rank]
+			
+			flow.add_child(view)
 			view.set_component(component, player)
 			if view.has_signal("dirty_listing"):
 				view.connect("dirty_listing", _on_dirty_listing)

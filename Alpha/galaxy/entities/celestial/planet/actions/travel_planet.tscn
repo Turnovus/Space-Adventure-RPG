@@ -122,3 +122,4 @@ script = ExtResource("14_nai2a")
 tag = "moving"
 mode = 1
 view_component = ExtResource("15_hyhkd")
+view_component_rank = 1

@@ -54,6 +54,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "Add"
 
-[node name="ComponentViews" type="HFlowContainer" parent="VBoxContainer"]
+[node name="ComponentViews" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1

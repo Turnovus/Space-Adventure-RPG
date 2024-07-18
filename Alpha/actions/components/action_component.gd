@@ -3,6 +3,7 @@ extends Node
 
 
 @export var view_component : PackedScene
+@export var view_component_rank : int = 0
 
 
 func build_view_component() -> Control:
