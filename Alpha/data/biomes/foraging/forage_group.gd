@@ -11,3 +11,5 @@ extends Resource
 @export var winter_replenish_factor : float = 1
 @export_subgroup("Depletion")
 @export var depletion_per_forage : float
+@export_subgroup("Content")
+@export var items : Array[PackedScene] = []
