@@ -53,7 +53,7 @@ func generate():
 			if biome.allow_spawn:
 				spawnable_tiles.append([j,i])
 			
-			var forage_here : Array[ForageTile]
+			var forage_here : Array[ForageTile] = []
 			for forage : BiomeForage in  biome.forage_groups:
 				forage_here.append(ForageTile.new(forage))
 			forage_row.append(forage_here)
@@ -120,9 +120,9 @@ class BiomeNoise:
 	const NOISE_OFFSET : float = 0
 	const NOISE_FACTOR : float = 1.05
 	
-	var seed : int = 0 :
+	var noise_seed : int = 0 :
 		set(new_seed):
-			seed = new_seed
+			noise_seed = new_seed
 			noise.seed = new_seed
 	
 	var size : float
@@ -131,7 +131,7 @@ class BiomeNoise:
 	
 	
 	func _init(new_seed : int, new_size : float, new_scale : float):
-		seed = new_seed
+		noise_seed = new_seed
 		size = new_size
 		scale = new_scale
 	
