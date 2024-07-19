@@ -8,8 +8,8 @@ const TEMPERATURE_RANDOMNESS : float = 0.15
 @export var generator : BiomeGenerator
 
 var biomes : Array
+var foraging : Array
 var size : int
-var image : Image
 var texture : ImageTexture = null
 var spawnable_tiles : Array
 
@@ -25,8 +25,10 @@ func _ready():
 
 func generate():
 	biomes = Array()
+	foraging = Array()
 	spawnable_tiles = Array()
-	var row = Array()
+	var biome_row = Array()
+	var forage_row = Array()
 	
 	noise_moisture = BiomeNoise.new(randi(), size, NOISE_SCALE)
 	noise_elevation = BiomeNoise.new(randi(), size, NOISE_SCALE)
@@ -37,7 +39,8 @@ func generate():
 		temperature = 1 - (4 * temperature)
 		temperature *= 1 - TEMPERATURE_RANDOMNESS
 		
-		row = []
+		biome_row = []
+		forage_row = []
 		for j in range(size):
 			var random_temperature = noise_temperature.get_noise_at(i, j)
 			random_temperature *= TEMPERATURE_RANDOMNESS
@@ -46,11 +49,17 @@ func generate():
 			var elevation = noise_elevation.get_noise_at(i, j)
 			
 			var biome = generator.get_biome(moisture, random_temperature, elevation)
-			row.append(biome)
+			biome_row.append(biome)
 			if biome.allow_spawn:
 				spawnable_tiles.append([j,i])
+			
+			var forage_here : Array[ForageTile]
+			for forage : BiomeForage in  biome.forage_groups:
+				forage_here.append(ForageTile.new(forage))
+			forage_row.append(forage_here)
 		
-		biomes.append(row.duplicate())
+		biomes.append(biome_row.duplicate())
+		foraging.append(forage_row.duplicate())
 
 
 func get_texture() -> Texture2D:
@@ -62,7 +71,7 @@ func get_texture() -> Texture2D:
 
 func regenerate_texture():
 	#texture = ImageTexture.new()
-	image = Image.create(size, size, false, Image.FORMAT_RGBA8)
+	var image = Image.create(size, size, false, Image.FORMAT_RGBA8)
 	generate_image(image)
 	texture = ImageTexture.create_from_image(image)
 
@@ -91,6 +100,20 @@ func get_biome_at(position : Vector2) -> Biome:
 	position /= 2
 	position *= size
 	return biomes[int(position.y)][int(position.x)]
+
+
+func get_forage_at(position : Vector2) -> ForageTile:
+	position += Vector2.ONE
+	position /= 2
+	position *= size
+	return foraging[int(position.y)][int(position.x)]
+
+
+func update():
+	for row : Array in foraging:
+		for tiles : Array in row:
+			for tile : ForageTile in tiles:
+				tile.update(1) #TODO: Winter
 
 
 class BiomeNoise:
@@ -128,3 +151,27 @@ class BiomeNoise:
 		n += NOISE_OFFSET
 		n = clampf(n, -1, 1)
 		return n
+
+
+class ForageTile:
+	var forage_group : ForageGroup
+	var max_richness : float
+	var richness : float
+	
+	
+	func _init(from : BiomeForage):
+		forage_group = from.forage_group
+		max_richness = randf_range(forage_group.min_natural_richness, forage_group.max_natural_richness)
+		max_richness *= from.richness_factor
+		richness = max_richness
+	
+	
+	func update(replenish_factor : float):
+		var replenish : float = max_richness / forage_group.replenish_turns
+		replenish *= replenish_factor
+		richness += replenish
+		richness = minf(max_richness, richness)
+	
+	
+	func do_deplete():
+		richness = maxf(0, richness - forage_group.depletion_per_forage)

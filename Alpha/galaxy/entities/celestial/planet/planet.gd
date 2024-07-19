@@ -163,6 +163,8 @@ func _turn_action(turn: int):
 	year_progress_turns += 1
 	if year_progress_turns >= year_length_turns:
 		year_progress_turns -= year_progress_turns
+	
+	biomes.update()
 
 
 func _on_child_location_changed(entity: Entity):
