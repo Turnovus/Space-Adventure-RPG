@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brhcv41cvfdxq"
-path="res://.godot/imported/basket.svg-f556df9e469a6739a8181c38f0503633.ctex"
+path="res://.godot/imported/basket.svg-b757695e7fc57de8f6ebc9dabd3ff88d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/object/basket.svg"
-dest_files=["res://.godot/imported/basket.svg-f556df9e469a6739a8181c38f0503633.ctex"]
+source_file="res://assets/textures/object/container/basket.svg"
+dest_files=["res://.godot/imported/basket.svg-b757695e7fc57de8f6ebc9dabd3ff88d.ctex"]
 
 [params]
 

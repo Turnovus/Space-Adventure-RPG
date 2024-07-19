@@ -6,3 +6,4 @@
 [node name="Branch" type="Node"]
 script = ExtResource("1_imqsu")
 icon = ExtResource("2_pjwsa")
+label = "branch"

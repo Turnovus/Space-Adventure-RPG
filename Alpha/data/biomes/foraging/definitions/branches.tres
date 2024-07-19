@@ -10,3 +10,4 @@ max_natural_richness = 1.0
 replenish_turns = 1
 winter_replenish_factor = 1.0
 depletion_per_forage = 0.0
+items = Array[PackedScene]([])

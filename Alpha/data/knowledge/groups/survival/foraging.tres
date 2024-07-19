@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Knowledge" load_steps=3 format=3 uid="uid://d0q23v2847exn"]
 
-[ext_resource type="Texture2D" uid="uid://brhcv41cvfdxq" path="res://assets/textures/object/basket.svg" id="1_cyotf"]
+[ext_resource type="Texture2D" uid="uid://brhcv41cvfdxq" path="res://assets/textures/object/container/basket.svg" id="1_cyotf"]
 [ext_resource type="Script" path="res://data/knowledge/knowledge.gd" id="1_ec3mw"]
 
 [resource]

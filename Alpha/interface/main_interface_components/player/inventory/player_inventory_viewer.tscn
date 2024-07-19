@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://b66t7c48ai1rr"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/player/inventory/player_inventory_viewer.gd" id="1_0sbui"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_57xdo"]
+[ext_resource type="Texture2D" uid="uid://dbmh8y6e24uuj" path="res://assets/textures/object/container/knapsack.svg" id="2_akniu"]
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_l2jwq"]
+
+[node name="PlayerInventoryViewer" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0sbui")
+fallback_texture = ExtResource("2_l2jwq")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("1_57xdo")
+tab_icon = ExtResource("2_akniu")
+
+[node name="ListScroll" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemList" type="Tree" parent="ListScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+hide_root = true
+
+[node name="ItemPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemPanel"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="ItemPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_akniu")
+expand_mode = 2
+
+[node name="ItemLabel" type="Label" parent="ItemPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "Sample text"
+horizontal_alignment = 1
