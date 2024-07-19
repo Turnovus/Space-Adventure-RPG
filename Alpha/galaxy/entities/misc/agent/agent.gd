@@ -18,6 +18,7 @@ var is_player: bool = false
 @onready var codex : Codex = $Codex
 @onready var skills : SkillTracker = $SkillTracker
 @onready var actions : ActionTracker = $ActionTracker
+@onready var inventory : Inventory = $Inventory
 
 
 func _ready():
@@ -43,7 +44,7 @@ func get_detection_range() -> float:
 	return survey_range_stat.get_current_potency(self)
 
 
-func _turn_action(_turn : int):
+func _turn_action(turn : int):
 	actions.do_turn()
 	actions.validate_actions()
 	
@@ -52,6 +53,8 @@ func _turn_action(_turn : int):
 	var unspent_mental = max_mental_points() - actions.allocated_mental_points()
 	if unspent_mental > 0:
 		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency(self))
+	
+	inventory.do_turn(turn)
 
 
 func _on_turn_end(_turn : int):
