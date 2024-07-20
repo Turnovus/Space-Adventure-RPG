@@ -23,6 +23,7 @@ folder_colors={
 "res://actions/components/activity/forage/view/": "green",
 "res://actions/components/knowledge/view/": "green",
 "res://actions/components/options/view/": "green",
+"res://actions/components/potency/action_potency_skill/view/": "green",
 "res://actions/components/potency/action_potency_stat/view/": "green",
 "res://actions/components/tagger/view/": "green",
 "res://assets/": "purple",

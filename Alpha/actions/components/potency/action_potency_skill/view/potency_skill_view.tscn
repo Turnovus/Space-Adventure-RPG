@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmm6ausb5bk"]
+
+[ext_resource type="Script" path="res://actions/components/potency/action_potency_skill/view/potency_skill_view.gd" id="1_o7kps"]
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_hcl31"]
+
+[node name="PotencySkillView" type="HBoxContainer"]
+script = ExtResource("1_o7kps")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_hcl31")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Sample Text"

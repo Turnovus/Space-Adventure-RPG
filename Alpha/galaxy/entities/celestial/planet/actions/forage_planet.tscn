@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bywxdiqinkqdl"]
+[gd_scene load_steps=17 format=3 uid="uid://bywxdiqinkqdl"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/forage_planet.gd" id="1_0q0cf"]
 [ext_resource type="Texture2D" uid="uid://brhcv41cvfdxq" path="res://assets/textures/object/container/basket.svg" id="2_5gri5"]
@@ -9,9 +9,13 @@
 [ext_resource type="Script" path="res://actions/components/activity/forage/action_component_forage.gd" id="6_aaupt"]
 [ext_resource type="PackedScene" uid="uid://b4ofidd204ujl" path="res://actions/components/options/view/action_option_view.tscn" id="6_cluni"]
 [ext_resource type="Script" path="res://actions/components/options/action_option.gd" id="7_06c40"]
+[ext_resource type="Script" path="res://actions/components/experience/action_skill_train.gd" id="7_31lld"]
 [ext_resource type="Resource" uid="uid://dst2web5610k7" path="res://data/biomes/foraging/definitions/branches.tres" id="7_actlj"]
+[ext_resource type="Resource" uid="uid://djrh7g5l87lpd" path="res://data/skills/survival/foraging.tres" id="8_cc1os"]
 [ext_resource type="PackedScene" uid="uid://cmfby7mu2h274" path="res://actions/components/activity/forage/view/action_component_forage_view.tscn" id="8_m7myp"]
 [ext_resource type="Script" path="res://actions/components/point_cost/action_point_cost_fraction.gd" id="8_oucxd"]
+[ext_resource type="Script" path="res://actions/components/potency/action_potency_skill/action_potency_skill.gd" id="15_t1syk"]
+[ext_resource type="PackedScene" uid="uid://bmm6ausb5bk" path="res://actions/components/potency/action_potency_skill/view/potency_skill_view.tscn" id="16_t50o5"]
 
 [node name="ForagePlanet" type="Node"]
 script = ExtResource("1_0q0cf")
@@ -32,6 +36,11 @@ script = ExtResource("8_oucxd")
 physical_points_percent = 0.25
 mental_points_percent = 0.2
 
+[node name="ActionComponentSkillTrain" type="Node" parent="Intensity/Light"]
+script = ExtResource("7_31lld")
+skill = ExtResource("8_cc1os")
+expeience = 0.2
+
 [node name="Normal" type="Node" parent="Intensity"]
 script = ExtResource("7_06c40")
 label = "Normal"
@@ -41,6 +50,11 @@ script = ExtResource("8_oucxd")
 physical_points_percent = 0.5
 mental_points_percent = 0.4
 
+[node name="ActionComponentSkillTrain" type="Node" parent="Intensity/Normal"]
+script = ExtResource("7_31lld")
+skill = ExtResource("8_cc1os")
+expeience = 0.4
+
 [node name="Thorough" type="Node" parent="Intensity"]
 script = ExtResource("7_06c40")
 label = "Thorough"
@@ -49,6 +63,11 @@ label = "Thorough"
 script = ExtResource("8_oucxd")
 physical_points_percent = 0.75
 mental_points_percent = 0.6
+
+[node name="ActionComponentSkillTrain" type="Node" parent="Intensity/Thorough"]
+script = ExtResource("7_31lld")
+skill = ExtResource("8_cc1os")
+expeience = 0.6
 
 [node name="ForageType" type="Node" parent="."]
 script = ExtResource("5_46ftx")
@@ -70,3 +89,8 @@ script = ExtResource("2_nxvad")
 required_knowledge = ExtResource("3_7dbuy")
 view_component = ExtResource("4_648tf")
 view_component_rank = 2
+
+[node name="ActionComponentPotencySkill" type="Node" parent="."]
+script = ExtResource("15_t1syk")
+skill = ExtResource("8_cc1os")
+view_component = ExtResource("16_t50o5")
