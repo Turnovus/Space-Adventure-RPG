@@ -79,7 +79,7 @@ func update_item_panel():
 	item_label.text = selected_item.label.capitalize()
 
 
-func _on_inventory_modified(node : Node):
+func _on_inventory_modified(_node : Node):
 	update()
 
 
@@ -100,5 +100,5 @@ func _on_item_selected():
 		update_item_panel()
 		return
 	
-	selected_item = inventory.get_child(index)
+	selected_item = inventory.get_child(index) #HACK: does not account for non-item children
 	update_item_panel()
