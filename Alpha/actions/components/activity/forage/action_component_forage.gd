@@ -3,6 +3,8 @@ extends ActionComponent
 
 
 @export var forage_group : ForageGroup
+@export var success_skill : Skill
+@export var success_experience : float
 
 
 func action_possible(agent : Agent) -> bool:
@@ -32,10 +34,15 @@ func turn_action(agent : Agent, potency : float):
 	
 	while true:
 		var chance : float = planet.biomes.get_forage_chance_at(agent.location_relative, forage_group, potency)
-		print(chance)
 		if chance <= 0:
 			break
 		
 		var success : bool = randf() < chance
 		if not success:
 			break
+		
+		if success_skill != null:
+			agent.skills.add_experience(success_skill, success_experience)
+		
+		var item : Node = forage_group.get_forage()
+		agent.inventory.add_child(item)

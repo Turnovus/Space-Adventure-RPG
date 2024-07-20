@@ -13,3 +13,8 @@ extends Resource
 @export var depletion_per_forage : float
 @export_subgroup("Content")
 @export var items : Array[PackedScene] = []
+
+
+func get_forage() -> Node:
+	var item : PackedScene = items.pick_random()
+	return item.instantiate()

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ForageGroup" load_steps=2 format=3 uid="uid://dst2web5610k7"]
+[gd_resource type="Resource" script_class="ForageGroup" load_steps=3 format=3 uid="uid://dst2web5610k7"]
 
 [ext_resource type="Script" path="res://data/biomes/foraging/forage_group.gd" id="1_dw6b8"]
+[ext_resource type="PackedScene" uid="uid://drlfdrkl0xmc6" path="res://galaxy/entities/items/foraged/branch.tscn" id="1_jhwhj"]
 
 [resource]
 script = ExtResource("1_dw6b8")
@@ -10,4 +11,4 @@ max_natural_richness = 1.0
 replenish_turns = 1
 winter_replenish_factor = 1.0
 depletion_per_forage = 0.0
-items = Array[PackedScene]([])
+items = Array[PackedScene]([ExtResource("1_jhwhj")])

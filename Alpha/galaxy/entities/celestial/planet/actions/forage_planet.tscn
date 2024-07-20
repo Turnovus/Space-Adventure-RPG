@@ -81,6 +81,8 @@ label = "Branches"
 [node name="ActionComponentForage" type="Node" parent="ForageType/Branches"]
 script = ExtResource("6_aaupt")
 forage_group = ExtResource("7_actlj")
+success_skill = ExtResource("8_cc1os")
+success_experience = 5.0
 view_component = ExtResource("8_m7myp")
 view_component_rank = 1
 
