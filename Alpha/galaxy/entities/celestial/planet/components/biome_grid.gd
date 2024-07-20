@@ -102,11 +102,22 @@ func get_biome_at(position : Vector2) -> Biome:
 	return biomes[int(position.y)][int(position.x)]
 
 
-func get_forage_at(position : Vector2) -> ForageTile:
+func get_forage_at(position : Vector2) -> Array[ForageTile]:
+	position /= get_planet().get_size() * 0.5
+	position.y *= -1
 	position += Vector2.ONE
 	position /= 2
 	position *= size
 	return foraging[int(position.y)][int(position.x)]
+
+
+func get_forage_chance_at(position : Vector2, group : ForageGroup, potency : float) -> float:
+	var forage : Array[ForageTile] = get_forage_at(position)
+	for tile : ForageTile in forage:
+		if tile.forage_group == group:
+			return tile.forage_chance(potency)
+	
+	return 0
 
 
 func update():
@@ -114,6 +125,10 @@ func update():
 		for tiles : Array in row:
 			for tile : ForageTile in tiles:
 				tile.update(1) #TODO: Winter
+
+
+func get_planet() -> Planet:
+	return get_parent() as Planet
 
 
 class BiomeNoise:
@@ -154,6 +169,10 @@ class BiomeNoise:
 
 
 class ForageTile:
+	const FORAGE_POTENCY_EFFECT : float = 0.05
+	# When forage power reaches this value, the chance of obtaining an item is 50%
+	const FORAGE_FIFTY_PERCENT_CHANCE_FACTOR : float = 5
+	
 	var forage_group : ForageGroup
 	var max_richness : float
 	var richness : float
@@ -175,3 +194,20 @@ class ForageTile:
 	
 	func do_deplete():
 		richness = maxf(0, richness - forage_group.depletion_per_forage)
+	
+	
+	func forage_chance(potency : float) -> float:
+		if richness <= 0:
+			return 0
+		
+		var factor : float = 1 + (FORAGE_POTENCY_EFFECT * potency)
+		var forage_power: float = richness * factor
+		var relative_richness : float = richness / max_richness
+		forage_power *= relative_richness
+		
+		# -n/(x+n) + 1
+		var chance : float = -FORAGE_FIFTY_PERCENT_CHANCE_FACTOR
+		chance /= forage_power + FORAGE_FIFTY_PERCENT_CHANCE_FACTOR
+		chance += 1
+		
+		return chance

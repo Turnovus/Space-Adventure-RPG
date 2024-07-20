@@ -19,3 +19,23 @@ func get_agent_biome(agent : Agent) -> Biome:
 	if location == null:
 		return null
 	return location.get_biome_at(agent.location_relative)
+
+
+func turn_action(agent : Agent, potency : float):
+	var biome : Biome = get_agent_biome(agent)
+	if not can_forage(biome):
+		return
+	
+	var planet : Planet = agent.get_terrestrial_location() as Planet
+	if planet == null:
+		return
+	
+	while true:
+		var chance : float = planet.biomes.get_forage_chance_at(agent.location_relative, forage_group, potency)
+		print(chance)
+		if chance <= 0:
+			break
+		
+		var success : bool = randf() < chance
+		if not success:
+			break
