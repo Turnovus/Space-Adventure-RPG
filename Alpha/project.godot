@@ -34,7 +34,8 @@ folder_colors={
 "res://galaxy/entities/celestial/planet/site/actions/": "orange",
 "res://galaxy/entities/misc/agent/components/": "red",
 "res://galaxy/entities/misc/agent/components/stats/stats/": "gray",
-"res://interface/": "green"
+"res://interface/": "green",
+"res://utilities/": "yellow"
 }
 
 [filesystem]
