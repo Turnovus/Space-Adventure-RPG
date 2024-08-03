@@ -43,7 +43,7 @@ func add_experience(skill : Skill, experience : float):
 	
 	if int(level_before) < int(level_after):
 		var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-		galaxy.push_event(skill_increase_event, [get_parent(), skill])
+		galaxy.push_event(skill_increase_event, [get_parent(), skill, level_after])
 
 
 class SkillProgress:
