@@ -6,19 +6,14 @@ extends PanelContainer
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
 	galaxy.player_points_reallocated.connect(_on_player_actions_changed)
 	_on_player_actions_changed()
 
 
-func get_player() -> Agent:
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	return galaxy.player
-
-
 func _on_player_actions_changed():
-	var player : Agent = get_player()
+	var player : Agent = await ReferenceSingleton.get_player()
 	var max_phys = player.max_physical_points()
 	var max_ment = player.max_mental_points()
 	var used_phys = player.actions.allocated_physical_points()

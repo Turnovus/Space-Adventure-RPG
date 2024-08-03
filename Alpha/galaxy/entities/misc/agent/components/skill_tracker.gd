@@ -42,7 +42,7 @@ func add_experience(skill : Skill, experience : float):
 	skill_altered.emit(skill, level_before, level_after)
 	
 	if int(level_before) < int(level_after):
-		var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+		var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 		galaxy.push_event(skill_increase_event, [get_parent(), skill, level_after])
 
 

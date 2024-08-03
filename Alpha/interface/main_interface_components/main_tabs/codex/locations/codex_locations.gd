@@ -11,9 +11,8 @@ var codex : Codex
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player : Agent = galaxy.player
-	codex = galaxy.player.codex
+	var player : Agent = await ReferenceSingleton.get_player()
+	codex = player.codex
 	codex.entry_pushed.connect(_on_player_entry_pushed)
 	rebuild_codex()
 

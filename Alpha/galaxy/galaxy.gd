@@ -2,6 +2,7 @@ extends Node
 class_name Galaxy
 
 
+signal galaxy_generated
 # Signals sent during execution of a turn
 signal turn_start(turn: int)
 signal turn_end(turn: int)
@@ -29,6 +30,8 @@ func _ready():
 	generate_galaxy()
 	make_player()
 	place_player()
+	
+	galaxy_generated.emit()
 
 
 func generate_galaxy():

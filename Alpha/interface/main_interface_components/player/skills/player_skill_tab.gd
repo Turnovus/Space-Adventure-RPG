@@ -12,7 +12,7 @@ var tree_root : TreeItem
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	skills = galaxy.player.skills
 	skills.skill_altered.connect(_on_skill_altered)
 	

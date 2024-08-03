@@ -19,7 +19,7 @@ var selected_group_icon : Texture2D
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.turn_post.connect(_on_turn_post)
 	
 	knowledge_group_list.item_selected.connect(_on_group_selected)

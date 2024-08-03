@@ -53,7 +53,7 @@ func push_entry(reference : Node, new_details : int):
 
 
 func try_notify_discoveries(entry : CodexEntry, details : int):
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	for key in DETAIL_NAMES.keys():
 		if key & details > 0:
 			var known_title = Identity.get_title(entry.reference.get_identity(), knows_title(entry.reference))

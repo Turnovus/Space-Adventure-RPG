@@ -16,8 +16,7 @@ var tree_items : Array
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player : Agent = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	inventory = player.inventory
 	inventory.child_entered_tree.connect(_on_inventory_modified)
 	inventory.child_exiting_tree.connect(_on_inventory_modified)

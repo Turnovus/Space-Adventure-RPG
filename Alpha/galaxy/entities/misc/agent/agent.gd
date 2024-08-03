@@ -22,7 +22,7 @@ var is_player: bool = false
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.turn_end.connect(_on_turn_end)
 
 

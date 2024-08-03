@@ -15,15 +15,14 @@ const LIGHT_LEVEL_NIGHT = 0.1
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.turn_post.connect(_on_turn_post)
 	_on_turn_post(galaxy.turn)
 
 
 @warning_ignore("integer_division")
 func _on_turn_post(turn:int):
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player : Agent = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	
 	universe_clock.text = DateUtil.get_full_date_string(turn)
 	

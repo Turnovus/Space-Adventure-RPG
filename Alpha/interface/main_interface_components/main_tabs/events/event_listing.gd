@@ -45,8 +45,7 @@ func resolve_text(format : String, targets : Array) -> String:
 
 # HACK: Low cohesion design
 func resolve_name(target) -> String:
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	
 	if not target is Object:
 		return resolve_string(target)
@@ -62,8 +61,7 @@ func resolve_name(target) -> String:
 
 
 func resolve_possessive(target) -> String:
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	
 	if not target is Object:
 		return resolve_string(target)

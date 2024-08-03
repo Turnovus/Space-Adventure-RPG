@@ -55,7 +55,7 @@ var color_mode : ColorMode = ColorMode.BIOME
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.turn_post.connect(_on_turn_post)
 	
 	show_player_button.toggled.connect(_on_show_player_toggled)
@@ -68,8 +68,7 @@ func _ready():
 
 
 func _draw():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player : Agent = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	var location : TerrestrialLocation = player.get_terrestrial_location().get_root_terrestrial_location()
 	var codex : Codex = player.codex
 	

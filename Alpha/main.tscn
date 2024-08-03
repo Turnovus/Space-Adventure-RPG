@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_048e1")
 
-[node name="Galaxy" parent="." instance=ExtResource("2_2epjy")]
-
 [node name="MainInterface" parent="." instance=ExtResource("3_h7j1e")]
 layout_mode = 1
+
+[node name="Galaxy" parent="." instance=ExtResource("2_2epjy")]

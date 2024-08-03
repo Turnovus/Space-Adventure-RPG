@@ -6,13 +6,12 @@ extends PanelContainer
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
+	var player : Agent = await ReferenceSingleton.get_player()
+	player.actions.actions_changed.connect(_on_player_actions_changed)
 
 
 func _on_player_actions_changed():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player = galaxy.player
+	var player = await ReferenceSingleton.get_player()
 	
 	for child in list.get_children():
 		child.queue_free()

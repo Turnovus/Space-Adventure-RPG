@@ -12,7 +12,7 @@ var galaxy: Galaxy
 
 
 func _ready():
-	galaxy = get_tree().root.get_child(0).get_galaxy()
+	galaxy = await ReferenceSingleton.get_galaxy()
 	turn_button.pressed.connect(_on_turn_button_pressed)
 	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
 	galaxy.player_points_reallocated.connect(_on_player_actions_changed)

@@ -52,5 +52,5 @@ func do_random_learning(mental_points : int, progress : float):
 		learn_knowledge(random, progress)
 		if not can_learn(random):
 			possible.erase(random)
-			var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+			var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 			galaxy.push_event(knowledge_learned_event, [get_parent(), random])

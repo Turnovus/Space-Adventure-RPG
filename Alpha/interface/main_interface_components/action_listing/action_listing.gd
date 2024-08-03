@@ -44,8 +44,7 @@ func update_label_and_icon():
 	action_label.text = action.label
 
 func update_point_display():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player : Agent = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	
 	var physical_cost = action.get_physical_point_cost(player)
 	if physical_cost == 0:
@@ -67,8 +66,7 @@ func update_point_display():
 
 
 func rebuild_component_views():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	var player : Agent = galaxy.player
+	var player : Agent = await ReferenceSingleton.get_player()
 	
 	for child in component_list.get_children():
 		child.queue_free()
@@ -94,16 +92,16 @@ func rebuild_component_views():
 
 
 func _on_action_remove():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.try_remove_player_action(action)
 
 
 func _on_action_add():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.try_add_player_action(action)
 
 
 func _on_dirty_listing():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.player_points_reallocated.emit()
 	update_visuals()

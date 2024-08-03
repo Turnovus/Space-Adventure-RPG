@@ -17,18 +17,18 @@ const H_BREAK = "    |    "
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.turn_post.connect(_on_turn_post)
+	await galaxy.ready
 	_on_turn_post(galaxy.turn)
 
 
 func get_player() -> Agent:
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
-	return galaxy.player
+	return await ReferenceSingleton.get_player()
 
 
 func update_location():
-	var player = get_player()
+	var player = await get_player()
 	var location = player.get_parent()
 	
 	var text = get_location_name(player, location)

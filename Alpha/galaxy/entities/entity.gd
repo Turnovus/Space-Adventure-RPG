@@ -9,7 +9,7 @@ var location_relative : Vector2 = Vector2(0,0)
 
 
 func _ready():
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	turn_created = galaxy.turn
 
 

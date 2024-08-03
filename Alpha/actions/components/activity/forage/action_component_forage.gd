@@ -52,5 +52,5 @@ func do_forage_reward(agent : Agent, biome : Biome):
 	var item : Node = forage_group.get_forage()
 	agent.inventory.add_child(item)
 	
-	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.push_event(success_event, [agent, item, biome])
