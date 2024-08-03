@@ -8,6 +8,8 @@ signal turn_end(turn: int)
 signal turn_post(turn: int)
 # Signals sent in response to player action
 signal player_points_reallocated
+# Signals used for decoupled data transfer
+signal event_pushed(type : EventType, targets : Array)
 
 const BASE_ENTITY = preload("res://galaxy/entities/entity.gd")
 const SUN_ENTITY = preload("res://galaxy/entities/celestial/sun/sun.tscn")
@@ -84,6 +86,10 @@ func try_add_player_action(action : Action):
 
 func try_remove_player_action(action : Action):
 	player.actions.remove_action(action)
+
+
+func push_event(type : EventType, targets : Array):
+	event_pushed.emit(type, targets)
 
 
 func _update_entities():

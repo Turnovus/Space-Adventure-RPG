@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp2dvdnaic5oy"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/events/event_group.gd" id="1_0jo6c"]
+
+[sub_resource type="SystemFont" id="SystemFont_al7y2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fi7p5"]
+font = SubResource("SystemFont_al7y2")
+font_size = 26
+
+[node name="EventGroup" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_0jo6c")
+
+[node name="Date" type="Label" parent="."]
+layout_mode = 2
+text = "Sample Text"
+label_settings = SubResource("LabelSettings_fi7p5")
+horizontal_alignment = 1
+
+[node name="Events" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+visible = false
+layout_mode = 2

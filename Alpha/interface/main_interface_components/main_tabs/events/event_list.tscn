@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://l4w8yi1c4u35"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/events/event_list.gd" id="1_i0b78"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_kgvqq"]
+[ext_resource type="Texture2D" uid="uid://b32y48xgtt6yy" path="res://assets/textures/weather/sun.svg" id="2_txwmo"]
+
+[node name="EventList" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0b78")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("1_kgvqq")
+tab_icon = ExtResource("2_txwmo")
+show_count = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Remove events after turns: "
+
+[node name="SpinBox" type="SpinBox" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+min_value = 5.0
+max_value = 999999.0
+value = 100.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Events" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

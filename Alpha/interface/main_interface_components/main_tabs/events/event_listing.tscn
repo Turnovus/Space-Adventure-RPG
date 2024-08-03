@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://db7avdta8ym34"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/events/event_listing.gd" id="1_k1qop"]
+[ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="1_oh1wr"]
+[ext_resource type="Texture2D" uid="uid://kblgw7o4ad2u" path="res://assets/textures/ui/position-marker.svg" id="2_puqrg"]
+[ext_resource type="Texture2D" uid="uid://c7crv0fcxrwjs" path="res://assets/textures/object/container/trash-can.svg" id="4_4274s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lur66"]
+font_size = 25
+
+[node name="EventListing" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_k1qop")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.17
+
+[node name="Icons" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MajorIcon" type="TextureRect" parent="HBoxContainer/Icons"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.01
+texture = ExtResource("1_oh1wr")
+expand_mode = 3
+
+[node name="MinorIcon" type="TextureRect" parent="HBoxContainer/Icons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_puqrg")
+expand_mode = 3
+
+[node name="Text" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="Title" type="Label" parent="HBoxContainer/Text"]
+layout_mode = 2
+text = "Sample Text
+"
+label_settings = SubResource("LabelSettings_lur66")
+
+[node name="Description" type="Label" parent="HBoxContainer/Text"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Lorem ipsum dolor sit amet, consectitur adipiscing elit."
+text_overrun_behavior = 3
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/icon_max_width = 37
+icon = ExtResource("4_4274s")

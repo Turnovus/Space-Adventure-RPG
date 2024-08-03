@@ -5,6 +5,7 @@ extends ActionComponent
 @export var forage_group : ForageGroup
 @export var success_skill : Skill
 @export var success_experience : float
+@export var success_event : EventType
 
 
 func action_possible(agent : Agent) -> bool:
@@ -41,8 +42,15 @@ func turn_action(agent : Agent, potency : float):
 		if not success:
 			break
 		
-		if success_skill != null:
-			agent.skills.add_experience(success_skill, success_experience)
-		
-		var item : Node = forage_group.get_forage()
-		agent.inventory.add_child(item)
+		do_forage_reward(agent, biome)
+
+
+func do_forage_reward(agent : Agent, biome : Biome):
+	if success_skill != null:
+		agent.skills.add_experience(success_skill, success_experience)
+	
+	var item : Node = forage_group.get_forage()
+	agent.inventory.add_child(item)
+	
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	galaxy.push_event(success_event, [agent, item, biome])
