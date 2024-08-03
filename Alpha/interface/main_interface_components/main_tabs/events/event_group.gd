@@ -5,7 +5,10 @@ extends VBoxContainer
 var turn : int:
 	set(new_turn):
 		turn = new_turn
-		date.text = DateUtil.get_full_date_string(turn)
+		date.text = "{full_date} (Turn {turn})".format({
+			"full_date" : DateUtil.get_full_date_string(turn),
+			"turn" : turn,
+		})
 
 var event_listing = preload("res://interface/main_interface_components/main_tabs/events/event_listing.tscn")
 

@@ -1,7 +1,8 @@
 extends VBoxContainer
 
 
-@onready var event_list = $ScrollContainer/Events
+@onready var event_list : BoxContainer = $ScrollContainer/Events
+@onready var auto_cull_spinner : SpinBox = $PanelContainer/HBoxContainer/AutoCullSpinner
 
 @onready var event_group = preload("res://interface/main_interface_components/main_tabs/events/event_group.tscn")
 
@@ -35,4 +36,10 @@ func _on_turn_post(turn : int):
 		current_group.turn = turn
 		current_group = null
 	
-	#TODO: Cull old events
+	for child in event_list.get_children():
+		var group = child as EventGroup
+		if group == null:
+			continue
+		
+		if group.turn + auto_cull_spinner.value >= turn:
+			group.queue_free()

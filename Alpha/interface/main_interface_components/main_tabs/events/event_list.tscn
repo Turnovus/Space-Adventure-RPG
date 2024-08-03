@@ -28,7 +28,7 @@ alignment = 1
 layout_mode = 2
 text = "Remove events after turns: "
 
-[node name="SpinBox" type="SpinBox" parent="PanelContainer/HBoxContainer"]
+[node name="AutoCullSpinner" type="SpinBox" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 min_value = 5.0
 max_value = 999999.0
