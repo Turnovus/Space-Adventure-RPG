@@ -6,6 +6,8 @@ var default_titles : Array[String] = []
 
 
 func _ready():
+	tab_changed.connect(_on_tab_changed)
+	
 	var tabs = get_children()
 	var tab_index = 0
 	for i in range(0, len(tabs)):
@@ -32,6 +34,7 @@ func get_tab_controller(node : Control) -> TabController:
 func setup_tab(tab_index : int, controller : TabController):
 	set_tab_icon(tab_index, controller.tab_icon)
 	controller.tab_count_changed.connect(_on_tab_count_changed)
+	controller.container = self
 	update_tab(tab_index, controller)
 
 
@@ -63,3 +66,9 @@ func _on_tab_count_changed(tab : Control):
 	
 	var controller : TabController = get_tab_controller(tab)
 	update_tab(tab_index, controller)
+
+
+func _on_tab_changed(_tab : int):
+	var control : Control = get_current_tab_control()
+	var controller = get_tab_controller(control)
+	controller.notify_selected()

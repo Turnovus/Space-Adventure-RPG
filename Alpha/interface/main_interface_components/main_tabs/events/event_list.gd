@@ -3,6 +3,7 @@ extends VBoxContainer
 
 @onready var event_list : BoxContainer = $ScrollContainer/Events
 @onready var auto_cull_spinner : SpinBox = $PanelContainer/HBoxContainer/AutoCullSpinner
+@onready var tab_controller : TabController = $TabController
 
 @onready var event_group = preload("res://interface/main_interface_components/main_tabs/events/event_group.tscn")
 
@@ -25,6 +26,7 @@ func _on_event_pushed(type : EventType, targets : Array):
 	
 	if _should_log_event(type, targets):
 		current_group.add_event(type, targets)
+		tab_controller.count += 1
 
 
 func _should_log_event(type : EventType, targets : Array) -> bool:

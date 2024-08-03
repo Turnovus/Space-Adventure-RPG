@@ -16,6 +16,7 @@ script = ExtResource("1_i0b78")
 script = ExtResource("1_kgvqq")
 tab_icon = ExtResource("2_txwmo")
 show_count = 1
+clear_count_on_open = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
