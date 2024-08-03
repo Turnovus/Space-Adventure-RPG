@@ -4,6 +4,7 @@ extends PanelContainer
 
 var format_rules = {
 	"name" : Callable(resolve_name),
+	"possessive" : Callable(resolve_possessive),
 }
 
 @onready var icon_major : TextureRect = $HBoxContainer/Icons/MajorIcon
@@ -54,6 +55,15 @@ func resolve_name(target) -> String:
 		return label
 	
 	return "something"
+
+
+func resolve_possessive(target) -> String:
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	var player = galaxy.player
+	if target == player:
+		return "your" #TODO: Incorporate agent identity
+	
+	return "its"
 
 
 func _on_delete_pressed():

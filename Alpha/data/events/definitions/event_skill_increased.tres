@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://daenyow8hmkls"]
+
+[ext_resource type="Texture2D" uid="uid://b2xh0yiblflb7" path="res://assets/textures/body/juggler.svg" id="1_28wil"]
+[ext_resource type="Script" path="res://data/events/event_type.gd" id="1_wf13w"]
+
+[resource]
+script = ExtResource("1_wf13w")
+label_format = "Skill Increase: {1.name}"
+description_format = "{0.name} have improved {0.possessive} skill in {1.name}."
+color = Color(0, 1, 1, 1)
+default_icon_primary = ExtResource("1_28wil")

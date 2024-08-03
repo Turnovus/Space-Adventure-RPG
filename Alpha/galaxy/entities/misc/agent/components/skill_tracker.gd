@@ -8,6 +8,7 @@ const BASE_EXPERIENCE_NEEDED = 100
 const EXPERIENCE_FACTOR_PER_LEVEL = 1.1
 
 @export var skills : Array[Skill] = []
+@export var skill_increase_event : EventType
 
 var skill_progress : Dictionary = {}
 
@@ -37,7 +38,12 @@ func add_experience(skill : Skill, experience : float):
 	var level_before = get_exact_level(skill)
 	skill_progress[skill].add_experience(experience)
 	var level_after = get_exact_level(skill)
+	
 	skill_altered.emit(skill, level_before, level_after)
+	
+	if int(level_before) < int(level_after):
+		var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+		galaxy.push_event(skill_increase_event, [get_parent(), skill])
 
 
 class SkillProgress:
