@@ -14,6 +14,14 @@ enum CodexDetails {
 
 signal entry_pushed(entry : CodexEntry)
 
+const DETAIL_NAMES = {
+	CodexDetails.TITLE : "name",
+	CodexDetails.GENDER : "gender",
+	CodexDetails.LOCATION : "location",
+}
+
+@export var entry_updated_event : EventType
+
 
 func get_entries() -> Array[CodexEntry]:
 	var entries : Array[CodexEntry] = []
@@ -34,11 +42,22 @@ func push_entry(reference : Node, new_details : int):
 		entry = CodexEntry.new(reference, new_details)
 		add_child(entry)
 		entry_pushed.emit(entry)
+		try_notify_discoveries(entry, new_details)
 		return
 	
+	var unknown_details = entry.known_details ^ new_details
 	entry.known_details |= new_details
 	entry.update_identity()
 	entry_pushed.emit(entry)
+	try_notify_discoveries(entry, unknown_details)
+
+
+func try_notify_discoveries(entry : CodexEntry, details : int):
+	var galaxy : Galaxy = get_tree().root.get_child(0).get_galaxy()
+	for key in DETAIL_NAMES.keys():
+		if key & details > 0:
+			var known_title = Identity.get_title(entry.reference.get_identity(), knows_title(entry.reference))
+			galaxy.push_event(entry_updated_event, [get_parent(), known_title, DETAIL_NAMES[key]])
 
 
 func knows_title(reference : Node) -> bool:

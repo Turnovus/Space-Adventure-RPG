@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=25 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/skill_tracker.gd" id="16_epxb4"]
 [ext_resource type="Resource" uid="uid://dtsvbdt4w7duf" path="res://data/events/definitions/event_knowledge_gained.tres" id="16_uqdhc"]
 [ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="17_8cy1n"]
+[ext_resource type="Resource" uid="uid://1ig8q0bdka4" path="res://data/events/definitions/event_codex_updated.tres" id="18_4xwys"]
 [ext_resource type="Resource" uid="uid://djrh7g5l87lpd" path="res://data/skills/survival/foraging.tres" id="19_76tao"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/action_tracker.gd" id="19_ddslp"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/inventory.gd" id="20_skaeg"]
@@ -92,6 +93,7 @@ knowledge_learned_event = ExtResource("16_uqdhc")
 
 [node name="Codex" type="Node" parent="."]
 script = ExtResource("15_1ab5t")
+entry_updated_event = ExtResource("18_4xwys")
 
 [node name="SkillTracker" type="Node" parent="."]
 script = ExtResource("16_epxb4")

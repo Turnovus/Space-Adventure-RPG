@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://1ig8q0bdka4"]
+
+[ext_resource type="Script" path="res://data/events/event_type.gd" id="1_77hjc"]
+[ext_resource type="Texture2D" uid="uid://bccuftkssausm" path="res://assets/textures/space/galaxy.svg" id="1_st5y5"]
+
+[resource]
+script = ExtResource("1_77hjc")
+label_format = "Codex updated: {1.name}"
+description_format = "{0.name} learned the {2.to_string} of {1.to_string}."
+color = Color(0.690196, 0, 0.337255, 1)
+default_icon_primary = ExtResource("1_st5y5")

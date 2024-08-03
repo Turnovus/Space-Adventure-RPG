@@ -54,9 +54,9 @@ func resolve_name(target) -> String:
 	if target == player:
 		return "you" #TODO: incorporate agent identity
 	
-	var label : String = target.get("label") as String
+	var label = target.get("label")
 	if label != null:
-		return label
+		return str(label)
 	
 	return "something"
 
