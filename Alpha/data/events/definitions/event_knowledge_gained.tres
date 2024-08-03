@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://dtsvbdt4w7duf"]
+
+[ext_resource type="Script" path="res://data/events/event_type.gd" id="1_alh5l"]
+[ext_resource type="Texture2D" uid="uid://c0i28kba7266q" path="res://assets/textures/head/idea.svg" id="1_qu2ng"]
+
+[resource]
+script = ExtResource("1_alh5l")
+label_format = "Learned Knowledge: {1.name}"
+description_format = "{0.name} learned the secrets of {1.name}."
+color = Color(0, 1, 0.478431, 1)
+default_icon_primary = ExtResource("1_qu2ng")
