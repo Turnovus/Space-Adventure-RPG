@@ -41,5 +41,5 @@ func _on_turn_post(turn : int):
 		if group == null:
 			continue
 		
-		if group.turn + auto_cull_spinner.value >= turn:
+		if group.turn + auto_cull_spinner.value <= turn:
 			group.queue_free()
