@@ -1,7 +1,12 @@
-[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://1ug3rxjolna"]
+[gd_resource type="Resource" script_class="EventType" load_steps=5 format=3 uid="uid://1ug3rxjolna"]
 
 [ext_resource type="Texture2D" uid="uid://brhcv41cvfdxq" path="res://assets/textures/object/container/basket.svg" id="1_7n7jv"]
 [ext_resource type="Script" path="res://data/events/event_type.gd" id="1_olwn0"]
+[ext_resource type="Script" path="res://data/events/icon_resolver/event_icon_item.gd" id="2_bpusx"]
+
+[sub_resource type="Resource" id="Resource_q1uvq"]
+script = ExtResource("2_bpusx")
+target_index = 1
 
 [resource]
 script = ExtResource("1_olwn0")
@@ -9,3 +14,4 @@ label_format = "Found {1.name}"
 description_format = "While foraging the {2.name}, {0.name} found {1.name}."
 color = Color(0.682353, 0, 1, 1)
 default_icon_primary = ExtResource("1_7n7jv")
+icon_secondary_resolver = SubResource("Resource_q1uvq")

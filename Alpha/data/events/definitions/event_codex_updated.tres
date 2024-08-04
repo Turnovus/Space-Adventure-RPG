@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://1ig8q0bdka4"]
+[gd_resource type="Resource" script_class="EventType" load_steps=5 format=3 uid="uid://1ig8q0bdka4"]
 
 [ext_resource type="Script" path="res://data/events/event_type.gd" id="1_77hjc"]
 [ext_resource type="Texture2D" uid="uid://bccuftkssausm" path="res://assets/textures/space/galaxy.svg" id="1_st5y5"]
+[ext_resource type="Script" path="res://data/events/icon_resolver/event_icon_identity.gd" id="2_7bpui"]
+
+[sub_resource type="Resource" id="Resource_1yn8t"]
+script = ExtResource("2_7bpui")
+target_index = 1
 
 [resource]
 script = ExtResource("1_77hjc")
-label_format = "Codex Updated: {1.name}"
-description_format = "{0.name} learned the {2.to_string} of {1.to_string}."
+label_format = "Codex Updated: {2.name}"
+description_format = "{0.name} learned the {3.to_string} of {2.to_string}."
 color = Color(0.690196, 0, 0.337255, 1)
 default_icon_primary = ExtResource("1_st5y5")
+icon_secondary_resolver = SubResource("Resource_1yn8t")

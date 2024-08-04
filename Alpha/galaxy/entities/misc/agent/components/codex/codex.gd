@@ -57,7 +57,7 @@ func try_notify_discoveries(entry : CodexEntry, details : int):
 	for key in DETAIL_NAMES.keys():
 		if key & details > 0:
 			var known_title = Identity.get_title(entry.reference.get_identity(), knows_title(entry.reference))
-			galaxy.push_event(entry_updated_event, [get_parent(), known_title, DETAIL_NAMES[key]])
+			galaxy.push_event(entry_updated_event, [get_parent(), entry.reference, known_title, DETAIL_NAMES[key]])
 
 
 func knows_title(reference : Node) -> bool:

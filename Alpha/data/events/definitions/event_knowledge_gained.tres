@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://dtsvbdt4w7duf"]
+[gd_resource type="Resource" script_class="EventType" load_steps=5 format=3 uid="uid://dtsvbdt4w7duf"]
 
 [ext_resource type="Script" path="res://data/events/event_type.gd" id="1_alh5l"]
 [ext_resource type="Texture2D" uid="uid://c0i28kba7266q" path="res://assets/textures/head/idea.svg" id="1_qu2ng"]
+[ext_resource type="Script" path="res://data/events/icon_resolver/event_icon_field.gd" id="2_0pcel"]
+
+[sub_resource type="Resource" id="Resource_5xo72"]
+script = ExtResource("2_0pcel")
+field_name = "icon"
+target_index = 1
 
 [resource]
 script = ExtResource("1_alh5l")
@@ -9,3 +15,4 @@ label_format = "Learned Knowledge: {1.name}"
 description_format = "{0.name} learned the secrets of {1.name}."
 color = Color(0, 1, 0.478431, 1)
 default_icon_primary = ExtResource("1_qu2ng")
+icon_secondary_resolver = SubResource("Resource_5xo72")

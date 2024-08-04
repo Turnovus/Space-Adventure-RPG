@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="EventType" load_steps=3 format=3 uid="uid://daenyow8hmkls"]
+[gd_resource type="Resource" script_class="EventType" load_steps=5 format=3 uid="uid://daenyow8hmkls"]
 
 [ext_resource type="Texture2D" uid="uid://b2xh0yiblflb7" path="res://assets/textures/body/juggler.svg" id="1_28wil"]
 [ext_resource type="Script" path="res://data/events/event_type.gd" id="1_wf13w"]
+[ext_resource type="Script" path="res://data/events/icon_resolver/event_icon_field.gd" id="2_tdn7p"]
+
+[sub_resource type="Resource" id="Resource_g11un"]
+script = ExtResource("2_tdn7p")
+field_name = "icon"
+target_index = 1
 
 [resource]
 script = ExtResource("1_wf13w")
@@ -9,3 +15,4 @@ label_format = "Skill Increase: {1.name}"
 description_format = "{0.name} have improved {0.possessive} skill in {1.name} to level {2.to_string}."
 color = Color(0, 1, 1, 1)
 default_icon_primary = ExtResource("1_28wil")
+icon_secondary_resolver = SubResource("Resource_g11un")

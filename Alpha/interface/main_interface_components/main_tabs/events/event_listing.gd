@@ -21,11 +21,13 @@ func _ready():
 
 
 func set_event(type : EventType, targets : Array):
-	if type.default_icon_primary != null:
-		icon_major.texture = type.default_icon_primary
+	var primary_icon = type.get_primary_icon(targets)
+	if primary_icon != null:
+		icon_major.texture = primary_icon
 	
-	if type.default_icon_secondary != null:
-		icon_minor.texture = type.default_icon_secondary
+	var secondary_icon = type.get_secondary_icon(targets)
+	if secondary_icon != null:
+		icon_minor.texture = secondary_icon
 	
 	label_title.text = resolve_text(type.label_format, targets)
 	label_description.text = resolve_text(type.description_format, targets)
