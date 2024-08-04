@@ -12,7 +12,7 @@ target_index = 1
 [resource]
 script = ExtResource("1_wf13w")
 label_format = "Skill Increase: {1.name}"
-description_format = "{0.name} have improved {0.possessive} skill in {1.name} to level {2.to_string}."
+description_format = "{0.name.cap} have improved {0.possessive} skill in {1.name} to level {2.to_string}."
 color = Color(0, 1, 1, 1)
 default_icon_primary = ExtResource("1_28wil")
 icon_secondary_resolver = SubResource("Resource_g11un")

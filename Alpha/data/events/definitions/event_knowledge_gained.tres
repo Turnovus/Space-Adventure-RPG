@@ -12,7 +12,7 @@ target_index = 1
 [resource]
 script = ExtResource("1_alh5l")
 label_format = "Learned Knowledge: {1.name}"
-description_format = "{0.name} learned the secrets of {1.name}."
+description_format = "{0.name.cap} learned the secrets of {1.name}."
 color = Color(0, 1, 0.478431, 1)
 default_icon_primary = ExtResource("1_qu2ng")
 icon_secondary_resolver = SubResource("Resource_5xo72")

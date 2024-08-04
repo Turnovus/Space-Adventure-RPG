@@ -40,7 +40,10 @@ func resolve_text(format : String, targets : Array) -> String:
 		for key in format_rules.keys():
 			var infix = str(i) + "." + key
 			var value = format_rules[key].call(targets[i])
-			format = format.format({infix : value})
+			format = format.format({
+				infix : value.to_lower(),
+				infix + ".cap" : value.capitalize(),
+			})
 	
 	return format
 

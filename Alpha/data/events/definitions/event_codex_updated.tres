@@ -10,8 +10,8 @@ target_index = 1
 
 [resource]
 script = ExtResource("1_77hjc")
-label_format = "Codex Updated: {2.name}"
-description_format = "{0.name} learned the {3.to_string} of {2.to_string}."
+label_format = "Codex Updated: {2.name.cap}"
+description_format = "{0.name.cap} learned the {3.to_string} of {2.to_string.cap}."
 color = Color(0.690196, 0, 0.337255, 1)
 default_icon_primary = ExtResource("1_st5y5")
 icon_secondary_resolver = SubResource("Resource_1yn8t")
