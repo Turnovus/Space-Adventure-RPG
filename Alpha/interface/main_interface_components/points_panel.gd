@@ -21,19 +21,19 @@ func _on_player_actions_changed():
 	
 	if used_phys > max_phys:
 		if player.actions.count_actions() > 1:
-			physical_readout.set("theme_override_colors/font_color", Color.RED)
+			physical_readout.set("theme_override_colors/font_color", GameColorUtil.COLOR_BAD_READABLE)
 		else:
-			physical_readout.set("theme_override_colors/font_color", Color.ORANGE)
+			physical_readout.set("theme_override_colors/font_color", GameColorUtil.COLOR_WARN_READABLE)
 	else:
-		physical_readout.set("theme_override_colors/font_color", Color.WHITE)
+		physical_readout.set("theme_override_colors/font_color", GameColorUtil.COLOR_NORMAL)
 	
 	if used_ment > max_ment:
 		if player.actions.count_actions() > 1:
-			mental_readout.set("theme_override_colors/font_color", Color.RED)
+			mental_readout.set("theme_override_colors/font_color", GameColorUtil.COLOR_BAD_READABLE)
 		else:
-			mental_readout.set("theme_override_colors/font_color", Color.ORANGE)
+			mental_readout.set("theme_override_colors/font_color", GameColorUtil.COLOR_WARN_READABLE)
 	else:
-		mental_readout.set("theme_override_colors/font_color", Color.WHITE)
+		mental_readout.set("theme_override_colors/font_color", GameColorUtil.COLOR_NORMAL)
 	
 	physical_readout.text = "{used}/{max}".format({
 		"used" : used_phys,

@@ -45,7 +45,7 @@ func update_selected_knowledge():
 	selection_description.push_color(get_knowledge_color(knowledge, true))
 	selection_description.append_text(get_completion_text(knowledge))
 	
-	selection_description.push_color(Color.WHITE)
+	selection_description.push_color(GameColorUtil.COLOR_NORMAL)
 	selection_description.append_text("\n\n")
 	selection_description.append_text(knowledge.description)
 	

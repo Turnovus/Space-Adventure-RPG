@@ -1,8 +1,6 @@
 extends Label
 
 
-const TEXT_COLOR : Color = Color.INDIAN_RED
-
 var component : ActionComponentTagger
 var agent : Agent
 
@@ -10,7 +8,7 @@ var agent : Agent
 func _ready():
 	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.turn_post.connect(_on_turn_post)
-	set("theme_override_colors/font_color", TEXT_COLOR)
+	set("theme_override_colors/font_color", GameColorUtil.COLOR_BAD_READABLE)
 
 
 func set_component(new_component : ActionComponent, new_agent : Agent):
