@@ -29,7 +29,7 @@ func _on_event_pushed(type : EventType, targets : Array):
 		tab_controller.count += 1
 
 
-func _should_log_event(type : EventType, targets : Array) -> bool:
+func _should_log_event(_type : EventType, _targets : Array) -> bool:
 	#TODO
 	return true
 

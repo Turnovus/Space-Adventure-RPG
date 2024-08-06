@@ -1,4 +1,4 @@
-@icon("res://assets/textures/body/jump-across.svg")
+@icon("res://assets/textures/body/juggler.svg")
 class_name Skill
 extends Resource
 

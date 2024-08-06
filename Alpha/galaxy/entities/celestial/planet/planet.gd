@@ -109,7 +109,7 @@ func season_factor_at(relative_location : Vector2) -> float:
 	return factor
 
 
-func get_random_location(ignore_terrain : bool = false) -> Vector2:
+func get_random_location(_ignore_terrain : bool = false) -> Vector2:
 	#TODO: Ignore terrain if requested
 	var location = biomes.get_spawnable_location()
 	location.y *= -1

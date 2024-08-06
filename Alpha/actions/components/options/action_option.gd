@@ -1,3 +1,4 @@
+@icon("res://assets/textures/ui/organigram.svg")
 class_name ActionOption
 extends Node
 

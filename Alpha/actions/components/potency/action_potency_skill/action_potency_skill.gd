@@ -9,7 +9,7 @@ extends ActionComponent
 
 
 func affect_potency(initial_potency : float, agent : Agent) -> float:
-	var potency = agent.skills.get_exact_level(skill) if use_exact_level else agent.skills.get_level(skill)
+	var potency = agent.skills.get_exact_level(skill) if use_exact_level else float(agent.skills.get_level(skill))
 	potency *= factor
 	potency += base_value
 	return initial_potency * potency
