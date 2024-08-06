@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ForageGroup" load_steps=3 format=3 uid="uid://cydmxcrckm3nx"]
+
+[ext_resource type="Script" path="res://data/biomes/foraging/forage_group.gd" id="1_8puk2"]
+[ext_resource type="PackedScene" uid="uid://c3krj0k3m8kqc" path="res://galaxy/entities/items/foraged/rock.tscn" id="1_qp2h1"]
+
+[resource]
+script = ExtResource("1_8puk2")
+label = "rocks"
+min_natural_richness = 0.0
+max_natural_richness = 1.0
+replenish_turns = 1
+winter_replenish_factor = 1.0
+depletion_per_forage = 0.0
+items = Array[PackedScene]([ExtResource("1_qp2h1")])

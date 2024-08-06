@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://cehb1htlkq22h"]
+[gd_resource type="Resource" script_class="Biome" load_steps=3 format=3 uid="uid://cehb1htlkq22h"]
 
+[ext_resource type="Resource" uid="uid://bxbrr3mv8uw45" path="res://data/biomes/foraging/definitions/biome_templates/rocks/rocks_average.tres" id="1_if82s"]
 [ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_xlu27"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_xlu27")
 label = "desert"
 map_color = Color(1, 0.847059, 0, 1)
 allow_spawn = false
+forage_groups = Array[Resource("res://data/biomes/foraging/biome_forage.gd")]([ExtResource("1_if82s")])

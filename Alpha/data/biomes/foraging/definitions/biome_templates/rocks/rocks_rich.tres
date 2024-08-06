@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BiomeForage" load_steps=3 format=3 uid="uid://pbvl7vo8gx2m"]
+
+[ext_resource type="Resource" uid="uid://cydmxcrckm3nx" path="res://data/biomes/foraging/definitions/rocks.tres" id="1_5qpqw"]
+[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="1_ku3ml"]
+
+[resource]
+script = ExtResource("1_ku3ml")
+forage_group = ExtResource("1_5qpqw")
+richness_factor = 1.5

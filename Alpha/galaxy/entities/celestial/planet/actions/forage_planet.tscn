@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bywxdiqinkqdl"]
+[gd_scene load_steps=19 format=3 uid="uid://bywxdiqinkqdl"]
 
 [ext_resource type="Script" path="res://galaxy/entities/celestial/planet/actions/forage_planet.gd" id="1_0q0cf"]
 [ext_resource type="Texture2D" uid="uid://brhcv41cvfdxq" path="res://assets/textures/object/container/basket.svg" id="2_5gri5"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cmfby7mu2h274" path="res://actions/components/activity/forage/view/action_component_forage_view.tscn" id="8_m7myp"]
 [ext_resource type="Script" path="res://actions/components/point_cost/action_point_cost_fraction.gd" id="8_oucxd"]
 [ext_resource type="Resource" uid="uid://1ug3rxjolna" path="res://data/events/definitions/event_foraging_find.tres" id="11_tvqci"]
+[ext_resource type="Resource" uid="uid://cydmxcrckm3nx" path="res://data/biomes/foraging/definitions/rocks.tres" id="13_vdbvb"]
 [ext_resource type="Script" path="res://actions/components/potency/action_potency_skill/action_potency_skill.gd" id="15_t1syk"]
 [ext_resource type="PackedScene" uid="uid://bmm6ausb5bk" path="res://actions/components/potency/action_potency_skill/view/potency_skill_view.tscn" id="16_t50o5"]
 
@@ -82,6 +83,19 @@ label = "Branches"
 [node name="ActionComponentForage" type="Node" parent="ForageType/Branches"]
 script = ExtResource("6_aaupt")
 forage_group = ExtResource("7_actlj")
+success_skill = ExtResource("8_cc1os")
+success_experience = 5.0
+success_event = ExtResource("11_tvqci")
+view_component = ExtResource("8_m7myp")
+view_component_rank = 1
+
+[node name="Rocks" type="Node" parent="ForageType"]
+script = ExtResource("7_06c40")
+label = "Rocks"
+
+[node name="ActionComponentForage" type="Node" parent="ForageType/Rocks"]
+script = ExtResource("6_aaupt")
+forage_group = ExtResource("13_vdbvb")
 success_skill = ExtResource("8_cc1os")
 success_experience = 5.0
 success_event = ExtResource("11_tvqci")

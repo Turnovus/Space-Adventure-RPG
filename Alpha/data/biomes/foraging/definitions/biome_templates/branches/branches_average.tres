@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BiomeForage" load_steps=3 format=3 uid="uid://6vervnl1m20a"]
+
+[ext_resource type="Resource" uid="uid://dst2web5610k7" path="res://data/biomes/foraging/definitions/branches.tres" id="1_o0041"]
+[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="1_vr1w6"]
+
+[resource]
+script = ExtResource("1_vr1w6")
+forage_group = ExtResource("1_o0041")
+richness_factor = 1.0
