@@ -1,3 +1,4 @@
+@icon("res://assets/textures/machine/gears.svg")
 class_name Namer
 extends Resource
 

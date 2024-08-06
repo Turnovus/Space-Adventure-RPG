@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/ringing-bell.svg")
 class_name EventType
 extends Resource
 

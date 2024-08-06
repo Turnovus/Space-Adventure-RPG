@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/id-card.svg")
 class_name Identity
 extends Node
 

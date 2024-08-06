@@ -1,3 +1,4 @@
+@icon("res://assets/textures/body/person.svg")
 class_name Agent
 extends Entity
 

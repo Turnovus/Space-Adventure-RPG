@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/photo-camera.svg")
 class_name EventIconResolver
 extends Resource
 

@@ -1,3 +1,4 @@
+@icon("res://assets/textures/ui/position-marker.svg")
 class_name TerrestrialLocation
 extends Entity
 

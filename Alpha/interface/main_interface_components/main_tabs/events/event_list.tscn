@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/events/event_list.gd" id="1_i0b78"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_kgvqq"]
-[ext_resource type="Texture2D" uid="uid://b32y48xgtt6yy" path="res://assets/textures/weather/sun.svg" id="2_txwmo"]
+[ext_resource type="Texture2D" uid="uid://cwpgym5sgpi5p" path="res://assets/textures/object/ringing-bell.svg" id="3_dydfu"]
 
 [node name="EventList" type="VBoxContainer"]
 anchors_preset = 15
@@ -14,7 +14,7 @@ script = ExtResource("1_i0b78")
 
 [node name="TabController" type="Node" parent="."]
 script = ExtResource("1_kgvqq")
-tab_icon = ExtResource("2_txwmo")
+tab_icon = ExtResource("3_dydfu")
 show_count = 1
 clear_count_on_open = true
 

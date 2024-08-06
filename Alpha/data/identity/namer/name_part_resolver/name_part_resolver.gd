@@ -1,3 +1,4 @@
+@icon("res://assets/textures/machine/cog.svg")
 class_name NamePartResolver
 extends Resource
 

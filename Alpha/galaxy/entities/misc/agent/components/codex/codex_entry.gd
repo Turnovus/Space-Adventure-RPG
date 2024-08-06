@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/notebook.svg")
 class_name CodexEntry
 extends Node
 

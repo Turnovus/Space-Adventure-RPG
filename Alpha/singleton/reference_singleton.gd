@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/magnifying-glass.svg")
 extends Node
 
 

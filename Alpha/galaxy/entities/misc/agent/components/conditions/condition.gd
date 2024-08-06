@@ -1,3 +1,4 @@
+@icon("res://assets/textures/body/aura.svg")
 class_name Condition
 extends Node
 

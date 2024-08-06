@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/container/basket.svg")
 class_name ForageGroup
 extends Resource
 

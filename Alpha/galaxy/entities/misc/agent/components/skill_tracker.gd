@@ -1,3 +1,4 @@
+@icon("res://assets/textures/body/skills.svg")
 class_name SkillTracker
 extends  Node
 

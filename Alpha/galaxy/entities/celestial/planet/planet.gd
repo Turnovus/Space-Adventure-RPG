@@ -1,3 +1,4 @@
+@icon("res://assets/textures/space/world.svg")
 class_name Planet
 extends TerrestrialLocation
 

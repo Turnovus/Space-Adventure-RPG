@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/cube.svg")
 class_name Entity
 extends Node
 

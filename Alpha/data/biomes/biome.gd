@@ -1,3 +1,4 @@
+@icon("res://assets/textures/place/forest.svg")
 class_name Biome
 extends Resource
 

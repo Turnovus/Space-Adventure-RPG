@@ -1,3 +1,4 @@
+@icon("res://assets/textures/object/wood-stick.svg")
 class_name BiomeForage
 extends Resource
 
