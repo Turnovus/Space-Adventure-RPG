@@ -1,5 +1,5 @@
-extends Node
 class_name ActionIssuer
+extends Node
 
 
 @export var action_scene : PackedScene

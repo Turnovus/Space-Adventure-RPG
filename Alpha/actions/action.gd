@@ -1,5 +1,12 @@
-extends Node
+@icon("res://assets/textures/body/jump-across.svg")
 class_name Action
+extends Node
+## Represents an action performed by an [Agent] over one or more turns.
+##
+## Actions store the parameters selected by the performing [Agent], and handle the execution of
+## action logic, including logic contained in every child [ActionComponent]. Actions are created by
+## an [ActionIssuer] attached to an [Entity], and they are handled by the executing agent's
+## [ActionManager].
 
 
 @export var icon : Texture2D
