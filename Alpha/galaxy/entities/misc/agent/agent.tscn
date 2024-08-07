@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=26 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxt82xhac32a1" path="res://galaxy/entities/misc/agent/components/stats/stat_manager.tscn" id="3_t8mw0"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/condition_degree_data.gd" id="4_080mv"]
 [ext_resource type="Texture2D" uid="uid://dnw6vasm3qimq" path="res://assets/textures/weather/moon.svg" id="5_242im"]
+[ext_resource type="Resource" uid="uid://bu6kx7bgfifcp" path="res://data/crafting/definitions/root_crafting.tres" id="6_4i0fj"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/components/stat_effector/condition_component_stat_effector.gd" id="6_65t5o"]
 [ext_resource type="Texture2D" uid="uid://dc7fg4a72c6bg" path="res://assets/textures/weather/sun-horizon.svg" id="7_krrdb"]
 [ext_resource type="Resource" uid="uid://djmubv2cm26h" path="res://galaxy/entities/misc/agent/components/stats/stats/physical_point_max.tres" id="9_c5vy8"]
@@ -31,6 +32,7 @@ physical_point_stat = ExtResource("9_c5vy8")
 mental_point_stat = ExtResource("10_oo78l")
 learning_stat = ExtResource("12_k3v11")
 survey_range_stat = ExtResource("13_e6ppp")
+crafting_root = ExtResource("6_4i0fj")
 
 [node name="ConditionManager" parent="." instance=ExtResource("2_e2rc3")]
 

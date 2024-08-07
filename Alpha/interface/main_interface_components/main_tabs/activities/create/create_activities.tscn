@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmag34qs40yge"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/create_activities.gd" id="1_gx421"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_ykgbc"]
+[ext_resource type="Texture2D" uid="uid://bxryoi488fggs" path="res://assets/textures/object/banging-gavel.svg" id="2_1traq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rslqv"]
+font_size = 30
+
+[node name="CreateActivities" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gx421")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("1_ykgbc")
+tab_icon = ExtResource("2_1traq")
+
+[node name="GroupTree" type="Tree" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RecipeList" type="ItemList" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+fixed_icon_size = Vector2i(25, 25)
+
+[node name="RecipeInfo" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Header" type="HBoxContainer" parent="RecipeInfo"]
+layout_mode = 2
+alignment = 1
+
+[node name="RecipeIcon" type="TextureRect" parent="RecipeInfo/Header"]
+layout_mode = 2
+texture = ExtResource("2_1traq")
+expand_mode = 2
+
+[node name="RecipeLabel" type="Label" parent="RecipeInfo/Header"]
+layout_mode = 2
+text = "Crafting"
+label_settings = SubResource("LabelSettings_rslqv")
+
+[node name="Description" type="RichTextLabel" parent="RecipeInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Select a crafting recipe from the list on the left. Information about the recipe, including material and labor costs, will be displayed here."

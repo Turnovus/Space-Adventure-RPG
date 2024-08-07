@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=3 format=3 uid="uid://cuf5ocwp08grp"]
+
+[ext_resource type="Texture2D" uid="uid://bkenurck0vu3a" path="res://assets/textures/object/silex.svg" id="1_b2y73"]
+[ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="1_vtbim"]
+
+[resource]
+script = ExtResource("1_vtbim")
+label = "sharpen rock"
+description = "Use one rock to smash material off of another, forming a sharp edge. This edge can be used as a crude cutting implement, or as the head of a primitive tool."
+icon = ExtResource("1_b2y73")

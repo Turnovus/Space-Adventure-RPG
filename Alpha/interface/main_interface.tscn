@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=13 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_l3a4o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dp7fo75kh6l3h" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.tscn" id="5_01e6a"]
 [ext_resource type="PackedScene" uid="uid://cg73gxmawfrtm" path="res://interface/main_interface_components/player_action_list/player_action_list.tscn" id="5_x15g8"]
 [ext_resource type="PackedScene" uid="uid://d1huw6xvlrfjv" path="res://interface/main_interface_components/player/player_main_menu.tscn" id="7_4cjly"]
+[ext_resource type="PackedScene" uid="uid://caryc82xc7ji3" path="res://interface/main_interface_components/main_tabs/activities/activity_menu.tscn" id="7_udveu"]
 [ext_resource type="PackedScene" uid="uid://l4w8yi1c4u35" path="res://interface/main_interface_components/main_tabs/events/event_list.tscn" id="8_cmeo2"]
 [ext_resource type="PackedScene" uid="uid://byw82b0q8oa4h" path="res://interface/main_interface_components/main_tabs/map/map.tscn" id="9_f6mjv"]
 [ext_resource type="PackedScene" uid="uid://edophnioen3s" path="res://interface/main_interface_components/main_tabs/codex/codex_main_menu.tscn" id="11_h5t0t"]
@@ -63,6 +64,10 @@ tab_focus_mode = 0
 script = ExtResource("1_l3a4o")
 
 [node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
+layout_mode = 2
+
+[node name="Activities" parent="TabContainer" instance=ExtResource("7_udveu")]
+visible = false
 layout_mode = 2
 
 [node name="You" parent="TabContainer" instance=ExtResource("7_4cjly")]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://caryc82xc7ji3"]
+
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_h1s0c"]
+[ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_yd1lu"]
+[ext_resource type="Texture2D" uid="uid://b8i7g7rrhig3b" path="res://assets/textures/body/jumping-rope.svg" id="2_3qfeb"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="3_8ul5f"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="4_t8pxm"]
+[ext_resource type="PackedScene" uid="uid://bmag34qs40yge" path="res://interface/main_interface_components/main_tabs/activities/create/create_activities.tscn" id="6_bhilm"]
+
+[node name="ActivityMenu" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("1_h1s0c")
+tab_icon = ExtResource("2_3qfeb")
+
+[node name="CustomTabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/icon_max_width = 25
+script = ExtResource("1_yd1lu")
+
+[node name="Create" parent="CustomTabContainer" instance=ExtResource("6_bhilm")]
+layout_mode = 2
+
+[node name="InfoBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="PhysicalIcon" type="TextureRect" parent="InfoBar"]
+layout_mode = 2
+texture = ExtResource("3_8ul5f")
+expand_mode = 2
+
+[node name="PhysicalText" type="Label" parent="InfoBar"]
+layout_mode = 2
+text = "0/0 (0/0)"
+
+[node name="MentalIcon" type="TextureRect" parent="InfoBar"]
+layout_mode = 2
+texture = ExtResource("4_t8pxm")
+expand_mode = 2
+
+[node name="MentalText" type="Label" parent="InfoBar"]
+layout_mode = 2
+text = "0/0 (0/0)"

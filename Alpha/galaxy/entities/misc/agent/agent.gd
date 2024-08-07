@@ -10,6 +10,8 @@ const BASE_POINTS = 20
 @export var mental_point_stat : Stat
 @export var learning_stat : Stat
 @export var survey_range_stat : Stat
+@export_category("crafting")
+@export var crafting_root : CraftingGroup
 
 var is_player: bool = false
 

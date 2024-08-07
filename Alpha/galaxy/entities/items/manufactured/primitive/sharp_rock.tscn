@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cquh0q3uab4cu"]
+
+[ext_resource type="Script" path="res://galaxy/entities/items/item.gd" id="1_6n5ot"]
+[ext_resource type="Texture2D" uid="uid://bkenurck0vu3a" path="res://assets/textures/object/silex.svg" id="2_67uel"]
+
+[node name="SharpRock" type="Node"]
+script = ExtResource("1_6n5ot")
+icon = ExtResource("2_67uel")
+label = "sharp rock"
