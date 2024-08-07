@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3krj0k3m8kqc"]
-
-[ext_resource type="Script" path="res://galaxy/entities/items/item.gd" id="1_57rmp"]
-[ext_resource type="Texture2D" uid="uid://dgc3qodyv2wxa" path="res://assets/textures/object/rock.svg" id="2_2vwqt"]
-
-[node name="Rock" type="Node"]
-script = ExtResource("1_57rmp")
-icon = ExtResource("2_2vwqt")
-label = "rock"

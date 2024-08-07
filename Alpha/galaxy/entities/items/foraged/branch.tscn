@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://drlfdrkl0xmc6"]
-
-[ext_resource type="Script" path="res://galaxy/entities/items/item.gd" id="1_imqsu"]
-[ext_resource type="Texture2D" uid="uid://c654hfbjykywh" path="res://assets/textures/object/wood-stick.svg" id="2_pjwsa"]
-
-[node name="Branch" type="Node"]
-script = ExtResource("1_imqsu")
-icon = ExtResource("2_pjwsa")
-label = "branch"

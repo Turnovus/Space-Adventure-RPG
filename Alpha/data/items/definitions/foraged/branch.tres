@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemTemplate" load_steps=3 format=3 uid="uid://bbnqcra6df48u"]
+
+[ext_resource type="Texture2D" uid="uid://c654hfbjykywh" path="res://assets/textures/object/wood-stick.svg" id="1_3gujn"]
+[ext_resource type="Script" path="res://data/items/item_template.gd" id="2_vb18m"]
+
+[resource]
+script = ExtResource("2_vb18m")
+label = "branch"
+icon = ExtResource("1_3gujn")
