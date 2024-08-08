@@ -6,4 +6,6 @@
 [resource]
 script = ExtResource("2_vb18m")
 label = "branch"
+description = "A hefty wooden branch, taken from a tree."
 icon = ExtResource("1_3gujn")
+tool_properties = Array[Resource("res://data/items/tools/tool_properties.gd")]([])
