@@ -3,6 +3,12 @@ extends HBoxContainer
 
 const TEXT_ICON_SIZE = 20
 
+const TEXT_SIZE_MAIN = 35
+const TEXT_SIZE_EXTRA = 15
+
+@export var icon_physical : Texture2D
+@export var icon_mental : Texture2D
+
 var groups : Dictionary
 var selected_group : CraftingGroup
 var selected_recipe : CraftingRecipe
@@ -58,10 +64,12 @@ func _display_recipe(recipe : CraftingRecipe):
 
 
 func _update_description(recipe : CraftingRecipe):
-	readout.text = recipe.description
+	readout.push_font_size(TEXT_SIZE_MAIN)
+	readout.text = recipe.description + "\n"
+	readout.push_font_size(TEXT_SIZE_EXTRA)
 	
 	if len(recipe.ingredients) > 0:
-		readout.append_text("\n\nIngredients:")
+		readout.append_text("\nIngredients:")
 		readout.push_list(1, RichTextLabel.LIST_DOTS, true)
 		for ingredient : RecipeIngredient in recipe.ingredients:
 			#TODO: Ingredient icons
@@ -70,7 +78,7 @@ func _update_description(recipe : CraftingRecipe):
 		readout.pop()
 	
 	if len(recipe.tools) > 0:
-		readout.append_text("\n\nTools needed:")
+		readout.append_text("\nTools needed:")
 		readout.push_list(1, RichTextLabel.LIST_DOTS, true)
 		for tool : RecipeTool in recipe.tools:
 			readout.add_image(tool.tool.icon, TEXT_ICON_SIZE, TEXT_ICON_SIZE)
@@ -81,6 +89,20 @@ func _update_description(recipe : CraftingRecipe):
 				readout.append_text(" (min. %s)" % str(tool.min_effectiveness))
 			readout.append_text("\n")
 		readout.pop()
+	
+	if recipe.physical_labor > 0 or recipe.mental_labor > 0:
+		readout.append_text("\nWork required:")
+		readout.push_list(1, RichTextLabel.LIST_DOTS, true)
+		if recipe.physical_labor > 0:
+			readout.add_image(icon_physical, TEXT_ICON_SIZE, TEXT_ICON_SIZE)
+			readout.append_text("Physical: ")
+			readout.append_text(str(recipe.physical_labor))
+			readout.append_text("\n")
+		if recipe.mental_labor > 0:
+			readout.add_image(icon_mental, TEXT_ICON_SIZE, TEXT_ICON_SIZE)
+			readout.append_text("Mental: ")
+			readout.append_text(str(recipe.mental_labor))
+			readout.append_text("\n")
 
 
 func _on_group_selected():

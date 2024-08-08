@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmag34qs40yge"]
+[gd_scene load_steps=7 format=3 uid="uid://bmag34qs40yge"]
 
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/create_activities.gd" id="1_gx421"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_ykgbc"]
 [ext_resource type="Texture2D" uid="uid://bxryoi488fggs" path="res://assets/textures/object/banging-gavel.svg" id="2_1traq"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_kl80i"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_t41xk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rslqv"]
 font_size = 30
@@ -14,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gx421")
+icon_physical = ExtResource("2_kl80i")
+icon_mental = ExtResource("3_t41xk")
 
 [node name="TabController" type="Node" parent="."]
 script = ExtResource("1_ykgbc")

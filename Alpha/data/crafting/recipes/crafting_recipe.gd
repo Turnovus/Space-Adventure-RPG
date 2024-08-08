@@ -8,3 +8,5 @@ extends Resource
 @export var icon : Texture2D
 @export var ingredients : Array[RecipeIngredient]
 @export var tools : Array[RecipeTool]
+@export var physical_labor : float = 0
+@export var mental_labor : float = 0
