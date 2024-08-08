@@ -1,6 +1,8 @@
 extends HBoxContainer
 
 
+const TEXT_ICON_SIZE = 20
+
 var groups : Dictionary
 var selected_group : CraftingGroup
 var selected_recipe : CraftingRecipe
@@ -50,25 +52,35 @@ func _generate_recipes(group : CraftingGroup):
 
 
 func _display_recipe(recipe : CraftingRecipe):
-	readout.text = _get_full_description(recipe)
+	_update_description(recipe)
 	recipe_icon.texture = recipe.icon
 	recipe_label.text = recipe.label.capitalize()
 
 
-func _get_full_description(recipe : CraftingRecipe) -> String:
-	var text = recipe.description
+func _update_description(recipe : CraftingRecipe):
+	readout.text = recipe.description
 	
-	var ingredient_texts = []
-	for ingredient : RecipeIngredient in recipe.ingredients:
-		ingredient_texts.append(ingredient.get_recipe_text())
+	if len(recipe.ingredients) > 0:
+		readout.append_text("\n\nIngredients:")
+		readout.push_list(1, RichTextLabel.LIST_DOTS, true)
+		for ingredient : RecipeIngredient in recipe.ingredients:
+			#TODO: Ingredient icons
+			readout.append_text(ingredient.get_recipe_text())
+			readout.append_text("\n")
+		readout.pop()
 	
-	if len(ingredient_texts) > 0:
-		text += "\n\nIngredients:"
-		for line in ingredient_texts:
-			text += "\n  - "
-			text += line
-	
-	return text
+	if len(recipe.tools) > 0:
+		readout.append_text("\n\nTools needed:")
+		readout.push_list(1, RichTextLabel.LIST_DOTS, true)
+		for tool : RecipeTool in recipe.tools:
+			readout.add_image(tool.tool.icon, TEXT_ICON_SIZE, TEXT_ICON_SIZE)
+			if tool.work_required > 0:
+				readout.append_text("%s x " % str(tool.work_required))
+			readout.append_text(tool.tool.label)
+			if tool.min_effectiveness > 0:
+				readout.append_text(" (min. %s)" % str(tool.min_effectiveness))
+			readout.append_text("\n")
+		readout.pop()
 
 
 func _on_group_selected():

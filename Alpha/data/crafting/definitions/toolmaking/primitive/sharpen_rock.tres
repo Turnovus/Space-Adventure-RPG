@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=10 format=3 uid="uid://cuf5ocwp08grp"]
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=13 format=3 uid="uid://cuf5ocwp08grp"]
 
 [ext_resource type="Texture2D" uid="uid://bkenurck0vu3a" path="res://assets/textures/object/silex.svg" id="1_b2y73"]
 [ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="1_vtbim"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_finder/item_template.gd" id="3_xxsf7"]
 [ext_resource type="Resource" uid="uid://1y2dthgcubss" path="res://data/items/definitions/foraged/rock.tres" id="4_rh1qa"]
 [ext_resource type="Script" path="res://data/crafting/ingredients/recipe_ingredient.gd" id="5_7i8eq"]
+[ext_resource type="Script" path="res://data/crafting/recipe_tool.gd" id="7_kh7vv"]
+[ext_resource type="Resource" uid="uid://6ouut1mqurbh" path="res://data/items/tools/definitions/hammering.tres" id="8_884il"]
 
 [sub_resource type="Resource" id="Resource_tk7my"]
 script = ExtResource("2_dexuv")
@@ -21,9 +23,16 @@ usage = 1
 finder = SubResource("Resource_dcpwk")
 counter = SubResource("Resource_tk7my")
 
+[sub_resource type="Resource" id="Resource_r0sn1"]
+script = ExtResource("7_kh7vv")
+tool = ExtResource("8_884il")
+min_effectiveness = 0.5
+work_required = 2.0
+
 [resource]
 script = ExtResource("1_vtbim")
 label = "sharpen rock"
 description = "Use one rock to smash material off of another, forming a sharp edge. This edge can be used as a crude cutting implement, or as the head of a primitive tool."
 icon = ExtResource("1_b2y73")
 ingredients = Array[ExtResource("5_7i8eq")]([SubResource("Resource_xci3j")])
+tools = Array[ExtResource("7_kh7vv")]([SubResource("Resource_r0sn1")])
