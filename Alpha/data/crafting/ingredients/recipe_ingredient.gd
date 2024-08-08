@@ -15,6 +15,12 @@ enum UsageMode {
 }
 
 
+const USAGE_TEXT = [
+	"consumed",
+	"assembled",
+	"modified",
+]
+
 @export var usage : UsageMode = UsageMode.NONE
 @export var finder : RecipeIngredientFinder
 @export var counter : RecipeIngredientCounter
@@ -24,4 +30,8 @@ func get_recipe_text() -> String:
 	var text : String = "item"
 	text = finder.alter_recipe_text(text)
 	text = counter.alter_recipe_text(text)
+	
+	if usage != 0:
+		text += " ({usage})".format({"usage" : USAGE_TEXT[usage - 1]})
+	
 	return text

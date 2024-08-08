@@ -50,9 +50,25 @@ func _generate_recipes(group : CraftingGroup):
 
 
 func _display_recipe(recipe : CraftingRecipe):
-	readout.text = recipe.description
+	readout.text = _get_full_description(recipe)
 	recipe_icon.texture = recipe.icon
 	recipe_label.text = recipe.label.capitalize()
+
+
+func _get_full_description(recipe : CraftingRecipe) -> String:
+	var text = recipe.description
+	
+	var ingredient_texts = []
+	for ingredient : RecipeIngredient in recipe.ingredients:
+		ingredient_texts.append(ingredient.get_recipe_text())
+	
+	if len(ingredient_texts) > 0:
+		text += "\n\nIngredients:"
+		for line in ingredient_texts:
+			text += "\n  - "
+			text += line
+	
+	return text
 
 
 func _on_group_selected():

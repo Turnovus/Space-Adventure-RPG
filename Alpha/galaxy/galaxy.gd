@@ -1,3 +1,4 @@
+@icon("res://assets/textures/space/galaxy.svg")
 extends Node
 class_name Galaxy
 
