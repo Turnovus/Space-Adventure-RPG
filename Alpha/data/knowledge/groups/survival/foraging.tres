@@ -9,5 +9,5 @@ key = "foraging"
 label = "Foraging"
 description = "The ability to extract useful materials from one's environment."
 icon = ExtResource("1_cyotf")
-base_cost = 0.1
+base_cost = 25.0
 prerequisites = Array[ExtResource("1_ec3mw")]([])
