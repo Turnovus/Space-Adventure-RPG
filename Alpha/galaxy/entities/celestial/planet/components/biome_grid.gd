@@ -18,6 +18,8 @@ var noise_elevation : BiomeNoise
 var noise_moisture : BiomeNoise
 var noise_temperature : BiomeNoise
 
+var tiles_to_update : Array[ForageTile] = []
+
 
 func _ready():
 	size = get_parent().get_size().x
@@ -121,11 +123,20 @@ func get_forage_chance_at(position : Vector2, group : ForageGroup, potency : flo
 	return 0
 
 
+func do_forage_depletion(position : Vector2, group : ForageGroup):
+	var forage : Array[ForageTile] = get_forage_at(position)
+	for tile : ForageTile in forage:
+		if tile.forage_group == group:
+			tile.do_deplete()
+			tiles_to_update.append(tile)
+
+
 func update():
-	for row : Array in foraging:
-		for tiles : Array in row:
-			for tile : ForageTile in tiles:
-				tile.update(1) #TODO: Winter
+	for i in range(len(tiles_to_update) - 1, -1, -1):
+		var tile : ForageTile = tiles_to_update[i]
+		tile.update(0) #TODO: Winter
+		if tile.has_full_richness():
+			tiles_to_update.remove_at(i)
 
 
 func get_planet() -> Planet:
@@ -173,6 +184,7 @@ class ForageTile:
 	const FORAGE_POTENCY_EFFECT : float = 0.05
 	# When forage power reaches this value, the chance of obtaining an item is 50%
 	const FORAGE_FIFTY_PERCENT_CHANCE_FACTOR : float = 5
+	const MAX_RICHNESS_EPSILON : float = 0.001
 	
 	var forage_group : ForageGroup
 	var max_richness : float
@@ -191,6 +203,10 @@ class ForageTile:
 		replenish *= replenish_factor
 		richness += replenish
 		richness = minf(max_richness, richness)
+	
+	
+	func has_full_richness() -> bool:
+		return richness + MAX_RICHNESS_EPSILON >= max_richness
 	
 	
 	func do_deplete():

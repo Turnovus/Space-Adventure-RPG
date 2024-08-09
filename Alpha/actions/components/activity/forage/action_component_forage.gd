@@ -43,6 +43,7 @@ func turn_action(agent : Agent, potency : float):
 			break
 		
 		do_forage_reward(agent, biome)
+		planet.biomes.do_forage_depletion(agent.location_relative, forage_group)
 
 
 func do_forage_reward(agent : Agent, biome : Biome):
