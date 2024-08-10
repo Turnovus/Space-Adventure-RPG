@@ -104,6 +104,8 @@ skill_increase_event = ExtResource("20_vy2pb")
 
 [node name="ActionTracker" type="Node" parent="."]
 script = ExtResource("19_ddslp")
+activity_point_value = 3
+max_activity_factor = 0.5
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("20_skaeg")

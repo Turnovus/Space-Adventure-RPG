@@ -10,3 +10,5 @@ extends Resource
 @export var tools : Array[RecipeTool]
 @export var physical_labor : float = 0
 @export var mental_labor : float = 0
+@export var physical_activity_cost : int = 0
+@export var mental_activity_cost : int = 0

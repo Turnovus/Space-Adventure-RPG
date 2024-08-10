@@ -15,6 +15,7 @@ func _ready():
 	galaxy = await ReferenceSingleton.get_galaxy()
 	turn_button.pressed.connect(_on_turn_button_pressed)
 	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
+	galaxy.player.actions.activities_changed.connect(_on_player_actions_changed)
 	galaxy.player_points_reallocated.connect(_on_player_actions_changed)
 	_on_player_actions_changed()
 

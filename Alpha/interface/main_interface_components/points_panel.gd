@@ -8,6 +8,7 @@ extends PanelContainer
 func _ready():
 	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.player.actions.actions_changed.connect(_on_player_actions_changed)
+	galaxy.player.actions.activities_changed.connect(_on_player_actions_changed)
 	galaxy.player_points_reallocated.connect(_on_player_actions_changed)
 	_on_player_actions_changed()
 

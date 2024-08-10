@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjy7tmi6n5kpd"]
+[gd_scene load_steps=14 format=3 uid="uid://cjy7tmi6n5kpd"]
 
 [ext_resource type="PackedScene" uid="uid://tkege38bv5p5" path="res://interface/main_interface_components/points_panel.tscn" id="1_g5gv6"]
 [ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_l3a4o"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfpx8i6ru5r7v" path="res://interface/main_interface_components/turn_buttons.tscn" id="2_ervsp"]
 [ext_resource type="PackedScene" uid="uid://dp7fo75kh6l3h" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.tscn" id="5_01e6a"]
 [ext_resource type="PackedScene" uid="uid://cg73gxmawfrtm" path="res://interface/main_interface_components/player_action_list/player_action_list.tscn" id="5_x15g8"]
+[ext_resource type="PackedScene" uid="uid://cd77om04ps15c" path="res://interface/main_interface_components/player_activity_list/player_activity_list.tscn" id="6_oibw2"]
 [ext_resource type="PackedScene" uid="uid://d1huw6xvlrfjv" path="res://interface/main_interface_components/player/player_main_menu.tscn" id="7_4cjly"]
 [ext_resource type="PackedScene" uid="uid://caryc82xc7ji3" path="res://interface/main_interface_components/main_tabs/activities/activity_menu.tscn" id="7_udveu"]
 [ext_resource type="PackedScene" uid="uid://l4w8yi1c4u35" path="res://interface/main_interface_components/main_tabs/events/event_list.tscn" id="8_cmeo2"]
@@ -50,46 +51,56 @@ layout_mode = 2
 [node name="TurnButtons" parent="HBoxContainer" instance=ExtResource("2_ervsp")]
 layout_mode = 2
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="MainContent" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.236
 anchor_right = 1.0
-anchor_bottom = 0.875
-offset_left = 3.12799
-offset_bottom = 0.999939
-grow_horizontal = 0
+anchor_bottom = 0.876543
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerAct" type="VSplitContainer" parent="MainContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayerActionList" parent="MainContent/PlayerAct" instance=ExtResource("5_x15g8")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="PlayerActivityList" parent="MainContent/PlayerAct" instance=ExtResource("6_oibw2")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="MainContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
 theme_override_constants/icon_max_width = 25
 tab_focus_mode = 0
 script = ExtResource("1_l3a4o")
 
-[node name="Actions" parent="TabContainer" instance=ExtResource("5_01e6a")]
+[node name="Actions" parent="MainContent/TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
 
-[node name="Activities" parent="TabContainer" instance=ExtResource("7_udveu")]
+[node name="Activities" parent="MainContent/TabContainer" instance=ExtResource("7_udveu")]
 visible = false
 layout_mode = 2
 
-[node name="You" parent="TabContainer" instance=ExtResource("7_4cjly")]
+[node name="You" parent="MainContent/TabContainer" instance=ExtResource("7_4cjly")]
 visible = false
 layout_mode = 2
 
-[node name="Events" parent="TabContainer" instance=ExtResource("8_cmeo2")]
+[node name="Events" parent="MainContent/TabContainer" instance=ExtResource("8_cmeo2")]
 visible = false
 layout_mode = 2
 
-[node name="Map" parent="TabContainer" instance=ExtResource("9_f6mjv")]
+[node name="Map" parent="MainContent/TabContainer" instance=ExtResource("9_f6mjv")]
 visible = false
 layout_mode = 2
 
-[node name="Codex" parent="TabContainer" instance=ExtResource("11_h5t0t")]
+[node name="Codex" parent="MainContent/TabContainer" instance=ExtResource("11_h5t0t")]
 visible = false
 layout_mode = 2
-
-[node name="PlayerActionList" parent="." instance=ExtResource("5_x15g8")]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.235
-anchor_bottom = 0.877
-offset_right = 0.279968
-offset_bottom = -0.296021

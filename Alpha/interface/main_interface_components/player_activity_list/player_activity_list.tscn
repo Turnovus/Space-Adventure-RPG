@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd77om04ps15c"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/player_activity_list/player_activity_list.gd" id="1_chjln"]
+[ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_45nqa"]
+[ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_vhl37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltfvc"]
+font_size = 20
+
+[node name="PlayerActivityList" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_chjln")
+physical_icon = ExtResource("2_45nqa")
+mental_icon = ExtResource("3_vhl37")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Activities"
+label_settings = SubResource("LabelSettings_ltfvc")
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Sample text"

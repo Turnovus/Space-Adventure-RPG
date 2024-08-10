@@ -38,3 +38,5 @@ ingredients = Array[ExtResource("5_7i8eq")]([SubResource("Resource_xci3j")])
 tools = Array[ExtResource("7_kh7vv")]([SubResource("Resource_r0sn1")])
 physical_labor = 15.0
 mental_labor = 0.0
+physical_activity_cost = 2
+mental_activity_cost = 2

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://caryc82xc7ji3"]
+[gd_scene load_steps=8 format=3 uid="uid://caryc82xc7ji3"]
 
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/activity_menu.gd" id="1_flkiy"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_h1s0c"]
 [ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_yd1lu"]
 [ext_resource type="Texture2D" uid="uid://b8i7g7rrhig3b" path="res://assets/textures/body/jumping-rope.svg" id="2_3qfeb"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_flkiy")
 
 [node name="TabController" type="Node" parent="."]
 script = ExtResource("1_h1s0c")
@@ -38,7 +40,7 @@ expand_mode = 2
 
 [node name="PhysicalText" type="Label" parent="InfoBar"]
 layout_mode = 2
-text = "0/0 (0/0)"
+text = "0/0"
 
 [node name="MentalIcon" type="TextureRect" parent="InfoBar"]
 layout_mode = 2
@@ -47,4 +49,4 @@ expand_mode = 2
 
 [node name="MentalText" type="Label" parent="InfoBar"]
 layout_mode = 2
-text = "0/0 (0/0)"
+text = "0/0"

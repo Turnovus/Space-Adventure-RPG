@@ -2,7 +2,7 @@ extends PanelContainer
 
 
 @onready var listing = preload("res://interface/main_interface_components/action_listing/action_listing.tscn")
-@onready var list = $ScrollContainer/VBoxContainer
+@onready var list = $VBoxContainer/ScrollContainer/VBoxContainer
 
 
 func _ready():

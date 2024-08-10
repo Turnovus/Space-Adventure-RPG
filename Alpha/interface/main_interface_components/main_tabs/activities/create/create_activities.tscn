@@ -18,6 +18,9 @@ grow_vertical = 2
 script = ExtResource("1_gx421")
 icon_physical = ExtResource("2_kl80i")
 icon_mental = ExtResource("3_t41xk")
+create_disabled_no_selection = "Please select a recipe from the center list."
+create_disabled_insufficient_activities = "You do not have enough remaining activity points to start this recipe.
+Try waiting until next turn."
 
 [node name="TabController" type="Node" parent="."]
 script = ExtResource("1_ykgbc")
@@ -56,3 +59,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Select a crafting recipe from the list on the left. Information about the recipe, including material and labor costs, will be displayed here."
+
+[node name="CreateButton" type="Button" parent="RecipeInfo"]
+layout_mode = 2
+text = "Create"

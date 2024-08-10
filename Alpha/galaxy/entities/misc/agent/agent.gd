@@ -5,12 +5,12 @@ extends Entity
 
 const BASE_POINTS = 20
 
-@export_category("stats")
+@export_subgroup("stats")
 @export var physical_point_stat : Stat
 @export var mental_point_stat : Stat
 @export var learning_stat : Stat
 @export var survey_range_stat : Stat
-@export_category("crafting")
+@export_subgroup("crafting")
 @export var crafting_root : CraftingGroup
 
 var is_player: bool = false
@@ -22,11 +22,6 @@ var is_player: bool = false
 @onready var skills : SkillTracker = $SkillTracker
 @onready var actions : ActionTracker = $ActionTracker
 @onready var inventory : Inventory = $Inventory
-
-
-func _ready():
-	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
-	galaxy.turn_end.connect(_on_turn_end)
 
 
 @warning_ignore("narrowing_conversion")
@@ -58,7 +53,3 @@ func _turn_action(turn : int):
 		knowledge.do_random_learning(unspent_mental, learning_stat.get_current_potency(self))
 	
 	inventory.do_turn(turn)
-
-
-func _on_turn_end(_turn : int):
-	pass
