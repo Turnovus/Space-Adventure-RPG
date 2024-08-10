@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpsxjfqc33jra"]
+
+[ext_resource type="Script" path="res://interface/main_interface_components/player/equipment/player_equipment_viewer.gd" id="1_sgjtg"]
+[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_st2da"]
+[ext_resource type="Texture2D" uid="uid://bv0a7n1780ayr" path="res://assets/textures/object/3d-hammer.svg" id="2_b4gkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu7i8"]
+font_size = 15
+
+[node name="PlayerEquipmentViewer" type="HBoxContainer" node_paths=PackedStringArray("tool_readout")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sgjtg")
+tool_readout = NodePath("ToolList/ToolReadout")
+
+[node name="TabController" type="Node" parent="."]
+script = ExtResource("1_st2da")
+tab_icon = ExtResource("2_b4gkv")
+
+[node name="ToolList" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ToolLabel" type="Label" parent="ToolList"]
+layout_mode = 2
+text = "Available Tools:"
+label_settings = SubResource("LabelSettings_uu7i8")
+horizontal_alignment = 1
+
+[node name="ToolReadout" type="RichTextLabel" parent="ToolList"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Sample Text"
+
+[node name="Placeholder" type="Panel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0

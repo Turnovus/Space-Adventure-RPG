@@ -3,6 +3,14 @@ class_name Inventory
 extends Node
 
 
+signal contents_modified
+
+
+func _ready():
+	child_entered_tree.connect(_on_tree_modified)
+	child_exiting_tree.connect(_on_tree_modified)
+
+
 func do_turn(turn : int):
 	for child in get_children():
 		var entity = child as Entity
@@ -10,3 +18,38 @@ func do_turn(turn : int):
 			continue
 		
 		entity.do_turn(turn)
+
+
+func get_all_contents() -> Array[Item]:
+	return get_contained_items(self)
+
+
+func get_contained_items(node : Node) -> Array[Item]:
+	var items : Array[Item] = []
+	
+	for child : Node in node.get_children():
+		var item : Item = child as Item
+		if item != null:
+			items.append(item)
+		items.append_array(get_contained_items(child))
+	
+	return items
+
+
+func get_best_tools() -> Dictionary:
+	var tools = {}
+	
+	for item : Item in get_all_contents():
+		for properties : ToolProperties in item.template.tool_properties:
+			var tool : ToolTemplate = properties.tool
+			if not tools.has(tool):
+				tools[tool] = item
+			else:
+				if item.get_tool_effectiveness(tool) > tools[tool].get_tool_effectiveness(tool):
+					tools[tool] = item
+	
+	return tools
+
+
+func _on_tree_modified(_node : Node):
+	contents_modified.emit()

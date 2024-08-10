@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1huw6xvlrfjv"]
+[gd_scene load_steps=10 format=3 uid="uid://d1huw6xvlrfjv"]
 
 [ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_33yy7"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_6l4yp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bsdd4hxg5cgne" path="res://interface/main_interface_components/player/stats/player_stat_tab.tscn" id="5_js2qx"]
 [ext_resource type="PackedScene" uid="uid://b5l8abpbh2ec3" path="res://interface/main_interface_components/player/skills/player_skill_tab.tscn" id="6_8sjvg"]
 [ext_resource type="PackedScene" uid="uid://cyu7h3kk7ci83" path="res://interface/main_interface_components/player/knowledge/knowledge_viewer.tscn" id="6_p0xkw"]
+[ext_resource type="PackedScene" uid="uid://cpsxjfqc33jra" path="res://interface/main_interface_components/player/equipment/player_equipment_viewer.tscn" id="7_3fjb6"]
 [ext_resource type="PackedScene" uid="uid://b66t7c48ai1rr" path="res://interface/main_interface_components/player/inventory/player_inventory_viewer.tscn" id="7_e468c"]
 
 [node name="PlayerMainMenu" type="TabContainer"]
@@ -31,6 +32,10 @@ visible = false
 layout_mode = 2
 
 [node name="Skills" parent="." instance=ExtResource("6_8sjvg")]
+visible = false
+layout_mode = 2
+
+[node name="Equipment" parent="." instance=ExtResource("7_3fjb6")]
 visible = false
 layout_mode = 2
 
