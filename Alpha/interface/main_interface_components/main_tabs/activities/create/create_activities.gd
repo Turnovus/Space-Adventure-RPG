@@ -17,6 +17,10 @@ var groups : Dictionary
 var selected_group : CraftingGroup
 var selected_recipe : CraftingRecipe
 
+var recipe_default_icon : Texture2D
+var recipe_default_text : String
+var recipe_default_description : String
+
 @onready var group_tree : Tree = $GroupTree
 @onready var recipes : ItemList = $RecipeList
 @onready var readout : RichTextLabel = $RecipeInfo/Description
@@ -33,6 +37,10 @@ func _ready():
 	var player : Agent = await ReferenceSingleton.get_player()
 	_generate_groups(player)
 	_validate_create_button()
+	
+	recipe_default_icon = recipe_icon.texture
+	recipe_default_text = recipe_label.text
+	recipe_default_description = readout.text
 
 
 func _generate_groups(agent : Agent):
@@ -178,10 +186,17 @@ func _validate_create_button():
 	create_button.disabled = false
 
 
+func _deselect_recipe():
+	selected_recipe = null
+	recipe_icon.texture = recipe_default_icon
+	recipe_label.text = recipe_default_text
+	readout.text = recipe_default_description
+
+
 func _on_group_selected():
-	#TODO: Clear selected recipe when group changes
 	selected_group = groups[group_tree.get_selected()]
 	_generate_recipes(selected_group)
+	_deselect_recipe()
 
 
 func _on_recipe_selected(index : int):
