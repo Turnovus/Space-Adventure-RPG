@@ -165,10 +165,7 @@ func _validate_create_button():
 	
 	var player : Agent = await ReferenceSingleton.get_player()
 	
-	#TODO: This is where we'll check that the player has the required resources.
-	
 	var actions : ActionTracker = player.actions
-	
 	var physical_activities = actions.get_num_physical_activities()
 	physical_activities += selected_recipe.physical_activity_cost
 	var mental_activities = actions.get_num_mental_activities()

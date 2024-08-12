@@ -27,14 +27,15 @@ func _update_tools():
 		tool_readout.push_bold()
 		tool_readout.append_text(tool.label.capitalize())
 		tool_readout.pop()
-		tool_readout.append_text(" - ")
+		tool_readout.push_list(2, RichTextLabel.LIST_DOTS, true)
 		var item : Item = tools[tool]
 		tool_readout.add_image(item.icon, TEXT_ICON_MINOR, TEXT_ICON_MINOR)
 		tool_readout.append_text("{item} ({effectiveness})".format({
 			"item" : item.label.capitalize(),
 			"effectiveness" : item.get_tool_effectiveness(tool),
 		}))
-		tool_readout.append_text("\n")
+		tool_readout.pop()
+		#tool_readout.append_text("\n")
 
 
 func _on_player_inventory_modified():
