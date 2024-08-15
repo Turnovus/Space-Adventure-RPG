@@ -69,7 +69,7 @@ func _add_to_group_tree(group : CraftingGroup, parent : TreeItem = null):
 func _generate_recipes(group : CraftingGroup):
 	recipes.clear()
 	for recipe : CraftingRecipe in group.recipes:
-		recipes.add_item(recipe.label, recipe.icon)
+		recipes.add_item(recipe.label.capitalize(), recipe.icon)
 
 
 func _display_recipe(recipe : CraftingRecipe):
