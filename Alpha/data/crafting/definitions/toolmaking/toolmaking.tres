@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="CraftingGroup" load_steps=3 format=3 uid="uid://dx8j4nk6crv0g"]
+[gd_resource type="Resource" script_class="CraftingGroup" load_steps=4 format=3 uid="uid://dx8j4nk6crv0g"]
 
 [ext_resource type="Resource" uid="uid://h1h1yk5dyw6l" path="res://data/crafting/definitions/toolmaking/primitive/primitive.tres" id="1_16cn3"]
 [ext_resource type="Script" path="res://data/crafting/groups/crafting_group.gd" id="1_hjrx1"]
+[ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="3_7rv7n"]
 
 [resource]
 script = ExtResource("1_hjrx1")
 label = "toolmaking"
 child_groups = Array[ExtResource("1_hjrx1")]([ExtResource("1_16cn3")])
-recipes = Array[Resource("res://data/crafting/recipes/crafting_recipe.gd")]([])
+recipes = Array[ExtResource("3_7rv7n")]([])

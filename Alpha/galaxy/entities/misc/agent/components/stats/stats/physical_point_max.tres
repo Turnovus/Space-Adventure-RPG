@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Stat" load_steps=3 format=3 uid="uid://djmubv2cm26h"]
+[gd_resource type="Resource" script_class="Stat" load_steps=4 format=3 uid="uid://djmubv2cm26h"]
 
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="1_eqs0i"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="2_sleb2"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/effectors/stat_effector_skill.gd" id="3_61f3b"]
 
 [resource]
 script = ExtResource("2_sleb2")
@@ -9,4 +10,4 @@ icon = ExtResource("1_eqs0i")
 label = "Physical Ability"
 description = "The number of available physical action points per turn, rounded down to the nearest whole number."
 base_value = 20.0
-skills = Array[Resource("res://galaxy/entities/misc/agent/components/stats/effectors/stat_effector_skill.gd")]([])
+skills = Array[ExtResource("3_61f3b")]([])

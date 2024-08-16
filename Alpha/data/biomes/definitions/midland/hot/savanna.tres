@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://becakt32bxos5"]
+[gd_resource type="Resource" script_class="Biome" load_steps=5 format=3 uid="uid://becakt32bxos5"]
 
 [ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_2h3jw"]
 [ext_resource type="Resource" uid="uid://b4e26ryg12c3k" path="res://data/biomes/foraging/definitions/biome_templates/branches/branches_desolate.tres" id="1_2nv7h"]
+[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="1_wboap"]
 [ext_resource type="Resource" uid="uid://bxbrr3mv8uw45" path="res://data/biomes/foraging/definitions/biome_templates/rocks/rocks_average.tres" id="2_6xgla"]
 
 [resource]
@@ -9,4 +10,4 @@ script = ExtResource("1_2h3jw")
 label = "savanna"
 map_color = Color(0.886275, 0.729412, 0.517647, 1)
 allow_spawn = true
-forage_groups = Array[Resource("res://data/biomes/foraging/biome_forage.gd")]([ExtResource("1_2nv7h"), ExtResource("2_6xgla")])
+forage_groups = Array[ExtResource("1_wboap")]([ExtResource("1_2nv7h"), ExtResource("2_6xgla")])

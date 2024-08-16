@@ -24,10 +24,12 @@ tab_icon = ExtResource("2_3qfeb")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/icon_max_width = 25
+current_tab = 0
 script = ExtResource("1_yd1lu")
 
 [node name="Create" parent="CustomTabContainer" instance=ExtResource("6_bhilm")]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="InfoBar" type="HBoxContainer" parent="."]
 layout_mode = 2

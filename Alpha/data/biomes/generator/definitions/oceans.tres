@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=10 format=3 uid="uid://cluguwf2kwwut"]
+[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=11 format=3 uid="uid://cluguwf2kwwut"]
 
 [ext_resource type="Resource" uid="uid://c8ca37h82etck" path="res://data/biomes/definitions/water/deepwater.tres" id="1_cph1x"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="1_wsypi"]
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="2_fwhq1"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_tgcpg"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_w5gyq"]
 [ext_resource type="Resource" uid="uid://bbu3j4q7g8ws0" path="res://data/biomes/definitions/water/water.tres" id="4_7p4ey"]
 
 [sub_resource type="Resource" id="Resource_wdrdo"]
 script = ExtResource("2_tgcpg")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("1_cph1x")])
+biomes = Array[ExtResource("2_fwhq1")]([ExtResource("1_cph1x")])
 
 [sub_resource type="Resource" id="Resource_ku1xe"]
 script = ExtResource("3_w5gyq")
@@ -17,7 +18,7 @@ generator = SubResource("Resource_wdrdo")
 
 [sub_resource type="Resource" id="Resource_3wniy"]
 script = ExtResource("2_tgcpg")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("4_7p4ey")])
+biomes = Array[ExtResource("2_fwhq1")]([ExtResource("4_7p4ey")])
 
 [sub_resource type="Resource" id="Resource_8dsq3"]
 script = ExtResource("3_w5gyq")

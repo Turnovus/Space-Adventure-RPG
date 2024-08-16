@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=10 format=3 uid="uid://617hbi8yfx7g"]
+[gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=11 format=3 uid="uid://617hbi8yfx7g"]
 
 [ext_resource type="Resource" uid="uid://b7hgw3575l14p" path="res://data/biomes/definitions/midland/mild/plains.tres" id="1_dmcds"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="1_n678w"]
+[ext_resource type="Script" path="res://data/biomes/biome.gd" id="2_0rlyk"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_1yiut"]
 [ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_hoqjs"]
 [ext_resource type="Resource" uid="uid://bwbui5imh75nt" path="res://data/biomes/definitions/midland/mild/forest.tres" id="4_yy25l"]
 
 [sub_resource type="Resource" id="Resource_ja7ol"]
 script = ExtResource("2_1yiut")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("1_dmcds")])
+biomes = Array[ExtResource("2_0rlyk")]([ExtResource("1_dmcds")])
 
 [sub_resource type="Resource" id="Resource_ao8qf"]
 script = ExtResource("3_hoqjs")
@@ -17,7 +18,7 @@ generator = SubResource("Resource_ja7ol")
 
 [sub_resource type="Resource" id="Resource_vbg4b"]
 script = ExtResource("2_1yiut")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("4_yy25l")])
+biomes = Array[ExtResource("2_0rlyk")]([ExtResource("4_yy25l")])
 
 [sub_resource type="Resource" id="Resource_3ckeu"]
 script = ExtResource("3_hoqjs")

@@ -79,28 +79,37 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.5
 theme_override_constants/icon_max_width = 25
+current_tab = 0
 tab_focus_mode = 0
 script = ExtResource("1_l3a4o")
 
 [node name="Actions" parent="MainContent/TabContainer" instance=ExtResource("5_01e6a")]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="Activities" parent="MainContent/TabContainer" instance=ExtResource("7_udveu")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="You" parent="MainContent/TabContainer" instance=ExtResource("7_4cjly")]
 visible = false
 layout_mode = 2
+current_tab = 0
+metadata/_tab_index = 2
 
 [node name="Events" parent="MainContent/TabContainer" instance=ExtResource("8_cmeo2")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 3
 
 [node name="Map" parent="MainContent/TabContainer" instance=ExtResource("9_f6mjv")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 4
 
 [node name="Codex" parent="MainContent/TabContainer" instance=ExtResource("11_h5t0t")]
 visible = false
 layout_mode = 2
+current_tab = 0
+metadata/_tab_index = 5

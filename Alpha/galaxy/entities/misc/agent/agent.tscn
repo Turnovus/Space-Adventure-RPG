@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=29 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -17,14 +17,17 @@
 [ext_resource type="Resource" uid="uid://ckbfwgju4f03l" path="res://galaxy/entities/misc/agent/components/stats/stats/survey_range.tres" id="13_e6ppp"]
 [ext_resource type="Resource" uid="uid://d0olmo34545xj" path="res://data/knowledge/groups/survival.tres" id="14_0khjm"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/codex/codex.gd" id="15_1ab5t"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="15_rlukt"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/skill_tracker.gd" id="16_epxb4"]
 [ext_resource type="Resource" uid="uid://dtsvbdt4w7duf" path="res://data/events/definitions/event_knowledge_gained.tres" id="16_uqdhc"]
 [ext_resource type="Resource" uid="uid://iaj4kj6h1mws" path="res://data/skills/survival/surveying.tres" id="17_8cy1n"]
+[ext_resource type="Script" path="res://data/knowledge/knowledge_group.gd" id="17_rfhku"]
 [ext_resource type="Resource" uid="uid://1ig8q0bdka4" path="res://data/events/definitions/event_codex_updated.tres" id="18_4xwys"]
 [ext_resource type="Resource" uid="uid://djrh7g5l87lpd" path="res://data/skills/survival/foraging.tres" id="19_76tao"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/action_tracker.gd" id="19_ddslp"]
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/inventory.gd" id="20_skaeg"]
 [ext_resource type="Resource" uid="uid://daenyow8hmkls" path="res://data/events/definitions/event_skill_increased.tres" id="20_vy2pb"]
+[ext_resource type="Script" path="res://data/skills/skill.gd" id="23_kud7e"]
 
 [node name="Agent" type="Node"]
 script = ExtResource("1_kdh5l")
@@ -86,11 +89,11 @@ stat = ExtResource("13_e6ppp")
 stat_potency_factor = 0.8
 
 [node name="StatManager" parent="." instance=ExtResource("3_t8mw0")]
-stats = Array[Resource("res://galaxy/entities/misc/agent/components/stats/stat.gd")]([ExtResource("9_c5vy8"), ExtResource("10_oo78l"), ExtResource("11_qdy8w"), ExtResource("12_k3v11"), ExtResource("13_e6ppp")])
+stats = Array[ExtResource("15_rlukt")]([ExtResource("9_c5vy8"), ExtResource("10_oo78l"), ExtResource("11_qdy8w"), ExtResource("12_k3v11"), ExtResource("13_e6ppp")])
 
 [node name="KnowledgeTracker" type="Node" parent="."]
 script = ExtResource("13_0id4j")
-knowledge_groups = Array[Resource("res://data/knowledge/knowledge_group.gd")]([ExtResource("14_0khjm")])
+knowledge_groups = Array[ExtResource("17_rfhku")]([ExtResource("14_0khjm")])
 knowledge_learned_event = ExtResource("16_uqdhc")
 
 [node name="Codex" type="Node" parent="."]
@@ -99,7 +102,7 @@ entry_updated_event = ExtResource("18_4xwys")
 
 [node name="SkillTracker" type="Node" parent="."]
 script = ExtResource("16_epxb4")
-skills = Array[Resource("res://data/skills/skill.gd")]([ExtResource("17_8cy1n"), ExtResource("19_76tao")])
+skills = Array[ExtResource("23_kud7e")]([ExtResource("17_8cy1n"), ExtResource("19_76tao")])
 skill_increase_event = ExtResource("20_vy2pb")
 
 [node name="ActionTracker" type="Node" parent="."]
