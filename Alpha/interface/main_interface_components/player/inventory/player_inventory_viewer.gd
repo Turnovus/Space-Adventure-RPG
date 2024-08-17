@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 
-const DESCRIPTION_FONT_SIZE_MAIN = 40
+const DESCRIPTION_FONT_SIZE_MAIN = 20
 const DESCRIPTION_FONT_SIZE_EXTRA = 15
 
 const ICON_SIZE_TOOL = 20
@@ -88,8 +88,9 @@ func update_item_panel():
 
 
 func update_description():
+	item_data.clear()
 	item_data.push_font_size(DESCRIPTION_FONT_SIZE_MAIN)
-	item_data.text = selected_item.template.description
+	item_data.append_text(selected_item.template.description)
 	item_data.push_font_size(DESCRIPTION_FONT_SIZE_EXTRA)
 	update_tool_description()
 
