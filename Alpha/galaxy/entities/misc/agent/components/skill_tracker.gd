@@ -44,7 +44,8 @@ func add_experience(skill : Skill, experience : float):
 	
 	if int(level_before) < int(level_after):
 		var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
-		galaxy.push_event(skill_increase_event, [get_parent(), skill, level_after])
+		var level_snapped : int = snapped(level_after, 1)
+		galaxy.push_event(skill_increase_event, [get_parent(), skill, level_snapped])
 
 
 class SkillProgress:
