@@ -8,6 +8,16 @@ const TEXT_SIZE_EXTRA = 15
 
 @export var icon_physical : Texture2D
 @export var icon_mental : Texture2D
+@export var popup_scene : PackedScene
+
+@export_subgroup("components")
+@export var group_tree : Tree
+@export var recipes : ItemList
+@export var readout : RichTextLabel
+@export var recipe_icon : TextureRect
+@export var recipe_label : Label
+@export var create_button : Button
+
 @export_category("text")
 @export_subgroup("create_button")
 @export_multiline var create_disabled_no_selection : String
@@ -20,13 +30,6 @@ var selected_recipe : CraftingRecipe
 var recipe_default_icon : Texture2D
 var recipe_default_text : String
 var recipe_default_description : String
-
-@onready var group_tree : Tree = $GroupTree
-@onready var recipes : ItemList = $RecipeList
-@onready var readout : RichTextLabel = $RecipeInfo/Description
-@onready var recipe_icon : TextureRect = $RecipeInfo/Header/RecipeIcon
-@onready var recipe_label : Label = $RecipeInfo/Header/RecipeLabel
-@onready var create_button : Button = $RecipeInfo/CreateButton
 
 
 func _ready():
@@ -115,7 +118,7 @@ func _list_recipe_ingredients(recipe : CraftingRecipe):
 	readout.append_text("\nIngredients:")
 	readout.push_list(1, RichTextLabel.LIST_DOTS, true)
 	for ingredient : RecipeIngredient in recipe.ingredients:
-		#TODO: Ingredient icons
+		readout.add_image(ingredient.icon, TEXT_ICON_SIZE, TEXT_ICON_SIZE)
 		readout.append_text(ingredient.get_recipe_text())
 		readout.append_text("\n")
 	readout.pop()
@@ -203,11 +206,12 @@ func _on_recipe_selected(index : int):
 
 
 func _on_create_pressed():
-	#HACK: This method is supposed to open an ingredient selection dialogue, which itself spawns
-	#the unfinished item and expends activity points. This is just a stand in so we can test the
-	#activity point system.
-	var player : Agent = await ReferenceSingleton.get_player()
-	var actions : ActionTracker = player.actions
-	actions.spend_physical_activity_points("crafting", selected_recipe.physical_activity_cost)
-	actions.spend_mental_activity_points("crafting", selected_recipe.mental_activity_cost)
+	var popup = popup_scene.instantiate()
+	popup.agent = await ReferenceSingleton.get_player()
+	popup.recipe = selected_recipe
+	popup.tree_exited.connect(_on_popup_freed)
+	ReferenceSingleton.get_main().push_popup(popup)
+
+
+func _on_popup_freed():
 	_validate_create_button()

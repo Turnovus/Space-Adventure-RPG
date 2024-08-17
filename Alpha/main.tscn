@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://db01hyegfe3i" path="res://galaxy/galaxy.tscn" id="2_2epjy"]
 [ext_resource type="PackedScene" uid="uid://cjy7tmi6n5kpd" path="res://interface/main_interface.tscn" id="3_h7j1e"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" node_paths=PackedStringArray("popup_blackout", "popup_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,8 +12,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_048e1")
+popup_blackout = NodePath("PopupBlackout")
+popup_container = NodePath("PopupBlackout/PopupContainer")
 
 [node name="MainInterface" parent="." instance=ExtResource("3_h7j1e")]
 layout_mode = 1
+
+[node name="PopupBlackout" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopupContainer" type="MarginContainer" parent="PopupBlackout"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="Galaxy" parent="." instance=ExtResource("2_2epjy")]

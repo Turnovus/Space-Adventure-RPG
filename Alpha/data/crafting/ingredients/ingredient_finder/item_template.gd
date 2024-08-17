@@ -5,7 +5,7 @@ extends RecipeIngredientFinder
 @export var template : ItemTemplate
 
 
-func matches_filter(target : Entity) -> bool:
+func matches_filter(target : Item) -> bool:
 	var item : Item = target as Item
 	return item != null and item.template == template
 

@@ -12,3 +12,4 @@ extends Resource
 @export var mental_labor : float = 0
 @export var physical_activity_cost : int = 0
 @export var mental_activity_cost : int = 0
+@export var units_label : String = "components"

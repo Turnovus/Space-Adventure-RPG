@@ -40,6 +40,7 @@ folder_colors={
 "res://galaxy/entities/misc/agent/components/stats/stats/": "gray",
 "res://interface/": "green",
 "res://singleton/": "pink",
+"res://style/": "teal",
 "res://utilities/": "yellow"
 }
 

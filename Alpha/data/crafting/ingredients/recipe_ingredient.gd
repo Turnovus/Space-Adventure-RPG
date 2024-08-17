@@ -21,6 +21,7 @@ const USAGE_TEXT = [
 	"modified",
 ]
 
+@export var icon : Texture2D
 @export var usage : UsageMode = UsageMode.NONE
 @export var finder : RecipeIngredientFinder
 @export var counter : RecipeIngredientCounter
@@ -35,3 +36,13 @@ func get_recipe_text() -> String:
 		text += " ({usage})".format({"usage" : USAGE_TEXT[usage - 1]})
 	
 	return text
+
+
+func is_satisfactory(ingredients : Array[Item]) -> bool:
+	if not finder.is_satisfactory(ingredients):
+		return false
+	
+	if counter.is_satisfactory(ingredients) != RecipeIngredientCounter.RecipeSatisfaction.SATISFACTORY:
+		return false
+	
+	return true

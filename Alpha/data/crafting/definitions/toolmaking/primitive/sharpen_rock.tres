@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=13 format=3 uid="uid://cuf5ocwp08grp"]
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=14 format=3 uid="uid://cuf5ocwp08grp"]
 
 [ext_resource type="Texture2D" uid="uid://bkenurck0vu3a" path="res://assets/textures/object/silex.svg" id="1_b2y73"]
 [ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="1_vtbim"]
@@ -6,12 +6,14 @@
 [ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_finder/item_template.gd" id="3_xxsf7"]
 [ext_resource type="Resource" uid="uid://1y2dthgcubss" path="res://data/items/definitions/foraged/rock.tres" id="4_rh1qa"]
 [ext_resource type="Script" path="res://data/crafting/ingredients/recipe_ingredient.gd" id="5_7i8eq"]
+[ext_resource type="Texture2D" uid="uid://dgc3qodyv2wxa" path="res://assets/textures/object/rock.svg" id="6_237fm"]
 [ext_resource type="Script" path="res://data/crafting/recipe_tool.gd" id="7_kh7vv"]
 [ext_resource type="Resource" uid="uid://6ouut1mqurbh" path="res://data/items/tools/definitions/hammering.tres" id="8_884il"]
 
 [sub_resource type="Resource" id="Resource_tk7my"]
 script = ExtResource("2_dexuv")
 count = 1
+allow_excess = false
 
 [sub_resource type="Resource" id="Resource_dcpwk"]
 script = ExtResource("3_xxsf7")
@@ -19,6 +21,7 @@ template = ExtResource("4_rh1qa")
 
 [sub_resource type="Resource" id="Resource_xci3j"]
 script = ExtResource("5_7i8eq")
+icon = ExtResource("6_237fm")
 usage = 1
 finder = SubResource("Resource_dcpwk")
 counter = SubResource("Resource_tk7my")
@@ -40,3 +43,4 @@ physical_labor = 15.0
 mental_labor = 0.0
 physical_activity_cost = 2
 mental_activity_cost = 2
+units_label = "components"

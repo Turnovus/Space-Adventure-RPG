@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://btnour8i6v5w0"]
+
+[ext_resource type="Theme" uid="uid://wc6kileaj34o" path="res://style/opaque_panels.tres" id="1_d8pqn"]
+[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/popup/create_popup.gd" id="1_xrnae"]
+
+[node name="CreatePopup" type="PanelContainer" node_paths=PackedStringArray("header_label", "requirement_list", "inventory_list", "cancel_button", "craft_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = -128.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d8pqn")
+script = ExtResource("1_xrnae")
+header_label = NodePath("VBoxContainer/HeaderLabel")
+requirement_list = NodePath("VBoxContainer/IngredientMenus/RequirementList")
+inventory_list = NodePath("VBoxContainer/IngredientMenus/InventoryScroll/InventoryList")
+cancel_button = NodePath("VBoxContainer/ButtonRow/CancelButton")
+craft_button = NodePath("VBoxContainer/ButtonRow/CraftButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sample text"
+horizontal_alignment = 1
+
+[node name="IngredientMenus" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RequirementList" type="ItemList" parent="VBoxContainer/IngredientMenus"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../InventoryScroll/InventoryList")
+focus_neighbor_top = NodePath("../../ButtonRow/CraftButton")
+focus_neighbor_right = NodePath("../InventoryScroll/InventoryList")
+focus_neighbor_bottom = NodePath("../../ButtonRow/CraftButton")
+focus_next = NodePath("../InventoryScroll/InventoryList")
+focus_previous = NodePath("../../ButtonRow/CraftButton")
+fixed_icon_size = Vector2i(30, 30)
+
+[node name="InventoryScroll" type="ScrollContainer" parent="VBoxContainer/IngredientMenus"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryList" type="VBoxContainer" parent="VBoxContainer/IngredientMenus/InventoryScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+focus_neighbor_left = NodePath("../../RequirementList")
+focus_neighbor_top = NodePath("../../../ButtonRow/CraftButton")
+focus_neighbor_right = NodePath("../../RequirementList")
+focus_neighbor_bottom = NodePath("../../../ButtonRow/CraftButton")
+focus_next = NodePath("../../../ButtonRow/CancelButton")
+focus_previous = NodePath("../../RequirementList")
+
+[node name="ButtonRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="VBoxContainer/ButtonRow"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../CraftButton")
+focus_neighbor_top = NodePath("../../IngredientMenus/RequirementList")
+focus_neighbor_right = NodePath("../CraftButton")
+focus_neighbor_bottom = NodePath("../../IngredientMenus/RequirementList")
+focus_next = NodePath("../CraftButton")
+focus_previous = NodePath("../../IngredientMenus/InventoryScroll/InventoryList")
+theme_override_font_sizes/font_size = 25
+text = "Cancel"
+
+[node name="CraftButton" type="Button" parent="VBoxContainer/ButtonRow"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../CancelButton")
+focus_neighbor_top = NodePath("../../IngredientMenus/InventoryScroll/InventoryList")
+focus_neighbor_right = NodePath("../CancelButton")
+focus_neighbor_bottom = NodePath("../../IngredientMenus/InventoryScroll/InventoryList")
+focus_next = NodePath("../../IngredientMenus/RequirementList")
+focus_previous = NodePath("../CancelButton")
+theme_override_font_sizes/font_size = 25
+disabled = true
+text = "Craft"

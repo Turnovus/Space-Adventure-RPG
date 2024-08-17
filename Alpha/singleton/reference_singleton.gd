@@ -6,7 +6,7 @@ func get_root() -> Node:
 	return get_tree().root
 
 
-func get_main() -> Node:
+func get_main() -> MainNode:
 	var root : Node = get_root()
 	var index = root.get_child_count() - 1
 	return root.get_child(index)
