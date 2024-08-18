@@ -8,6 +8,8 @@ signal galaxy_generated
 signal turn_start(turn: int)
 signal turn_end(turn: int)
 signal turn_post(turn: int)
+# Signals sent in response to player action
+signal player_points_reallocated
 # Signals used for decoupled data transfer
 signal event_pushed(type : EventType, targets : Array)
 
@@ -92,6 +94,10 @@ func try_remove_player_action(action : Action):
 
 func push_event(type : EventType, targets : Array):
 	event_pushed.emit(type, targets)
+
+
+func notify_player_points_reallocated():
+	player_points_reallocated.emit()
 
 
 func _update_entities():

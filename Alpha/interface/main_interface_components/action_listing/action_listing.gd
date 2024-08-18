@@ -103,5 +103,5 @@ func _on_action_add():
 
 func _on_dirty_listing():
 	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
-	galaxy.player_points_reallocated.emit()
+	galaxy.notify_player_points_reallocated()
 	update_visuals()
