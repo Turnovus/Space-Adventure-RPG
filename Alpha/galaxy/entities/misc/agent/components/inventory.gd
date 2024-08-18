@@ -40,8 +40,7 @@ func get_best_tools() -> Dictionary:
 	var tools = {}
 	
 	for item : Item in get_all_contents():
-		for properties : ToolProperties in item.template.tool_properties:
-			var tool : ToolTemplate = properties.tool
+		for tool : ToolTemplate in item.get_available_tools():
 			if not tools.has(tool):
 				tools[tool] = item
 			else:

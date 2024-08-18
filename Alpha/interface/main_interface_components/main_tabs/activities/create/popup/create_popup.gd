@@ -33,6 +33,19 @@ func _finalize_craft():
 	var actions : ActionTracker = agent.actions
 	actions.spend_physical_activity_points("crafting", recipe.physical_activity_cost)
 	actions.spend_mental_activity_points("crafting", recipe.mental_activity_cost)
+	_spawn_unfinished_item()
+
+
+func _spawn_unfinished_item():
+	var item : UnfinishedItem = UnfinishedItem.new()
+	item.recipe = recipe
+	
+	for i in range(0, len(recipe.ingredients)):
+		item.push_part_group(recipe.ingredients[i])
+		for part : Item in selected_items[i]:
+			item.push_part(part)
+	
+	agent.inventory.add_child(item)
 
 
 func _setup_header():

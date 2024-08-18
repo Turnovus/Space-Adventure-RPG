@@ -16,3 +16,5 @@ label = "rock"
 description = "It's a rock. Can be used for bashing things."
 icon = ExtResource("1_o03jw")
 tool_properties = Array[ExtResource("3_b316m")]([SubResource("Resource_vmjrq")])
+show_parts = true
+parts_label = "Components"

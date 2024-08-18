@@ -14,6 +14,8 @@ func _ready():
 	turn_created = galaxy.turn
 
 
+## Add an entity as a child of this entity. Handles reparenting automatically, safely removing
+## the entity from its former parent entity if necessary.
 func add_child_entity(entity: Entity):
 	var parent = entity.get_parent()
 	if parent != null:
