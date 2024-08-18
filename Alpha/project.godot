@@ -18,6 +18,7 @@ config/icon="res://assets/textures/space/galaxy.svg"
 [autoload]
 
 ReferenceSingleton="*res://singleton/reference_singleton.gd"
+AssetSingleton="*res://singleton/asset_singleton.tscn"
 
 [file_customization]
 

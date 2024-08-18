@@ -13,3 +13,17 @@ extends Resource
 @export var physical_activity_cost : int = 0
 @export var mental_activity_cost : int = 0
 @export var units_label : String = "components"
+
+
+func get_required_tools() -> Array[ToolTemplate]:
+	var required_tools : Array[ToolTemplate] = []
+	for tool : RecipeTool in tools:
+		required_tools.append(tool.tool)
+	return required_tools
+
+
+func get_labor_required_of_tool(tool : ToolTemplate) -> float:
+	for recipe_tool : RecipeTool in tools:
+		if recipe_tool.tool == tool:
+			return recipe_tool.work_required
+	return 0
