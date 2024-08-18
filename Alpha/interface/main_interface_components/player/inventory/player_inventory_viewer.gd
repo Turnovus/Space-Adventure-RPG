@@ -83,34 +83,7 @@ func update_item_panel():
 	var icon : Texture2D = fallback_texture if selected_item.icon == null else selected_item.icon
 	item_icon.texture = icon
 	item_label.text = selected_item.label.capitalize()
-	
-	update_description()
-
-
-func update_description():
-	item_data.clear()
-	item_data.push_font_size(DESCRIPTION_FONT_SIZE_MAIN)
-	item_data.append_text(selected_item.template.description)
-	item_data.push_font_size(DESCRIPTION_FONT_SIZE_EXTRA)
-	update_tool_description()
-
-
-func update_tool_description():
-	if selected_item.template.tool_properties.is_empty():
-		return
-	
-	item_data.append_text("\n\nTool properties:")
-	item_data.push_list(1, RichTextLabel.LIST_DOTS, true)
-	
-	for tool : ToolProperties in selected_item.template.tool_properties:
-		var tool_label : String = tool.tool.label
-		var tool_icon : Texture2D = tool.tool.icon
-		var tool_effect : float = selected_item.get_tool_effectiveness(tool.tool)
-		item_data.add_image(tool_icon, ICON_SIZE_TOOL, ICON_SIZE_TOOL)
-		item_data.append_text(tool_label)
-		item_data.append_text(" (%s)" % snapped(tool_effect, 0.01))
-	
-	item_data.pop()
+	selected_item.fill_description(item_data, DESCRIPTION_FONT_SIZE_MAIN, DESCRIPTION_FONT_SIZE_EXTRA, ICON_SIZE_TOOL)
 
 
 func _on_inventory_modified(_node : Node):
