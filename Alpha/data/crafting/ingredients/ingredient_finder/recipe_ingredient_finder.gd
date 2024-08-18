@@ -2,7 +2,7 @@ class_name RecipeIngredientFinder
 extends Resource
 
 
-func matches_filter(target : Item) -> bool:
+func matches_filter(_target : Item) -> bool:
 	return false
 
 

@@ -10,5 +10,5 @@ func matches_filter(target : Item) -> bool:
 	return item != null and item.template == template
 
 
-func alter_recipe_text(text : String) -> String:
+func alter_recipe_text(_text : String) -> String:
 	return template.label
