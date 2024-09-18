@@ -86,7 +86,8 @@ func rebuild_component_views():
 				flow = ranks[component.view_component_rank]
 			
 			flow.add_child(view)
-			view.set_component(component, player)
+			if view.has_method("set_component"):
+				view.set_component(component, player)
 			if view.has_signal("dirty_listing"):
 				view.connect("dirty_listing", _on_dirty_listing)
 

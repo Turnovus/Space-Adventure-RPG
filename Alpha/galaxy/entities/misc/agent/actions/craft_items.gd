@@ -1,7 +1,7 @@
 extends Action
 
 
-func _get_unfinished_items(agent : Agent) -> Array[UnfinishedItem]:
+func get_unfinished_items(agent : Agent) -> Array[UnfinishedItem]:
 	var items : Array[UnfinishedItem] = []
 	for item : Item in agent.inventory.get_all_contents():
 		var unfinished : UnfinishedItem = item as UnfinishedItem

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hhgo84xml05y"]
+[gd_scene load_steps=8 format=3 uid="uid://hhgo84xml05y"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/actions/craft_items.gd" id="1_osasx"]
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_etr1g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ofidd204ujl" path="res://actions/components/options/view/action_option_view.tscn" id="4_m3ssq"]
 [ext_resource type="Script" path="res://actions/components/options/action_option.gd" id="5_obc23"]
 [ext_resource type="Script" path="res://actions/components/point_cost/action_point_cost_fraction.gd" id="6_1a5er"]
+[ext_resource type="Script" path="res://galaxy/entities/misc/agent/actions/components/craft_validator/craft_validator.gd" id="7_k3ffv"]
 
 [node name="CraftItems" type="Node"]
 script = ExtResource("1_osasx")
@@ -43,3 +44,7 @@ label = "Major"
 script = ExtResource("6_1a5er")
 physical_points_percent = 0.75
 mental_points_percent = 0.75
+
+[node name="ActionComponentCraftValidator" type="Node" parent="."]
+script = ExtResource("7_k3ffv")
+view_component_rank = 1
