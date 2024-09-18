@@ -6,12 +6,15 @@ extends Node
 @export var view_component : PackedScene
 @export var view_component_rank : int = 0
 
+var view : Control
+
 
 func build_view_component() -> Control:
 	if view_component == null:
 		return null
 	
-	return view_component.instantiate() as Control
+	view = view_component.instantiate() as Control
+	return view
 
 
 func affect_physical_point_cost(initial_cost : int, _agent : Agent) -> int:

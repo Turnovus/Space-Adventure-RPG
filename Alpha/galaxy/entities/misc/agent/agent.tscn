@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu57sse557lbi"]
+[gd_scene load_steps=31 format=3 uid="uid://cu57sse557lbi"]
 
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/agent.gd" id="1_kdh5l"]
 [ext_resource type="PackedScene" uid="uid://br33brnaiaxxk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.tscn" id="2_e2rc3"]
@@ -28,6 +28,8 @@
 [ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/inventory.gd" id="20_skaeg"]
 [ext_resource type="Resource" uid="uid://daenyow8hmkls" path="res://data/events/definitions/event_skill_increased.tres" id="20_vy2pb"]
 [ext_resource type="Script" path="res://data/skills/skill.gd" id="23_kud7e"]
+[ext_resource type="Script" path="res://actions/action_issuer.gd" id="29_bfe60"]
+[ext_resource type="PackedScene" uid="uid://hhgo84xml05y" path="res://galaxy/entities/misc/agent/actions/craft_items.tscn" id="30_kjxeo"]
 
 [node name="Agent" type="Node"]
 script = ExtResource("1_kdh5l")
@@ -112,3 +114,7 @@ max_activity_factor = 0.5
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("20_skaeg")
+
+[node name="CraftingIssuer" type="Node" parent="."]
+script = ExtResource("29_bfe60")
+action_scene = ExtResource("30_kjxeo")
