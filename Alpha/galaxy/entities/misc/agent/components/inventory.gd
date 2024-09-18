@@ -31,7 +31,10 @@ func get_contained_items(node : Node) -> Array[Item]:
 		var item : Item = child as Item
 		if item != null:
 			items.append(item)
-		items.append_array(get_contained_items(child))
+		#TODO: Support for items stored in items
+		# The below line will include e.g. components of unfinished items, so we need a more clear
+		# definition of the difference between contents and components.
+		#items.append_array(get_contained_items(child))
 	
 	return items
 
@@ -51,4 +54,5 @@ func get_best_tools() -> Dictionary:
 
 
 func _on_tree_modified(_node : Node):
-	contents_modified.emit()
+	if not is_queued_for_deletion():
+		contents_modified.emit()

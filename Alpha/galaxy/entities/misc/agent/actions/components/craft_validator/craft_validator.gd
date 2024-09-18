@@ -31,4 +31,9 @@ func _on_player_inventory_changed():
 		view.show()
 		return
 	
+	if not get_parent().has_any_tools(player):
+		view.text = "Need tools."
+		view.show()
+		return
+	
 	view.hide()
