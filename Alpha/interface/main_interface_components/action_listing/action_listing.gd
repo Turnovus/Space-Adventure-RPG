@@ -11,6 +11,8 @@ extends PanelContainer
 @export var mental_container : Container
 @export var mental_count : Label
 
+@export var potency_readout : Label
+
 @export var button : Button
 
 @export var component_list : VBoxContainer
@@ -34,8 +36,11 @@ func set_action(new_action : Action, player_action : bool):
 
 
 func update_visuals():
+	var player : Agent = await ReferenceSingleton.get_player()
+	
 	update_label_and_icon()
-	update_point_display()
+	update_point_display(player)
+	update_potency_display(player)
 	rebuild_component_views()
 
 
@@ -45,9 +50,7 @@ func update_label_and_icon():
 	
 	action_label.text = action.label
 
-func update_point_display():
-	var player : Agent = await ReferenceSingleton.get_player()
-	
+func update_point_display(player : Agent):
 	var physical_cost = action.get_physical_point_cost(player)
 	if physical_cost == 0:
 		physical_container.hide()
@@ -61,6 +64,12 @@ func update_point_display():
 	else:
 		mental_container.show()
 		mental_count.text = str(mental_cost)
+
+
+func update_potency_display(player : Agent):
+	var potency : float = action.get_potency(player) * 100
+	potency = snapped(potency, 0.01)
+	potency_readout.text = str(potency) + "%"
 
 
 func rebuild_component_views():

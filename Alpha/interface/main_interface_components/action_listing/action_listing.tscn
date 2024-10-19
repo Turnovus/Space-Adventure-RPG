@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgagh2ynn47x4"]
+[gd_scene load_steps=6 format=3 uid="uid://cgagh2ynn47x4"]
 
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="1_he7ad"]
 [ext_resource type="Script" path="res://interface/main_interface_components/action_listing/action_listing.gd" id="1_vofev"]
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_mbd65"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_ju71v"]
+[ext_resource type="Texture2D" uid="uid://c1s3i2ago76h0" path="res://assets/textures/machine/gears.svg" id="5_dxt4y"]
 
-[node name="ActionListing" type="PanelContainer" node_paths=PackedStringArray("action_icon", "action_label", "physical_container", "physical_count", "mental_container", "mental_count", "button", "component_list")]
+[node name="ActionListing" type="PanelContainer" node_paths=PackedStringArray("action_icon", "action_label", "physical_container", "physical_count", "mental_container", "mental_count", "potency_readout", "button", "component_list")]
 offset_right = 431.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 script = ExtResource("1_vofev")
 action_icon = NodePath("VBoxContainer/TopBar/ActionIcon")
 action_label = NodePath("VBoxContainer/TopBar/ActionLabel")
-physical_container = NodePath("VBoxContainer/TopBar/Physical")
-physical_count = NodePath("VBoxContainer/TopBar/Physical/PhysicalCost")
-mental_container = NodePath("VBoxContainer/TopBar/Mental")
-mental_count = NodePath("VBoxContainer/TopBar/Mental/MentalCost")
+physical_container = NodePath("VBoxContainer/MiddleBar/Physical")
+physical_count = NodePath("VBoxContainer/MiddleBar/Physical/PhysicalCost")
+mental_container = NodePath("VBoxContainer/MiddleBar/Mental")
+mental_count = NodePath("VBoxContainer/MiddleBar/Mental/MentalCost")
+potency_readout = NodePath("VBoxContainer/MiddleBar/Potency/PotencyReadout")
 button = NodePath("VBoxContainer/TopBar/Button")
 component_list = NodePath("VBoxContainer/ComponentViews")
 
@@ -35,38 +37,53 @@ expand_mode = 2
 layout_mode = 2
 text = "Sample Text"
 
-[node name="Space" type="Label" parent="VBoxContainer/TopBar"]
-layout_mode = 2
-text = "    --    "
-
-[node name="Physical" type="HBoxContainer" parent="VBoxContainer/TopBar"]
-layout_mode = 2
-
-[node name="PhysicalIcon" type="TextureRect" parent="VBoxContainer/TopBar/Physical"]
-layout_mode = 2
-texture = ExtResource("2_mbd65")
-expand_mode = 2
-
-[node name="PhysicalCost" type="Label" parent="VBoxContainer/TopBar/Physical"]
-layout_mode = 2
-text = "0"
-
-[node name="Mental" type="HBoxContainer" parent="VBoxContainer/TopBar"]
-layout_mode = 2
-
-[node name="MentalIcon" type="TextureRect" parent="VBoxContainer/TopBar/Mental"]
-layout_mode = 2
-texture = ExtResource("3_ju71v")
-expand_mode = 2
-
-[node name="MentalCost" type="Label" parent="VBoxContainer/TopBar/Mental"]
-layout_mode = 2
-text = "0"
-
 [node name="Button" type="Button" parent="VBoxContainer/TopBar"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Add"
+
+[node name="MiddleBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Physical" type="HBoxContainer" parent="VBoxContainer/MiddleBar"]
+layout_mode = 2
+alignment = 1
+
+[node name="PhysicalIcon" type="TextureRect" parent="VBoxContainer/MiddleBar/Physical"]
+layout_mode = 2
+texture = ExtResource("2_mbd65")
+expand_mode = 2
+
+[node name="PhysicalCost" type="Label" parent="VBoxContainer/MiddleBar/Physical"]
+layout_mode = 2
+text = "0"
+
+[node name="Mental" type="HBoxContainer" parent="VBoxContainer/MiddleBar"]
+layout_mode = 2
+alignment = 1
+
+[node name="MentalIcon" type="TextureRect" parent="VBoxContainer/MiddleBar/Mental"]
+layout_mode = 2
+texture = ExtResource("3_ju71v")
+expand_mode = 2
+
+[node name="MentalCost" type="Label" parent="VBoxContainer/MiddleBar/Mental"]
+layout_mode = 2
+text = "0"
+
+[node name="Potency" type="HBoxContainer" parent="VBoxContainer/MiddleBar"]
+layout_mode = 2
+alignment = 1
+
+[node name="PotencyIcon" type="TextureRect" parent="VBoxContainer/MiddleBar/Potency"]
+layout_mode = 2
+texture = ExtResource("5_dxt4y")
+expand_mode = 2
+
+[node name="PotencyReadout" type="Label" parent="VBoxContainer/MiddleBar/Potency"]
+layout_mode = 2
+text = "100%"
 
 [node name="ComponentViews" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
