@@ -26,6 +26,8 @@ label = "Minor"
 script = ExtResource("6_1a5er")
 physical_points_percent = 0.25
 mental_points_percent = 0.25
+physical_affects_potency = true
+base_physical_points = 10
 
 [node name="Normal" type="Node" parent="Focus"]
 script = ExtResource("5_obc23")
@@ -35,6 +37,8 @@ label = "Normal"
 script = ExtResource("6_1a5er")
 physical_points_percent = 0.5
 mental_points_percent = 0.5
+physical_affects_potency = true
+base_physical_points = 10
 
 [node name="Major" type="Node" parent="Focus"]
 script = ExtResource("5_obc23")
@@ -44,6 +48,8 @@ label = "Major"
 script = ExtResource("6_1a5er")
 physical_points_percent = 0.75
 mental_points_percent = 0.75
+physical_affects_potency = true
+base_physical_points = 10
 
 [node name="ActionComponentCraftValidator" type="Node" parent="."]
 script = ExtResource("7_k3ffv")

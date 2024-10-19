@@ -21,6 +21,11 @@ var action : Action
 var is_player_action : bool
 
 
+func _ready():
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
+	galaxy.turn_end.connect(_on_turn_end)
+
+
 func set_action(new_action : Action, player_action : bool):
 	action = new_action
 	is_player_action = player_action
@@ -112,4 +117,8 @@ func _on_action_add():
 func _on_dirty_listing():
 	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 	galaxy.notify_player_points_reallocated()
+	update_visuals()
+
+
+func _on_turn_end(_turn : int):
 	update_visuals()

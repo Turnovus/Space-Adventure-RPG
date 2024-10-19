@@ -37,6 +37,8 @@ label = "Light"
 script = ExtResource("8_oucxd")
 physical_points_percent = 0.25
 mental_points_percent = 0.2
+physical_affects_potency = true
+base_physical_points = 10
 
 [node name="ActionComponentSkillTrain" type="Node" parent="Intensity/Light"]
 script = ExtResource("7_31lld")
@@ -51,6 +53,8 @@ label = "Normal"
 script = ExtResource("8_oucxd")
 physical_points_percent = 0.5
 mental_points_percent = 0.4
+physical_affects_potency = true
+base_physical_points = 10
 
 [node name="ActionComponentSkillTrain" type="Node" parent="Intensity/Normal"]
 script = ExtResource("7_31lld")
@@ -65,6 +69,8 @@ label = "Thorough"
 script = ExtResource("8_oucxd")
 physical_points_percent = 0.75
 mental_points_percent = 0.6
+physical_affects_potency = true
+base_physical_points = 10
 
 [node name="ActionComponentSkillTrain" type="Node" parent="Intensity/Thorough"]
 script = ExtResource("7_31lld")
