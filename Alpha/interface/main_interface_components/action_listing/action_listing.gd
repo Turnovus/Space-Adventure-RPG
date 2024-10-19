@@ -1,17 +1,19 @@
 extends PanelContainer
 
 
-@onready var icon_action : TextureRect = $VBoxContainer/TopBar/ActionIcon
-@onready var icon_physical : TextureRect = $VBoxContainer/TopBar/PhysicalIcon
-@onready var icon_mental : TextureRect = $VBoxContainer/TopBar/MentalIcon
+@export_subgroup("Components")
+@export var action_icon : TextureRect
+@export var action_label : Label
 
-@onready var action_label : Label = $VBoxContainer/TopBar/ActionLabel
-@onready var physical_count : Label = $VBoxContainer/TopBar/PhysicalCost
-@onready var mental_count : Label = $VBoxContainer/TopBar/MentalCost
+@export var physical_container : Container
+@export var physical_count : Label
 
-@onready var button : Button = $VBoxContainer/TopBar/Button
+@export var mental_container : Container
+@export var mental_count : Label
 
-@onready var component_list : VBoxContainer = $VBoxContainer/ComponentViews
+@export var button : Button
+
+@export var component_list : VBoxContainer
 
 var action : Action
 var is_player_action : bool
@@ -39,7 +41,7 @@ func update_visuals():
 
 func update_label_and_icon():
 	if action.icon != null:
-		icon_action.texture = action.icon
+		action_icon.texture = action.icon
 	
 	action_label.text = action.label
 
@@ -48,20 +50,16 @@ func update_point_display():
 	
 	var physical_cost = action.get_physical_point_cost(player)
 	if physical_cost == 0:
-		icon_physical.hide()
-		physical_count.hide()
+		physical_container.hide()
 	else:
-		icon_physical.show()
-		physical_count.show()
+		physical_container.show()
 		physical_count.text = str(physical_cost)
 	
 	var mental_cost = action.get_mental_point_cost(player)
 	if mental_cost == 0:
-		icon_mental.hide()
-		mental_count.hide()
+		mental_container.hide()
 	else:
-		icon_mental.show()
-		mental_count.show()
+		mental_container.show()
 		mental_count.text = str(mental_cost)
 
 

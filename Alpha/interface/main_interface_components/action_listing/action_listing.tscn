@@ -5,11 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_mbd65"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_ju71v"]
 
-[node name="ActionListing" type="PanelContainer"]
+[node name="ActionListing" type="PanelContainer" node_paths=PackedStringArray("action_icon", "action_label", "physical_container", "physical_count", "mental_container", "mental_count", "button", "component_list")]
 offset_right = 431.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 script = ExtResource("1_vofev")
+action_icon = NodePath("VBoxContainer/TopBar/ActionIcon")
+action_label = NodePath("VBoxContainer/TopBar/ActionLabel")
+physical_container = NodePath("VBoxContainer/TopBar/Physical")
+physical_count = NodePath("VBoxContainer/TopBar/Physical/PhysicalCost")
+mental_container = NodePath("VBoxContainer/TopBar/Mental")
+mental_count = NodePath("VBoxContainer/TopBar/Mental/MentalCost")
+button = NodePath("VBoxContainer/TopBar/Button")
+component_list = NodePath("VBoxContainer/ComponentViews")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -31,21 +39,27 @@ text = "Sample Text"
 layout_mode = 2
 text = "    --    "
 
-[node name="PhysicalIcon" type="TextureRect" parent="VBoxContainer/TopBar"]
+[node name="Physical" type="HBoxContainer" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="PhysicalIcon" type="TextureRect" parent="VBoxContainer/TopBar/Physical"]
 layout_mode = 2
 texture = ExtResource("2_mbd65")
 expand_mode = 2
 
-[node name="PhysicalCost" type="Label" parent="VBoxContainer/TopBar"]
+[node name="PhysicalCost" type="Label" parent="VBoxContainer/TopBar/Physical"]
 layout_mode = 2
 text = "0"
 
-[node name="MentalIcon" type="TextureRect" parent="VBoxContainer/TopBar"]
+[node name="Mental" type="HBoxContainer" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="MentalIcon" type="TextureRect" parent="VBoxContainer/TopBar/Mental"]
 layout_mode = 2
 texture = ExtResource("3_ju71v")
 expand_mode = 2
 
-[node name="MentalCost" type="Label" parent="VBoxContainer/TopBar"]
+[node name="MentalCost" type="Label" parent="VBoxContainer/TopBar/Mental"]
 layout_mode = 2
 text = "0"
 
