@@ -1,9 +1,6 @@
 extends Action
 
 
-const BASE_WORK_POINTS : int = 10
-
-
 func get_unfinished_items(agent : Agent) -> Array[UnfinishedItem]:
 	var items : Array[UnfinishedItem] = []
 	for item : Item in agent.inventory.get_all_contents():
@@ -43,11 +40,10 @@ func has_any_tools_for(agent : Agent, items : Array[UnfinishedItem]) -> bool:
 	return false
 
 
-func _do_action(agent : Agent, potency : float):
+func _do_action(agent : Agent, _potency : float):
 	var best_tools : Dictionary = agent.inventory.get_best_tools()
-	#HACK: Work amounts do not reflect actor's actual point utilization
-	var physical_work : float = potency * BASE_WORK_POINTS
-	var mental_work : float = potency * BASE_WORK_POINTS
+	var physical_work : float = get_physical_point_cost(agent)
+	var mental_work : float = get_mental_point_cost(agent)
 	
 	for any_item : Item in agent.inventory.get_all_contents():
 		var unfinished : UnfinishedItem = any_item as UnfinishedItem
