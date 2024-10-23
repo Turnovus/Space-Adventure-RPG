@@ -63,8 +63,8 @@ func is_exclusive_with(other : Action) -> bool:
 
 
 func action_turn(agent : Agent):
-	var potency = get_potency(agent)
-	_do_action(agent)
+	var potency : float = get_potency(agent)
+	_do_action(agent, potency)
 	
 	for component in get_components():
 		component.turn_action(agent, potency)
@@ -74,5 +74,5 @@ func sustain_action(_agent : Agent) -> bool:
 	return true
 
 
-func _do_action(_agent : Agent):
+func _do_action(_agent : Agent, _potency : float):
 	pass
