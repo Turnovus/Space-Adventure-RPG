@@ -23,12 +23,14 @@ var tree_items : Array
 
 
 func _ready():
-	var player : Agent = await ReferenceSingleton.get_player()
+	var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
+	var player : Agent = galaxy.player
 	inventory = player.inventory
 	inventory.child_entered_tree.connect(_on_inventory_modified)
 	inventory.child_exiting_tree.connect(_on_inventory_modified)
 	inventory.child_order_changed.connect(_on_inventory_reordered)
 	item_list.item_selected.connect(_on_item_selected)
+	galaxy.turn_end.connect(_on_turn_end)
 	
 	update()
 
@@ -108,4 +110,8 @@ func _on_item_selected():
 		return
 	
 	selected_item = inventory.get_child(index) #HACK: does not account for non-item children
+	update_item_panel()
+
+
+func _on_turn_end(_turn : int):
 	update_item_panel()

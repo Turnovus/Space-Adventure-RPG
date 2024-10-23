@@ -36,4 +36,5 @@ func _on_player_inventory_changed():
 		view.show()
 		return
 	
-	view.hide()
+	if view != null:
+		view.hide()

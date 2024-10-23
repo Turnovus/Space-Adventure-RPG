@@ -9,7 +9,6 @@ var recipe : CraftingRecipe:
 
 var labor_completed_physical : float
 var labor_completed_mental : float
-var labor_completed_tools : Dictionary
 
 var parts : Array[PartGroup] = []
 var active_group_index = -1
@@ -28,8 +27,6 @@ func fill_labor_description(target : RichTextLabel, size_icon : int) -> void:
 	
 	fill_physical_labor_description(target, size_icon)
 	fill_mental_labor_description(target, size_icon)
-	for tool : ToolTemplate in recipe.get_required_tools():
-		fill_tool_labor_description(target, size_icon, tool)
 	
 	target.pop()
 
@@ -58,16 +55,6 @@ func fill_mental_labor_description(target : RichTextLabel, size_icon : int) -> v
 	target.add_text("\n")
 
 
-func fill_tool_labor_description(target : RichTextLabel, size_icon : int, tool : ToolTemplate) -> void:
-	target.add_image(tool.icon, size_icon, size_icon)
-	target.add_text(tool.label.capitalize())
-	target.add_text(": ")
-	target.add_text(str(labor_completed_tools[tool]))
-	target.add_text("/")
-	target.add_text(str(recipe.get_labor_required_of_tool(tool)))
-	target.add_text("\n")
-
-
 func push_part_group(ingredient : RecipeIngredient):
 	active_group_index += 1
 	var group = PartGroup.new()
@@ -80,13 +67,17 @@ func push_part(item : Item):
 	add_child_entity(item)
 
 
+func update_crafting_progress() -> void:
+	if labor_completed_physical < recipe.physical_labor or labor_completed_mental < recipe.mental_labor:
+		return
+	
+	#TODO: Finish item
+
+
 func _notify_recipe_changed():
 	label = "unfinished " + recipe.label #TODO: Use product label.
 	icon = recipe.icon
 	description = recipe.description
-	labor_completed_tools = {}
-	for tool : ToolTemplate in recipe.get_required_tools():
-		labor_completed_tools[tool] = 0
 
 
 class PartGroup:

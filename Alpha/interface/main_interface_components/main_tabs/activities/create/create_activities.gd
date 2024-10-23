@@ -132,8 +132,6 @@ func _list_recipe_tools(recipe : CraftingRecipe):
 	readout.push_list(1, RichTextLabel.LIST_DOTS, true)
 	for tool : RecipeTool in recipe.tools:
 		readout.add_image(tool.tool.icon, TEXT_ICON_SIZE, TEXT_ICON_SIZE)
-		if tool.work_required > 0:
-			readout.append_text("%s x " % str(tool.work_required))
 		readout.append_text(tool.tool.label)
 		if tool.min_effectiveness > 0:
 			readout.append_text(" (min. %s)" % str(tool.min_effectiveness))

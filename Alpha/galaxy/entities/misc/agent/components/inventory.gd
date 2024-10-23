@@ -40,17 +40,17 @@ func get_contained_items(node : Node) -> Array[Item]:
 
 
 func get_best_tools() -> Dictionary:
-	var tools = {}
+	var best_tools : Dictionary = {} # {ToolTemplate : Item}
 	
 	for item : Item in get_all_contents():
 		for tool : ToolTemplate in item.get_available_tools():
-			if not tools.has(tool):
-				tools[tool] = item
-			else:
-				if item.get_tool_effectiveness(tool) > tools[tool].get_tool_effectiveness(tool):
-					tools[tool] = item
+			if not best_tools.has(tool):
+				best_tools[tool] = item
+				continue
+			if item.get_tool_effectiveness(tool) > best_tools[tool].get_tool_effectiveness(tool):
+				best_tools[tool] = item
 	
-	return tools
+	return best_tools
 
 
 func _on_tree_modified(_node : Node):
