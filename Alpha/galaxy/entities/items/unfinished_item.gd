@@ -67,11 +67,19 @@ func push_part(item : Item):
 	add_child_entity(item)
 
 
-func update_crafting_progress() -> void:
+func update_crafting_progress(agent : Agent) -> void:
 	if labor_completed_physical < recipe.physical_labor or labor_completed_mental < recipe.mental_labor:
 		return
 	
-	#TODO: Finish item
+	var finished_item : Item = Item.new()
+	finished_item.template = recipe.product
+	get_parent().add_child(finished_item)
+	
+	if recipe.event_on_finish != null:
+		var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
+		galaxy.push_event(recipe.event_on_finish, [agent, finished_item])
+	
+	queue_free()
 
 
 func _notify_recipe_changed():

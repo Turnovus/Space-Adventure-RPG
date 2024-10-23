@@ -11,6 +11,9 @@ var parts_label : String = StringConstantUtil.ITEM_PART_HEADER
 
 var template : ItemTemplate:
 	set(new_template):
+		if new_template == null:
+			push_warning("Attempted to assign null template to item.")
+			return
 		template = new_template
 		_notify_template_changed()
 

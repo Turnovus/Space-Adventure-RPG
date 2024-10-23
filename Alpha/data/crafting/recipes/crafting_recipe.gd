@@ -5,6 +5,7 @@ extends Resource
 
 @export var label : String
 @export_multiline var description : String
+@export var product : ItemTemplate
 @export var icon : Texture2D
 @export var ingredients : Array[RecipeIngredient]
 @export var tools : Array[RecipeTool]
@@ -13,6 +14,7 @@ extends Resource
 @export var physical_activity_cost : int = 0
 @export var mental_activity_cost : int = 0
 @export var units_label : String = "components"
+@export var event_on_finish : EventType
 
 
 func get_required_tools() -> Array[ToolTemplate]:

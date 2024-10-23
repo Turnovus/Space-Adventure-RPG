@@ -26,6 +26,9 @@ func _anything_to_craft(agent : Agent) -> bool:
 
 
 func _on_player_inventory_changed():
+	if view == null:
+		return
+	
 	if not _anything_to_craft(player):
 		view.text = "Nothing to craft."
 		view.show()
@@ -36,5 +39,4 @@ func _on_player_inventory_changed():
 		view.show()
 		return
 	
-	if view != null:
-		view.hide()
+	view.hide()

@@ -70,7 +70,7 @@ func _do_action(agent : Agent, _potency : float):
 			unfinished.labor_completed_mental += mental_work_done
 			mental_work -= mental_work_done / work_effectiveness
 		
-		unfinished.update_crafting_progress()
+		unfinished.update_crafting_progress(agent)
 		
 		if physical_work <= 0 and mental_work <= 0:
 			break
