@@ -75,6 +75,18 @@ func update_crafting_progress(agent : Agent) -> void:
 	finished_item.template = recipe.product
 	get_parent().add_child(finished_item)
 	
+	for part : PartGroup in parts:
+		match part.ingredient.usage:
+			RecipeIngredient.UsageMode.NONE, RecipeIngredient.UsageMode.MODIFIED:
+				for item : Item in part.items:
+					item.reparent(get_parent())
+			RecipeIngredient.UsageMode.CONSUMED:
+				for item :  Item in part.items:
+					item.queue_free()
+			RecipeIngredient.UsageMode.ASSEMBLED:
+				for item : Item in part.items:
+					item.reparent(finished_item)
+	
 	if recipe.event_on_finish != null:
 		var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()
 		galaxy.push_event(recipe.event_on_finish, [agent, finished_item])
