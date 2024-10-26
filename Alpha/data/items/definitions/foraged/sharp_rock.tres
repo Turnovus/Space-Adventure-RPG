@@ -10,13 +10,11 @@
 script = ExtResource("2_i7ma3")
 tool = ExtResource("4_pty6g")
 effectiveness = 0.25
-finished_tool_name = "tool"
 
 [sub_resource type="Resource" id="Resource_whoxq"]
 script = ExtResource("2_i7ma3")
 tool = ExtResource("5_k8ygf")
 effectiveness = 0.1
-finished_tool_name = "tool"
 
 [resource]
 script = ExtResource("1_ep34x")

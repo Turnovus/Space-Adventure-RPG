@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://dyakc4o0pxc4k" path="res://data/items/definitions/tools/primitive/crude_tool.tres" id="4_dtfab"]
 [ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_counter/item_quantity.gd" id="4_l2h47"]
 [ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_finder/item_template.gd" id="5_4otor"]
-[ext_resource type="Resource" uid="uid://ctwfxq2uxjilr" path="res://data/items/definitions/components/primitive/haft.tres" id="6_p2elo"]
+[ext_resource type="Resource" uid="uid://bbnqcra6df48u" path="res://data/items/definitions/foraged/branch.tres" id="6_kyql1"]
 [ext_resource type="Texture2D" uid="uid://c654hfbjykywh" path="res://assets/textures/object/wood-stick.svg" id="7_q24cg"]
 
 [sub_resource type="Resource" id="Resource_sph4g"]
@@ -18,7 +18,7 @@ allow_excess = false
 
 [sub_resource type="Resource" id="Resource_pvjj6"]
 script = ExtResource("5_4otor")
-template = ExtResource("6_p2elo")
+template = ExtResource("6_kyql1")
 
 [sub_resource type="Resource" id="Resource_vpjid"]
 script = ExtResource("1_bsaxf")
