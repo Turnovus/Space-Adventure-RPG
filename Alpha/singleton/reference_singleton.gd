@@ -13,7 +13,7 @@ func get_main() -> MainNode:
 
 
 func get_galaxy(wait_ready : bool = true) -> Galaxy:
-	var galaxy = get_main().get_galaxy()
+	var galaxy : Galaxy = get_main().get_galaxy()
 	if wait_ready and not galaxy.is_node_ready():
 		await galaxy.ready
 	return galaxy

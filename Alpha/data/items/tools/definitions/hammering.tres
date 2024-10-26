@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="ToolTemplate" load_steps=3 format=3 uid="uid://6ouut1mqurbh"]
 
-[ext_resource type="Texture2D" uid="uid://bv0a7n1780ayr" path="res://assets/textures/object/3d-hammer.svg" id="1_06snt"]
+[ext_resource type="Texture2D" uid="uid://bv0a7n1780ayr" path="res://assets/textures/object/tool/3d-hammer.svg" id="1_dxoag"]
 [ext_resource type="Script" path="res://data/items/tools/tool_template.gd" id="2_ff3lh"]
 
 [resource]
 script = ExtResource("2_ff3lh")
 label = "hammering"
-icon = ExtResource("1_06snt")
+icon = ExtResource("1_dxoag")
+finished_tool_name = "mallet"

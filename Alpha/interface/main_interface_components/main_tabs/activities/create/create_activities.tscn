@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/create_activities.gd" id="1_gx421"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_ykgbc"]
-[ext_resource type="Texture2D" uid="uid://bxryoi488fggs" path="res://assets/textures/object/banging-gavel.svg" id="2_1traq"]
+[ext_resource type="Texture2D" uid="uid://bxryoi488fggs" path="res://assets/textures/object/tool/banging-gavel.svg" id="2_1traq"]
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_kl80i"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_t41xk"]
 [ext_resource type="PackedScene" uid="uid://btnour8i6v5w0" path="res://interface/main_interface_components/main_tabs/activities/create/popup/create_popup.tscn" id="4_d85ou"]

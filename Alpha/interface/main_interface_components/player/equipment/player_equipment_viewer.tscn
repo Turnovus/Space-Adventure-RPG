@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://interface/main_interface_components/player/equipment/player_equipment_viewer.gd" id="1_sgjtg"]
 [ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_st2da"]
-[ext_resource type="Texture2D" uid="uid://bv0a7n1780ayr" path="res://assets/textures/object/3d-hammer.svg" id="2_b4gkv"]
+[ext_resource type="Texture2D" uid="uid://bv0a7n1780ayr" path="res://assets/textures/object/tool/3d-hammer.svg" id="2_b4gkv"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_uu7i8"]
 font_size = 15

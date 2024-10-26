@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=15 format=3 uid="uid://mosgua4jjuke"]
+
+[ext_resource type="Script" path="res://data/crafting/ingredients/recipe_ingredient.gd" id="1_6pket"]
+[ext_resource type="Resource" uid="uid://0pffm8nvhnv5" path="res://data/events/definitions/event_crafting_finished.tres" id="1_amdsy"]
+[ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="2_6dy2u"]
+[ext_resource type="Texture2D" uid="uid://c654hfbjykywh" path="res://assets/textures/object/wood-stick.svg" id="2_xs4y1"]
+[ext_resource type="Script" path="res://data/crafting/recipe_tool.gd" id="3_rlpsb"]
+[ext_resource type="Resource" uid="uid://ctwfxq2uxjilr" path="res://data/items/definitions/components/primitive/haft.tres" id="3_yocef"]
+[ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_counter/item_quantity.gd" id="4_mts2s"]
+[ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_finder/item_template.gd" id="5_aaygn"]
+[ext_resource type="Resource" uid="uid://bbnqcra6df48u" path="res://data/items/definitions/foraged/branch.tres" id="6_7uvxc"]
+[ext_resource type="Resource" uid="uid://b2twthvynxu05" path="res://data/items/tools/definitions/cutting.tres" id="6_by3hs"]
+
+[sub_resource type="Resource" id="Resource_22mn2"]
+script = ExtResource("4_mts2s")
+count = 1
+allow_excess = false
+
+[sub_resource type="Resource" id="Resource_12gbk"]
+script = ExtResource("5_aaygn")
+template = ExtResource("6_7uvxc")
+
+[sub_resource type="Resource" id="Resource_mu6q0"]
+script = ExtResource("1_6pket")
+icon = ExtResource("2_xs4y1")
+usage = 1
+finder = SubResource("Resource_12gbk")
+counter = SubResource("Resource_22mn2")
+
+[sub_resource type="Resource" id="Resource_gjh06"]
+script = ExtResource("3_rlpsb")
+tool = ExtResource("6_by3hs")
+min_effectiveness = 0.0
+
+[resource]
+script = ExtResource("2_6dy2u")
+label = "carve haft"
+description = "Carve a primitive haft from a branch to be used as a crude tool handle."
+product = ExtResource("3_yocef")
+icon = ExtResource("2_xs4y1")
+ingredients = Array[ExtResource("1_6pket")]([SubResource("Resource_mu6q0")])
+tools = Array[ExtResource("3_rlpsb")]([SubResource("Resource_gjh06")])
+physical_labor = 10.0
+mental_labor = 10.0
+physical_activity_cost = 2
+mental_activity_cost = 2
+units_label = "components"
+event_on_finish = ExtResource("1_amdsy")

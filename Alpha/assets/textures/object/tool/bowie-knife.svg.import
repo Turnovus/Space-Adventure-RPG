@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpi8dswxl0v3y"
-path="res://.godot/imported/magnifying-glass.svg-8cac9e443c121b0f8d787b7849e0d9a6.ctex"
+uid="uid://cm8agfvoajhq0"
+path="res://.godot/imported/bowie-knife.svg-364139974c8f8729ff14cb206e407660.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/object/magnifying-glass.svg"
-dest_files=["res://.godot/imported/magnifying-glass.svg-8cac9e443c121b0f8d787b7849e0d9a6.ctex"]
+source_file="res://assets/textures/object/tool/bowie-knife.svg"
+dest_files=["res://.godot/imported/bowie-knife.svg-364139974c8f8729ff14cb206e407660.ctex"]
 
 [params]
 

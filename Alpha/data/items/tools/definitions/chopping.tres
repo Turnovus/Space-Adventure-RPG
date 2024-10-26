@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ToolTemplate" load_steps=3 format=3 uid="uid://traet5n6asum"]
+
+[ext_resource type="Script" path="res://data/items/tools/tool_template.gd" id="1_m5jnd"]
+[ext_resource type="Texture2D" uid="uid://cct7r5nllg3i4" path="res://assets/textures/object/tool/wood-axe.svg" id="1_qivg4"]
+
+[resource]
+script = ExtResource("1_m5jnd")
+label = "chopping"
+icon = ExtResource("1_qivg4")
+finished_tool_name = "axe"

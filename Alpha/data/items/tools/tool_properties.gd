@@ -1,4 +1,4 @@
-@icon("res://assets/textures/object/hammer-drop.svg")
+@icon("res://assets/textures/object/tool/hammer-drop.svg")
 class_name ToolProperties
 extends Resource
 ## Simple class used to wrap up tool-related information for an [ItemTemplate].

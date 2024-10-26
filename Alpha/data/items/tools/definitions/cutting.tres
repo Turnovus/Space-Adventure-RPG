@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ToolTemplate" load_steps=3 format=3 uid="uid://b2twthvynxu05"]
+
+[ext_resource type="Script" path="res://data/items/tools/tool_template.gd" id="1_1myvn"]
+[ext_resource type="Texture2D" uid="uid://cm8agfvoajhq0" path="res://assets/textures/object/tool/bowie-knife.svg" id="1_32my2"]
+
+[resource]
+script = ExtResource("1_1myvn")
+label = "cutting"
+icon = ExtResource("1_32my2")
+finished_tool_name = "knife"
