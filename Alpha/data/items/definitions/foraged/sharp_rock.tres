@@ -22,5 +22,7 @@ label = "sharp rock"
 description = "A rock fashioned into a crude edge. Useful for cutting or chopping anything that isn't too hard."
 icon = ExtResource("1_481n1")
 tool_properties = Array[ExtResource("2_i7ma3")]([SubResource("Resource_cvvdk"), SubResource("Resource_whoxq")])
+is_assembled_tool = false
+tool_assembly_effect = 1.0
 show_parts = true
 parts_label = "Components"

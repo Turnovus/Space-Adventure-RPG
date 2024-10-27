@@ -35,7 +35,7 @@ func _update_tools():
 			"effectiveness" : item.get_tool_effectiveness(tool),
 		}))
 		tool_readout.pop()
-		#tool_readout.append_text("\n")
+		tool_readout.append_text("\n")
 
 
 func _on_player_inventory_modified():

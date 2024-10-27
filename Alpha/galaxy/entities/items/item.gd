@@ -49,8 +49,9 @@ func fill_tool_description(target : RichTextLabel, size_icon : int) -> void:
 		var tool_icon : Texture2D = tool.icon
 		var tool_effect : float = get_tool_effectiveness(tool)
 		target.add_image(tool_icon, size_icon, size_icon)
-		target.append_text(tool_label)
+		target.append_text(tool_label.capitalize())
 		target.append_text(" (%s)" % snapped(tool_effect, 0.01))
+		target.append_text("\n")
 	
 	target.pop()
 
@@ -133,7 +134,7 @@ func _resolve_tool_assembly() -> void:
 
 
 func _resolve_tool_name() -> void:
-	var best_tool : ToolTemplate
+	var best_tool : ToolTemplate = null
 	for tool : ToolTemplate in tools.keys():
 		if best_tool == null or tools[tool] > tools[best_tool]:
 			best_tool = tool

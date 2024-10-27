@@ -47,7 +47,7 @@ expand_mode = 2
 [node name="ItemLabel" type="Label" parent="ItemPanel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 44
 text = "Sample text"
 horizontal_alignment = 1
 text_overrun_behavior = 3

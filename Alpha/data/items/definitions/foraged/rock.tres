@@ -16,5 +16,7 @@ label = "rock"
 description = "It's a rock. Can be used for bashing things."
 icon = ExtResource("1_o03jw")
 tool_properties = Array[ExtResource("3_b316m")]([SubResource("Resource_vmjrq")])
+is_assembled_tool = false
+tool_assembly_effect = 1.0
 show_parts = true
 parts_label = "Components"
