@@ -2,10 +2,16 @@ class_name Item
 extends Entity
 
 
+const FORMAT_KEY_TOOL : String = "tool"
+
 var label : String
 var icon : Texture2D
 var description : String
+
 var tools : Dictionary = {}
+var is_assembled_tool : bool
+var tool_assembly_effect : float = 1
+
 var show_parts : bool = true
 var parts_label : String = StringConstantUtil.ITEM_PART_HEADER
 
@@ -96,10 +102,46 @@ func _notify_template_changed():
 	description = template.description
 	show_parts = template.show_parts
 	parts_label = template.parts_label
+	
+	is_assembled_tool = template.is_assembled_tool
+	tool_assembly_effect = template.tool_assembly_effect
 	_resolve_tools()
 
 
-func _resolve_tools():
-	tools = {}
+func _resolve_tools() -> void:
+	tools = {} # {ToolTemplate : float}
 	for properties : ToolProperties in template.tool_properties:
 		tools[properties.tool] = properties.effectiveness
+	
+	_resolve_tool_assembly()
+
+
+func _resolve_tool_assembly() -> void:
+	if not is_assembled_tool:
+		return
+	
+	for part : Item in get_parts():
+		for part_tool : ToolTemplate in part.tools:
+			if not tools.has(part_tool):
+				tools[part_tool] = 0
+			tools[part_tool] += part.tools[part_tool]
+	
+	for assembled_tool : ToolTemplate in tools.keys():
+		tools[assembled_tool] *= tool_assembly_effect
+	
+	_resolve_tool_name()
+
+
+func _resolve_tool_name() -> void:
+	var best_tool : ToolTemplate
+	for tool : ToolTemplate in tools.keys():
+		if best_tool == null or tools[tool] > tools[best_tool]:
+			best_tool = tool
+	
+	var tool_name : String = "tool" if best_tool == null else best_tool.finished_tool_name
+	label = _do_tool_format(label, tool_name)
+	description = _do_tool_format(description, tool_name)
+
+
+func _do_tool_format(string : String, tool_name : String) -> String:
+	return string.format({FORMAT_KEY_TOOL : tool_name})

@@ -72,8 +72,6 @@ func update_crafting_progress(agent : Agent) -> void:
 		return
 	
 	var finished_item : Item = Item.new()
-	finished_item.template = recipe.product
-	get_parent().add_child(finished_item)
 	
 	for part : PartGroup in parts:
 		match part.ingredient.usage:
@@ -86,6 +84,9 @@ func update_crafting_progress(agent : Agent) -> void:
 			RecipeIngredient.UsageMode.ASSEMBLED:
 				for item : Item in part.items:
 					item.reparent(finished_item)
+	
+	finished_item.template = recipe.product
+	get_parent().add_child(finished_item)
 	
 	if recipe.event_on_finish != null:
 		var galaxy : Galaxy = await ReferenceSingleton.get_galaxy()

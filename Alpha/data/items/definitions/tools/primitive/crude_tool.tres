@@ -6,9 +6,11 @@
 
 [resource]
 script = ExtResource("1_dybnw")
-label = "crude {0}"
-description = "A crude {0} made from hafting a branch around a toolhead."
+label = "crude {tool}"
+description = "A crude {tool} made from hafting a branch around a toolhead."
 icon = ExtResource("1_q04tr")
 tool_properties = Array[ExtResource("2_jvfg2")]([])
+is_assembled_tool = true
+tool_assembly_effect = 1.3
 show_parts = true
 parts_label = "Components"
