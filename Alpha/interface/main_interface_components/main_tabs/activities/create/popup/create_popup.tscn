@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://wc6kileaj34o" path="res://style/opaque_panels.tres" id="1_d8pqn"]
 [ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/popup/create_popup.gd" id="1_xrnae"]
 
-[node name="CreatePopup" type="PanelContainer" node_paths=PackedStringArray("header_label", "requirement_list", "inventory_list", "cancel_button", "craft_button")]
+[node name="CreatePopup" type="PanelContainer" node_paths=PackedStringArray("header_label", "requirement_list", "inventory_list", "item_description", "cancel_button", "craft_button")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,8 +18,12 @@ script = ExtResource("1_xrnae")
 header_label = NodePath("VBoxContainer/HeaderLabel")
 requirement_list = NodePath("VBoxContainer/IngredientMenus/RequirementList")
 inventory_list = NodePath("VBoxContainer/IngredientMenus/InventoryScroll/InventoryList")
+item_description = NodePath("VBoxContainer/IngredientMenus/RichTextLabel")
 cancel_button = NodePath("VBoxContainer/ButtonRow/CancelButton")
 craft_button = NodePath("VBoxContainer/ButtonRow/CraftButton")
+default_item_text = "Select the items you would like to use to use for this recipe.
+
+On the left of the screen is the list of requirements. Each requirement must be fulfilled to begin crafting. Click on a requirement to view the list of usable ingredients currently available to you."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -58,6 +62,11 @@ focus_neighbor_right = NodePath("../../RequirementList")
 focus_neighbor_bottom = NodePath("../../../ButtonRow/CraftButton")
 focus_next = NodePath("../../../ButtonRow/CancelButton")
 focus_previous = NodePath("../../RequirementList")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/IngredientMenus"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
 
 [node name="ButtonRow" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

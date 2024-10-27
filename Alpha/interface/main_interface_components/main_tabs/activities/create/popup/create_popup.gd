@@ -1,12 +1,19 @@
 extends PanelContainer
 
 
+const DESCRIPTION_ICON_SIZE : float = 16
+const DESCRIPTION_FONT_SIZE_MAIN : float = 18
+const DESCRIPTION_FONT_SIZE_EXTRA : float = 15
+
 @export_subgroup("components")
 @export var header_label : Label
 @export var requirement_list : ItemList
 @export var inventory_list : Container
+@export var item_description : RichTextLabel
 @export var cancel_button : Button
 @export var craft_button : Button
+@export_subgroup("strings")
+@export_multiline var default_item_text : String
 
 var agent : Agent
 var recipe : CraftingRecipe
@@ -27,6 +34,13 @@ func _ready():
 	_setup_header()
 	_find_items()
 	_build_requirements()
+	_clear_item_description()
+
+
+func _clear_item_description() -> void:
+	item_description.clear()
+	item_description.push_font_size(DESCRIPTION_FONT_SIZE_MAIN)
+	item_description.append_text(default_item_text)
 
 
 func _finalize_craft():
@@ -146,14 +160,21 @@ func _on_requirement_selected(index : int):
 		checkbox.item = item
 		# HACK: Untested
 		checkbox.disabled = all_selections.has(item) and not selected_items[index].has(item)
-		checkbox.item_selected.connect(_on_item_selected)
-		checkbox.item_deselected.connect(_on_item_deselected)
+		_connect_inventory_item(checkbox)
 		inventory_list.add_child(checkbox)
 	
 	if len(available_items[index]) == 0:
 		var label : Label = Label.new()
 		label.text = "No suitable items"
 		inventory_list.add_child(label)
+	
+	_clear_item_description()
+
+
+func _connect_inventory_item(item : CreatePopupInventoryItem) -> void:
+	item.item_selected.connect(_on_item_selected)
+	item.item_deselected.connect(_on_item_deselected)
+	item.item_focused.connect(_on_item_focused)
 
 
 func _on_craft_pressed():
@@ -179,3 +200,7 @@ func _on_item_deselected(item : Item):
 	if all_selections.has(item):
 		all_selections.erase(item)
 	_update_requirements()
+
+
+func _on_item_focused(item : Item):
+	item.fill_description(item_description, DESCRIPTION_FONT_SIZE_MAIN, DESCRIPTION_FONT_SIZE_EXTRA, DESCRIPTION_ICON_SIZE)

@@ -37,6 +37,7 @@ func start_description(target : RichTextLabel, size_main : int, size_extra : int
 	target.push_font_size(size_extra)
 
 
+## Populates a RichTextLabel with the description and all relevant details of the item.
 func fill_tool_description(target : RichTextLabel, size_icon : int) -> void:
 	if get_available_tools().is_empty():
 		return
