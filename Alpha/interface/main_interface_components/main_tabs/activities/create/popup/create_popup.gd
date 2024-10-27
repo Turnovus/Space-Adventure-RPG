@@ -158,6 +158,7 @@ func _on_requirement_selected(index : int):
 	for item : Item in available_items[index]:
 		var checkbox : CreatePopupInventoryItem = CreatePopupInventoryItem.new()
 		checkbox.item = item
+		checkbox.button_pressed = selected_items[index].has(item)
 		# HACK: Untested
 		checkbox.disabled = all_selections.has(item) and not selected_items[index].has(item)
 		_connect_inventory_item(checkbox)
