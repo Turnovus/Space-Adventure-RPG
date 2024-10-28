@@ -4,7 +4,7 @@ class_name GameColorUtil
 const COLOR_NORMAL : Color = Color.WHITE
 
 const COLOR_GOOD : Color = Color.GREEN_YELLOW
-const COLOR_GOOD_READABLE : Color = Color.LIGHT_SEA_GREEN
+const COLOR_GOOD_READABLE : Color = Color.LIGHT_GREEN
 
 const COLOR_WARN : Color = Color.ORANGE
 const COLOR_WARN_READABLE : Color = Color.ORANGE

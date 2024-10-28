@@ -1,9 +1,9 @@
 extends PanelContainer
 
 
-const DESCRIPTION_ICON_SIZE : float = 16
-const DESCRIPTION_FONT_SIZE_MAIN : float = 18
-const DESCRIPTION_FONT_SIZE_EXTRA : float = 15
+const DESCRIPTION_ICON_SIZE : int = 16
+const DESCRIPTION_FONT_SIZE_MAIN : int = 18
+const DESCRIPTION_FONT_SIZE_EXTRA : int = 15
 
 @export_subgroup("components")
 @export var header_label : Label

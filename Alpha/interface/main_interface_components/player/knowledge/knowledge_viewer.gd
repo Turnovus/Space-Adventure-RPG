@@ -80,11 +80,11 @@ func _on_group_selected(index : int):
 
 func get_knowledge_color(knowledge : Knowledge, use_alt=false) -> Color:
 	if player_knowledge.has_learned(knowledge):
-		return Knowledge.COLOR_LEARNED_ALT if use_alt else Knowledge.COLOR_LEARNED
+		return GameColorUtil.COLOR_GOOD_READABLE if use_alt else GameColorUtil.COLOR_NORMAL
 	elif player_knowledge.can_learn(knowledge):
-		return Knowledge.COLOR_CAN_LEARN
+		return GameColorUtil.COLOR_POSSIBILITY_READABLE
 	else:
-		return Knowledge.COLOR_LOCKED
+		return GameColorUtil.COLOR_BAD_READABLE
 
 
 func get_completion_text(knowledge : Knowledge) -> String:
