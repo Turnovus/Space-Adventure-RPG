@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4ofidd204ujl"]
 
-[ext_resource type="Script" path="res://actions/components/options/view/action_option_view.gd" id="1_ujmmj"]
+[ext_resource type="Script" uid="uid://c0n5rqdquegdk" path="res://actions/components/options/view/action_option_view.gd" id="1_ujmmj"]
 
 [node name="ActionOptionView" type="HBoxContainer"]
 offset_right = 110.0

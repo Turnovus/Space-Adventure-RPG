@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="ItemTemplate" load_steps=3 format=3 uid="uid://dgjtjie65ykwd"]
 
-[ext_resource type="Script" path="res://data/items/item_template.gd" id="1_b0ckt"]
-[ext_resource type="Script" path="res://data/items/tools/tool_properties.gd" id="2_cj64m"]
+[ext_resource type="Script" uid="uid://chqoh6lnxg527" path="res://data/items/item_template.gd" id="1_b0ckt"]
+[ext_resource type="Script" uid="uid://cy14vm6p2sak" path="res://data/items/tools/tool_properties.gd" id="2_cj64m"]
 
 [resource]
 script = ExtResource("1_b0ckt")
 label = "unfinished item"
 description = "An unfinished item, requiring further labor to complete. Use the \"Craft Items\" action to continue the process."
 tool_properties = Array[ExtResource("2_cj64m")]([])
+is_assembled_tool = false
+tool_assembly_effect = 1.0
 show_parts = true
 parts_label = "Components"

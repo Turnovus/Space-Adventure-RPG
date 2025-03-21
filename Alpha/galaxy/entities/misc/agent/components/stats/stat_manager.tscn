@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxt82xhac32a1"]
 
-[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat_manager.gd" id="1_finw8"]
+[ext_resource type="Script" uid="uid://cfrvrpvmcxkvr" path="res://galaxy/entities/misc/agent/components/stats/stat_manager.gd" id="1_finw8"]
 
 [node name="StatManager" type="Node"]
 script = ExtResource("1_finw8")

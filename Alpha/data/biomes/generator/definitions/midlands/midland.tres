@@ -2,9 +2,9 @@
 
 [ext_resource type="Resource" uid="uid://617hbi8yfx7g" path="res://data/biomes/generator/definitions/midlands/mild_biomes.tres" id="1_e43eh"]
 [ext_resource type="Resource" uid="uid://c4ur3p7arm8oj" path="res://data/biomes/generator/definitions/midlands/cold_biomes.tres" id="1_l7ana"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="2_7pad1"]
+[ext_resource type="Script" uid="uid://c63pi7b4psy8v" path="res://data/biomes/generator/biome_generator_group.gd" id="2_7pad1"]
 [ext_resource type="Resource" uid="uid://oa45s3l46qni" path="res://data/biomes/generator/definitions/midlands/hot_biomes.tres" id="3_ed2tw"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="4_v38oa"]
+[ext_resource type="Script" uid="uid://bmiv3wslktowl" path="res://data/biomes/generator/biome_generator_property.gd" id="4_v38oa"]
 
 [sub_resource type="Resource" id="Resource_s5nkg"]
 script = ExtResource("2_7pad1")

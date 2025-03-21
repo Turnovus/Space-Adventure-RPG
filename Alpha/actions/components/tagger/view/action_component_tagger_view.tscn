@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bs5w64d8xvkqh"]
 
-[ext_resource type="Script" path="res://actions/components/tagger/view/action_component_tagger_view.gd" id="1_uau3b"]
+[ext_resource type="Script" uid="uid://ddmex8b4sqvcq" path="res://actions/components/tagger/view/action_component_tagger_view.gd" id="1_uau3b"]
 
 [node name="ActionComponentTaggerView" type="Label"]
 text = "Sample Text"

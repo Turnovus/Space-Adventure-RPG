@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5l8abpbh2ec3"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player/skills/player_skill_tab.gd" id="1_4bp6f"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_edrwm"]
+[ext_resource type="Script" uid="uid://dmp8ujg7qgecr" path="res://interface/main_interface_components/player/skills/player_skill_tab.gd" id="1_4bp6f"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="1_edrwm"]
 [ext_resource type="Texture2D" uid="uid://b2xh0yiblflb7" path="res://assets/textures/body/juggler.svg" id="2_cfjwu"]
 
 [node name="PlayerSkillTab" type="HBoxContainer"]

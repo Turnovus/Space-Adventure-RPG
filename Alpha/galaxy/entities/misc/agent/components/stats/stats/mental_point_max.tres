@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Stat" load_steps=3 format=3 uid="uid://bfdamhdf7exc3"]
+[gd_resource type="Resource" script_class="Stat" load_steps=4 format=3 uid="uid://bfdamhdf7exc3"]
 
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="1_d3ci7"]
-[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="1_f4wh8"]
+[ext_resource type="Script" uid="uid://4pm0b2w6cjge" path="res://galaxy/entities/misc/agent/components/stats/stat.gd" id="1_f4wh8"]
+[ext_resource type="Script" uid="uid://bfpqr075kq0eh" path="res://galaxy/entities/misc/agent/components/stats/effectors/stat_effector_skill.gd" id="3_h6cvv"]
 
 [resource]
 script = ExtResource("1_f4wh8")
@@ -9,3 +10,4 @@ icon = ExtResource("1_d3ci7")
 label = "Mental Ability"
 description = "The number of available mental action points per turn, rounded down to the nearest whole number."
 base_value = 20.0
+skills = Array[ExtResource("3_h6cvv")]([])

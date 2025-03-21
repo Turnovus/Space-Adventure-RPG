@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://bbu3j4q7g8ws0"]
+[gd_resource type="Resource" script_class="Biome" load_steps=3 format=3 uid="uid://bbu3j4q7g8ws0"]
 
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_djie0"]
+[ext_resource type="Script" uid="uid://bmnpj7si0p68q" path="res://data/biomes/foraging/biome_forage.gd" id="1_1u35s"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="1_djie0"]
 
 [resource]
 script = ExtResource("1_djie0")
 label = "ocean"
 map_color = Color(0, 0, 1, 1)
 allow_spawn = false
+forage_groups = Array[ExtResource("1_1u35s")]([])

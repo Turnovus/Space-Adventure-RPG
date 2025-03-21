@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ForageGroup" load_steps=4 format=3 uid="uid://cydmxcrckm3nx"]
 
 [ext_resource type="Resource" uid="uid://1y2dthgcubss" path="res://data/items/definitions/foraged/rock.tres" id="1_7w58v"]
-[ext_resource type="Script" path="res://data/biomes/foraging/forage_group.gd" id="1_8puk2"]
-[ext_resource type="Script" path="res://data/items/item_template.gd" id="1_kvoch"]
+[ext_resource type="Script" uid="uid://buax5dr5abh5v" path="res://data/biomes/foraging/forage_group.gd" id="1_8puk2"]
+[ext_resource type="Script" uid="uid://chqoh6lnxg527" path="res://data/items/item_template.gd" id="1_kvoch"]
 
 [resource]
 script = ExtResource("1_8puk2")

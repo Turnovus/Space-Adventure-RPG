@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyu7h3kk7ci83"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player/knowledge/knowledge_viewer.gd" id="1_d6501"]
+[ext_resource type="Script" uid="uid://bmov8nfxd45lu" path="res://interface/main_interface_components/player/knowledge/knowledge_viewer.gd" id="1_d6501"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="1_rtgk7"]
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_c3mjt"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="3_pwcpl"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="3_pwcpl"]
 [ext_resource type="Texture2D" uid="uid://c0i28kba7266q" path="res://assets/textures/head/idea.svg" id="4_cmuk0"]
 
 [node name="KnowledgeViewer" type="HBoxContainer"]

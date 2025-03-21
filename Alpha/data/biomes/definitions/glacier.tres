@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://b2y7d7mirl3au"]
+[gd_resource type="Resource" script_class="Biome" load_steps=3 format=3 uid="uid://b2y7d7mirl3au"]
 
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_xi775"]
+[ext_resource type="Script" uid="uid://bmnpj7si0p68q" path="res://data/biomes/foraging/biome_forage.gd" id="1_xerev"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="1_xi775"]
 
 [resource]
 script = ExtResource("1_xi775")
 label = "glacier"
 map_color = Color(0.819392, 0.889307, 0.855154, 1)
 allow_spawn = false
+forage_groups = Array[ExtResource("1_xerev")]([])

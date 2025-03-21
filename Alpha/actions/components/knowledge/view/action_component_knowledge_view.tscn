@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bf63ht60bon4x"]
 
-[ext_resource type="Script" path="res://actions/components/knowledge/view/action_component_knowledge_view.gd" id="1_57qa1"]
+[ext_resource type="Script" uid="uid://cgjwghyxtt5yw" path="res://actions/components/knowledge/view/action_component_knowledge_view.gd" id="1_57qa1"]
 
 [node name="ActionComponentKnowledgeView" type="Label"]
 text = "Sample text"

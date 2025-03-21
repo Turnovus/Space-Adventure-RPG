@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d1huw6xvlrfjv"]
 
-[ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_33yy7"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_6l4yp"]
+[ext_resource type="Script" uid="uid://b26qmia5v5gcq" path="res://interface/custom_tab_container.gd" id="1_33yy7"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="2_6l4yp"]
 [ext_resource type="Texture2D" uid="uid://bd7k4vurfqepg" path="res://assets/textures/body/person.svg" id="3_sxxhe"]
 [ext_resource type="PackedScene" uid="uid://brobaureixti5" path="res://interface/main_interface_components/player/effects/player_effect_tab.tscn" id="4_mtoc6"]
 [ext_resource type="PackedScene" uid="uid://bsdd4hxg5cgne" path="res://interface/main_interface_components/player/stats/player_stat_tab.tscn" id="5_js2qx"]

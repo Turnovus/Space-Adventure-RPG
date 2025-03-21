@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brobaureixti5"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player/effects/player_effect_tab.gd" id="1_bok0e"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_66ddg"]
+[ext_resource type="Script" uid="uid://gfhaf7d8s1dd" path="res://interface/main_interface_components/player/effects/player_effect_tab.gd" id="1_bok0e"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="2_66ddg"]
 [ext_resource type="Texture2D" uid="uid://dpn8ta8woqbxn" path="res://assets/textures/body/aura.svg" id="3_hpmv4"]
 
 [node name="PlayerEffectTab" type="ScrollContainer"]

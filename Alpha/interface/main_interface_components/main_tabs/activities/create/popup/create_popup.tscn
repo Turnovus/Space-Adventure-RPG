@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btnour8i6v5w0"]
 
 [ext_resource type="Theme" uid="uid://wc6kileaj34o" path="res://style/opaque_panels.tres" id="1_d8pqn"]
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/popup/create_popup.gd" id="1_xrnae"]
+[ext_resource type="Script" uid="uid://kkmskuivdw6k" path="res://interface/main_interface_components/main_tabs/activities/create/popup/create_popup.gd" id="1_xrnae"]
 
 [node name="CreatePopup" type="PanelContainer" node_paths=PackedStringArray("header_label", "requirement_list", "inventory_list", "item_description", "cancel_button", "craft_button")]
 anchors_preset = 15

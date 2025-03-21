@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CraftingGroup" load_steps=4 format=3 uid="uid://bu6kx7bgfifcp"]
 
 [ext_resource type="Resource" uid="uid://dx8j4nk6crv0g" path="res://data/crafting/definitions/toolmaking/toolmaking.tres" id="1_7fg1e"]
-[ext_resource type="Script" path="res://data/crafting/groups/crafting_group.gd" id="2_8ddnq"]
-[ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="3_ovyiu"]
+[ext_resource type="Script" uid="uid://tnfnyedx1v0m" path="res://data/crafting/groups/crafting_group.gd" id="2_8ddnq"]
+[ext_resource type="Script" uid="uid://ds1tphct0l3r6" path="res://data/crafting/recipes/crafting_recipe.gd" id="3_ovyiu"]
 
 [resource]
 script = ExtResource("2_8ddnq")

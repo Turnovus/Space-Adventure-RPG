@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="BiomeGeneratorChoice" load_steps=3 format=3 uid="uid://cqcai46qgiikq"]
+[gd_resource type="Resource" script_class="BiomeGeneratorChoice" load_steps=4 format=3 uid="uid://cqcai46qgiikq"]
 
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="1_6b8co"]
 [ext_resource type="Resource" uid="uid://rxmfk52ah36u" path="res://data/biomes/definitions/mountain.tres" id="1_fp5yp"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="1_vxkao"]
+[ext_resource type="Script" uid="uid://d258eahq8s46d" path="res://data/biomes/generator/biome_generator_choice.gd" id="1_vxkao"]
 
 [resource]
 script = ExtResource("1_vxkao")
-biomes = Array[Resource("res://data/biomes/biome.gd")]([ExtResource("1_fp5yp")])
+biomes = Array[ExtResource("1_6b8co")]([ExtResource("1_fp5yp")])

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://edophnioen3s"]
 
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_a66jj"]
-[ext_resource type="Script" path="res://interface/custom_tab_container.gd" id="1_xp7ff"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="1_a66jj"]
+[ext_resource type="Script" uid="uid://b26qmia5v5gcq" path="res://interface/custom_tab_container.gd" id="1_xp7ff"]
 [ext_resource type="PackedScene" uid="uid://d4lpm3acli8v2" path="res://interface/main_interface_components/main_tabs/codex/locations/codex_locations.tscn" id="3_1ckpy"]
 [ext_resource type="Texture2D" uid="uid://b55k8hn31wvwd" path="res://assets/textures/object/open-book.svg" id="3_githw"]
 

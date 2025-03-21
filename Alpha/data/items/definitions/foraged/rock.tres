@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemTemplate" load_steps=6 format=3 uid="uid://1y2dthgcubss"]
 
 [ext_resource type="Texture2D" uid="uid://dgc3qodyv2wxa" path="res://assets/textures/object/rock.svg" id="1_o03jw"]
-[ext_resource type="Script" path="res://data/items/item_template.gd" id="1_rqxi1"]
-[ext_resource type="Script" path="res://data/items/tools/tool_properties.gd" id="3_b316m"]
+[ext_resource type="Script" uid="uid://chqoh6lnxg527" path="res://data/items/item_template.gd" id="1_rqxi1"]
+[ext_resource type="Script" uid="uid://cy14vm6p2sak" path="res://data/items/tools/tool_properties.gd" id="3_b316m"]
 [ext_resource type="Resource" uid="uid://6ouut1mqurbh" path="res://data/items/tools/definitions/hammering.tres" id="4_5vsyr"]
 
 [sub_resource type="Resource" id="Resource_vmjrq"]

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CraftingGroup" load_steps=5 format=3 uid="uid://h1h1yk5dyw6l"]
 
 [ext_resource type="Resource" uid="uid://cuf5ocwp08grp" path="res://data/crafting/definitions/toolmaking/primitive/sharpen_rock.tres" id="1_kh857"]
-[ext_resource type="Script" path="res://data/crafting/groups/crafting_group.gd" id="1_nj4vq"]
-[ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="2_c472q"]
+[ext_resource type="Script" uid="uid://tnfnyedx1v0m" path="res://data/crafting/groups/crafting_group.gd" id="1_nj4vq"]
+[ext_resource type="Script" uid="uid://ds1tphct0l3r6" path="res://data/crafting/recipes/crafting_recipe.gd" id="2_c472q"]
 [ext_resource type="Resource" uid="uid://caaw5hq6cj3ck" path="res://data/crafting/definitions/toolmaking/primitive/haft_toolhead.tres" id="3_gqimp"]
 
 [resource]

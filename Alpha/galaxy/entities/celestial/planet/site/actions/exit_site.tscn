@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dw64x84o8stbf"]
 
-[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/site/actions/exit_site.gd" id="1_53q4j"]
+[ext_resource type="Script" uid="uid://di4pdy2yfcd7k" path="res://galaxy/entities/celestial/planet/site/actions/exit_site.gd" id="1_53q4j"]
 [ext_resource type="Texture2D" uid="uid://btsychtkefpin" path="res://assets/textures/ui/exit-door.svg" id="2_fyt37"]
 
 [node name="ExitSite" type="Node"]

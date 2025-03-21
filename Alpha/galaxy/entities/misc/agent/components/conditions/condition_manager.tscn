@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://br33brnaiaxxk"]
 
-[ext_resource type="Script" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.gd" id="1_jxbo6"]
+[ext_resource type="Script" uid="uid://cpndpik123wnk" path="res://galaxy/entities/misc/agent/components/conditions/condition_manager.gd" id="1_jxbo6"]
 
 [node name="ConditionManager" type="Node"]
 script = ExtResource("1_jxbo6")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp7fo75kh6l3h"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.gd" id="1_ukee3"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_leo5h"]
+[ext_resource type="Script" uid="uid://bv1iykb7tlyf0" path="res://interface/main_interface_components/main_tabs/available_actions/available_actions_tab.gd" id="1_ukee3"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="2_leo5h"]
 [ext_resource type="Texture2D" uid="uid://daqy56klcjd64" path="res://assets/textures/body/run.svg" id="3_hcueu"]
 
 [node name="AvailableActionsTab" type="ScrollContainer"]

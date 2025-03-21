@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://obs3wkehvrtw"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player/effects/stat_effect_listing.gd" id="1_0780h"]
+[ext_resource type="Script" uid="uid://356c0vgyupx8" path="res://interface/main_interface_components/player/effects/stat_effect_listing.gd" id="1_0780h"]
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_3jx2g"]
 
 [node name="StatEffectListing" type="HBoxContainer"]

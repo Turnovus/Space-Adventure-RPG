@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4lpm3acli8v2"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/codex/locations/codex_locations.gd" id="1_bkgh0"]
+[ext_resource type="Script" uid="uid://cpg2vq46xnk3a" path="res://interface/main_interface_components/main_tabs/codex/locations/codex_locations.gd" id="1_bkgh0"]
 [ext_resource type="Texture2D" uid="uid://bccuftkssausm" path="res://assets/textures/space/galaxy.svg" id="2_hmojn"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="3_jqade"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="3_jqade"]
 
 [node name="CodexLocations" type="HBoxContainer"]
 anchors_preset = 15

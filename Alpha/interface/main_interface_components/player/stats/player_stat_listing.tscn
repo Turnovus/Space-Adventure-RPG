@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7n84tmbc0x6d"]
 
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="1_ndqro"]
-[ext_resource type="Script" path="res://interface/main_interface_components/player/stats/player_stat_listing.gd" id="1_prtbm"]
-
+[ext_resource type="Script" uid="uid://ol4p1lrriijq" path="res://interface/main_interface_components/player/stats/player_stat_listing.gd" id="1_prtbm"]
 
 [node name="PlayerStatListing" type="HBoxContainer"]
 offset_right = 136.0

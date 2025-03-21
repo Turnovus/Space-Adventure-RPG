@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://l4w8yi1c4u35"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/events/event_list.gd" id="1_i0b78"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_kgvqq"]
+[ext_resource type="Script" uid="uid://cyf77k73rgmfy" path="res://interface/main_interface_components/main_tabs/events/event_list.gd" id="1_i0b78"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="1_kgvqq"]
 [ext_resource type="Texture2D" uid="uid://cwpgym5sgpi5p" path="res://assets/textures/object/ringing-bell.svg" id="3_dydfu"]
 
 [node name="EventList" type="VBoxContainer"]

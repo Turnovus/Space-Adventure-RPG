@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Namer" load_steps=13 format=3 uid="uid://djmpxd184omj6"]
 
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_resolver.gd" id="1_7cvmj"]
-[ext_resource type="Script" path="res://data/identity/namer/namer.gd" id="1_giq0n"]
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_random_choice.gd" id="1_vyvlx"]
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_from_file.gd" id="2_7hhcu"]
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_terrestrial_root.gd" id="3_dsi5v"]
+[ext_resource type="Script" uid="uid://g1bfawof51v4" path="res://data/identity/namer/name_part_resolver/name_part_resolver.gd" id="1_7cvmj"]
+[ext_resource type="Script" uid="uid://3lhpm1o42v3g" path="res://data/identity/namer/namer.gd" id="1_giq0n"]
+[ext_resource type="Script" uid="uid://dnhoibvhaybic" path="res://data/identity/namer/name_part_resolver/name_part_random_choice.gd" id="1_vyvlx"]
+[ext_resource type="Script" uid="uid://c1sillhvqs4lf" path="res://data/identity/namer/name_part_resolver/name_part_from_file.gd" id="2_7hhcu"]
+[ext_resource type="Script" uid="uid://b817uluii62gh" path="res://data/identity/namer/name_part_resolver/name_part_terrestrial_root.gd" id="3_dsi5v"]
 
 [sub_resource type="Resource" id="Resource_cwjxo"]
 script = ExtResource("3_dsi5v")

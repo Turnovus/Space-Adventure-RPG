@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6wf2glsjigx4"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player/effects/player_effect_listing.gd" id="1_2lt6c"]
+[ext_resource type="Script" uid="uid://d11fxui3ie7am" path="res://interface/main_interface_components/player/effects/player_effect_listing.gd" id="1_2lt6c"]
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_fxmey"]
-
 
 [node name="PlayerEffectListing" type="VBoxContainer"]
 offset_right = 207.0

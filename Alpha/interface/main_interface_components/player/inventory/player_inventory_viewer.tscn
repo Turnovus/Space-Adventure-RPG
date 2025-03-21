@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b66t7c48ai1rr"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player/inventory/player_inventory_viewer.gd" id="1_0sbui"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_57xdo"]
+[ext_resource type="Script" uid="uid://boy585yjsibmt" path="res://interface/main_interface_components/player/inventory/player_inventory_viewer.gd" id="1_0sbui"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="1_57xdo"]
 [ext_resource type="Texture2D" uid="uid://dbmh8y6e24uuj" path="res://assets/textures/object/container/knapsack.svg" id="2_akniu"]
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="2_l2jwq"]
 

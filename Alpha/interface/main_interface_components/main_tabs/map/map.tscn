@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://byw82b0q8oa4h"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/map/map.gd" id="1_sgirn"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="2_4gk4l"]
+[ext_resource type="Script" uid="uid://liao5hpddcif" path="res://interface/main_interface_components/main_tabs/map/map.gd" id="1_sgirn"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="2_4gk4l"]
 [ext_resource type="Texture2D" uid="uid://cui3hhhi0kg2e" path="res://assets/textures/map/compass.svg" id="3_s5xlc"]
 
 [sub_resource type="SystemFont" id="SystemFont_38qaq"]
@@ -67,6 +67,7 @@ layout_mode = 2
 selected = 1
 item_count = 2
 popup/item_0/text = "None"
+popup/item_0/id = 0
 popup/item_1/text = "Distance"
 popup/item_1/id = 1
 
@@ -82,5 +83,6 @@ layout_mode = 2
 selected = 1
 item_count = 2
 popup/item_0/text = "None"
+popup/item_0/id = 0
 popup/item_1/text = "Biome"
 popup/item_1/id = 1

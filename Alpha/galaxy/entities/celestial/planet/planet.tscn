@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cx2i4hx5bi26"]
 
-[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_xhvau"]
-[ext_resource type="Script" path="res://actions/action_issuer.gd" id="2_tklot"]
+[ext_resource type="Script" uid="uid://bme5qcg766ow1" path="res://galaxy/entities/celestial/planet/planet.gd" id="1_xhvau"]
+[ext_resource type="Script" uid="uid://c5a2fqxa1w6jo" path="res://actions/action_issuer.gd" id="2_tklot"]
 [ext_resource type="PackedScene" uid="uid://d20tlitpshcgb" path="res://galaxy/entities/celestial/planet/actions/travel_planet.tscn" id="3_imxn3"]
 [ext_resource type="PackedScene" uid="uid://bywxdiqinkqdl" path="res://galaxy/entities/celestial/planet/actions/forage_planet.tscn" id="4_7oveh"]
-[ext_resource type="Script" path="res://data/identity/identity.gd" id="4_it4ph"]
+[ext_resource type="Script" uid="uid://d51gv7e0n0w" path="res://data/identity/identity.gd" id="4_it4ph"]
 [ext_resource type="Resource" uid="uid://du31m5rqdda8e" path="res://data/identity/namer/planet_namer.tres" id="5_cebf7"]
 [ext_resource type="Texture2D" uid="uid://w68wuw7kat8x" path="res://assets/textures/space/world.svg" id="6_7jtg2"]
-[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/components/biome_grid.gd" id="7_je5bt"]
+[ext_resource type="Script" uid="uid://bodsl17cilk1d" path="res://galaxy/entities/celestial/planet/components/biome_grid.gd" id="7_je5bt"]
 [ext_resource type="Resource" uid="uid://u8hm6muvv1qd" path="res://data/biomes/generator/definitions/planet_biomes.tres" id="8_lvk8t"]
 
 [node name="Planet" type="Node"]

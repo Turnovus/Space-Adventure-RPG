@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpf2a8kiiyl8h"]
 
-[ext_resource type="Script" path="res://galaxy/entities/celestial/planet/site/actions/enter_site.gd" id="1_ww7t1"]
+[ext_resource type="Script" uid="uid://1820lyitla4w" path="res://galaxy/entities/celestial/planet/site/actions/enter_site.gd" id="1_ww7t1"]
 [ext_resource type="Texture2D" uid="uid://dpyjnv4u2fnqg" path="res://assets/textures/ui/entry-door.svg" id="2_yhyym"]
-[ext_resource type="Script" path="res://actions/components/tagger/action_component_tagger.gd" id="3_ouwso"]
+[ext_resource type="Script" uid="uid://dg2tdekqwptef" path="res://actions/components/tagger/action_component_tagger.gd" id="3_ouwso"]
 [ext_resource type="PackedScene" uid="uid://bs5w64d8xvkqh" path="res://actions/components/tagger/view/action_component_tagger_view.tscn" id="4_r86jh"]
 
 [node name="EnterSite" type="Node"]

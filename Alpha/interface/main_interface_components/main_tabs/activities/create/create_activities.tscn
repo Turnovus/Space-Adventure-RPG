@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmag34qs40yge"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/main_tabs/activities/create/create_activities.gd" id="1_gx421"]
-[ext_resource type="Script" path="res://interface/tab_controller.gd" id="1_ykgbc"]
+[ext_resource type="Script" uid="uid://bubqabyv1815b" path="res://interface/main_interface_components/main_tabs/activities/create/create_activities.gd" id="1_gx421"]
+[ext_resource type="Script" uid="uid://boc0jqq1gbbm8" path="res://interface/tab_controller.gd" id="1_ykgbc"]
 [ext_resource type="Texture2D" uid="uid://bxryoi488fggs" path="res://assets/textures/object/tool/banging-gavel.svg" id="2_1traq"]
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_kl80i"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_t41xk"]

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="EventType" load_steps=5 format=3 uid="uid://dtsvbdt4w7duf"]
 
-[ext_resource type="Script" path="res://data/events/event_type.gd" id="1_alh5l"]
+[ext_resource type="Script" uid="uid://d3lj5jv0y1yq7" path="res://data/events/event_type.gd" id="1_alh5l"]
 [ext_resource type="Texture2D" uid="uid://c0i28kba7266q" path="res://assets/textures/head/idea.svg" id="1_qu2ng"]
-[ext_resource type="Script" path="res://data/events/icon_resolver/event_icon_field.gd" id="2_0pcel"]
+[ext_resource type="Script" uid="uid://djhfb0y8rlko3" path="res://data/events/icon_resolver/event_icon_field.gd" id="2_0pcel"]
 
 [sub_resource type="Resource" id="Resource_5xo72"]
 script = ExtResource("2_0pcel")

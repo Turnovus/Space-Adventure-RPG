@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="EventType" load_steps=5 format=3 uid="uid://0pffm8nvhnv5"]
 
 [ext_resource type="Texture2D" uid="uid://cf4pqawcq34uk" path="res://assets/textures/object/tool/hammer-drop.svg" id="1_0wx5b"]
-[ext_resource type="Script" path="res://data/events/event_type.gd" id="1_78jft"]
-[ext_resource type="Script" path="res://data/events/icon_resolver/event_icon_item.gd" id="2_rj0kb"]
+[ext_resource type="Script" uid="uid://d3lj5jv0y1yq7" path="res://data/events/event_type.gd" id="1_78jft"]
+[ext_resource type="Script" uid="uid://p11k4lngecql" path="res://data/events/icon_resolver/event_icon_item.gd" id="2_rj0kb"]
 
 [sub_resource type="Resource" id="Resource_ekblb"]
 script = ExtResource("2_rj0kb")

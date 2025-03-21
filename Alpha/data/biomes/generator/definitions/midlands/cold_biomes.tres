@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=11 format=3 uid="uid://c4ur3p7arm8oj"]
 
 [ext_resource type="Resource" uid="uid://bqpovymtub0lu" path="res://data/biomes/definitions/midland/cold/tundra.tres" id="1_18dlu"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="1_bs338"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_2nqc6"]
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="2_ro4sx"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_j60fv"]
+[ext_resource type="Script" uid="uid://bmiv3wslktowl" path="res://data/biomes/generator/biome_generator_property.gd" id="1_bs338"]
+[ext_resource type="Script" uid="uid://d258eahq8s46d" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_2nqc6"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="2_ro4sx"]
+[ext_resource type="Script" uid="uid://c63pi7b4psy8v" path="res://data/biomes/generator/biome_generator_group.gd" id="3_j60fv"]
 [ext_resource type="Resource" uid="uid://cx03h6towx10g" path="res://data/biomes/definitions/midland/cold/boreal.tres" id="4_5517r"]
 
 [sub_resource type="Resource" id="Resource_nk4p6"]

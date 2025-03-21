@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=9 format=3 uid="uid://dd1pgmtxkqqw0"]
 
 [ext_resource type="Resource" uid="uid://cluguwf2kwwut" path="res://data/biomes/generator/definitions/oceans.tres" id="1_f6cjo"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="2_ayfsd"]
+[ext_resource type="Script" uid="uid://c63pi7b4psy8v" path="res://data/biomes/generator/biome_generator_group.gd" id="2_ayfsd"]
 [ext_resource type="Resource" uid="uid://b0myjx1pjf065" path="res://data/biomes/generator/definitions/midlands/midland.tres" id="3_henv4"]
 [ext_resource type="Resource" uid="uid://cqcai46qgiikq" path="res://data/biomes/generator/definitions/mountains.tres" id="4_kl0au"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="5_3lyb7"]
+[ext_resource type="Script" uid="uid://bmiv3wslktowl" path="res://data/biomes/generator/biome_generator_property.gd" id="5_3lyb7"]
 
 [sub_resource type="Resource" id="Resource_ntwht"]
 script = ExtResource("2_ayfsd")

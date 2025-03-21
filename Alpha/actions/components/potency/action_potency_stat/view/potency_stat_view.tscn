@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvaqj61lnneb5"]
 
 [ext_resource type="Texture2D" uid="uid://ricm4nnkl0g8" path="res://assets/textures/machine/cog.svg" id="1_bikch"]
-[ext_resource type="Script" path="res://actions/components/potency/action_potency_stat/view/potency_stat_view.gd" id="1_kheka"]
+[ext_resource type="Script" uid="uid://def2kx7ucdogv" path="res://actions/components/potency/action_potency_stat/view/potency_stat_view.gd" id="1_kheka"]
 
 [node name="PotencyStatView" type="HBoxContainer"]
 offset_right = 40.0

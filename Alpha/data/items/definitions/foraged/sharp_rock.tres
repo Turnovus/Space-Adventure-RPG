@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemTemplate" load_steps=8 format=3 uid="uid://busq3o6xheasc"]
 
 [ext_resource type="Texture2D" uid="uid://bkenurck0vu3a" path="res://assets/textures/object/silex.svg" id="1_481n1"]
-[ext_resource type="Script" path="res://data/items/item_template.gd" id="1_ep34x"]
-[ext_resource type="Script" path="res://data/items/tools/tool_properties.gd" id="2_i7ma3"]
+[ext_resource type="Script" uid="uid://chqoh6lnxg527" path="res://data/items/item_template.gd" id="1_ep34x"]
+[ext_resource type="Script" uid="uid://cy14vm6p2sak" path="res://data/items/tools/tool_properties.gd" id="2_i7ma3"]
 [ext_resource type="Resource" uid="uid://traet5n6asum" path="res://data/items/tools/definitions/chopping.tres" id="4_pty6g"]
 [ext_resource type="Resource" uid="uid://b2twthvynxu05" path="res://data/items/tools/definitions/cutting.tres" id="5_k8ygf"]
 

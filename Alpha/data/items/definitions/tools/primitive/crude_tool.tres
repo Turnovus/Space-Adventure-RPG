@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemTemplate" load_steps=4 format=3 uid="uid://dyakc4o0pxc4k"]
 
-[ext_resource type="Script" path="res://data/items/item_template.gd" id="1_dybnw"]
+[ext_resource type="Script" uid="uid://chqoh6lnxg527" path="res://data/items/item_template.gd" id="1_dybnw"]
 [ext_resource type="Texture2D" uid="uid://crjlr3runuf0b" path="res://assets/textures/object/tool/stone-axe.svg" id="1_q04tr"]
-[ext_resource type="Script" path="res://data/items/tools/tool_properties.gd" id="2_jvfg2"]
+[ext_resource type="Script" uid="uid://cy14vm6p2sak" path="res://data/items/tools/tool_properties.gd" id="2_jvfg2"]
 
 [resource]
 script = ExtResource("1_dybnw")

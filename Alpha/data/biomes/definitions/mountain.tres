@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://rxmfk52ah36u"]
 
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_gvpxh"]
-[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="1_in58h"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="1_gvpxh"]
+[ext_resource type="Script" uid="uid://bmnpj7si0p68q" path="res://data/biomes/foraging/biome_forage.gd" id="1_in58h"]
 [ext_resource type="Resource" uid="uid://pbvl7vo8gx2m" path="res://data/biomes/foraging/definitions/biome_templates/rocks/rocks_rich.tres" id="1_ql4hl"]
 
 [resource]

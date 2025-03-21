@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=11 format=3 uid="uid://617hbi8yfx7g"]
 
 [ext_resource type="Resource" uid="uid://b7hgw3575l14p" path="res://data/biomes/definitions/midland/mild/plains.tres" id="1_dmcds"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="1_n678w"]
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="2_0rlyk"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_1yiut"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_hoqjs"]
+[ext_resource type="Script" uid="uid://bmiv3wslktowl" path="res://data/biomes/generator/biome_generator_property.gd" id="1_n678w"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="2_0rlyk"]
+[ext_resource type="Script" uid="uid://d258eahq8s46d" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_1yiut"]
+[ext_resource type="Script" uid="uid://c63pi7b4psy8v" path="res://data/biomes/generator/biome_generator_group.gd" id="3_hoqjs"]
 [ext_resource type="Resource" uid="uid://bwbui5imh75nt" path="res://data/biomes/definitions/midland/mild/forest.tres" id="4_yy25l"]
 
 [sub_resource type="Resource" id="Resource_ja7ol"]

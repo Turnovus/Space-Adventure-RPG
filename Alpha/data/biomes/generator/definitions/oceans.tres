@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=11 format=3 uid="uid://cluguwf2kwwut"]
 
 [ext_resource type="Resource" uid="uid://c8ca37h82etck" path="res://data/biomes/definitions/water/deepwater.tres" id="1_cph1x"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="1_wsypi"]
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="2_fwhq1"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_tgcpg"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_w5gyq"]
+[ext_resource type="Script" uid="uid://bmiv3wslktowl" path="res://data/biomes/generator/biome_generator_property.gd" id="1_wsypi"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="2_fwhq1"]
+[ext_resource type="Script" uid="uid://d258eahq8s46d" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_tgcpg"]
+[ext_resource type="Script" uid="uid://c63pi7b4psy8v" path="res://data/biomes/generator/biome_generator_group.gd" id="3_w5gyq"]
 [ext_resource type="Resource" uid="uid://bbu3j4q7g8ws0" path="res://data/biomes/definitions/water/water.tres" id="4_7p4ey"]
 
 [sub_resource type="Resource" id="Resource_wdrdo"]

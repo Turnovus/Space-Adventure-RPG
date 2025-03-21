@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cd77om04ps15c"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/player_activity_list/player_activity_list.gd" id="1_chjln"]
+[ext_resource type="Script" uid="uid://d2qrlw6y5amu8" path="res://interface/main_interface_components/player_activity_list/player_activity_list.gd" id="1_chjln"]
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_45nqa"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_vhl37"]
 

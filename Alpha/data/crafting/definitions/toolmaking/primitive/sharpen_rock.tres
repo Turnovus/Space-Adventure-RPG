@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bkenurck0vu3a" path="res://assets/textures/object/silex.svg" id="1_b2y73"]
 [ext_resource type="Resource" uid="uid://0pffm8nvhnv5" path="res://data/events/definitions/event_crafting_finished.tres" id="1_ldkun"]
-[ext_resource type="Script" path="res://data/crafting/recipes/crafting_recipe.gd" id="1_vtbim"]
-[ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_counter/item_quantity.gd" id="2_dexuv"]
-[ext_resource type="Script" path="res://data/crafting/ingredients/ingredient_finder/item_template.gd" id="3_xxsf7"]
+[ext_resource type="Script" uid="uid://ds1tphct0l3r6" path="res://data/crafting/recipes/crafting_recipe.gd" id="1_vtbim"]
+[ext_resource type="Script" uid="uid://ccqwiwaf7du5k" path="res://data/crafting/ingredients/ingredient_counter/item_quantity.gd" id="2_dexuv"]
+[ext_resource type="Script" uid="uid://dhnp0ayhog0l8" path="res://data/crafting/ingredients/ingredient_finder/item_template.gd" id="3_xxsf7"]
 [ext_resource type="Resource" uid="uid://1y2dthgcubss" path="res://data/items/definitions/foraged/rock.tres" id="4_rh1qa"]
-[ext_resource type="Script" path="res://data/crafting/ingredients/recipe_ingredient.gd" id="5_7i8eq"]
+[ext_resource type="Script" uid="uid://bsae8mdrkj2ts" path="res://data/crafting/ingredients/recipe_ingredient.gd" id="5_7i8eq"]
 [ext_resource type="Texture2D" uid="uid://dgc3qodyv2wxa" path="res://assets/textures/object/rock.svg" id="6_237fm"]
-[ext_resource type="Script" path="res://data/crafting/recipe_tool.gd" id="7_kh7vv"]
+[ext_resource type="Script" uid="uid://bdpuug6isdc6x" path="res://data/crafting/recipe_tool.gd" id="7_kh7vv"]
 [ext_resource type="Resource" uid="uid://busq3o6xheasc" path="res://data/items/definitions/foraged/sharp_rock.tres" id="7_lbdmj"]
 [ext_resource type="Resource" uid="uid://6ouut1mqurbh" path="res://data/items/tools/definitions/hammering.tres" id="8_884il"]
 

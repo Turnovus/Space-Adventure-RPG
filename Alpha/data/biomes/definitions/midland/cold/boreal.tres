@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=5 format=3 uid="uid://cx03h6towx10g"]
 
 [ext_resource type="Resource" uid="uid://6vervnl1m20a" path="res://data/biomes/foraging/definitions/biome_templates/branches/branches_average.tres" id="1_f7yir"]
-[ext_resource type="Script" path="res://data/biomes/foraging/biome_forage.gd" id="1_pnq3y"]
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="1_xfw6m"]
+[ext_resource type="Script" uid="uid://bmnpj7si0p68q" path="res://data/biomes/foraging/biome_forage.gd" id="1_pnq3y"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="1_xfw6m"]
 [ext_resource type="Resource" uid="uid://bxbrr3mv8uw45" path="res://data/biomes/foraging/definitions/biome_templates/rocks/rocks_average.tres" id="2_ay66l"]
 
 [resource]

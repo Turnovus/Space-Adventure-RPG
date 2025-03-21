@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3tgiiopvq2dk"]
 
-[ext_resource type="Script" path="res://interface/main_interface_components/time_panel.gd" id="1_pvpvv"]
+[ext_resource type="Script" uid="uid://cl13gq5vm76ng" path="res://interface/main_interface_components/time_panel.gd" id="1_pvpvv"]
 [ext_resource type="Texture2D" uid="uid://cnn6oeuetsood" path="res://assets/textures/machine/clockwork.svg" id="2_l4y3x"]
 [ext_resource type="Texture2D" uid="uid://b32y48xgtt6yy" path="res://assets/textures/weather/sun.svg" id="2_v7pd5"]
 [ext_resource type="Texture2D" uid="uid://dnw6vasm3qimq" path="res://assets/textures/weather/moon.svg" id="3_v42af"]

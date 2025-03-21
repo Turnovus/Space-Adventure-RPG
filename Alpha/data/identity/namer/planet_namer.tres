@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Namer" load_steps=8 format=3 uid="uid://du31m5rqdda8e"]
 
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_resolver.gd" id="1_1fo4b"]
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_from_file.gd" id="1_44k68"]
-[ext_resource type="Script" path="res://data/identity/namer/namer.gd" id="1_jso7y"]
-[ext_resource type="Script" path="res://data/identity/namer/name_part_resolver/name_part_chance.gd" id="2_n8oar"]
+[ext_resource type="Script" uid="uid://g1bfawof51v4" path="res://data/identity/namer/name_part_resolver/name_part_resolver.gd" id="1_1fo4b"]
+[ext_resource type="Script" uid="uid://c1sillhvqs4lf" path="res://data/identity/namer/name_part_resolver/name_part_from_file.gd" id="1_44k68"]
+[ext_resource type="Script" uid="uid://3lhpm1o42v3g" path="res://data/identity/namer/namer.gd" id="1_jso7y"]
+[ext_resource type="Script" uid="uid://bf2jwdhwb2wsg" path="res://data/identity/namer/name_part_resolver/name_part_chance.gd" id="2_n8oar"]
 
 [sub_resource type="Resource" id="Resource_q2x7t"]
 script = ExtResource("1_44k68")

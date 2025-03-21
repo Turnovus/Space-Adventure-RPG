@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhf51cxd1ny6v"]
 
-[ext_resource type="Script" path="res://singleton/asset_singleton.gd" id="1_ikc58"]
+[ext_resource type="Script" uid="uid://cl5yw4wx1a4be" path="res://singleton/asset_singleton.gd" id="1_ikc58"]
 [ext_resource type="Texture2D" uid="uid://bj0ejx3j4n3dh" path="res://assets/textures/anatomy/palm.svg" id="2_4d6ft"]
 [ext_resource type="Texture2D" uid="uid://c4lfu07sxpbv" path="res://assets/textures/anatomy/brain.svg" id="3_y0fa7"]
 

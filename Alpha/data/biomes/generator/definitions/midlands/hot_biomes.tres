@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BiomeGeneratorProperty" load_steps=14 format=3 uid="uid://oa45s3l46qni"]
 
 [ext_resource type="Resource" uid="uid://cehb1htlkq22h" path="res://data/biomes/definitions/midland/hot/desert.tres" id="1_2ewxt"]
-[ext_resource type="Script" path="res://data/biomes/biome.gd" id="2_4m17q"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_846ns"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_group.gd" id="3_s7vnf"]
+[ext_resource type="Script" uid="uid://b1vyb5a3hejlx" path="res://data/biomes/biome.gd" id="2_4m17q"]
+[ext_resource type="Script" uid="uid://d258eahq8s46d" path="res://data/biomes/generator/biome_generator_choice.gd" id="2_846ns"]
+[ext_resource type="Script" uid="uid://c63pi7b4psy8v" path="res://data/biomes/generator/biome_generator_group.gd" id="3_s7vnf"]
 [ext_resource type="Resource" uid="uid://becakt32bxos5" path="res://data/biomes/definitions/midland/hot/savanna.tres" id="4_caahm"]
 [ext_resource type="Resource" uid="uid://cylbm4a1dxp1f" path="res://data/biomes/definitions/midland/hot/jungle.tres" id="5_h5w6k"]
-[ext_resource type="Script" path="res://data/biomes/generator/biome_generator_property.gd" id="6_mwj7b"]
+[ext_resource type="Script" uid="uid://bmiv3wslktowl" path="res://data/biomes/generator/biome_generator_property.gd" id="6_mwj7b"]
 
 [sub_resource type="Resource" id="Resource_w1438"]
 script = ExtResource("2_846ns")
