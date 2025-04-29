@@ -1,4 +1,4 @@
-@icon("res://assets/textures/object/banging-gavel.svg")
+@icon("res://assets/textures/object/tool/banging-gavel.svg")
 class_name CraftingRecipe
 extends Resource
 
